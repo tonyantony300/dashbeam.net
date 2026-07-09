@@ -266,9 +266,6 @@
       "githubSponsors": "GitHub Sponsors"
     }
   },
-  "pressReviews": {
-    "title": "As seen in"
-  },
   "taglineFooter": {
     "quote": "มันเหมือนลิงก์ AirDrop ส่วนตัวครั้งเดียว — สำหรับใครก็ได้ ที่ไหนก็ได้"
   },
@@ -284,6 +281,7 @@
     "discord": "Discord",
     "sourceCode": "ซอร์สโค้ด",
     "githubSponsors": "GitHub Sponsors",
+    "asSeenIn": "As seen in",
     "websiteBy": "ออกแบบเว็บไซต์โดย",
     "designer": "ShravanKumar PS",
     "license": "©GNU Affero General Public License v3.0",
@@ -349,7 +347,7 @@
   "comparePage": {
     "hub": {
       "metaTitle": "Compare AltSendme to LocalSend, Blip & Magic Wormhole",
-      "metaDescription": "See how AltSendme compares to LocalSend, Blip, Magic Wormhole, WeTransfer, FilePizza, and PairDrop. Open-source P2P with CLI, gigabit Iroh speeds, and transfers that work over the internet.",
+      "metaDescription": "See how AltSendme compares to LocalSend, Blip, Magic Wormhole, WeTransfer, and PairDrop. Open-source P2P with CLI, gigabit Iroh speeds, and transfers that work over the internet.",
       "title": "How AltSendme compares",
       "lead": "AltSendme is an open-source file transfer app powered by Iroh, bringing AirDrop-like sharing to any device and any network. With native apps, CLI, no file size limits, and gigabit-class transfer speeds, it outperforms browser WebRTC tools on large files.",
       "tableTitle": "การเปรียบเทียบ",
@@ -376,34 +374,27 @@
         "protocolBlip": "ไม่ทราบ",
         "protocolLocalsend": "HTTPS/REST บน TCP",
         "protocolWormhole": "TCP ที่เข้ารหัส",
-        "protocolFilepizza": "WebRTC/DTLS (SCTP)",
         "protocolPairdrop": "WebRTC/DTLS (SCTP)",
         "natAltsendme": "~90% โดยตรง, QUIC แบบเนทีฟ",
         "natBlip": "ยังไม่ได้รับการยืนยันอย่างอิสระ",
         "natLocalsend": "ไม่มี (LAN เท่านั้น)",
         "natWormhole": "TCP โดยตรงเมื่อเข้าถึงได้; ไม่มี ICE/STUN hole punching",
-        "natFilepizza": "WebRTC ICE/STUN",
         "natPairdrop": "WebRTC ICE/STUN",
         "gigabitLocalsend": "ใช่ (LAN เท่านั้น)",
         "gigabitWormhole": "ใช่ (เมื่อเชื่อมต่อโดยตรง)",
-        "gigabitFilepizza": "ไม่ (เพดาน SCTP/เบราว์เซอร์)",
         "gigabitPairdrop": "ไม่ (เพดาน SCTP/เบราว์เซอร์)",
-        "foldersFilepizza": "ZIP หลายไฟล์เท่านั้น",
         "foldersPairdrop": "ใช่ (CLI เท่านั้น ไม่รองรับในเบราว์เซอร์)",
         "resumableLocalsend": "ไม่ (คำขอฟีเจอร์เปิดอยู่ ยังไม่ปล่อย)",
-        "sizeFilepizza": "จำกัดด้วยหน่วยความจำเบราว์เซอร์",
         "sizePairdrop": "จำกัดด้วยหน่วยความจำเบราว์เซอร์",
         "platformsAltsendme": "CLI + เดสก์ท็อป + มือถือ + เว็บ",
         "platformsBlip": "เดสก์ท็อป + มือถือ (ไม่มีเว็บ/CLI)",
         "platformsLocalsend": "เดสก์ท็อป + มือถือ (ไม่มีเว็บ/CLI)",
         "platformsWormhole": "CLI เท่านั้น",
-        "platformsFilepizza": "เว็บเท่านั้น",
         "platformsPairdrop": "เว็บ/PWA + แอป Android + CLI",
         "catchAltsendme": "กำลังพัฒนา",
         "catchBlip": "โค้ดปิด; ตรวจสอบการจัดการข้อมูลไม่ได้",
         "catchLocalsend": "เครือข่ายเดียวกันเท่านั้น ไม่มีการต่อ",
         "catchWormhole": "CLI เท่านั้น; GUI แยกต่างหาก ดูแลโดยชุมชน",
-        "catchFilepizza": "เพดาน throughput WebRTC/SCTP; จำกัดหน่วยความจำเบราว์เซอร์",
         "catchPairdrop": "เพดาน throughput WebRTC/SCTP; จำกัดหน่วยความจำเบราว์เซอร์"
       },
       "deepDives": "Deep dives",
@@ -415,8 +406,6 @@
       "othersLead": "AltSendme sits alongside other popular tools—here is where it fits.",
       "wetransfer": "WeTransfer / Drive",
       "wetransferNote": "Cloud upload with size limits and accounts. AltSendme transfers directly with no middleman storage—and can push multi-gigabit when the path allows.",
-      "filepizza": "FilePizza / PairDrop",
-      "filepizzaNote": "Browser WebRTC tools struggle with very large files and lower sustained speeds. AltSendme uses Iroh/QUIC native networking to saturate gigabit links, plus CLI, resumable folders, and desktop/Android apps.",
       "wormhole": "Magic Wormhole",
       "wormholeNote": "Great CLI UX with short codes. AltSendme pairs a full GUI + Android + web with the Iroh sendme CLI—same tickets, gigabit-capable transfers.",
       "ctaTitle": "Try AltSendme free",

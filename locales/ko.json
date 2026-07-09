@@ -266,9 +266,6 @@
       "githubSponsors": "GitHub Sponsors"
     }
   },
-  "pressReviews": {
-    "title": "As seen in"
-  },
   "taglineFooter": {
     "quote": "누구나, 어디서나 사용할 수 있는 비공개 일회용 AirDrop 링크와 같습니다."
   },
@@ -284,6 +281,7 @@
     "discord": "Discord",
     "sourceCode": "소스 코드",
     "githubSponsors": "GitHub Sponsors",
+    "asSeenIn": "As seen in",
     "websiteBy": "웹사이트 디자인",
     "designer": "ShravanKumar PS",
     "license": "©GNU Affero General Public License v3.0",
@@ -349,7 +347,7 @@
   "comparePage": {
     "hub": {
       "metaTitle": "Compare AltSendme to LocalSend, Blip & Magic Wormhole",
-      "metaDescription": "See how AltSendme compares to LocalSend, Blip, Magic Wormhole, WeTransfer, FilePizza, and PairDrop. Open-source P2P with CLI, gigabit Iroh speeds, and transfers that work over the internet.",
+      "metaDescription": "See how AltSendme compares to LocalSend, Blip, Magic Wormhole, WeTransfer, and PairDrop. Open-source P2P with CLI, gigabit Iroh speeds, and transfers that work over the internet.",
       "title": "How AltSendme compares",
       "lead": "AltSendme is an open-source file transfer app powered by Iroh, bringing AirDrop-like sharing to any device and any network. With native apps, CLI, no file size limits, and gigabit-class transfer speeds, it outperforms browser WebRTC tools on large files.",
       "tableTitle": "비교",
@@ -376,34 +374,27 @@
         "protocolBlip": "알 수 없음",
         "protocolLocalsend": "TCP 위 HTTPS/REST",
         "protocolWormhole": "암호화된 TCP",
-        "protocolFilepizza": "WebRTC/DTLS (SCTP)",
         "protocolPairdrop": "WebRTC/DTLS (SCTP)",
         "natAltsendme": "약 90% 직접, QUIC 네이티브",
         "natBlip": "독립적으로 확인되지 않음",
         "natLocalsend": "해당 없음 (LAN만)",
         "natWormhole": "도달 가능 시 직접 TCP; ICE/STUN 홀 펀칭 없음",
-        "natFilepizza": "WebRTC ICE/STUN",
         "natPairdrop": "WebRTC ICE/STUN",
         "gigabitLocalsend": "예 (LAN만)",
         "gigabitWormhole": "예 (직접 연결 시)",
-        "gigabitFilepizza": "아니오 (SCTP/브라우저 한계)",
         "gigabitPairdrop": "아니오 (SCTP/브라우저 한계)",
-        "foldersFilepizza": "다중 파일 ZIP만",
         "foldersPairdrop": "예 (CLI만, 브라우저 불가)",
         "resumableLocalsend": "아니오 (기능 요청 중, 미출시)",
-        "sizeFilepizza": "브라우저 메모리로 제한",
         "sizePairdrop": "브라우저 메모리로 제한",
         "platformsAltsendme": "CLI + 데스크톱 + 모바일 + 웹",
         "platformsBlip": "데스크톱 + 모바일 (웹/CLI 없음)",
         "platformsLocalsend": "데스크톱 + 모바일 (웹/CLI 없음)",
         "platformsWormhole": "CLI만",
-        "platformsFilepizza": "웹만",
         "platformsPairdrop": "웹/PWA + Android 앱 + CLI",
         "catchAltsendme": "개발 중",
         "catchBlip": "폐쇄 소스; 데이터 처리 감사 불가",
         "catchLocalsend": "동일 네트워크만, 재개 불가",
         "catchWormhole": "CLI만; GUI는 별도, 커뮤니티 유지",
-        "catchFilepizza": "WebRTC/SCTP 처리량 한계; 브라우저 메모리 제한",
         "catchPairdrop": "WebRTC/SCTP 처리량 한계; 브라우저 메모리 제한"
       },
       "deepDives": "Deep dives",
@@ -415,8 +406,6 @@
       "othersLead": "AltSendme sits alongside other popular tools—here is where it fits.",
       "wetransfer": "WeTransfer / Drive",
       "wetransferNote": "Cloud upload with size limits and accounts. AltSendme transfers directly with no middleman storage—and can push multi-gigabit when the path allows.",
-      "filepizza": "FilePizza / PairDrop",
-      "filepizzaNote": "Browser WebRTC tools struggle with very large files and lower sustained speeds. AltSendme uses Iroh/QUIC native networking to saturate gigabit links, plus CLI, resumable folders, and desktop/Android apps.",
       "wormhole": "Magic Wormhole",
       "wormholeNote": "Great CLI UX with short codes. AltSendme pairs a full GUI + Android + web with the Iroh sendme CLI—same tickets, gigabit-capable transfers.",
       "ctaTitle": "Try AltSendme free",

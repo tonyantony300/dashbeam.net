@@ -6,7 +6,6 @@ export function buildCompareHubTable(t, s) {
     s("blip"),
     s("localsend"),
     s("wormhole"),
-    s("filepizza"),
     s("pairdrop"),
   ];
 
@@ -25,7 +24,6 @@ export function buildCompareHubTable(t, s) {
             text(t("table.protocolBlip")),
             text(t("table.protocolLocalsend")),
             text(t("table.protocolWormhole")),
-            text(t("table.protocolFilepizza")),
             text(t("table.protocolPairdrop")),
           ],
         },
@@ -37,7 +35,6 @@ export function buildCompareHubTable(t, s) {
             status(STATUS.lanOnly, t("lanOnly"), { compact: true }),
             yes(),
             yes(),
-            yes(),
           ],
         },
         {
@@ -47,7 +44,6 @@ export function buildCompareHubTable(t, s) {
             yes(),
             status(STATUS.yes, t("table.gigabitLocalsend")),
             yes(),
-            status(STATUS.no, t("table.gigabitFilepizza")),
             status(STATUS.no, t("table.gigabitPairdrop")),
           ],
         },
@@ -58,15 +54,15 @@ export function buildCompareHubTable(t, s) {
       rows: [
         {
           feature: t("table.openSource"),
-          values: [yes(), no(), yes(), yes(), yes(), yes()],
+          values: [yes(), no(), yes(), yes(), yes()],
         },
         {
           feature: t("table.noAccount"),
-          values: [yes(), no(), yes(), yes(), yes(), yes()],
+          values: [yes(), no(), yes(), yes(), yes()],
         },
         {
           feature: t("table.e2eEncryption"),
-          values: [yes(), yes(), yes(), yes(), yes(), yes()],
+          values: [yes(), yes(), yes(), yes(), yes()],
         },
         {
           feature: t("table.folders"),
@@ -75,13 +71,12 @@ export function buildCompareHubTable(t, s) {
             yes(),
             yes(),
             yes(),
-            status(STATUS.partial, t("table.foldersFilepizza")),
             status(STATUS.yes, t("table.foldersPairdrop")),
           ],
         },
         {
           feature: t("table.resumable"),
-          values: [yes(), yes(), no(), no(), no(), no()],
+          values: [yes(), yes(), no(), no(), no()],
         },
         {
           feature: t("table.unlimitedSize"),
@@ -90,7 +85,6 @@ export function buildCompareHubTable(t, s) {
             yes(),
             yes(),
             yes(),
-            status(STATUS.partial, t("table.sizeFilepizza")),
             status(STATUS.partial, t("table.sizePairdrop")),
           ],
         },
@@ -101,7 +95,6 @@ export function buildCompareHubTable(t, s) {
             text(t("table.platformsBlip")),
             text(t("table.platformsLocalsend")),
             text(t("table.platformsWormhole")),
-            text(t("table.platformsFilepizza")),
             text(t("table.platformsPairdrop")),
           ],
         },
@@ -118,7 +111,6 @@ export function buildCompareHubTable(t, s) {
             text(t("table.catchBlip")),
             text(t("table.catchLocalsend")),
             text(t("table.catchWormhole")),
-            text(t("table.catchFilepizza")),
             text(t("table.catchPairdrop")),
           ],
         },

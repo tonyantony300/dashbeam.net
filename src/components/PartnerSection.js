@@ -7,21 +7,29 @@ export default function PartnerSection() {
   const t = useTranslations('partners');
 
   return (
-    <section id="partners-section" className="home-section home-section--extra-bottom scroll-mt-24">
-      <div className="home-section__container">
-        <div className="px-5 pt-10">
-          <h2 className="home-section__heading">
-            {t('title')}
-          </h2>
-        </div>
+    <section
+      id="partners-section"
+      className="relative w-full scroll-mt-24 py-16 px-5 font-funnel-sans md:px-10 md:py-20 lg:px-[60px] lg:py-24 text-zinc-100 overflow-hidden"
+    >
+      <div className="absolute inset-0 pointer-events-none isolate" aria-hidden="true">
+        <div className="absolute inset-0 bg-dark" />
+        <div className="absolute inset-0 dark-grain" />
+        <div className="absolute inset-0 dark-grain" />
+        <div className="absolute inset-0 dark-grain" />
+      </div>
 
-        <div className="border border-foreground/15">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto">
+        <h2 className="font-funnel-sans text-[32px] leading-[1.2] text-center text-accent font-bold mb-8 md:text-[40px] md:mb-10 lg:mb-12">
+          {t('title')}
+        </h2>
+
+        <div className="border border-zinc-700/60">
           <div className="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-none">
             <a
               href="https://www.lambdatest.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex h-full min-h-0 items-center justify-center border-b border-foreground/15 home-card px-6 py-14 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:border-b-0 md:border-r md:px-8 md:py-16"
+              className="group flex h-full min-h-0 items-center justify-center border-b border-zinc-700/60 home-card px-6 py-14 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-dark md:border-b-0 md:border-r md:px-8 md:py-16"
             >
               <Image
                 src="/assets/sponsors/testMUlogo.svg"

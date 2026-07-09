@@ -266,9 +266,6 @@
       "githubSponsors": "GitHub Sponsors"
     }
   },
-  "pressReviews": {
-    "title": "As seen in"
-  },
   "taglineFooter": {
     "quote": "It's like a private, one-time AirDrop link — for anyone, anywhere."
   },
@@ -285,6 +282,7 @@
     "discord": "Discord",
     "sourceCode": "Source Code",
     "githubSponsors": "GitHub Sponsors",
+    "asSeenIn": "As seen in",
     "websiteBy": "Website designed by",
     "designer": "ShravanKumar PS",
     "license": "©GNU Affero General Public License v3.0"
@@ -345,7 +343,7 @@
   "comparePage": {
     "hub": {
       "metaTitle": "Compare AltSendme to Blip, LocalSend, Magic Wormhole & more",
-      "metaDescription": "See how AltSendme compares to Blip, LocalSend, Magic Wormhole, FilePizza, and PairDrop. Open-source P2P with CLI, gigabit Iroh speeds, and transfers that work over the internet.",
+      "metaDescription": "See how AltSendme compares to Blip, LocalSend, Magic Wormhole, and PairDrop. Open-source P2P with CLI, gigabit Iroh speeds, and transfers that work over the internet.",
       "title": "How AltSendme compares",
       "lead": "AltSendme is an open-source file transfer app powered by Iroh, bringing AirDrop-like sharing to any device and any network. With native apps, CLI, no file size limits, and gigabit-class transfer speeds, it outperforms browser WebRTC tools on large files.",
       "tableTitle": "The comparison",
@@ -372,34 +370,27 @@
         "protocolBlip": "Unknown",
         "protocolLocalsend": "HTTPS/REST over TCP",
         "protocolWormhole": "encrypted TCP",
-        "protocolFilepizza": "WebRTC/DTLS (SCTP)",
         "protocolPairdrop": "WebRTC/DTLS (SCTP)",
         "natAltsendme": "~90% direct, QUIC-native",
         "natBlip": "Not independently confirmed",
         "natLocalsend": "N/A (LAN only)",
         "natWormhole": "Direct TCP when reachable; no ICE/STUN hole punching",
-        "natFilepizza": "WebRTC ICE/STUN",
         "natPairdrop": "WebRTC ICE/STUN",
         "gigabitLocalsend": "Yes (LAN only)",
         "gigabitWormhole": "Yes (when direct)",
-        "gigabitFilepizza": "No (SCTP/browser ceiling)",
         "gigabitPairdrop": "No (SCTP/browser ceiling)",
-        "foldersFilepizza": "Multi-file zip only",
         "foldersPairdrop": "Yes (CLI only, not in browser)",
         "resumableLocalsend": "No (open feature request, unshipped)",
-        "sizeFilepizza": "Limited by browser memory",
         "sizePairdrop": "Limited by browser memory",
         "platformsAltsendme": "CLI + desktop + mobile + web",
         "platformsBlip": "Desktop + mobile (no web/CLI)",
         "platformsLocalsend": "Desktop + mobile (no web/CLI)",
         "platformsWormhole": "CLI only",
-        "platformsFilepizza": "Web only",
         "platformsPairdrop": "Web/PWA + Android app + CLI",
         "catchAltsendme": "WIP",
         "catchBlip": "Closed source; data handling cannot be audited",
         "catchLocalsend": "Same-network only, no resume",
         "catchWormhole": "CLI-only; GUI front-ends are separate, community-maintained",
-        "catchFilepizza": "WebRTC/SCTP throughput ceiling; browser memory limits",
         "catchPairdrop": "WebRTC/SCTP throughput ceiling; browser memory limits"
       },
       "deepDives": "Deep dives",
@@ -472,7 +463,6 @@
       "blip": "Blip",
       "localsend": "LocalSend",
       "wormhole": "Magic Wormhole",
-      "filepizza": "FilePizza",
       "pairdrop": "PairDrop",
       "cloud": "WeTransfer / Drive",
       "internet": "Internet + LAN",
@@ -501,4 +491,3 @@
     "description": "Open-source LocalSend alternative for the internet and Blip alternative. Peer-to-peer file transfer for Windows, macOS, Linux, Android, and web—no accounts, unlimited size, E2E encrypted with Iroh."
   }
 }
-

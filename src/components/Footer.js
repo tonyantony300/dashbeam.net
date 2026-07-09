@@ -3,6 +3,14 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
+import { PRESS_LINKS } from "@/lib/seo";
+
+const PRESS_ITEMS = [
+  { name: "Softpedia", url: PRESS_LINKS.softpediaMac },
+  { name: "Neowin", url: PRESS_LINKS.neowin },
+  { name: "XDA Developers", url: PRESS_LINKS.xda },
+  { name: "DEV Community", url: PRESS_LINKS.devto },
+];
 
 const FOOTER_NAV_GRID = [
   [
@@ -44,9 +52,7 @@ export default function Footer() {
 
   return (
     <footer className="relative w-full overflow-hidden bg-black text-white">
-      <FooterRule className="pt-10 md:pt-14" />
-
-      <div className="px-5 pb-14 pt-10 md:px-10 md:pb-20 md:pt-12 lg:px-[60px] lg:pb-12 lg:pt-6">
+      <div className="px-5 pb-14 pt-12 md:px-10 md:pb-20 md:pt-14 lg:px-[60px] lg:pb-12 lg:pt-10">
         <div className="mx-auto flex max-w-[1200px] flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-xl lg:max-w-lg lg:shrink-0">
             <h2 className="font-funnel-sans text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl lg:text-[40px]">
@@ -109,18 +115,38 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="px-5 py-8 md:px-10 md:py-10 lg:px-[60px] lg:py-16">
-        <div className="mx-auto flex max-w-[1200px] items-center gap-4 md:gap-6">
-          <Image
-            src="/Altsendmelogo.png"
-            alt="AltSendme logo"
-            width={220}
-            height={220}
-            className="h-24 w-24 shrink-0 sm:h-32 sm:w-32 md:h-40 md:w-40 lg:h-48 lg:w-48"
-          />
-          <span className="min-w-0 font-funnel-sans text-[clamp(2.75rem,12.1vw,3.85rem)] font-extrabold leading-none tracking-tighter text-accent sm:text-[clamp(2.75rem,12vw,4.5rem)] md:text-[clamp(3rem,12vw,6rem)] lg:text-[clamp(3.5rem,15vw,10rem)]">
-            AltSendme
-          </span>
+      <div className="px-5 pt-8 pb-4 md:px-10 md:pt-10 md:pb-5 lg:px-[60px] lg:pt-16 lg:pb-6">
+        <div className="mx-auto flex max-w-[1200px] flex-col gap-6">
+          <div className="flex items-center gap-4 md:gap-6">
+            <Image
+              src="/Altsendmelogo.png"
+              alt="AltSendme logo"
+              width={220}
+              height={220}
+              className="h-24 w-24 shrink-0 sm:h-32 sm:w-32 md:h-40 md:w-40 lg:h-48 lg:w-48"
+            />
+            <span className="min-w-0 font-funnel-sans text-[clamp(2.75rem,12.1vw,3.85rem)] font-extrabold leading-none tracking-tighter text-accent sm:text-[clamp(2.75rem,12vw,4.5rem)] md:text-[clamp(3rem,12vw,6rem)] lg:text-[clamp(3.5rem,15vw,10rem)]">
+              AltSendme
+            </span>
+          </div>
+          <div className="flex flex-col gap-2 font-inter text-xs text-white/60">
+            <p>{t("asSeenIn")}</p>
+            <p className="flex flex-wrap gap-x-1 gap-y-1">
+              {PRESS_ITEMS.map((item, index) => (
+                <span key={item.name}>
+                  {index > 0 && <span aria-hidden="true"> · </span>}
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline underline-offset-[3px] hover:text-white/80"
+                  >
+                    {item.name}
+                  </a>
+                </span>
+              ))}
+            </p>
+          </div>
         </div>
       </div>
 

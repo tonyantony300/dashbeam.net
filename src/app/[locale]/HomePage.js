@@ -10,7 +10,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import CompareHubMatrixSection from "@/components/CompareHubMatrixSection";
 import PartnerSection from "@/components/PartnerSection";
 import CommunitySection from "@/components/CommunitySection";
-import PressReviews from "@/components/PressReviews";
+import DonateCard from "@/components/DonateCard";
 
 export default function HomePage() {
   return (
@@ -25,8 +25,13 @@ export default function HomePage() {
         <PartnerSection />
         <CommunitySection />
         <HomeFAQ />
-        <PressReviews />
       </main>
+
+      <section className="home-section scroll-mt-24">
+        <div className="home-section__container">
+          <DonateCard className="w-full" />
+        </div>
+      </section>
 
       <Footer />
     </div>
