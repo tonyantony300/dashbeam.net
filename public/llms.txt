@@ -1,0 +1,21 @@
+# AltSendme
+
+> Open-source peer-to-peer file transfer over the internet. Built on Iroh. No accounts, unlimited size, E2E encrypted.
+
+## Docs
+
+- [Full product brief for AI systems](https://altsendme.com/llm.txt): Canonical facts, platforms, comparisons, press links
+- [Website](https://altsendme.com/en): Marketing home
+- [Downloads](https://altsendme.com/en/downloads): Desktop, Android, web, CLI
+- [Compare](https://altsendme.com/en/compare): vs LocalSend, Blip, WeTransfer, FilePizza
+- [vs LocalSend](https://altsendme.com/en/compare/localsend): LocalSend alternative for the internet
+- [vs Blip](https://altsendme.com/en/compare/blip): Open-source Blip alternative
+- [Under the hood](https://altsendme.com/en/under-the-hood): Tickets, blobs, QUIC, relays
+- [GitHub](https://github.com/tonyantony300/alt-sendme): Source code (AGPL-3.0)
+- [Iroh](https://www.iroh.computer): Networking stack
+- [Sendme CLI](https://www.iroh.computer/sendme): Interoperable CLI
+
+## Optional
+
+- [Web app](https://app.altsendme.com)
+- [Discord](https://discord.gg/xwb7z22Eve)

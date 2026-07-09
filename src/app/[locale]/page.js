@@ -1,8 +1,12 @@
-import HomePage from './HomePage';
+import HomePage from "./HomePage";
+import { HomeFaqStructuredData } from "./StructuredData";
 
-export default function Page() {
+export default async function Page({ params }) {
+  const { locale } = await params;
+
   return (
     <>
+      <HomeFaqStructuredData locale={locale} />
       <HomePage />
       <script
         data-name="BMC-Widget"

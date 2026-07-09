@@ -326,7 +326,6 @@ export default function DownloadsPageContent() {
               className="inline-flex h-12 w-full items-center justify-center gap-3 rounded-md border-4 border-accent bg-[#452815] px-6 text-base font-medium text-[#F5F4F0] transition-colors hover:bg-[#5a3419] sm:w-auto"
             >
               <span>{t("tryOnWeb")}</span>
-              <DownloadIcon className="h-5 w-5 shrink-0" fill="#F5F4F0" />
             </a>
           </div>
         </div>

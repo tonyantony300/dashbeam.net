@@ -1,15 +1,15 @@
 "use client";
 
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import HeroSection from '@/components/HeroSection';
-import HowItWorks from '@/components/HowItWorks';
-import AvailableAs from '@/components/AvailableAs';
-import HomeFAQ from '@/components/HomeFAQ';
-import FeaturesSection from '@/components/FeaturesSection';
-import PartnerSection from '@/components/PartnerSection';
-import CommunitySection from '@/components/CommunitySection';
-import TallyPopup from '@/components/TallyPopup';
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
+import HowItWorks from "@/components/HowItWorks";
+import AvailableAs from "@/components/AvailableAs";
+import HomeFAQ from "@/components/HomeFAQ";
+import FeaturesSection from "@/components/FeaturesSection";
+import PartnerSection from "@/components/PartnerSection";
+import CommunitySection from "@/components/CommunitySection";
+import PressReviews from "@/components/PressReviews";
 
 export default function HomePage() {
   return (
@@ -23,10 +23,10 @@ export default function HomePage() {
         <PartnerSection />
         <CommunitySection />
         <HomeFAQ />
+        <PressReviews />
       </main>
 
       <Footer />
-      {/* <TallyPopup /> */}
     </div>
   );
 }

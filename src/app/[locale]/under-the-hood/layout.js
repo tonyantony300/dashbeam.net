@@ -1,19 +1,9 @@
 import { getTranslations } from "next-intl/server";
+import { OG_LOCALE_MAP, absoluteUrl, pageAlternates } from "@/lib/seo";
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "underTheHoodPage" });
-  const ogLocaleMap = {
-    en: "en_US",
-    ru: "ru_RU",
-    th: "th_TH",
-    de: "de_DE",
-    fr: "fr_FR",
-    ja: "ja_JP",
-    zh: "zh_CN",
-    ko: "ko_KR",
-    it: "it_IT",
-  };
 
   return {
     metadataBase: new URL("https://altsendme.com"),
@@ -21,14 +11,14 @@ export async function generateMetadata({ params }) {
     description: t("metaDescription"),
     openGraph: {
       type: "website",
-      locale: ogLocaleMap[locale] || "en_US",
-      url: `https://altsendme.com/${locale}/under-the-hood`,
+      locale: OG_LOCALE_MAP[locale] || "en_US",
+      url: absoluteUrl(locale, "under-the-hood"),
       siteName: "AltSendme",
       title: t("metaTitle"),
       description: t("metaDescription"),
       images: [
         {
-          url: "/hero.png",
+          url: "/og-image.png",
           width: 1200,
           height: 630,
           alt: t("heroAlt"),
@@ -39,12 +29,10 @@ export async function generateMetadata({ params }) {
       card: "summary_large_image",
       title: t("metaTitle"),
       description: t("metaDescription"),
-      images: ["/hero.png"],
+      images: ["/og-image.png"],
       creator: "@tonyantony300",
     },
-    alternates: {
-      canonical: `https://altsendme.com/${locale}/under-the-hood`,
-    },
+    alternates: pageAlternates(locale, "under-the-hood"),
   };
 }
 

@@ -1,9 +1,19 @@
 "use client";
 
-import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useState } from "react";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
-const FAQ_KEYS = ['faq1', 'faq2', 'faq3', 'faq4', 'faq5', 'faq6'];
+const FAQ_KEYS = [
+  "faq1",
+  "faq2",
+  "faq3",
+  "faq4",
+  "faq5",
+  "faq6",
+  "faq7",
+  "faq8",
+];
 const INITIAL_VISIBLE_COUNT = 5;
 
 function PlusIcon() {
@@ -35,7 +45,7 @@ function ChevronDownIcon({ expanded }) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      className={`text-section-text transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`}
+      className={`text-section-text transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
     >
       <path
         d="M1 1L7 7L13 1"
@@ -49,7 +59,7 @@ function ChevronDownIcon({ expanded }) {
 }
 
 export default function HomeFAQ() {
-  const t = useTranslations('faq');
+  const t = useTranslations("faq");
   const [openItems, setOpenItems] = useState(new Set());
   const [showAll, setShowAll] = useState(false);
 
@@ -65,8 +75,14 @@ export default function HomeFAQ() {
     });
   };
 
+  const compareHrefForKey = (key) => {
+    if (key === "faq7") return "/compare/localsend";
+    if (key === "faq8") return "/compare/blip";
+    return "/compare";
+  };
+
   const renderAnswer = (key) => {
-    if (key === 'faq1') {
+    if (key === "faq1") {
       return t.rich(`items.${key}.answer`, {
         link: (chunks) => (
           <a
@@ -80,6 +96,18 @@ export default function HomeFAQ() {
         ),
       });
     }
+    if (key === "faq5" || key === "faq7" || key === "faq8") {
+      return t.rich(`items.${key}.answer`, {
+        compareLink: (chunks) => (
+          <Link
+            href={compareHrefForKey(key)}
+            className="underline hover:opacity-80 transition-opacity"
+          >
+            {chunks}
+          </Link>
+        ),
+      });
+    }
     return t(`items.${key}.answer`);
   };
 
@@ -90,9 +118,7 @@ export default function HomeFAQ() {
       <div className="home-section__container">
         <div className="home-faq__panel">
           <div className="home-faq__title-col">
-            <h2 className="home-faq__title">
-              {t('title')}
-            </h2>
+            <h2 className="home-faq__title">{t("title")}</h2>
           </div>
 
           <div className="home-faq__content">
@@ -107,7 +133,7 @@ export default function HomeFAQ() {
               return (
                 <div
                   key={key}
-                  className={`home-faq__item ${isHidden ? 'hidden' : ''}`}
+                  className={`home-faq__item ${isHidden ? "hidden" : ""}`}
                 >
                   <h3 className="m-0">
                     <button
@@ -122,7 +148,7 @@ export default function HomeFAQ() {
                         {t(`items.${key}.question`)}
                       </span>
                       <span
-                        className={`home-faq__icon ${isOpen ? 'rotate-45' : ''}`}
+                        className={`home-faq__icon ${isOpen ? "rotate-45" : ""}`}
                       >
                         <PlusIcon />
                       </span>
@@ -147,7 +173,7 @@ export default function HomeFAQ() {
                 onClick={() => setShowAll((prev) => !prev)}
                 className="home-faq__more"
               >
-                <span>{showAll ? 'View fewer questions' : 'View more questions'}</span>
+                <span>{showAll ? t("viewFewer") : t("viewMore")}</span>
                 <ChevronDownIcon expanded={showAll} />
               </button>
             )}

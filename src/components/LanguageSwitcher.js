@@ -1,18 +1,19 @@
 "use client";
 
-import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from '@/i18n/routing';
-import { useState, useEffect, useRef } from 'react';
+import { useLocale } from "next-intl";
+import { usePathname, useRouter } from "@/i18n/routing";
+import { useState, useEffect, useRef } from "react";
 
 const languages = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-  { code: 'th', name: 'ไทย', flag: '🇹🇭' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'ja', name: '日本語', flag: '🇯🇵' },
-  { code: 'zh', name: '中文', flag: '🇨🇳' },
-  { code: 'ko', name: '한국어', flag: '🇰🇷' },
+  { code: "en", name: "English", flag: "🇺🇸" },
+  { code: "ru", name: "Русский", flag: "🇷🇺" },
+  { code: "th", name: "ไทย", flag: "🇹🇭" },
+  { code: "de", name: "Deutsch", flag: "🇩🇪" },
+  { code: "fr", name: "Français", flag: "🇫🇷" },
+  { code: "ja", name: "日本語", flag: "🇯🇵" },
+  { code: "zh", name: "中文", flag: "🇨🇳" },
+  { code: "ko", name: "한국어", flag: "🇰🇷" },
+  { code: "it", name: "Italiano", flag: "🇮🇹" },
 ];
 
 export default function LanguageSwitcher() {
@@ -22,7 +23,8 @@ export default function LanguageSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  const currentLanguage = languages.find(lang => lang.code === locale) || languages[0];
+  const currentLanguage =
+    languages.find((lang) => lang.code === locale) || languages[0];
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -32,9 +34,9 @@ export default function LanguageSwitcher() {
     };
 
     if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
       return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
+        document.removeEventListener("mousedown", handleClickOutside);
       };
     }
   }, [isOpen]);
@@ -61,7 +63,7 @@ export default function LanguageSwitcher() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
         >
           <path d="m7 15 5 5 5-5"></path>
           <path d="m7 9 5-5 5 5"></path>
@@ -78,8 +80,8 @@ export default function LanguageSwitcher() {
                 onClick={() => handleLanguageChange(language.code)}
                 className={`w-full flex items-center gap-3 px-3 py-2 text-left rounded-lg transition-colors font-federo text-sm ${
                   locale === language.code
-                    ? 'bg-foreground/10 font-medium'
-                    : 'hover:bg-foreground/5'
+                    ? "bg-foreground/10 font-medium"
+                    : "hover:bg-foreground/5"
                 }`}
               >
                 <span>{language.name}</span>
@@ -94,4 +96,3 @@ export default function LanguageSwitcher() {
     </div>
   );
 }
-

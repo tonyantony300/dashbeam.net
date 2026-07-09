@@ -1,42 +1,27 @@
-import { getTranslations } from 'next-intl/server';
+import { getTranslations } from "next-intl/server";
+import { OG_LOCALE_MAP, absoluteUrl, pageAlternates } from "@/lib/seo";
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale });
-  const ogLocaleMap = {
-    en: 'en_US',
-    ru: 'ru_RU',
-    th: 'th_TH',
-    de: 'de_DE',
-    fr: 'fr_FR',
-    ja: 'ja_JP',
-    zh: 'zh_CN',
-    ko: 'ko_KR'
-  };
+  const t = await getTranslations({ locale, namespace: "contact" });
+
+  const title = t("metaTitle");
+  const description = t("metaDescription");
 
   return {
-    metadataBase: new URL('https://altsendme.com'),
-    title: 'Contact - AltSendme',
-    description: 'Get in touch with AltSendme developer - Contact us for inquiries, support, or collaboration opportunities',
-    keywords: [
-      "contact",
-      "contact AltSendme",
-      "AltSendme contact",
-      "file transfer contact",
-      "hire developer",
-      "AltSendme support",
-      "reach out",
-    ],
+    metadataBase: new URL("https://altsendme.com"),
+    title,
+    description,
     authors: [{ name: "tonyantony300" }],
     creator: "tonyantony300",
     publisher: "AltSendme",
     openGraph: {
       type: "website",
-      locale: ogLocaleMap[locale] || 'en_US',
-      url: `https://altsendme.com/${locale === 'en' ? '' : locale}/contact`,
+      locale: OG_LOCALE_MAP[locale] || "en_US",
+      url: absoluteUrl(locale, "contact"),
       siteName: "AltSendme",
-      title: 'Contact - AltSendme',
-      description: 'Get in touch with AltSendme developer - Contact us for inquiries, support, or collaboration opportunities',
+      title,
+      description,
       images: [
         {
           url: "/og-image.png",
@@ -48,8 +33,8 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: 'Contact - AltSendme',
-      description: 'Get in touch with AltSendme developer - Contact us for inquiries, support, or collaboration opportunities',
+      title,
+      description,
       images: ["/og-image.png"],
       creator: "@tonyantony300",
     },
@@ -64,13 +49,10 @@ export async function generateMetadata({ params }) {
         "max-snippet": -1,
       },
     },
-    alternates: {
-      canonical: `https://altsendme.com/${locale === 'en' ? '' : locale}/contact`,
-    },
+    alternates: pageAlternates(locale, "contact"),
   };
 }
 
 export default function ContactLayout({ children }) {
   return <>{children}</>;
 }
-

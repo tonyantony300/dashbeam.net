@@ -267,7 +267,7 @@
     }
   },
   "pressReviews": {
-    "title": "媒体与评价"
+    "title": "As seen in"
   },
   "taglineFooter": {
     "quote": "它就像一个私密的一次性 AirDrop 链接 — 适用于任何人，任何地方。"
@@ -286,7 +286,8 @@
     "githubSponsors": "GitHub Sponsors",
     "websiteBy": "网站设计",
     "designer": "ShravanKumar PS",
-    "license": "©GNU Affero General Public License v3.0"
+    "license": "©GNU Affero General Public License v3.0",
+    "compare": "Compare"
   },
   "contact": {
     "title": "联系我们",
@@ -298,39 +299,174 @@
     "submitting": "发送中...",
     "success": "谢谢！您的消息已成功发送。",
     "error": "出错了。请稍后再试。",
-    "imageAlt": "创世纪·亚当的创造 — 伸手连接"
+    "imageAlt": "创世纪·亚当的创造 — 伸手连接",
+    "metaTitle": "Contact",
+    "metaDescription": "Get in touch with the AltSendme team for support, partnership, or collaboration. Open-source peer-to-peer file transfer built on Iroh."
   },
   "faq": {
     "title": "常见问题",
     "items": {
       "faq1": {
-        "question": "AltSendme 是什么？它是如何工作的？",
-        "answer": "AltSendme 是一款极简的跨平台桌面应用程序，允许用户在世界任何地方以点对点方式发送文件和目录。它围绕<link>Iroh 网络堆栈</link>构建，使用开源公共连接中继来执行 NAT 遍历和打孔等高级技术以到达目的地。"
+        "question": "What is AltSendme and how does it work?",
+        "answer": "AltSendme is an open-source peer-to-peer file transfer app for desktop, Android, web, and CLI. It lets you send files and folders anywhere in the world with no accounts and no cloud storage. It is built on the <link>Iroh networking stack</link> and uses ticket-based sharing with NAT hole punching and encrypted relay fallback."
       },
       "faq2": {
-        "question": "AltSendme 是免费使用的吗？",
-        "answer": "是的，AltSendme 目前没有基础设施成本。如果您从这项工作中受益，请考虑通过 Buy Me a Coffee 或 GitHub Sponsors 支持开发者。"
+        "question": "Is AltSendme free to use?",
+        "answer": "Yes. AltSendme is free and open source (AGPL-3.0) with no file size limits, no upload quotas, and no accounts. If you benefit from this work, consider supporting development through Buy Me a Coffee or GitHub Sponsors."
       },
       "faq3": {
-        "question": "我可以使用 AltSendme 传输哪些文件类型？",
-        "answer": "您可以传输任何内容—图像、视频、文档等。在两端执行完整性检查，因此您的文件在发送和接收期间都会自动验证正确性。"
+        "question": "What file types can I transfer with AltSendme?",
+        "answer": "You can transfer anything—images, videos, documents, folders, and more. Integrity checks use BLAKE3 on both ends, so files are verified during send and receive. Transfers are resumable if interrupted."
       },
       "faq4": {
-        "question": "使用 AltSendme 时我的数据有多安全？",
-        "answer": "AltSendme 使用基于 TLS 1.3 和 QUIC 等现代标准的强端到端加密，确保只有您和收件人可以访问您的数据。它提供前向和后向保密性，因此即使票据被暴露，过去和未来的传输仍然安全。"
+        "question": "How secure is my data when using AltSendme?",
+        "answer": "AltSendme uses end-to-end encryption with QUIC + TLS 1.3. Files go directly between devices and are not stored on a cloud server. Relays only see encrypted traffic. Tickets authenticate the intended sender before a transfer starts."
       },
       "faq5": {
-        "question": "它与 FilePizza、Wormhole 和 PairDrop 相比如何？",
-        "answer": "AltSendme 提供比其他仅限 Web 的 P2P 工具更好的文件共享体验。通过在 UDP 上利用 QUIC，它能够实现更快、更有弹性的点对点传输，具有内置加密、身份验证和流多路复用。它允许发送大文件和完整文件夹，支持暂停/恢复，浏览器限制更少。此外，完整性和加密操作针对速度进行了优化，使 AltSendme 成为经过验证的传输的可靠选择。"
+        "question": "How does AltSendme compare to FilePizza, Wormhole, and PairDrop?",
+        "answer": "Unlike browser-only WebRTC tools, AltSendme is a native app (plus Android, web, and CLI) built on Iroh/QUIC. You can send large files and full folders with pause/resume, fewer browser limits, and BLAKE3-verified streaming. See our <compareLink>full comparison</compareLink> for details."
       },
       "faq6": {
-        "question": "使用 AltSendme 需要互联网连接吗？",
-        "answer": "是的，需要网络连接，因为设备必须相互连接。如果两个设备在同一本地网络上（例如，同一 Wi-Fi），则不需要完整的互联网访问—只需 LAN 连接。但是，如果设备位于 NAT 或防火墙后面的不同网络上，则需要互联网连接来进行打孔或中继回退。"
+        "question": "Do I need an internet connection to use AltSendme?",
+        "answer": "A network connection is required so devices can reach each other. On the same LAN/Wi-Fi, full internet is not required. Across different networks, internet is used for hole punching or encrypted relay fallback—so AltSendme works over the internet, not only on local Wi-Fi."
+      },
+      "faq7": {
+        "question": "Is AltSendme a LocalSend alternative for the internet?",
+        "answer": "Yes. LocalSend is excellent for nearby devices on the same local network. AltSendme is built for the same frictionless feel across any network—local or across the internet—using Iroh tickets, QUIC encryption, and optional relays. Compare them on our <compareLink>LocalSend comparison page</compareLink>."
+      },
+      "faq8": {
+        "question": "Is AltSendme an open-source Blip alternative?",
+        "answer": "Yes. AltSendme is a free, open-source Blip alternative: unlimited file size, no accounts, end-to-end encrypted peer-to-peer transfers, and apps for Windows, macOS, Linux, Android, and the web. See <compareLink>AltSendme vs Blip</compareLink>."
       }
-    }
+    },
+    "viewMore": "View more questions",
+    "viewFewer": "View fewer questions"
   },
   "meta": {
-    "title": "将文件发送到任何地方 | 无摩擦、快速、私密、无限且免费",
-    "description": "AltSendme 是一款无摩擦的点对点文件传输跨平台桌面应用程序。开源 blip 替代品，适用于 Windows、macOS 和 Linux。"
+    "title": "AltSendme — Send files anywhere over the internet | Open-source P2P",
+    "description": "Open-source LocalSend alternative for the internet and Blip alternative. Peer-to-peer file transfer for Windows, macOS, Linux, Android, and web—no accounts, unlimited size, E2E encrypted with Iroh."
+  },
+  "comparePage": {
+    "hub": {
+      "metaTitle": "Compare AltSendme to LocalSend, Blip & WeTransfer",
+      "metaDescription": "See how AltSendme compares to LocalSend, Blip, WeTransfer, FilePizza, and PairDrop. Open-source P2P with CLI, gigabit Iroh speeds, and transfers that work over the internet.",
+      "title": "How AltSendme compares",
+      "lead": "AltSendme is the open-source, Iroh-powered peer-to-peer file transfer app—AirDrop for any device, any network. Native apps plus a real CLI, unlimited size, and transfers that can saturate gigabit links—unlike browser WebRTC tools that choke on large files.",
+      "tableTitle": "At a glance",
+      "feature": "Feature",
+      "worksOverInternet": "Works over the internet",
+      "openSource": "Open source",
+      "noAccount": "No account required",
+      "unlimitedSize": "Unlimited file size",
+      "e2eEncryption": "End-to-end encryption",
+      "folders": "Send folders",
+      "resumable": "Resumable transfers",
+      "platforms": "Desktop + mobile + web",
+      "cliSupport": "CLI / terminal support",
+      "gigabitSpeed": "Saturates gigabit connections",
+      "yes": "Yes",
+      "no": "No",
+      "limited": "Limited / paid",
+      "lanOnly": "LAN only",
+      "partial": "Partial",
+      "browserLimited": "Browser-limited",
+      "deepDives": "Deep dives",
+      "localsendCardTitle": "AltSendme vs LocalSend",
+      "localsendCardDesc": "Looking for a LocalSend alternative that works over the internet? See the full breakdown.",
+      "blipCardTitle": "AltSendme vs Blip",
+      "blipCardDesc": "Need an open-source Blip alternative? Compare features, pricing, and privacy.",
+      "othersTitle": "Also compared to",
+      "othersLead": "AltSendme sits alongside other popular tools—here is where it fits.",
+      "wetransfer": "WeTransfer / Drive",
+      "wetransferNote": "Cloud upload with size limits and accounts. AltSendme transfers directly with no middleman storage—and can push multi-gigabit when the path allows.",
+      "filepizza": "FilePizza / PairDrop",
+      "filepizzaNote": "Browser WebRTC tools struggle with very large files and lower sustained speeds. AltSendme uses Iroh/QUIC native networking to saturate gigabit links, plus CLI, resumable folders, and desktop/Android apps.",
+      "wormhole": "Magic Wormhole",
+      "wormholeNote": "Great CLI UX with short codes. AltSendme pairs a full GUI + Android + web with the Iroh sendme CLI—same tickets, gigabit-capable transfers.",
+      "ctaTitle": "Try AltSendme free",
+      "ctaButton": "Download AltSendme",
+      "underTheHood": "How it works under the hood",
+      "builtOnIroh": "Built on Iroh"
+    },
+    "localsend": {
+      "metaTitle": "LocalSend Alternative for the Internet",
+      "metaDescription": "AltSendme is a LocalSend alternative that works over the internet—not just the same Wi-Fi. Open-source P2P with Iroh gigabit speeds, tickets, Android, web, and CLI.",
+      "title": "LocalSend alternative for the internet",
+      "lead": "LocalSend is excellent for nearby devices on the same network. AltSendme keeps that frictionless feel across the internet—and adds Iroh/QUIC networking that can saturate gigabit links, plus a real CLI compatible with sendme.",
+      "tableTitle": "LocalSend vs AltSendme",
+      "whenTitle": "When to use which",
+      "whenLocalsendTitle": "Choose LocalSend when",
+      "whenLocalsend1": "Both devices are on the same Wi-Fi or LAN",
+      "whenLocalsend2": "You want automatic nearby device discovery",
+      "whenLocalsend3": "You do not need internet-wide transfers",
+      "whenAltsendmeTitle": "Choose AltSendme when",
+      "whenAltsendme1": "Devices are on different networks or across the internet",
+      "whenAltsendme2": "You want ticket-based sharing and Iroh speeds that can fill a gigabit pipe",
+      "whenAltsendme3": "You need CLI/sendme interop, resumable large folders, or a web app",
+      "faqTitle": "FAQ",
+      "faq1q": "Does LocalSend work over the internet?",
+      "faq1a": "LocalSend is designed for local network transfers between nearby devices. AltSendme is built for both local and internet transfers via Iroh hole punching and relays.",
+      "faq2q": "Is AltSendme open source like LocalSend?",
+      "faq2a": "Yes. AltSendme is AGPL-3.0 open source, free, with no accounts or upload limits.",
+      "faq3q": "Does AltSendme have a CLI?",
+      "faq3a": "Yes. AltSendme is interoperable with the official Iroh sendme CLI—tickets work across GUI and terminal. It also supports Windows, macOS, Linux, Android, and a web app."
+    },
+    "blip": {
+      "metaTitle": "Open Source Blip Alternative",
+      "metaDescription": "AltSendme is a free, open-source Blip alternative. Unlimited P2P with CLI, Iroh gigabit speeds, no accounts, and apps for Windows, macOS, Linux, Android, and web.",
+      "title": "Open-source Blip alternative",
+      "lead": "Blip is a popular proprietary large-file transfer app. AltSendme is the open-source alternative: unlimited size, no accounts, a real CLI, end-to-end encrypted P2P on Iroh that can saturate gigabit connections, and full transparency under AGPL-3.0.",
+      "tableTitle": "Blip vs AltSendme",
+      "whenTitle": "When to use which",
+      "whenBlipTitle": "Blip may fit if",
+      "whenBlip1": "You already rely on Blip’s proprietary workflow",
+      "whenBlip2": "You prefer a closed commercial product",
+      "whenAltsendmeTitle": "Choose AltSendme when",
+      "whenAltsendme1": "You want open source you can audit and self-host relays for",
+      "whenAltsendme2": "You need free unlimited transfers, CLI/sendme interop, and no account lock-in",
+      "whenAltsendme3": "You want Iroh networking that can push multi-gigabit on a good path",
+      "faqTitle": "FAQ",
+      "faq1q": "Is there a free open-source Blip alternative?",
+      "faq1a": "Yes. AltSendme is free and open source, with unlimited peer-to-peer transfers, CLI support, and no cloud storage of your files.",
+      "faq2q": "Does AltSendme require an account?",
+      "faq2a": "No. Drop a file, share a ticket, and transfer directly—no signup. Use the GUI or the sendme-compatible CLI.",
+      "faq3q": "Is AltSendme end-to-end encrypted?",
+      "faq3a": "Yes. Transfers use QUIC + TLS 1.3 on Iroh. Relays only forward encrypted packets, and native transfers can saturate gigabit links."
+    },
+    "shared": {
+      "backToCompare": "All comparisons",
+      "downloadCta": "Download AltSendme",
+      "network": "Network reach",
+      "license": "License",
+      "cost": "Cost",
+      "encryption": "Encryption",
+      "discovery": "How peers connect",
+      "stack": "Networking stack",
+      "cli": "CLI support",
+      "speed": "Transfer speed",
+      "altsendme": "AltSendme",
+      "localsend": "LocalSend",
+      "blip": "Blip",
+      "cloud": "WeTransfer / Drive",
+      "internet": "Internet + LAN",
+      "lan": "LAN / same Wi-Fi",
+      "agpl": "AGPL-3.0 (open source)",
+      "foss": "Open source",
+      "proprietary": "Proprietary",
+      "free": "Free",
+      "freemium": "Free / paid tiers",
+      "quic": "QUIC + TLS 1.3 E2E",
+      "tickets": "Share a ticket",
+      "nearby": "Nearby discovery",
+      "iroh": "Iroh",
+      "httpsLocal": "HTTPS on local network",
+      "cloudUpload": "Upload to cloud",
+      "cliYes": "Yes — sendme-compatible CLI",
+      "cliNo": "No dedicated CLI",
+      "speedGigabit": "Can saturate gigabit (Iroh/QUIC)",
+      "speedLan": "Fast on LAN",
+      "speedTypical": "Typical app speeds",
+      "speedBrowser": "Browser / WebRTC limited"
+    }
   }
 }

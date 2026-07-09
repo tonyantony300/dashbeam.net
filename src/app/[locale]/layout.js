@@ -1,12 +1,25 @@
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
-import { notFound } from 'next/navigation';
-import { Funnel_Sans, Newsreader, Libre_Franklin, Koulen, Inter } from "next/font/google";
-import { Analytics } from '@vercel/analytics/next';
-import { routing } from '@/i18n/routing';
-import StructuredData from './StructuredData';
-import '../globals.css';
-import '../../styles/home-sections.css';
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, getTranslations } from "next-intl/server";
+import { notFound } from "next/navigation";
+import {
+  Funnel_Sans,
+  Newsreader,
+  Libre_Franklin,
+  Koulen,
+  Inter,
+} from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { routing } from "@/i18n/routing";
+import {
+  OG_LOCALE_MAP,
+  PRESS_LINKS,
+  SEO_KEYWORDS,
+  absoluteUrl,
+  pageAlternates,
+} from "@/lib/seo";
+import StructuredData from "./StructuredData";
+import "../globals.css";
+import "../../styles/home-sections.css";
 
 const funnelSans = Funnel_Sans({
   variable: "--font-funnel-sans",
@@ -34,43 +47,6 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const keywords = [
-  "open source blip alternative",
-  "blip alternative",
-  "file transfer",
-  "peer-to-peer",
-  "P2P file sharing",
-  "encrypted file transfer",
-  "cross-platform file transfer",
-  "secure file sharing",
-  "private file transfer",
-  "free file transfer",
-  "unlimited file transfer",
-  "AltSendme",
-  "sendme",
-  "iroh",
-  "open source",
-  "free",
-  "unlimited",
-  "open source file transfer",
-  "free file transfer",
-  "unlimited file transfer",
-  "open source file sharing",
-  "free file sharing",
-  "unlimited file sharing",
-  "open source file transfer software",
-  "free file transfer software",
-  "unlimited file transfer software",
-  "open source file sharing software",
-  "free file sharing software",
-  "unlimited file sharing software",
-  "file sharing software",
-  "desktop file transfer",
-  "Windows file transfer",
-  "macOS file transfer",
-  "Linux file transfer",
-];
-
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -79,31 +55,25 @@ export async function generateMetadata({ params }) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
 
-  const ogLocaleMap = {
-    en: 'en_US',
-    ru: 'ru_RU',
-    th: 'th_TH',
-    de: 'de_DE',
-    fr: 'fr_FR',
-    ja: 'ja_JP',
-    zh: 'zh_CN',
-    ko: 'ko_KR'
-  };
-
   return {
-    metadataBase: new URL('https://altsendme.com'),
-    title: t('meta.title'),
-    description: t('meta.description'),
-    keywords,
-    authors: [{ name: "tonyantony300", url: "https://github.com/tonyantony300" }],
+    metadataBase: new URL("https://altsendme.com"),
+    title: {
+      default: t("meta.title"),
+      template: "%s | AltSendme",
+    },
+    description: t("meta.description"),
+    keywords: SEO_KEYWORDS,
+    authors: [
+      { name: "tonyantony300", url: "https://github.com/tonyantony300" },
+    ],
     creator: "tonyantony300",
     publisher: "AltSendme",
     other: {
       "github:repository": "https://github.com/tonyantony300/alt-sendme",
-      "review:softpedia-mac": "https://mac.softpedia.com/get/Internet-Utilities/AltSendme.shtml",
-      "review:softpedia-linux": "https://linux.softpedia.com/get/Communications/Filesharing/AltSendme-104966.shtml",
-      "review:neowin": "https://www.neowin.net/amp/altsendme-021/",
-      "review:xda-developers": "https://www.xda-developers.com/i-swapped-dropbox-for-this-self-hosted-alternative/",
+      "review:softpedia-mac": PRESS_LINKS.softpediaMac,
+      "review:softpedia-linux": PRESS_LINKS.softpediaLinux,
+      "review:neowin": PRESS_LINKS.neowin,
+      "review:xda-developers": PRESS_LINKS.xda,
       "apple-mobile-web-app-capable": "yes",
       "apple-mobile-web-app-status-bar-style": "black-translucent",
       "format-detection": "telephone=no",
@@ -124,11 +94,11 @@ export async function generateMetadata({ params }) {
     manifest: "/manifest.json",
     openGraph: {
       type: "website",
-      locale: ogLocaleMap[locale] || 'en_US',
-      url: `https://altsendme.com/${locale === 'en' ? '' : locale}`,
+      locale: OG_LOCALE_MAP[locale] || "en_US",
+      url: absoluteUrl(locale),
       siteName: "AltSendme",
-      title: t('meta.title'),
-      description: t('meta.description'),
+      title: t("meta.title"),
+      description: t("meta.description"),
       images: [
         {
           url: "/og-image.png",
@@ -141,8 +111,8 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: t('meta.title'),
-      description: t('meta.description'),
+      title: t("meta.title"),
+      description: t("meta.description"),
       images: ["/og-image.png"],
       creator: "@tonyantony300",
     },
@@ -157,19 +127,7 @@ export async function generateMetadata({ params }) {
         "max-snippet": -1,
       },
     },
-    alternates: {
-      canonical: `https://altsendme.com/${locale === 'en' ? '' : locale}`,
-      languages: {
-        en: "https://altsendme.com",
-        ru: "https://altsendme.com/ru",
-        th: "https://altsendme.com/th",
-        de: "https://altsendme.com/de",
-        fr: "https://altsendme.com/fr",
-        ja: "https://altsendme.com/ja",
-        zh: "https://altsendme.com/zh",
-        ko: "https://altsendme.com/ko",
-      },
-    },
+    alternates: pageAlternates(locale),
   };
 }
 
@@ -186,13 +144,18 @@ export default async function LocaleLayout({ children, params }) {
     <html lang={locale}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="keywords" content={keywords.join(', ')} />
+        <meta name="keywords" content={SEO_KEYWORDS.join(", ")} />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
         <meta name="format-detection" content="telephone=no" />
         <script src="https://tally.so/widgets/embed.js" async></script>
       </head>
-      <body className={`${funnelSans.variable} ${newsreader.variable} ${libreFranklin.variable} ${koulen.variable} ${inter.variable}`}>
+      <body
+        className={`${funnelSans.variable} ${newsreader.variable} ${libreFranklin.variable} ${koulen.variable} ${inter.variable}`}
+      >
         <NextIntlClientProvider messages={messages}>
           <StructuredData locale={locale} />
           {children}
@@ -202,4 +165,3 @@ export default async function LocaleLayout({ children, params }) {
     </html>
   );
 }
-

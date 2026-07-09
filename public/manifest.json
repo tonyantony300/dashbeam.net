@@ -1,8 +1,8 @@
 {
   "name": "AltSendme - Peer-to-peer file transfer",
   "short_name": "AltSendme",
-  "description": "Open-source, frictionless peer-to-peer file transfer cross-platform desktop application",
-  "start_url": "/",
+  "description": "Open-source peer-to-peer file transfer for Windows, macOS, Linux, Android, and web. LocalSend alternative for the internet. No accounts, unlimited size.",
+  "start_url": "/en",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
@@ -34,10 +34,9 @@
   "categories": ["utilities", "productivity"],
   "screenshots": [
     {
-      "src": "/hero.png",
-      "sizes": "1200x800",
+      "src": "/og-image.png",
+      "sizes": "1200x630",
       "type": "image/png"
     }
   ]
 }
-

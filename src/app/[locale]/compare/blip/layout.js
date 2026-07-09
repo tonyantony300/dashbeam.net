@@ -3,7 +3,7 @@ import { OG_LOCALE_MAP, absoluteUrl, pageAlternates } from "@/lib/seo";
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "downloadsPage" });
+  const t = await getTranslations({ locale, namespace: "comparePage.blip" });
 
   return {
     metadataBase: new URL("https://altsendme.com"),
@@ -12,7 +12,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       type: "website",
       locale: OG_LOCALE_MAP[locale] || "en_US",
-      url: absoluteUrl(locale, "downloads"),
+      url: absoluteUrl(locale, "compare/blip"),
       siteName: "AltSendme",
       title: t("metaTitle"),
       description: t("metaDescription"),
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }) {
           url: "/og-image.png",
           width: 1200,
           height: 630,
-          alt: "AltSendme Downloads",
+          alt: "AltSendme vs Blip",
         },
       ],
     },
@@ -32,10 +32,10 @@ export async function generateMetadata({ params }) {
       images: ["/og-image.png"],
       creator: "@tonyantony300",
     },
-    alternates: pageAlternates(locale, "downloads"),
+    alternates: pageAlternates(locale, "compare/blip"),
   };
 }
 
-export default function DownloadsLayout({ children }) {
+export default function CompareBlipLayout({ children }) {
   return children;
 }

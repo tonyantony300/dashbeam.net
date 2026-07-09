@@ -2,19 +2,32 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 const FOOTER_NAV_GRID = [
   [
-    { key: "sourceCode", href: "https://github.com/tonyantony300/alt-sendme", external: true },
+    {
+      key: "sourceCode",
+      href: "https://github.com/tonyantony300/alt-sendme",
+      external: true,
+    },
     { key: "howItWorks", href: "/under-the-hood" },
     { key: "downloads", href: "/downloads" },
-    { key: "contactUs", href: "/contact" },
+    { key: "compare", href: "/compare" },
   ],
   [
-    { key: "githubSponsors", href: "https://github.com/sponsors/tonyantony300", external: true },
-    { key: "buyMeACoffee", href: "https://buymeacoffee.com/tny_antny", external: true },
+    { key: "contactUs", href: "/contact" },
+    {
+      key: "githubSponsors",
+      href: "https://github.com/sponsors/tonyantony300",
+      external: true,
+    },
+    {
+      key: "buyMeACoffee",
+      href: "https://buymeacoffee.com/tny_antny",
+      external: true,
+    },
     { key: "discord", href: "https://discord.gg/xwb7z22Eve", external: true },
-    { key: "reportIssue", href: "https://github.com/tonyantony300/alt-sendme/issues", external: true },
   ],
 ];
 
@@ -68,25 +81,33 @@ export default function Footer() {
                 }
 
                 const { key, href, external } = link;
+                const className =
+                  "whitespace-nowrap hover:underline underline-offset-[3px]";
+
+                if (external) {
+                  return (
+                    <a
+                      key={key}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={className}
+                    >
+                      {t(key)}
+                    </a>
+                  );
+                }
 
                 return (
-                  <a
-                    key={key}
-                    href={href}
-                    {...(external
-                      ? { target: "_blank", rel: "noopener noreferrer" }
-                      : {})}
-                    className="whitespace-nowrap hover:underline underline-offset-[3px]"
-                  >
+                  <Link key={key} href={href} className={className}>
                     {t(key)}
-                  </a>
+                  </Link>
                 );
-              })
+              }),
             )}
           </nav>
         </div>
       </div>
-
 
       <div className="px-5 py-8 md:px-10 md:py-10 lg:px-[60px] lg:py-16">
         <div className="mx-auto flex max-w-[1200px] items-center gap-4 md:gap-6">

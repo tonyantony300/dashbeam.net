@@ -1,168 +1,124 @@
-export default function StructuredData({ locale }) {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "AltSendme",
-    "applicationCategory": "FileTransferApplication",
-    "operatingSystem": ["Windows", "macOS", "Linux"],
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "description": "AltSendme is an open-source, frictionless peer-to-peer file transfer cross-platform desktop application. Send files and directories over the internet with no account requirements, end-to-end encryption using QUIC + TLS 1.3, unlimited transfers, and full privacy control. Features include NAT hole punching, verified streaming with Blake3, resumable downloads, and CLI compatibility with sendme tool.",
-    "featureList": [
-      "Peer-to-peer file transfer",
-      "No account required",
-      "End-to-end encryption (QUIC + TLS 1.3)",
-      "Unlimited file size and transfers",
-      "Cross-platform (Windows, macOS, Linux)",
-      "NAT hole punching",
-      "Verified streaming (Blake3)",
-      "Resumable downloads",
-      "CLI compatible with sendme",
-      "Open source (AGPL-3.0)",
-      "Free and unlimited"
-    ],
-    "softwareVersion": "0.2.0",
-    "releaseNotes": "Cross-platform desktop application for frictionless file transfer",
-    "license": "https://www.gnu.org/licenses/agpl-3.0.html",
-    "author": {
-      "@type": "Person",
-      "name": "tonyantony300"
-    },
-    "downloadUrl": "https://github.com/tonyantony300/alt-sendme/releases",
-    "codeRepository": "https://github.com/tonyantony300/alt-sendme",
-    "isAccessibleForFree": true,
-    "softwareHelp": "https://www.iroh.computer/docs/faq",
-    "applicationSubCategory": "File Sharing",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.5",
-      "bestRating": "5",
-      "worstRating": "1",
-      "ratingCount": "4"
-    },
-    "review": [
-      {
-        "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "4.5",
-          "bestRating": "5",
-        },
-        "author": {
-          "@type": "Organization",
-          "name": "Softpedia"
-        },
-        "reviewBody": "AltSendme received a 4.5/5 rating from Softpedia",
-        "url": "https://mac.softpedia.com/get/Internet-Utilities/AltSendme.shtml"
-      },
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Organization",
-          "name": "Softpedia"
-        },
-        "reviewBody": "AltSendme listing on Softpedia Linux",
-        "url": "https://linux.softpedia.com/get/Communications/Filesharing/AltSendme-104966.shtml"
-      },
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Organization",
-          "name": "Neowin"
-        },
-        "reviewBody": "AltSendme review on Neowin",
-        "url": "https://www.neowin.net/amp/altsendme-021/"
-      },
-      {
-        "@type": "Review",
-        "author": {
-          "@type": "Organization",
-          "name": "XDA Developers"
-        },
-        "reviewBody": "I swapped Dropbox for this self-hosted alternative - AltSendme review on XDA Developers",
-        "url": "https://www.xda-developers.com/i-swapped-dropbox-for-this-self-hosted-alternative/"
-      }
-    ],
-    "screenshot": "https://altsendme.com/hero.png",
-    "keywords": "file transfer, peer-to-peer, P2P, encrypted, secure, private, cross-platform, free, unlimited, open source, iroh, sendme",
-    "inLanguage": ["en", "fr", "th", "de", "zh", "ja", "ru", "ko"],
-    "browserRequirements": "Requires desktop application installation",
-    "softwareRequirements": "Windows 10+, macOS 10.13+, or Linux",
-    "permissions": "File system access for sending and receiving files"
-  };
+import { getTranslations } from "next-intl/server";
+import { DESKTOP_VERSION } from "@/constants/downloads";
+import { PRESS_LINKS, SITE_URL } from "@/lib/seo";
+
+/** Homepage-only FAQ schema; FAQPage markup must match visible page content */
+export async function HomeFaqStructuredData({ locale }) {
+  const t = await getTranslations({ locale, namespace: "faq" });
+
+  const faqKeys = [
+    "faq1",
+    "faq2",
+    "faq3",
+    "faq4",
+    "faq5",
+    "faq6",
+    "faq7",
+    "faq8",
+  ];
+
+  // JSON-LD requires plain strings; strip rich-text tags like <link>/<compareLink>
+  const getFaqAnswerText = (key) =>
+    t.raw(`items.${key}.answer`).replace(/<\/?[^>]+>/g, "");
 
   const faqStructuredData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is AltSendme?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "AltSendme is an open-source, frictionless peer-to-peer file transfer cross-platform desktop application that allows you to send files and directories over the internet. It requires no account, uses end-to-end encryption, and offers unlimited transfers for free. The source code is available on GitHub under the AGPL-3.0 license."
-        }
+    mainEntity: faqKeys.map((key) => ({
+      "@type": "Question",
+      name: t(`items.${key}.question`),
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: getFaqAnswerText(key),
       },
-      {
-        "@type": "Question",
-        "name": "Is AltSendme free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, AltSendme is completely free and open-source. There are no limits on file size or number of transfers."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is AltSendme secure?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, AltSendme uses end-to-end encryption with QUIC + TLS 1.3. All traffic between endpoints is encrypted, and there are no account requirements, ensuring maximum privacy."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What platforms does AltSendme support?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "AltSendme is available for Windows, macOS (both Apple Silicon and Intel), and Linux (deb and AppImage formats)."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does AltSendme work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "AltSendme uses iroh networking library for peer-to-peer file transfer. It handles NAT traversal automatically through hole punching, falling back to a relay if needed. Files are transferred directly between sender and receiver with end-to-end encryption."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need an account to use AltSendme?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No, AltSendme requires no account. It enables direct transfer between sender and receiver without any registration or login."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I resume interrupted downloads?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, AltSendme supports resumable downloads. If a download is interrupted, you can resume it seamlessly without starting over."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is AltSendme compatible with the sendme CLI tool?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, AltSendme is interoperable with the sendme CLI tool. Tickets generated by the CLI can be used in the desktop app and vice versa, and both versions can send/receive to each other."
-        }
-      }
-    ]
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+    />
+  );
+}
+
+export default async function StructuredData({ locale }) {
+  const tMeta = await getTranslations({ locale, namespace: "meta" });
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "AltSendme",
+    applicationCategory: "FileTransferApplication",
+    operatingSystem: ["Windows", "macOS", "Linux", "Android", "Web"],
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    description: tMeta("description"),
+    featureList: [
+      "Peer-to-peer file transfer over the internet",
+      "No account required",
+      "End-to-end encryption (QUIC + TLS 1.3)",
+      "Unlimited file size and transfers",
+      "Cross-platform (Windows, macOS, Linux, Android, Web)",
+      "NAT hole punching with encrypted relay fallback",
+      "Verified streaming (BLAKE3)",
+      "Resumable downloads",
+      "CLI compatible with Iroh sendme",
+      "Open source (AGPL-3.0)",
+      "Built on Iroh networking stack",
+    ],
+    softwareVersion: DESKTOP_VERSION,
+    releaseNotes:
+      "Cross-platform peer-to-peer file transfer for desktop, Android, web, and CLI",
+    license: "https://www.gnu.org/licenses/agpl-3.0.html",
+    author: {
+      "@type": "Person",
+      name: "tonyantony300",
+      url: "https://github.com/tonyantony300",
+    },
+    downloadUrl: "https://altsendme.com/en/downloads",
+    codeRepository: "https://github.com/tonyantony300/alt-sendme",
+    isAccessibleForFree: true,
+    softwareHelp: "https://www.iroh.computer/docs/faq",
+    applicationSubCategory: "File Sharing",
+    sameAs: [
+      "https://github.com/tonyantony300/alt-sendme",
+      PRESS_LINKS.softpediaMac,
+      PRESS_LINKS.softpediaLinux,
+      PRESS_LINKS.softpediaWindows,
+      PRESS_LINKS.neowin,
+      PRESS_LINKS.xda,
+      PRESS_LINKS.devto,
+      PRESS_LINKS.sourceforge,
+      PRESS_LINKS.hnSendme,
+      PRESS_LINKS.hnWormhole,
+    ],
+    screenshot: "https://altsendme.com/og-image.png",
+    keywords:
+      "file transfer, peer-to-peer, P2P, LocalSend alternative, Blip alternative, encrypted, open source, iroh, sendme",
+    inLanguage: ["en", "fr", "th", "de", "zh", "ja", "ru", "ko", "it"],
+    browserRequirements:
+      "Native app recommended; web app available at app.altsendme.com",
+    softwareRequirements:
+      "Windows 10+, macOS 10.13+, Linux, Android 8+, or modern browser",
+    permissions: "File system access for sending and receiving files",
+  };
+
+  const webSiteStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "AltSendme",
+    alternateName: "AltSendme - Peer-to-peer file transfer",
+    url: SITE_URL,
+    inLanguage: locale,
+    publisher: {
+      "@type": "Person",
+      name: "tonyantony300",
+      url: "https://github.com/tonyantony300",
+    },
   };
 
   return (
@@ -173,9 +129,10 @@ export default function StructuredData({ locale }) {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webSiteStructuredData),
+        }}
       />
     </>
   );
 }
-
