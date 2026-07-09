@@ -67,7 +67,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 hero-grain mix-blend-overlay opacity-[0.22]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto flex flex-col">
+      <div className="relative z-10 w-full max-w-[1380px] mx-auto flex flex-col">
         <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-8 lg:gap-12">
         <div className="flex flex-col items-center lg:items-start">
           <a
@@ -182,7 +182,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="relative z-20 w-full md:max-w-[500px] lg:max-w-[600px] rounded-[20px] border border-foreground/20 bg-white/30 backdrop-blur-md p-1.5 shadow-[2px_2px_12px_2px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.6)]">
+        <div className="relative z-20 w-full md:max-w-[575px] lg:max-w-[690px] rounded-[20px] border border-foreground/20 bg-white/30 backdrop-blur-md p-1.5 shadow-[2px_2px_12px_2px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.6)]">
 
           <div className="rounded-xl overflow-hidden">
             <Image
