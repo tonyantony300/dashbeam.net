@@ -8,8 +8,8 @@
     "license": "© GNU Affero General Public License v3.0"
   },
   "hero": {
-    "title": "Самый быстрый опыт передачи файлов на планете",
-    "description": "Прямая зашифрованная передача файлов с ваших устройств кому угодно и куда угодно — без аккаунтов и облачного хранилища посередине.",
+    "title": "Самый быстрый и плавный способ передавать файлы кому угодно и куда угодно.",
+    "description": "Ваши файлы идут напрямую с устройства на устройство — зашифровано, без аккаунтов, отслеживания, рекламы и облачного хранилища посередине.",
     "airdropQuote": "Думайте об этом как об AirDrop для любого устройства и любой сети.",
     "downloadForMac": "Скачать для Mac",
     "downloadForWindows": "Скачать для Windows",
@@ -17,7 +17,8 @@
     "downloadForAndroid": "Скачать для Android",
     "downloadForLinuxAppImage": "Скачать для Linux (AppImage)",
     "openInBrowser": "Открыть в браузере",
-    "tryNow": "Попробовать сейчас",
+    "sendNow": "Отправить сейчас",
+    "newBadge": "Новое",
     "donationMessage": "Ваши пожертвования делают этот проект лучше"
   },
   "howItWorks": {
@@ -49,7 +50,7 @@
       },
       "noSizeLimits": {
         "title": "Без ограничений размера. По-настоящему безлимитно.",
-        "description": "От KB's до 99GB's. AltSendme помогает делиться файлами неограниченного размера."
+        "description": "От KB's до 999GB's. AltSendme помогает делиться файлами неограниченного размера."
       },
       "blazingFast": {
         "title": "Молниеносно быстро и надёжно",
@@ -149,12 +150,6 @@
     "title": "Под капотом",
     "intro": "Это как scp без необходимости знать IP-адрес. Добавьте файлы в AltSendme, и он выдаст вставляемый билет, который можно передать любому, кому нужны ваши файлы. AltSendme напрямую соединит устройства и передаст данные без аккаунтов и настройки.",
     "heroAlt": "Hero-графика AltSendme",
-    "underTheHood": {
-      "title": "AltSendme построен на <iroh>iroh</iroh>",
-      "description": "AltSendme расширяет open-source работу команды iroh. AltSendme использует <iroh>iroh</iroh> для прямых связей между устройствами и <irohBlobs>iroh-blobs</irohBlobs> для отправки и проверки файлов.",
-      "buildOnCta": "Строить на iroh",
-      "irohGithubCta": "iroh github"
-    },
     "conceptsTitle": "Важные концепции",
     "concepts": {
       "blobs": "Blobs",
@@ -215,6 +210,7 @@
     "getAppForLinux": "Приложение для Linux",
     "getAppForWeb": "Открыть веб-приложение",
     "otherPlatforms": "Другие платформы",
+    "tryOnWeb": "Попробовать в вебе",
     "moreFormats": "Другие форматы загрузки",
     "termsPrefix": "Продолжая, вы соглашаетесь с нашей",
     "licenseLink": "Лицензией",

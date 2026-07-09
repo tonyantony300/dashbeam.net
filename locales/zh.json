@@ -8,8 +8,8 @@
     "license": "© GNU Affero General Public License v3.0"
   },
   "hero": {
-    "title": "星球上最快的文件传输体验",
-    "description": "从您的设备直接、加密传输文件给任何人、任何地方 — 无需账户，中间没有云存储。",
+    "title": "最快、最流畅地向任何人、任何地方传输文件的方式。",
+    "description": "您的文件从设备直传到设备 — 加密传输，无需账户、追踪、广告，中间没有云存储。",
     "airdropQuote": "把它想象成适用于任何设备、任何网络的 AirDrop。",
     "downloadForMac": "下载 Mac 版",
     "downloadForWindows": "下载 Windows 版",
@@ -17,7 +17,8 @@
     "downloadForAndroid": "下载 Android 版",
     "downloadForLinuxAppImage": "下载 Linux 版 (AppImage)",
     "openInBrowser": "在浏览器中打开",
-    "tryNow": "立即体验",
+    "sendNow": "立即发送",
+    "newBadge": "全新",
     "donationMessage": "您的捐赠让这个项目变得更好"
   },
   "howItWorks": {
@@ -49,7 +50,7 @@
       },
       "noSizeLimits": {
         "title": "无大小限制。真正无限。",
-        "description": "从 KB's 到 99GB's。AltSendme 帮助您分享无限大小的文件。"
+        "description": "从 KB's 到 999GB's。AltSendme 帮助您分享无限大小的文件。"
       },
       "blazingFast": {
         "title": "极速且可靠",
@@ -149,12 +150,6 @@
     "title": "底层原理",
     "intro": "就像 scp，但无需知道 IP 地址。将文件添加到 AltSendme，它会给你一个可粘贴的票据，交给任何需要这些文件的人。AltSendme 会直接连接你的设备并传输数据，无需账户或配置。",
     "heroAlt": "AltSendme 主视觉图",
-    "underTheHood": {
-      "title": "AltSendme 基于 <iroh>iroh</iroh> 构建",
-      "description": "AltSendme 扩展了 iroh 团队的开源工作。AltSendme 使用 <iroh>iroh</iroh> 在设备之间建立直接链接进行数据传输，并使用 <irohBlobs>iroh-blobs</irohBlobs> 发送和验证文件。",
-      "buildOnCta": "基于 iroh 构建",
-      "irohGithubCta": "iroh github"
-    },
     "conceptsTitle": "重要概念",
     "concepts": {
       "blobs": "Blobs",
@@ -215,6 +210,7 @@
     "getAppForLinux": "获取 Linux 版",
     "getAppForWeb": "打开网页版",
     "otherPlatforms": "其他平台",
+    "tryOnWeb": "在网页上试用",
     "moreFormats": "更多下载格式",
     "termsPrefix": "继续即表示您同意我们的",
     "licenseLink": "许可证",

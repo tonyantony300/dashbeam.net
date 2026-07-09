@@ -15,6 +15,7 @@ import {
   getPrimaryDownload,
   getPrimaryDownloadUrl,
   mobilePlatformGroups,
+  WEB_APP_URL,
 } from "@/constants/downloads";
 
 function DownloadIcon({ className = "", fill = "currentColor" }) {
@@ -236,7 +237,7 @@ export default function DownloadsPageContent() {
     <div className="w-full font-funnel-sans">
       <section className="relative flex min-h-[420px] w-full items-start overflow-hidden px-5 py-14 md:min-h-[480px] md:px-10 md:py-16 lg:min-h-[540px] lg:px-[60px] lg:py-20">
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-          <div className="absolute inset-0 bg-[url('/downloadsBg.webp')] bg-cover bg-center bg-no-repeat" />
+          <div className="absolute inset-0 bg-[url('/communityBg.webp')] bg-cover bg-center bg-no-repeat" />
           <div className="absolute inset-0 hero-grain mix-blend-overlay opacity-[0.18]" />
         </div>
 
@@ -317,6 +318,16 @@ export default function DownloadsPageContent() {
               <span>{t("otherPlatforms")}</span>
               <DownloadIcon className="h-5 w-5 shrink-0" fill="#73411F" />
             </button>
+
+            <a
+              href={WEB_APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-12 w-full items-center justify-center gap-3 rounded-md border-4 border-accent bg-[#452815] px-6 text-base font-medium text-[#F5F4F0] transition-colors hover:bg-[#5a3419] sm:w-auto"
+            >
+              <span>{t("tryOnWeb")}</span>
+              <DownloadIcon className="h-5 w-5 shrink-0" fill="#F5F4F0" />
+            </a>
           </div>
         </div>
       </section>

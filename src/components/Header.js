@@ -9,7 +9,6 @@ import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function Header() {
   const t = useTranslations();
-  const tAvailableAs = useTranslations('availableAs');
 
   return (
     <header className="w-full py-3 px-5 md:px-10 lg:px-[60px] border-b border-[#aeadad] sticky top-0 z-[100] bg-background">
@@ -46,10 +45,10 @@ export default function Header() {
           </a>
           <Link
             href="/downloads"
-            className="flex shrink-0 items-center gap-2 rounded-md bg-dark px-3 py-1.5 font-funnel-sans text-sm font-normal text-white transition-opacity hover:opacity-90 md:px-4"
+            className="flex shrink-0 items-center gap-1 rounded-md px-1.5 py-1.5 font-funnel-sans text-sm font-semibold text-[#452815] transition-opacity hover:opacity-70"
           >
-            <span>{tAvailableAs('download')}</span>
-            <DownloadSimple size={14} weight="bold" aria-hidden="true" />
+            <DownloadSimple size={14} weight="bold" className="shrink-0 text-[#452815]" aria-hidden="true" />
+            <span>Downloads</span>
           </Link>
         </nav>
       </div>

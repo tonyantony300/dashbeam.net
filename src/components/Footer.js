@@ -30,13 +30,7 @@ export default function Footer() {
   const t = useTranslations("footer");
 
   return (
-    <footer className="relative w-full overflow-hidden text-white">
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div className="absolute inset-0 bg-[url('/footerBg.webp')] bg-cover bg-top bg-no-repeat" />
-        <div className="absolute inset-0 hero-grain mix-blend-overlay opacity-[0.22]" />
-      </div>
-
-      <div className="relative z-10">
+    <footer className="relative w-full overflow-hidden bg-black text-white">
       <FooterRule className="pt-10 md:pt-14" />
 
       <div className="px-5 pb-14 pt-10 md:px-10 md:pb-20 md:pt-12 lg:px-[60px] lg:pb-12 lg:pt-6">
@@ -126,7 +120,6 @@ export default function Footer() {
           </p>
           <p>{t("license")}</p>
         </div>
-      </div>
       </div>
     </footer>
   );

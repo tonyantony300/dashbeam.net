@@ -8,8 +8,8 @@
     "license": "© GNU Affero General Public License v3.0"
   },
   "hero": {
-    "title": "Fastest file transfer experience on the planet",
-    "description": "Direct, encrypted file transfers from your devices to anyone, anywhere - no accounts, no cloud storage in between.",
+    "title": "The fastest, smoothest way to transfer files to anyone, anywhere.",
+    "description": "Your files go straight from device to device - encrypted, with no accounts, tracking, ads, or cloud storage in between.",
     "airdropQuote": "Think of it like AirDrop for any device, any network.",
     "downloadForMac": "Download for Mac",
     "downloadForWindows": "Download for Windows",
@@ -17,7 +17,8 @@
     "downloadForAndroid": "Download for Android",
     "downloadForLinuxAppImage": "Download for Linux (AppImage)",
     "openInBrowser": "Open in browser",
-    "tryNow": "Try Now",
+    "sendNow": "Send now",
+    "newBadge": "New",
     "donationMessage": "Your donations make this project better"
   },
   "howItWorks": {
@@ -49,7 +50,7 @@
       },
       "noSizeLimits": {
         "title": "No Size Limits. Truly unlimited.",
-        "description": "Send KB's to 99GB's. Altsendme helps you to share files of unlimited size."
+        "description": "Send KB's to 999GB's. Altsendme helps you to share files of unlimited size."
       },
       "blazingFast": {
         "title": "Blazing Fast & Reliable",
@@ -149,12 +150,6 @@
     "title": "Under The Hood",
     "intro": "It's like scp without needing to know the IP address. Add some files to AltSendme, and it will give you a pastable ticket that you can give to anyone who needs your files. AltSendme will connect your devices directly & transfer the data without any accounts or configuration.",
     "heroAlt": "AltSendme hero graphic",
-    "underTheHood": {
-      "title": "AltSendme is built on <iroh>iroh</iroh>",
-      "description": "AltSendme extends the open-source work being done by the amazing team behind iroh. AltSendme uses <iroh>iroh</iroh> to establish direct links between devices for data transfer, and <irohBlobs>iroh-blobs</irohBlobs> to send and verify your files.",
-      "buildOnCta": "Build on iroh",
-      "irohGithubCta": "iroh github"
-    },
     "conceptsTitle": "Important concepts",
     "concepts": {
       "blobs": "Blobs",
@@ -215,6 +210,7 @@
     "getAppForLinux": "Get app for Linux",
     "getAppForWeb": "Open web app",
     "otherPlatforms": "Other Platforms",
+    "tryOnWeb": "Try on Web",
     "moreFormats": "More download formats",
     "termsPrefix": "By continuing you agree to our",
     "licenseLink": "License",

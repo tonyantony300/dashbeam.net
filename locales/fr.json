@@ -8,8 +8,8 @@
     "license": "© GNU Affero General Public License v3.0"
   },
   "hero": {
-    "title": "Le transfert de fichiers le plus rapide sur la planète",
-    "description": "Transferts de fichiers directs et chiffrés depuis vos appareils vers n'importe qui, n'importe où — pas de comptes, pas de stockage cloud intermédiaire.",
+    "title": "Le moyen le plus rapide et le plus fluide de transférer des fichiers à n'importe qui, n'importe où.",
+    "description": "Vos fichiers passent directement d'appareil à appareil — chiffrés, sans comptes, suivi, publicités ni stockage cloud intermédiaire.",
     "airdropQuote": "Pensez-y comme à AirDrop pour n'importe quel appareil, n'importe quel réseau.",
     "downloadForMac": "Télécharger pour Mac",
     "downloadForWindows": "Télécharger pour Windows",
@@ -17,7 +17,8 @@
     "downloadForAndroid": "Télécharger pour Android",
     "downloadForLinuxAppImage": "Télécharger pour Linux (AppImage)",
     "openInBrowser": "Ouvrir dans le navigateur",
-    "tryNow": "Essayer maintenant",
+    "sendNow": "Envoyer",
+    "newBadge": "Nouveau",
     "donationMessage": "Vos dons rendent ce projet meilleur"
   },
   "howItWorks": {
@@ -49,7 +50,7 @@
       },
       "noSizeLimits": {
         "title": "Aucune limite de taille. Vraiment illimité.",
-        "description": "De KB's à 99GB's. AltSendme vous aide à partager des fichiers de taille illimitée."
+        "description": "De KB's à 999GB's. AltSendme vous aide à partager des fichiers de taille illimitée."
       },
       "blazingFast": {
         "title": "Ultra rapide et fiable",
@@ -149,12 +150,6 @@
     "title": "Sous le capot",
     "intro": "C'est comme scp sans avoir besoin de connaître l'adresse IP. Ajoutez des fichiers à AltSendme, et il vous donnera un ticket collable que vous pourrez transmettre à quiconque a besoin de vos fichiers. AltSendme connectera vos appareils directement et transférera les données sans comptes ni configuration.",
     "heroAlt": "Graphique hero AltSendme",
-    "underTheHood": {
-      "title": "AltSendme est construit sur <iroh>iroh</iroh>",
-      "description": "AltSendme prolonge le travail open source réalisé par l'équipe derrière iroh. AltSendme utilise <iroh>iroh</iroh> pour établir des liens directs entre appareils pour le transfert de données, et <irohBlobs>iroh-blobs</irohBlobs> pour envoyer et vérifier vos fichiers.",
-      "buildOnCta": "Construire sur iroh",
-      "irohGithubCta": "iroh github"
-    },
     "conceptsTitle": "Concepts importants",
     "concepts": {
       "blobs": "Blobs",
@@ -215,6 +210,7 @@
     "getAppForLinux": "App pour Linux",
     "getAppForWeb": "Ouvrir l'app web",
     "otherPlatforms": "Autres plateformes",
+    "tryOnWeb": "Essayer sur le Web",
     "moreFormats": "Autres formats de téléchargement",
     "termsPrefix": "En continuant, vous acceptez notre",
     "licenseLink": "Licence",

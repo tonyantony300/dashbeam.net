@@ -8,8 +8,8 @@
     "license": "© GNU Affero General Public License v3.0"
   },
   "hero": {
-    "title": "地球上で最速のファイル転送体験",
-    "description": "デバイスから誰にでも、どこにでも直接暗号化されたファイル転送 — アカウント不要、クラウドストレージを介しません。",
+    "title": "誰にでも、どこにでも、最も速くスムーズにファイルを転送する方法。",
+    "description": "ファイルはデバイス間で直接送受信 — 暗号化、アカウント・追跡・広告・クラウドストレージは一切不要。",
     "airdropQuote": "あらゆるデバイス、あらゆるネットワーク向けのAirDropのようなものと考えてください。",
     "downloadForMac": "Mac用をダウンロード",
     "downloadForWindows": "Windows用をダウンロード",
@@ -17,7 +17,8 @@
     "downloadForAndroid": "Android用をダウンロード",
     "downloadForLinuxAppImage": "Linux用をダウンロード (AppImage)",
     "openInBrowser": "ブラウザで開く",
-    "tryNow": "今すぐ試す",
+    "sendNow": "今すぐ送信",
+    "newBadge": "新着",
     "donationMessage": "あなたの寄付がこのプロジェクトをより良くします"
   },
   "howItWorks": {
@@ -49,7 +50,7 @@
       },
       "noSizeLimits": {
         "title": "サイズ制限なし。真に無制限。",
-        "description": "KB'sから99GB'sまで。AltSendmeは無制限サイズのファイル共有を支援します。"
+        "description": "KB'sから999GB'sまで。AltSendmeは無制限サイズのファイル共有を支援します。"
       },
       "blazingFast": {
         "title": "超高速＆信頼性",
@@ -149,12 +150,6 @@
     "title": "内部の仕組み",
     "intro": "IPアドレスを知らなくてもscpのように使えます。AltSendmeにファイルを追加すると、貼り付け可能なチケットが生成され、必要な人に渡せます。AltSendmeはデバイスを直接接続し、アカウントや設定なしでデータを転送します。",
     "heroAlt": "AltSendmeヒーローグラフィック",
-    "underTheHood": {
-      "title": "AltSendmeは<iroh>iroh</iroh>上に構築されています",
-      "description": "AltSendmeはirohチームのオープンソース成果を拡張しています。AltSendmeは<iroh>iroh</iroh>でデバイス間の直接リンクを確立し、<irohBlobs>iroh-blobs</irohBlobs>でファイルの送信と検証を行います。",
-      "buildOnCta": "iroh上に構築",
-      "irohGithubCta": "iroh github"
-    },
     "conceptsTitle": "重要な概念",
     "concepts": {
       "blobs": "Blobs",
@@ -215,6 +210,7 @@
     "getAppForLinux": "Linux版を入手",
     "getAppForWeb": "ウェブアプリを開く",
     "otherPlatforms": "その他のプラットフォーム",
+    "tryOnWeb": "Webで試す",
     "moreFormats": "その他のダウンロード形式",
     "termsPrefix": "続行することで、次に同意したものとみなされます：",
     "licenseLink": "ライセンス",

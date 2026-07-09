@@ -62,7 +62,7 @@ export default function HeroSection() {
     <section className="relative w-full min-h-[559px] md:min-h-[60vh] lg:min-h-[70vh] xl:min-h-[80vh] flex flex-col items-center lg:items-start justify-center overflow-hidden py-10 lg:pt-20 px-5 md:px-10 lg:px-[60px]">
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div
-          className="absolute inset-0 bg-[url('/heroBg.webp')] bg-[length:auto_100%] lg:bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-[url('/heroImage.jpg')] bg-[length:auto_100%] lg:bg-cover bg-center bg-no-repeat"
         />
         <div className="absolute inset-0 hero-grain mix-blend-overlay opacity-[0.22]" />
       </div>
@@ -74,35 +74,40 @@ export default function HeroSection() {
             href="https://github.com/tonyantony300/alt-sendme"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center lg:justify-start gap-2 font-funnel-sans text-sm text-white px-4 py-1.5 rounded-full mb-6 border-[0.5px] border-white/40 bg-white/20 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.5)] hover:bg-white/30 transition-colors"
+            className="flex items-center justify-center lg:justify-start gap-2 font-funnel-sans text-sm text-black px-4 py-1.5 rounded-full mb-6 border-[0.5px] border-white/40 bg-white/20 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.5)] hover:bg-white/30 transition-colors"
           >
             {t('common.openSourceAgpl')}
           </a>
 
-          <h1 className="font-funnel-sans text-[41px] leading-[1.2] text-center lg:text-left text-white font-bold mb-6 max-w-[600px] md:text-[56px] md:mb-6 md:max-w-[800px] lg:mb-8 lg:max-w-[1000px] tracking-tight">
+          <h1 className="font-funnel-sans text-[41px] leading-[1.2] text-center lg:text-left text-black font-bold mb-6 max-w-[600px] md:text-[56px] md:mb-6 md:max-w-[800px] lg:mb-8 lg:max-w-[1000px] tracking-tight">
             {t('hero.title')}
           </h1>
 
-          <p className="font-funnel-sans text-base text-center lg:text-left text-white mb-6 max-w-[600px] md:text-lg md:mb-8">
+          <p className="font-funnel-sans text-base text-center lg:text-left text-black mb-6 max-w-[600px] md:text-lg md:mb-8">
             {t('hero.description')}
           </p>
 
           <div className="flex flex-col items-center lg:items-start gap-3 mb-6 md:mb-8">
-            <p className="font-funnel-sans text-sm text-center lg:text-left text-white italic max-w-[600px] md:text-base">
+            <p className="font-funnel-sans text-sm text-center lg:text-left text-black italic max-w-[600px] md:text-base">
               {t('hero.airdropQuote')}
             </p>
           </div>
 
           <div className="w-full max-w-[460px] lg:max-w-[660px] flex flex-col items-center lg:items-start">
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full mb-8">
-              <a
-                href={WEB_APP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl font-medium transition-all h-16 px-6 text-base md:text-lg lg:text-xl bg-white text-dark hover:opacity-90 font-funnel-sans w-full sm:w-auto flex-shrink-0"
-              >
-                {t('hero.tryNow')}
-              </a>
+              <div className="relative w-full sm:w-auto flex-shrink-0">
+                <span className="pointer-events-none absolute -right-1 -top-3 z-10 rounded-full bg-yc-red px-2 py-0.5 font-funnel-sans text-[9px] font-bold uppercase tracking-[0.1em] text-white shadow-[0_2px_10px_rgba(220,38,38,0.5)] ring-2 ring-white">
+                  {t('hero.newBadge')}
+                </span>
+                <a
+                  href={WEB_APP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all h-16 px-6 text-base md:text-lg lg:text-xl bg-white text-dark hover:opacity-90 font-funnel-sans"
+                >
+                  {t('hero.sendNow')}
+                </a>
+              </div>
 
             <div className="relative w-full rounded-[20px] lg:w-auto download-container flex-1 sm:flex-initial">
               <div className="flex group hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] rounded-xl transition-all bg-dark w-full lg:w-auto ">
@@ -198,7 +203,7 @@ export default function HeroSection() {
             <h2 className="font-federo text-sm md:text-base font-bold uppercase tracking-wide text-foreground mb-2">
               {heroFeatures[0].title}
             </h2>
-            <p className="font-funnel-sans text-sm md:text-base text-foreground/55 leading-relaxed">
+            <p className="font-funnel-sans text-sm md:text-base text-foreground leading-relaxed">
               {heroFeatures[0].description}
             </p>
           </div>
@@ -216,7 +221,7 @@ export default function HeroSection() {
                 <h3 className="font-funnel-sans text-sm md:text-base font-bold uppercase tracking-wide text-foreground mb-2">
                   {feature.title}
                 </h3>
-                <p className="font-funnel-sans text-sm md:text-base text-foreground/55 leading-relaxed">
+                <p className="font-funnel-sans text-sm md:text-base text-foreground leading-relaxed">
                   {feature.description}
                 </p>
               </div>

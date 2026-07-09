@@ -8,8 +8,8 @@
     "license": "© GNU Affero General Public License v3.0"
   },
   "hero": {
-    "title": "L'esperienza di trasferimento file più veloce sul pianeta",
-    "description": "Trasferimenti diretti e crittografati dai tuoi dispositivi a chiunque, ovunque — nessun account, nessun cloud storage in mezzo.",
+    "title": "Il modo più veloce e fluido per trasferire file a chiunque, ovunque.",
+    "description": "I tuoi file vanno direttamente da dispositivo a dispositivo — crittografati, senza account, tracciamento, pubblicità o cloud storage in mezzo.",
     "airdropQuote": "Pensalo come AirDrop per qualsiasi dispositivo, qualsiasi rete.",
     "downloadForMac": "Scarica per Mac",
     "downloadForWindows": "Scarica per Windows",
@@ -17,7 +17,8 @@
     "downloadForAndroid": "Scarica per Android",
     "downloadForLinuxAppImage": "Scarica per Linux (AppImage)",
     "openInBrowser": "Apri nel browser",
-    "tryNow": "Provalo ora",
+    "sendNow": "Invia ora",
+    "newBadge": "Nuovo",
     "donationMessage": "Le tue donazioni rendono questo progetto migliore"
   },
   "howItWorks": {
@@ -49,7 +50,7 @@
       },
       "noSizeLimits": {
         "title": "Nessun limite di dimensione. Veramente illimitato.",
-        "description": "Da KB's a 99GB's. AltSendme ti aiuta a condividere file di dimensioni illimitate."
+        "description": "Da KB's a 999GB's. AltSendme ti aiuta a condividere file di dimensioni illimitate."
       },
       "blazingFast": {
         "title": "Velocissimo e affidabile",
@@ -149,12 +150,6 @@
     "title": "Sotto il cofano",
     "intro": "È come scp senza dover conoscere l'indirizzo IP. Aggiungi file ad AltSendme e otterrai un ticket incollabile da dare a chiunque abbia bisogno dei tuoi file. AltSendme collegherà i tuoi dispositivi direttamente e trasferirà i dati senza account o configurazione.",
     "heroAlt": "Grafica hero AltSendme",
-    "underTheHood": {
-      "title": "AltSendme è costruito su <iroh>iroh</iroh>",
-      "description": "AltSendme estende il lavoro open source del team dietro iroh. AltSendme usa <iroh>iroh</iroh> per stabilire collegamenti diretti tra dispositivi e <irohBlobs>iroh-blobs</irohBlobs> per inviare e verificare i tuoi file.",
-      "buildOnCta": "Costruisci su iroh",
-      "irohGithubCta": "iroh github"
-    },
     "conceptsTitle": "Concetti importanti",
     "concepts": {
       "blobs": "Blobs",
@@ -215,6 +210,7 @@
     "getAppForLinux": "App per Linux",
     "getAppForWeb": "Apri app web",
     "otherPlatforms": "Altre piattaforme",
+    "tryOnWeb": "Prova sul Web",
     "moreFormats": "Altri formati di download",
     "termsPrefix": "Continuando accetti la nostra",
     "licenseLink": "Licenza",

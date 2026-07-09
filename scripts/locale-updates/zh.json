@@ -1,5 +1,7 @@
 {
-  "common": { "donate": "捐赠" },
+  "common": {
+    "donate": "捐赠"
+  },
   "hero": {
     "title": "这个星球上最快的文件传输体验",
     "description": "从您的设备直接、加密传输文件给任何人、任何地方 — 无需账户，中间没有云存储。",
@@ -27,7 +29,7 @@
       },
       "noSizeLimits": {
         "title": "无大小限制。真正无限。",
-        "description": "从 KB's 到 99GB's。AltSendme 帮助您分享无限大小的文件。"
+        "description": "从 KB's 到 999GB's。AltSendme 帮助您分享无限大小的文件。"
       },
       "blazingFast": {
         "title": "极速且可靠",
@@ -69,12 +71,6 @@
     "title": "底层原理",
     "intro": "就像 scp，但无需知道 IP 地址。将文件添加到 AltSendme，它会给你一个可粘贴的票据，交给任何需要这些文件的人。AltSendme 会直接连接你的设备并传输数据，无需账户或配置。",
     "heroAlt": "AltSendme 主视觉图",
-    "underTheHood": {
-      "title": "AltSendme 基于 <iroh>iroh</iroh> 构建",
-      "description": "AltSendme 扩展了 iroh 团队的开源工作。AltSendme 使用 <iroh>iroh</iroh> 在设备之间建立直接链接进行数据传输，并使用 <irohBlobs>iroh-blobs</irohBlobs> 发送和验证文件。",
-      "buildOnCta": "基于 iroh 构建",
-      "irohGithubCta": "iroh github"
-    },
     "conceptsTitle": "重要概念",
     "concepts": {
       "blobs": "Blobs",

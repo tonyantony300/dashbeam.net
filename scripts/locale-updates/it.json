@@ -1,5 +1,7 @@
 {
-  "common": { "donate": "Dona" },
+  "common": {
+    "donate": "Dona"
+  },
   "hero": {
     "title": "L'esperienza di trasferimento file più veloce su questo pianeta",
     "description": "Trasferimenti diretti e crittografati dai tuoi dispositivi a chiunque, ovunque — nessun account, nessun cloud storage in mezzo.",
@@ -27,7 +29,7 @@
       },
       "noSizeLimits": {
         "title": "Nessun limite di dimensione. Veramente illimitato.",
-        "description": "Da KB's a 99GB's. AltSendme ti aiuta a condividere file di dimensioni illimitate."
+        "description": "Da KB's a 999GB's. AltSendme ti aiuta a condividere file di dimensioni illimitate."
       },
       "blazingFast": {
         "title": "Velocissimo e affidabile",
@@ -69,12 +71,6 @@
     "title": "Sotto il cofano",
     "intro": "È come scp senza dover conoscere l'indirizzo IP. Aggiungi file ad AltSendme e otterrai un ticket incollabile da dare a chiunque abbia bisogno dei tuoi file. AltSendme collegherà i tuoi dispositivi direttamente e trasferirà i dati senza account o configurazione.",
     "heroAlt": "Grafica hero AltSendme",
-    "underTheHood": {
-      "title": "AltSendme è costruito su <iroh>iroh</iroh>",
-      "description": "AltSendme estende il lavoro open source del team dietro iroh. AltSendme usa <iroh>iroh</iroh> per stabilire collegamenti diretti tra dispositivi e <irohBlobs>iroh-blobs</irohBlobs> per inviare e verificare i tuoi file.",
-      "buildOnCta": "Costruisci su iroh",
-      "irohGithubCta": "iroh github"
-    },
     "conceptsTitle": "Concetti importanti",
     "concepts": {
       "blobs": "Blobs",

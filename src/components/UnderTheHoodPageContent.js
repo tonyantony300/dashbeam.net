@@ -35,7 +35,7 @@ export default function UnderTheHoodPageContent() {
           <div className="absolute inset-0 dark-grain opacity-40" />
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-[1200px] px-5 py-12 md:px-10 md:py-16 lg:px-[60px] lg:py-20">
+        <div className="relative z-10 mx-auto w-full max-w-[1200px] px-5 py-12 md:px-10 md:py-16  lg:px-0 lg:py-20">
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
             <div>
               <h1 className="font-funnel-sans text-[40px] font-bold leading-[1.1] tracking-tight text-accent md:text-[52px] lg:text-[60px]">
@@ -62,66 +62,7 @@ export default function UnderTheHoodPageContent() {
 
       <section className="w-full px-5 py-12 md:px-10 md:py-16 lg:px-[60px] lg:py-20">
         <div className="mx-auto w-full max-w-[1200px]">
-          <div className="border border-[#D3D2CD] bg-[#F5F4F0] p-8 md:p-12 lg:p-16">
-            <h2 className="font-funnel-sans text-2xl font-bold text-[#121212] md:text-3xl">
-              {t.rich("underTheHood.title", {
-                iroh: (chunks) => (
-                  <a
-                    href="https://www.iroh.computer"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-bold text-[#6860FF] underline underline-offset-[3px] hover:text-[#121212]"
-                  >
-                    {chunks}
-                  </a>
-                ),
-              })}
-            </h2>
-            <p className="mt-4 max-w-3xl font-inter text-sm leading-relaxed text-[#4D4D4D] md:text-base">
-              {t.rich("underTheHood.description", {
-                iroh: (chunks) => (
-                  <a
-                    href="https://docs.iroh.computer/what-is-iroh"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-[#6860FF] underline underline-offset-[3px] hover:text-[#121212]"
-                  >
-                    {chunks}
-                  </a>
-                ),
-                irohBlobs: (chunks) => (
-                  <a
-                    href="https://docs.iroh.computer/protocols/blobs"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-[#6860FF] underline underline-offset-[3px] hover:text-[#121212]"
-                  >
-                    {chunks}
-                  </a>
-                ),
-              })}
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a
-                href="https://www.iroh.computer"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center rounded-md bg-[#121212] px-6 text-sm font-medium uppercase tracking-wide text-white transition-colors hover:bg-[#2a2a2a] md:text-base"
-              >
-                {t("underTheHood.buildOnCta")}
-              </a>
-              <a
-                href="https://github.com/n0-computer/iroh"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center rounded-md border border-[#D3D2CD] bg-white px-6 text-sm font-medium uppercase tracking-wide text-[#121212] transition-colors hover:border-[#6860FF] hover:text-[#6860FF] md:text-base"
-              >
-                {t("underTheHood.irohGithubCta")}
-              </a>
-            </div>
-          </div>
-
-          <h2 className="mt-10 font-funnel-sans text-2xl font-bold text-[#121212] md:mt-14 md:text-3xl">
+          <h2 className="font-funnel-sans text-2xl font-bold text-[#121212] md:text-3xl">
             {t("conceptsTitle")}
           </h2>
 
