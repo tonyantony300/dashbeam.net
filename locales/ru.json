@@ -16,6 +16,8 @@
     "downloadForLinux": "Скачать для Linux",
     "downloadForAndroid": "Скачать для Android",
     "downloadForLinuxAppImage": "Скачать для Linux (AppImage)",
+    "openInBrowser": "Открыть в браузере",
+    "tryNow": "Попробовать сейчас",
     "donationMessage": "Ваши пожертвования делают этот проект лучше"
   },
   "howItWorks": {
@@ -107,7 +109,7 @@
     "title": "Создано, чтобы пережить нас.",
     "subtitle": "Open Source и сообщество",
     "description": "AltSendme разрабатывается открыто участниками со всего мира. Каждая строка кода публична. Каждое улучшение доступно всем. Вместе мы создаём более быстрый и приватный способ отправки файлов напрямую между людьми.",
-    "githubStars": "8,2k звёзд",
+    "githubStars": "8,5k звёзд",
     "cardTitle": "Присоединяйтесь к сообществу",
     "othersCount": "+ 65 других",
     "cardDescription": "Open source — это наш способ отдать долг сообществу и убедиться, что то, что мы создаём, переживёт нас.",
@@ -118,6 +120,7 @@
     "titleLine1": "Один опыт.",
     "titleLine2": "Несколько платформ.",
     "download": "Скачать",
+    "openWeb": "Открыть приложение",
     "comingSoon": "Скоро",
     "desktop": {
       "title": "Десктопные приложения",
@@ -203,13 +206,14 @@
   },
   "downloadsPage": {
     "metaTitle": "Скачать AltSendme",
-    "metaDescription": "Скачайте AltSendme для Windows, macOS, Linux и Android. Бесплатная одноранговая передача файлов с открытым исходным кодом без ограничений по размеру.",
+    "metaDescription": "Скачайте AltSendme для Windows, macOS, Linux и Android — или используйте веб-приложение на app.altsendme.com. Бесплатная одноранговая передача файлов с открытым исходным кодом без ограничений по размеру.",
     "titleLine1": "Скачать",
     "titleLine2": "AltSendme",
     "statsLine": "100K+ загрузок | Доступно на 24 языках | Бесплатно",
     "getAppForMac": "Приложение для Mac",
     "getAppForWindows": "Приложение для Windows",
     "getAppForLinux": "Приложение для Linux",
+    "getAppForWeb": "Открыть веб-приложение",
     "otherPlatforms": "Другие платформы",
     "moreFormats": "Другие форматы загрузки",
     "termsPrefix": "Продолжая, вы соглашаетесь с нашей",
@@ -217,6 +221,9 @@
     "previewAlt": "Предпросмотр настольного приложения AltSendme",
     "desktop": "Компьютер",
     "mobile": "Мобильные",
+    "web": "Веб",
+    "openWebApp": "app.altsendme.com",
+    "webDescription": "Передавайте файлы прямо в браузере — установка не требуется.",
     "scoopLabel": "Windows (Scoop)",
     "scoopIntro": "Установка через Scoop:",
     "cli": {

@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { ArrowUpRight } from '@phosphor-icons/react';
 import { Link } from '@/i18n/routing';
+import { WEB_APP_URL } from '@/constants/downloads';
 
 const PLATFORMS = [
   {
@@ -35,7 +36,8 @@ const PLATFORMS = [
     imageAlt: 'Web application',
     width: 1010,
     height: 687,
-    href: '/downloads',
+    href: WEB_APP_URL,
+    external: true,
   },
 ];
 
@@ -63,7 +65,7 @@ export default function AvailableAs() {
         <div className="border border-foreground/15">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
             {PLATFORMS.map((platform, index) => {
-              const isWeb = platform.key === 'web';
+              const isExternal = platform.external;
               const cardClasses = `home-card ${cardBorderClasses(index, PLATFORMS.length)}`;
               const cardContent = (
                 <>
@@ -84,24 +86,24 @@ export default function AvailableAs() {
                   <p className="font-funnel-sans text-sm text-foreground/55 font-normal leading-relaxed mb-6 flex-grow md:text-base md:mb-8">
                     {t(`${platform.key}.description`)}
                   </p>
-                  {isWeb ? (
-                    <span className="font-funnel-sans text-sm font-medium text-foreground/55 md:text-base">
-                      {t('comingSoon')}
-                    </span>
-                  ) : (
-                    <span className="home-card__link-text inline-flex items-center gap-1">
-                      {t('download')}
-                      <ArrowUpRight size={16} weight="bold" aria-hidden="true" />
-                    </span>
-                  )}
+                  <span className="home-card__link-text inline-flex items-center gap-1">
+                    {isExternal ? t('openWeb') : t('download')}
+                    <ArrowUpRight size={16} weight="bold" aria-hidden="true" />
+                  </span>
                 </>
               );
 
-              if (isWeb) {
+              if (isExternal) {
                 return (
-                  <div key={platform.key} className={cardClasses}>
+                  <a
+                    key={platform.key}
+                    href={platform.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${cardClasses} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30 focus-visible:ring-offset-2`}
+                  >
                     {cardContent}
-                  </div>
+                  </a>
                 );
               }
 

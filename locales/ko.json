@@ -16,6 +16,8 @@
     "downloadForLinux": "Linux용 다운로드",
     "downloadForAndroid": "Android용 다운로드",
     "downloadForLinuxAppImage": "Linux용 다운로드 (AppImage)",
+    "openInBrowser": "브라우저에서 열기",
+    "tryNow": "지금 사용해 보기",
     "donationMessage": "여러분의 기부가 이 프로젝트를 더 좋게 만듭니다"
   },
   "howItWorks": {
@@ -107,7 +109,7 @@
     "title": "우리를 뛰어넘어 남도록.",
     "subtitle": "오픈 소스 & 커뮤니티 주도",
     "description": "AltSendme는 전 세계 기여자들에 의해 공개적으로 개발되고 있습니다. 모든 코드는 공개되어 있습니다. 모든 개선은 공유됩니다. 함께 사람들 사이에서 파일을 직접 보내는 더 빠르고 더 프라이빗한 방법을 만들고 있습니다.",
-    "githubStars": "8.2k 스타",
+    "githubStars": "8.5k 스타",
     "cardTitle": "커뮤니티에 참여하세요",
     "othersCount": "+ 65명",
     "cardDescription": "오픈 소스는 커뮤니티에 환원하고 우리가 만드는 것이 우리를 뛰어넘어 남도록 하는 방법입니다.",
@@ -118,6 +120,7 @@
     "titleLine1": "하나의 경험.",
     "titleLine2": "여러 플랫폼.",
     "download": "다운로드",
+    "openWeb": "앱 열기",
     "comingSoon": "출시 예정",
     "desktop": {
       "title": "데스크톱 애플리케이션",
@@ -203,13 +206,14 @@
   },
   "downloadsPage": {
     "metaTitle": "AltSendme 다운로드",
-    "metaDescription": "Windows, macOS, Linux, Android용 AltSendme를 다운로드하세요. 무료 오픈 소스 P2P 파일 전송, 용량 제한 없음.",
+    "metaDescription": "Windows, macOS, Linux, Android용 AltSendme를 다운로드하거나 app.altsendme.com에서 웹 앱을 사용하세요. 무료 오픈 소스 P2P 파일 전송, 용량 제한 없음.",
     "titleLine1": "다운로드",
     "titleLine2": "AltSendme",
     "statsLine": "10만+ 다운로드 | 24개 언어 지원 | 무료",
     "getAppForMac": "Mac용 앱 받기",
     "getAppForWindows": "Windows용 앱 받기",
     "getAppForLinux": "Linux용 앱 받기",
+    "getAppForWeb": "웹 앱 열기",
     "otherPlatforms": "다른 플랫폼",
     "moreFormats": "다른 다운로드 형식",
     "termsPrefix": "계속하면 다음에 동의하는 것으로 간주됩니다:",
@@ -217,6 +221,9 @@
     "previewAlt": "AltSendme 데스크톱 앱 미리보기",
     "desktop": "데스크톱",
     "mobile": "모바일",
+    "web": "웹",
+    "openWebApp": "app.altsendme.com",
+    "webDescription": "브라우저에서 바로 파일을 전송하세요. 설치가 필요 없습니다.",
     "scoopLabel": "Windows (Scoop)",
     "scoopIntro": "Scoop으로 설치:",
     "cli": {

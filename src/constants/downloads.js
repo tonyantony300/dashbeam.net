@@ -5,8 +5,9 @@ export const DONATE_LINKS = {
   githubSponsors: "https://github.com/sponsors/tonyantony300",
 };
 
-export const DESKTOP_VERSION = "0.4.2";
-export const ANDROID_VERSION = "v0.4.2";
+export const DESKTOP_VERSION = "0.5.0";
+export const ANDROID_VERSION = "v0.5.0";
+export const WEB_APP_URL = "https://app.altsendme.com";
 const DESKTOP_TAG = `v${DESKTOP_VERSION}`;
 
 export function releaseUrl(tag, filename) {
@@ -42,6 +43,13 @@ export const primaryDownloadsByOs = {
     heroTranslationKey: "hero.downloadForMac",
     size: "32 MB",
   },
+  web: {
+    id: "web",
+    icon: "/browser.webp",
+    externalUrl: WEB_APP_URL,
+    translationKey: "getAppForWeb",
+    heroTranslationKey: "hero.openInBrowser",
+  },
   windows: {
     id: "windows",
     icon: "/windows.svg",
@@ -49,7 +57,7 @@ export const primaryDownloadsByOs = {
     tag: DESKTOP_TAG,
     translationKey: "getAppForWindows",
     heroTranslationKey: "hero.downloadForWindows",
-    size: "10 MB",
+    size: "11 MB",
   },
   "windows-arm64": {
     id: "windows-arm64",
@@ -67,7 +75,7 @@ export const primaryDownloadsByOs = {
     tag: DESKTOP_TAG,
     translationKey: "getAppForLinux",
     heroTranslationKey: "hero.downloadForLinux",
-    size: "92 MB",
+    size: "91 MB",
   },
   "linux-arm64": {
     id: "linux-appimage-arm64",
@@ -85,7 +93,7 @@ export const primaryDownloadsByOs = {
     tag: ANDROID_VERSION,
     translationKey: "getAppForAndroid",
     heroTranslationKey: "hero.downloadForAndroid",
-    size: "50 MB",
+    size: "46 MB",
   },
 };
 
@@ -109,7 +117,7 @@ export const desktopPlatformGroups = [
         key: "aarch64Dmg",
         file: `AltSendme_${DESKTOP_VERSION}_aarch64.dmg`,
         tag: DESKTOP_TAG,
-        size: "16 MB",
+        size: "15 MB",
       },
     ],
   },
@@ -120,7 +128,7 @@ export const desktopPlatformGroups = [
         key: "standardExe",
         file: `AltSendme_${DESKTOP_VERSION}_x64-setup.exe`,
         tag: DESKTOP_TAG,
-        size: "10 MB",
+        size: "11 MB",
       },
       {
         key: "msi",
@@ -143,13 +151,13 @@ export const desktopPlatformGroups = [
         key: "appImage",
         file: `AltSendme_${DESKTOP_VERSION}_amd64.AppImage`,
         tag: DESKTOP_TAG,
-        size: "92 MB",
+        size: "91 MB",
       },
       {
         key: "debian",
         file: `AltSendme_${DESKTOP_VERSION}_amd64.deb`,
         tag: DESKTOP_TAG,
-        size: "19 MB",
+        size: "14 MB",
       },
       {
         key: "rpm",
@@ -167,7 +175,7 @@ export const desktopPlatformGroups = [
         key: "arm64Debian",
         file: `AltSendme_${DESKTOP_VERSION}_arm64.deb`,
         tag: DESKTOP_TAG,
-        size: "19 MB",
+        size: "14 MB",
       },
       {
         key: "aarch64Rpm",
@@ -187,28 +195,28 @@ export const mobilePlatformGroups = [
         key: "arm64Apk",
         file: `AltSendme-${ANDROID_VERSION}-arm64.apk`,
         tag: ANDROID_VERSION,
-        size: "50 MB",
+        size: "46 MB",
       },
       {
         key: "armv7Apk",
         file: `AltSendme-${ANDROID_VERSION}-armv7.apk`,
         tag: ANDROID_VERSION,
-        size: "35 MB",
+        size: "33 MB",
       },
       {
         key: "universalApk",
         file: `AltSendme-${ANDROID_VERSION}-universal.apk`,
         tag: ANDROID_VERSION,
-        size: "177 MB",
+        size: "161 MB",
       },
     ],
   },
 ];
 
-const HERO_DOWNLOAD_ORDER = ["windows", "mac", "linux", "android"];
+const HERO_DOWNLOAD_ORDER = ["web", "windows", "mac", "linux", "android"];
 
 export function getDownloadHref(link) {
-  return releaseUrl(link.tag, link.file);
+  return link.externalUrl ?? releaseUrl(link.tag, link.file);
 }
 
 export function getPrimaryDownload(os, arch = "x64") {
@@ -223,7 +231,7 @@ export function getPrimaryDownload(os, arch = "x64") {
 
 export function getPrimaryDownloadUrl(os, arch = "x64") {
   const primary = getPrimaryDownload(os, arch);
-  return releaseUrl(primary.tag, primary.file);
+  return getDownloadHref(primary);
 }
 
 export function getAlternateDownloadsForOs(osKey, arch = "x64") {
@@ -244,7 +252,7 @@ export function getPrimaryDownloadOption(t, os, arch = "x64") {
     id: download.id,
     size: download.size,
     icon: download.icon,
-    url: releaseUrl(download.tag, download.file),
+    url: getDownloadHref(download),
     label: t(download.heroTranslationKey),
   };
 }
@@ -256,7 +264,7 @@ export function getDownloadOptions(t) {
       id: download.id,
       size: download.size,
       icon: download.icon,
-      url: releaseUrl(download.tag, download.file),
+      url: getDownloadHref(download),
       label: t(download.heroTranslationKey),
     };
   });

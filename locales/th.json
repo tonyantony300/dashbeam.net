@@ -16,6 +16,8 @@
     "downloadForLinux": "ดาวน์โหลดสำหรับ Linux",
     "downloadForAndroid": "ดาวน์โหลดสำหรับ Android",
     "downloadForLinuxAppImage": "ดาวน์โหลดสำหรับ Linux (AppImage)",
+    "openInBrowser": "เปิดในเบราว์เซอร์",
+    "tryNow": "ลองใช้เลย",
     "donationMessage": "การบริจาคของคุณทำให้โปรเจกต์นี้ดีขึ้น"
   },
   "howItWorks": {
@@ -107,7 +109,7 @@
     "title": "สร้างขึ้นเพื่ออยู่เหนือเรา",
     "subtitle": "โอเพนซอร์ส & ขับเคลื่อนโดยชุมชน",
     "description": "AltSendme ถูกพัฒนาอย่างเปิดเผยโดยผู้มีส่วนร่วมจากทั่วโลก ทุกบรรทัดของโค้ดเป็น public ทุกการปรับปรุงถูกแชร์ เรากำลังสร้างวิธีที่เร็วและเป็นส่วนตัวมากขึ้นในการส่งไฟล์โดยตรงระหว่างผู้คน",
-    "githubStars": "8.2k stars",
+    "githubStars": "8.5k stars",
     "cardTitle": "เข้าร่วมชุมชนของเรา",
     "othersCount": "+ 65 คนอื่นๆ",
     "cardDescription": "โอเพนซอร์สคือวิธีที่เราตอบแทนชุมชนและมั่นใจว่าสิ่งที่เรากำลังสร้างจะอยู่เหนือเรา",
@@ -118,6 +120,7 @@
     "titleLine1": "ประสบการณ์เดียว",
     "titleLine2": "หลายแพลตฟอร์ม",
     "download": "ดาวน์โหลด",
+    "openWeb": "เปิดแอป",
     "comingSoon": "เร็วๆ นี้",
     "desktop": {
       "title": "แอปพลิเคชันเดสก์ท็อป",
@@ -203,13 +206,14 @@
   },
   "downloadsPage": {
     "metaTitle": "ดาวน์โหลด AltSendme",
-    "metaDescription": "ดาวน์โหลด AltSendme สำหรับ Windows, macOS, Linux และ Android การถ่ายโอนไฟล์แบบ peer-to-peer ฟรีและโอเพนซอร์ส ไม่จำกัดขนาด",
+    "metaDescription": "ดาวน์โหลด AltSendme สำหรับ Windows, macOS, Linux และ Android — หรือใช้เว็บแอปที่ app.altsendme.com การถ่ายโอนไฟล์แบบ peer-to-peer ฟรีและโอเพนซอร์ส ไม่จำกัดขนาด",
     "titleLine1": "ดาวน์โหลด",
     "titleLine2": "AltSendme",
     "statsLine": "100K+ ดาวน์โหลด | รองรับ 24 ภาษา | ฟรี",
     "getAppForMac": "ดาวน์โหลดสำหรับ Mac",
     "getAppForWindows": "ดาวน์โหลดสำหรับ Windows",
     "getAppForLinux": "ดาวน์โหลดสำหรับ Linux",
+    "getAppForWeb": "เปิดเว็บแอป",
     "otherPlatforms": "แพลตฟอร์มอื่นๆ",
     "moreFormats": "รูปแบบดาวน์โหลดเพิ่มเติม",
     "termsPrefix": "การดำเนินการต่อถือว่าคุณยอมรับ",
@@ -217,6 +221,9 @@
     "previewAlt": "ตัวอย่างแอป AltSendme บนเดสก์ท็อป",
     "desktop": "เดสก์ท็อป",
     "mobile": "มือถือ",
+    "web": "เว็บ",
+    "openWebApp": "app.altsendme.com",
+    "webDescription": "ถ่ายโอนไฟล์ได้โดยตรงในเบราว์เซอร์ ไม่ต้องติดตั้ง",
     "scoopLabel": "Windows (Scoop)",
     "scoopIntro": "ติดตั้งด้วย Scoop:",
     "cli": {

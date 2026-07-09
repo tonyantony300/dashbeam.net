@@ -16,6 +16,8 @@
     "downloadForLinux": "Download for Linux",
     "downloadForAndroid": "Download for Android",
     "downloadForLinuxAppImage": "Download for Linux (AppImage)",
+    "openInBrowser": "Open in browser",
+    "tryNow": "Try Now",
     "donationMessage": "Your donations make this project better"
   },
   "howItWorks": {
@@ -107,7 +109,7 @@
     "title": "Built To Outlive Us.",
     "subtitle": "Open Source & Community Driven",
     "description": "AltSendme is built in public by contributors around the world. Every line of code is public. Every improvement is shared. Together, we're building a faster, more private way to send files directly between people.",
-    "githubStars": "8.2k stars",
+    "githubStars": "8.5k stars",
     "cardTitle": "Join our Community",
     "othersCount": "+ 65 Others",
     "cardDescription": "Open source is our way of giving back to the community and making sure what we're building outlives us.",
@@ -118,6 +120,7 @@
     "titleLine1": "One Experience.",
     "titleLine2": "Multiple Platforms.",
     "download": "Download",
+    "openWeb": "Open app",
     "comingSoon": "Coming soon",
     "desktop": {
       "title": "Desktop Applications",
@@ -203,13 +206,14 @@
   },
   "downloadsPage": {
     "metaTitle": "Download AltSendme",
-    "metaDescription": "Download AltSendme for Windows, macOS, Linux, and Android. Free, open source, peer-to-peer file transfer with no size limits.",
+    "metaDescription": "Download AltSendme for Windows, macOS, Linux, and Android — or use the web app at app.altsendme.com. Free, open source, peer-to-peer file transfer with no size limits.",
     "titleLine1": "Download",
     "titleLine2": "AltSendme",
     "statsLine": "100K+ Downloads | Available in 24 Languages | Free",
     "getAppForMac": "Get app for Mac",
     "getAppForWindows": "Get app for Windows",
     "getAppForLinux": "Get app for Linux",
+    "getAppForWeb": "Open web app",
     "otherPlatforms": "Other Platforms",
     "moreFormats": "More download formats",
     "termsPrefix": "By continuing you agree to our",
@@ -217,6 +221,9 @@
     "previewAlt": "AltSendme desktop application preview",
     "desktop": "Desktop",
     "mobile": "Mobile",
+    "web": "Web",
+    "openWebApp": "app.altsendme.com",
+    "webDescription": "Transfer files directly in your browser — no install required.",
     "scoopLabel": "Windows (Scoop)",
     "scoopIntro": "Install with scoop:",
     "cli": {

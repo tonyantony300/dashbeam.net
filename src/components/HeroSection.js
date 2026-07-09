@@ -7,6 +7,7 @@ import {
   detectPlatform,
   getDownloadOptions,
   getPrimaryDownloadOption,
+  WEB_APP_URL,
 } from '@/constants/downloads';
 
 export default function HeroSection() {
@@ -93,7 +94,17 @@ export default function HeroSection() {
           </div>
 
           <div className="w-full max-w-[460px] lg:max-w-[660px] flex flex-col items-center lg:items-start">
-            <div className="relative w-full rounded-[20px] lg:w-auto download-container mb-8">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full mb-8">
+              <a
+                href={WEB_APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl font-medium transition-all h-16 px-6 text-base md:text-lg lg:text-xl bg-white text-dark hover:opacity-90 font-funnel-sans w-full sm:w-auto flex-shrink-0"
+              >
+                {t('hero.tryNow')}
+              </a>
+
+            <div className="relative w-full rounded-[20px] lg:w-auto download-container flex-1 sm:flex-initial">
               <div className="flex group hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] rounded-xl transition-all bg-dark w-full lg:w-auto ">
                 <a
                   href={primaryDownload.url}
@@ -161,6 +172,7 @@ export default function HeroSection() {
                   ))}
                 </div>
               )}
+            </div>
             </div>
           </div>
         </div>

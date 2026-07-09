@@ -16,6 +16,8 @@
     "downloadForLinux": "下载 Linux 版",
     "downloadForAndroid": "下载 Android 版",
     "downloadForLinuxAppImage": "下载 Linux 版 (AppImage)",
+    "openInBrowser": "在浏览器中打开",
+    "tryNow": "立即体验",
     "donationMessage": "您的捐赠让这个项目变得更好"
   },
   "howItWorks": {
@@ -107,7 +109,7 @@
     "title": "为超越我们而构建。",
     "subtitle": "开源 & 社区驱动",
     "description": "AltSendme 由全球贡献者公开构建。每一行代码都是公开的。每一项改进都会共享。我们一起正在构建一种更快、更私密的文件直传方式。",
-    "githubStars": "8.2k stars",
+    "githubStars": "8.5k stars",
     "cardTitle": "加入我们的社区",
     "othersCount": "+ 65 其他人",
     "cardDescription": "开源是我们回馈社区的方式，也是确保我们所构建的东西能够超越我们的方式。",
@@ -118,6 +120,7 @@
     "titleLine1": "一种体验。",
     "titleLine2": "多个平台。",
     "download": "下载",
+    "openWeb": "打开应用",
     "comingSoon": "即将推出",
     "desktop": {
       "title": "桌面应用程序",
@@ -203,13 +206,14 @@
   },
   "downloadsPage": {
     "metaTitle": "下载 AltSendme",
-    "metaDescription": "下载适用于 Windows、macOS、Linux 和 Android 的 AltSendme。免费开源的点对点文件传输，无大小限制。",
+    "metaDescription": "下载适用于 Windows、macOS、Linux 和 Android 的 AltSendme，或在 app.altsendme.com 使用网页版。免费开源的点对点文件传输，无大小限制。",
     "titleLine1": "下载",
     "titleLine2": "AltSendme",
     "statsLine": "10万+ 下载 | 支持 24 种语言 | 免费",
     "getAppForMac": "获取 Mac 版",
     "getAppForWindows": "获取 Windows 版",
     "getAppForLinux": "获取 Linux 版",
+    "getAppForWeb": "打开网页版",
     "otherPlatforms": "其他平台",
     "moreFormats": "更多下载格式",
     "termsPrefix": "继续即表示您同意我们的",
@@ -217,6 +221,9 @@
     "previewAlt": "AltSendme 桌面应用预览",
     "desktop": "桌面端",
     "mobile": "移动端",
+    "web": "网页版",
+    "openWebApp": "app.altsendme.com",
+    "webDescription": "直接在浏览器中传输文件，无需安装。",
     "scoopLabel": "Windows (Scoop)",
     "scoopIntro": "使用 Scoop 安装：",
     "cli": {

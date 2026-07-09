@@ -42,7 +42,7 @@ export default function Header() {
           </a>
           <a href="https://github.com/tonyantony300/alt-sendme" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 md:gap-2 font-funnel-sans text-sm font-semibold text-[#452815] px-1.5 py-1.5 rounded-md ">
             <GithubIcon size={14} className="shrink-0" />
-            <span>8.3K</span>
+            <span>8.5K</span>
           </a>
           <Link
             href="/downloads"
