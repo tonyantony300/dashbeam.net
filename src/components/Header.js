@@ -34,12 +34,6 @@ export default function Header() {
           </div>
         </div>
         <nav className="flex items-center gap-3 md:gap-6">
-          <Link
-            href="/compare"
-            className="hidden md:inline font-funnel-sans text-sm font-semibold text-[#452815] transition-opacity hover:opacity-70"
-          >
-            {t("footer.compare")}
-          </Link>
           <a
             href="https://github.com/sponsors/tonyantony300"
             target="_blank"

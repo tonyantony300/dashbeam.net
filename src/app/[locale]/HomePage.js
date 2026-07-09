@@ -7,6 +7,7 @@ import HowItWorks from "@/components/HowItWorks";
 import AvailableAs from "@/components/AvailableAs";
 import HomeFAQ from "@/components/HomeFAQ";
 import FeaturesSection from "@/components/FeaturesSection";
+import CompareHubMatrixSection from "@/components/CompareHubMatrixSection";
 import PartnerSection from "@/components/PartnerSection";
 import CommunitySection from "@/components/CommunitySection";
 import PressReviews from "@/components/PressReviews";
@@ -20,6 +21,7 @@ export default function HomePage() {
         <HowItWorks />
         <AvailableAs />
         <FeaturesSection />
+        <CompareHubMatrixSection />
         <PartnerSection />
         <CommunitySection />
         <HomeFAQ />

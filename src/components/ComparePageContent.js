@@ -5,176 +5,21 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowsLeftRight,
-  Check,
-  CloudArrowUp,
   DownloadSimple,
   Globe,
-  Lightning,
-  Minus,
   Question,
   Scales,
-  TerminalWindow,
   WifiHigh,
-  X,
 } from "@phosphor-icons/react";
 import { Link } from "@/i18n/routing";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const STATUS = {
-  yes: "yes",
-  no: "no",
-  partial: "partial",
-  limited: "limited",
-  lanOnly: "lanOnly",
-};
-
-function StatusIcon({ status }) {
-  if (status === STATUS.yes) {
-    return (
-      <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#E8F5E9] text-[#1B5E20]">
-        <Check size={16} weight="bold" aria-hidden="true" />
-      </span>
-    );
-  }
-  if (status === STATUS.no) {
-    return (
-      <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#FCE8E6] text-[#B3261E]">
-        <X size={16} weight="bold" aria-hidden="true" />
-      </span>
-    );
-  }
-  return (
-    <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#F5F4F1] text-[#73411F]">
-      <Minus size={16} weight="bold" aria-hidden="true" />
-    </span>
-  );
-}
-
-function StatusCell({ status, label }) {
-  return (
-    <div className="flex items-center gap-2.5">
-      <StatusIcon status={status} />
-      <span className="font-inter text-sm leading-snug text-[#4D4D4D] md:text-[15px]">
-        {label}
-      </span>
-    </div>
-  );
-}
-
-function TextCell({ label }) {
-  return (
-    <span className="font-inter text-sm leading-snug text-[#4D4D4D] md:text-[15px]">
-      {label}
-    </span>
-  );
-}
-
-/** Mobile: stacked feature cards. Desktop: clean table. */
-function ComparisonMatrix({ columns, rows }) {
-  return (
-    <>
-      {/* Mobile / tablet stacked cards */}
-      <div className="space-y-3 lg:hidden">
-        {rows.map((row) => (
-          <article
-            key={row.feature}
-            className="border border-[#D3D2CD] bg-white p-4 sm:p-5"
-          >
-            <h3 className="font-funnel-sans text-base font-semibold text-[#121212]">
-              {row.feature}
-            </h3>
-            <ul className="mt-4 divide-y divide-[#E8E7E2]">
-              {columns.map((col, colIndex) => {
-                const cell = row.values[colIndex];
-                return (
-                  <li
-                    key={`${row.feature}-${col}`}
-                    className="flex items-start justify-between gap-4 py-3 first:pt-0 last:pb-0"
-                  >
-                    <span
-                      className={`shrink-0 font-funnel-sans text-sm ${
-                        colIndex === 0
-                          ? "font-semibold text-[#73411F]"
-                          : "font-medium text-[#121212]"
-                      }`}
-                    >
-                      {col}
-                    </span>
-                    <div className="min-w-0 text-right">
-                      {cell.kind === "status" ? (
-                        <div className="inline-flex items-center gap-2">
-                          <span className="font-inter text-sm text-[#4D4D4D]">
-                            {cell.label}
-                          </span>
-                          <StatusIcon status={cell.status} />
-                        </div>
-                      ) : (
-                        <TextCell label={cell.label} />
-                      )}
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </article>
-        ))}
-      </div>
-
-      {/* Desktop table */}
-      <div className="hidden overflow-hidden border border-[#D3D2CD] bg-white lg:block">
-        <table className="w-full table-fixed border-collapse">
-          <thead>
-            <tr className="border-b border-[#D3D2CD] bg-[#F5F4F1]">
-              <th className="w-[22%] px-5 py-4 text-left font-funnel-sans text-sm font-semibold text-[#121212]">
-                {/* feature column */}
-              </th>
-              {columns.map((col, index) => (
-                <th
-                  key={col}
-                  className={`px-5 py-4 text-left font-funnel-sans text-sm font-semibold ${
-                    index === 0 ? "text-[#73411F]" : "text-[#121212]"
-                  }`}
-                >
-                  {col}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row, rowIndex) => (
-              <tr
-                key={row.feature}
-                className={
-                  rowIndex < rows.length - 1 ? "border-b border-[#D3D2CD]" : ""
-                }
-              >
-                <th
-                  scope="row"
-                  className="px-5 py-4 text-left align-middle font-funnel-sans text-sm font-semibold text-[#121212]"
-                >
-                  {row.feature}
-                </th>
-                {row.values.map((cell, cellIndex) => (
-                  <td
-                    key={`${row.feature}-${cellIndex}`}
-                    className="px-5 py-4 align-middle"
-                  >
-                    {cell.kind === "status" ? (
-                      <StatusCell status={cell.status} label={cell.label} />
-                    ) : (
-                      <TextCell label={cell.label} />
-                    )}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </>
-  );
-}
+import ComparisonMatrix, {
+  STATUS,
+  status,
+  text,
+} from "@/components/ComparisonMatrix";
+import { buildCompareHubTable } from "@/lib/compareHubTable";
 
 function PageShell({ children }) {
   return (
@@ -325,112 +170,10 @@ function FaqList({ items }) {
   );
 }
 
-function status(statusKey, label) {
-  return { kind: "status", status: statusKey, label };
-}
-
-function text(label) {
-  return { kind: "text", label };
-}
-
 export function CompareHubContent() {
   const t = useTranslations("comparePage.hub");
   const s = useTranslations("comparePage.shared");
-
-  const columns = [s("altsendme"), s("localsend"), s("blip"), s("cloud")];
-
-  const rows = [
-    {
-      feature: t("worksOverInternet"),
-      values: [
-        status(STATUS.yes, t("yes")),
-        status(STATUS.lanOnly, t("lanOnly")),
-        status(STATUS.yes, t("yes")),
-        status(STATUS.yes, t("yes")),
-      ],
-    },
-    {
-      feature: t("gigabitSpeed"),
-      values: [
-        status(STATUS.yes, t("yes")),
-        status(STATUS.partial, t("partial")),
-        status(STATUS.partial, t("partial")),
-        status(STATUS.no, t("browserLimited")),
-      ],
-    },
-    {
-      feature: t("cliSupport"),
-      values: [
-        status(STATUS.yes, t("yes")),
-        status(STATUS.no, t("no")),
-        status(STATUS.no, t("no")),
-        status(STATUS.no, t("no")),
-      ],
-    },
-    {
-      feature: t("openSource"),
-      values: [
-        status(STATUS.yes, t("yes")),
-        status(STATUS.yes, t("yes")),
-        status(STATUS.no, t("no")),
-        status(STATUS.no, t("no")),
-      ],
-    },
-    {
-      feature: t("noAccount"),
-      values: [
-        status(STATUS.yes, t("yes")),
-        status(STATUS.yes, t("yes")),
-        status(STATUS.partial, t("partial")),
-        status(STATUS.no, t("no")),
-      ],
-    },
-    {
-      feature: t("unlimitedSize"),
-      values: [
-        status(STATUS.yes, t("yes")),
-        status(STATUS.yes, t("yes")),
-        status(STATUS.yes, t("yes")),
-        status(STATUS.limited, t("limited")),
-      ],
-    },
-    {
-      feature: t("e2eEncryption"),
-      values: [
-        status(STATUS.yes, t("yes")),
-        status(STATUS.yes, t("yes")),
-        status(STATUS.partial, t("partial")),
-        status(STATUS.partial, t("partial")),
-      ],
-    },
-    {
-      feature: t("folders"),
-      values: [
-        status(STATUS.yes, t("yes")),
-        status(STATUS.yes, t("yes")),
-        status(STATUS.yes, t("yes")),
-        status(STATUS.yes, t("yes")),
-      ],
-    },
-    {
-      feature: t("resumable"),
-      values: [
-        status(STATUS.yes, t("yes")),
-        status(STATUS.partial, t("partial")),
-        status(STATUS.yes, t("yes")),
-        status(STATUS.partial, t("partial")),
-      ],
-    },
-    {
-      feature: t("platforms"),
-      values: [
-        status(STATUS.yes, t("yes")),
-        status(STATUS.yes, t("yes")),
-        status(STATUS.partial, t("partial")),
-        status(STATUS.yes, t("yes")),
-      ],
-    },
-  ];
+  const { columns, sections } = buildCompareHubTable(t, s);
 
   const deepDives = [
     {
@@ -447,12 +190,6 @@ export function CompareHubContent() {
     },
   ];
 
-  const others = [
-    { icon: CloudArrowUp, title: t("wetransfer"), note: t("wetransferNote") },
-    { icon: Globe, title: t("filepizza"), note: t("filepizzaNote") },
-    { icon: TerminalWindow, title: t("wormhole"), note: t("wormholeNote") },
-  ];
-
   return (
     <PageShell>
       <DarkHero title={t("title")} lead={t("lead")} />
@@ -460,32 +197,11 @@ export function CompareHubContent() {
       <section className="w-full px-5 py-12 md:px-10 md:py-16 lg:px-[60px] lg:py-20">
         <div className="mx-auto w-full max-w-[1200px]">
           <SectionHeading icon={Scales}>{t("tableTitle")}</SectionHeading>
-          <ComparisonMatrix columns={columns} rows={rows} />
-
-          <div className="mt-8 grid gap-3 sm:grid-cols-2">
-            <div className="flex gap-3 border border-[#D3D2CD] bg-[#FBF8F3] p-4 md:p-5">
-              <Lightning
-                size={22}
-                weight="regular"
-                className="mt-0.5 shrink-0 text-[#73411F]"
-                aria-hidden="true"
-              />
-              <p className="font-inter text-sm leading-relaxed text-[#4D4D4D]">
-                {t("filepizzaNote")}
-              </p>
-            </div>
-            <div className="flex gap-3 border border-[#D3D2CD] bg-[#FBF8F3] p-4 md:p-5">
-              <TerminalWindow
-                size={22}
-                weight="regular"
-                className="mt-0.5 shrink-0 text-[#73411F]"
-                aria-hidden="true"
-              />
-              <p className="font-inter text-sm leading-relaxed text-[#4D4D4D]">
-                {t("wormholeNote")}
-              </p>
-            </div>
-          </div>
+          <ComparisonMatrix
+            columns={columns}
+            sections={sections}
+            highlightColumnIndex={0}
+          />
 
           <div className="mt-14 md:mt-16">
             <SectionHeading icon={ArrowsLeftRight}>
@@ -518,40 +234,6 @@ export function CompareHubContent() {
                       {item.desc}
                     </p>
                   </Link>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className="mt-14 md:mt-16">
-            <SectionHeading icon={Globe}>{t("othersTitle")}</SectionHeading>
-            <p className="mb-6 max-w-2xl font-inter text-sm text-[#4D4D4D] md:text-base">
-              {t("othersLead")}
-            </p>
-            <div className="border border-[#D3D2CD] bg-white">
-              {others.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={item.title}
-                    className={`flex gap-4 p-6 md:gap-5 md:p-8 ${
-                      index < others.length - 1
-                        ? "border-b border-[#D3D2CD]"
-                        : ""
-                    }`}
-                  >
-                    <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center border border-[#D3D2CD] bg-[#F5F4F1] text-[#73411F]">
-                      <Icon size={18} weight="regular" aria-hidden="true" />
-                    </span>
-                    <div>
-                      <h3 className="font-funnel-sans text-base font-semibold text-[#121212] md:text-lg">
-                        {item.title}
-                      </h3>
-                      <p className="mt-2 font-inter text-sm leading-relaxed text-[#4D4D4D] md:text-base">
-                        {item.note}
-                      </p>
-                    </div>
-                  </div>
                 );
               })}
             </div>
@@ -613,14 +295,14 @@ export function CompareLocalSendContent() {
       values: [text(s("iroh")), text("Local HTTPS")],
     },
     {
-      feature: tHub("resumable"),
+      feature: tHub("table.resumable"),
       values: [
         status(STATUS.yes, tHub("yes")),
         status(STATUS.partial, tHub("partial")),
       ],
     },
     {
-      feature: tHub("platforms"),
+      feature: tHub("table.platforms"),
       values: [
         status(STATUS.yes, tHub("yes")),
         status(STATUS.yes, tHub("yes")),
@@ -724,21 +406,21 @@ export function CompareBlipContent() {
       values: [text(s("tickets")), status(STATUS.partial, tHub("partial"))],
     },
     {
-      feature: tHub("noAccount"),
+      feature: tHub("table.noAccount"),
       values: [
         status(STATUS.yes, tHub("yes")),
         status(STATUS.partial, tHub("partial")),
       ],
     },
     {
-      feature: tHub("unlimitedSize"),
+      feature: tHub("table.unlimitedSize"),
       values: [
         status(STATUS.yes, tHub("yes")),
         status(STATUS.yes, tHub("yes")),
       ],
     },
     {
-      feature: tHub("openSource"),
+      feature: tHub("table.openSource"),
       values: [status(STATUS.yes, tHub("yes")), status(STATUS.no, tHub("no"))],
     },
   ];
