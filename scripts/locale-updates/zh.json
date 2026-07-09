@@ -4,7 +4,7 @@
   },
   "hero": {
     "title": "这个星球上最快的文件传输体验",
-    "description": "从您的设备直接、加密传输文件给任何人、任何地方 — 无需账户，中间没有云存储。",
+    "description": "从您的设备直接、加密传输文件给任何人、任何地方，无需账户，中间没有云存储。",
     "airdropQuote": "把它想象成适用于任何设备、任何网络的 AirDrop。"
   },
   "howItWorks": {
@@ -67,7 +67,7 @@
   },
   "underTheHoodPage": {
     "metaTitle": "底层原理",
-    "metaDescription": "了解 AltSendme 如何通过票据、iroh、QUIC 加密、NAT 穿透和开源中继实现直接点对点文件传输 — 无需账户或 IP 地址。",
+    "metaDescription": "了解 AltSendme 如何通过票据、iroh、QUIC 加密、NAT 穿透和开源中继实现直接点对点文件传输, 无需账户或 IP 地址。",
     "title": "底层原理",
     "intro": "就像 scp，但无需知道 IP 地址。将文件添加到 AltSendme，它会给你一个可粘贴的票据，交给任何需要这些文件的人。AltSendme 会直接连接你的设备并传输数据，无需账户或配置。",
     "heroAlt": "AltSendme 主视觉图",
@@ -132,6 +132,6 @@
     "email": "输入您的邮箱",
     "message": "在此输入",
     "submit": "提交",
-    "imageAlt": "创世纪·亚当的创造 — 伸手连接"
+    "imageAlt": "创世纪·亚当的创造, 伸手连接"
   }
 }

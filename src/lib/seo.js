@@ -49,6 +49,8 @@ export const SITE_ROUTES = [
   "compare",
   "compare/localsend",
   "compare/blip",
+  "compare/wormhole",
+  "compare/pairdrop",
 ];
 
 export const SEO_KEYWORDS = [

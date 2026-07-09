@@ -24,6 +24,12 @@ const FOOTER_NAV_GRID = [
     { key: "compare", href: "/compare" },
   ],
   [
+    { key: "compareLocalsend", href: "/compare/localsend" },
+    { key: "compareBlip", href: "/compare/blip" },
+    { key: "compareWormhole", href: "/compare/wormhole" },
+    { key: "comparePairdrop", href: "/compare/pairdrop" },
+  ],
+  [
     { key: "contactUs", href: "/contact" },
     {
       key: "githubSponsors",

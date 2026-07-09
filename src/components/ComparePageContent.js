@@ -5,10 +5,10 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowsLeftRight,
-  DownloadSimple,
-  Globe,
+  Browsers,
   Question,
   Scales,
+  Terminal,
   WifiHigh,
 } from "@phosphor-icons/react";
 import { Link } from "@/i18n/routing";
@@ -20,6 +20,11 @@ import ComparisonMatrix, {
   text,
 } from "@/components/ComparisonMatrix";
 import { buildCompareHubTable } from "@/lib/compareHubTable";
+import {
+  buildLocalsendFaqs,
+  buildWormholeFaqs,
+  buildPairdropFaqs,
+} from "@/constants/compareFaqs";
 
 function PageShell({ children }) {
   return (
@@ -42,7 +47,7 @@ function DarkHero({ eyebrow, title, lead, backHref, backLabel }) {
       >
         <div className="absolute inset-0 dark-grain opacity-40" />
       </div>
-      <div className="relative z-10 mx-auto w-full max-w-[1200px] px-5 py-12 md:px-10 md:py-16 lg:px-[60px] lg:py-20">
+      <div className="relative z-10 mx-auto w-full max-w-[1200px] px-5 py-12 md:px-10 md:py-16 lg:px-0 lg:py-20">
         {backHref && (
           <Link
             href={backHref}
@@ -79,35 +84,6 @@ function SectionHeading({ icon: Icon, children }) {
       <h2 className="font-funnel-sans text-2xl font-bold text-[#121212] md:text-3xl">
         {children}
       </h2>
-    </div>
-  );
-}
-
-function CtaBlock({ downloadLabel, underTheHoodLabel, builtOnIrohLabel }) {
-  return (
-    <div className="mt-10 flex flex-wrap items-center gap-3 md:mt-12 md:gap-4">
-      <Link
-        href="/downloads"
-        className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#121212] px-6 text-sm font-medium text-white transition-colors hover:bg-[#2a2a2a] md:text-base"
-      >
-        <DownloadSimple size={18} weight="bold" aria-hidden="true" />
-        {downloadLabel}
-      </Link>
-      <Link
-        href="/under-the-hood"
-        className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-[#D3D2CD] bg-white px-6 text-sm font-medium text-[#121212] transition-colors hover:border-[#73411F] hover:text-[#73411F] md:text-base"
-      >
-        {underTheHoodLabel}
-      </Link>
-      <a
-        href="https://www.iroh.computer"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-[#D3D2CD] bg-white px-6 text-sm font-medium text-[#121212] transition-colors hover:border-[#73411F] hover:text-[#73411F] md:text-base"
-      >
-        <Globe size={18} weight="regular" aria-hidden="true" />
-        {builtOnIrohLabel}
-      </a>
     </div>
   );
 }
@@ -188,6 +164,18 @@ export function CompareHubContent() {
       title: t("blipCardTitle"),
       desc: t("blipCardDesc"),
     },
+    {
+      href: "/compare/wormhole",
+      icon: Terminal,
+      title: t("wormholeCardTitle"),
+      desc: t("wormholeCardDesc"),
+    },
+    {
+      href: "/compare/pairdrop",
+      icon: Browsers,
+      title: t("pairdropCardTitle"),
+      desc: t("pairdropCardDesc"),
+    },
   ];
 
   return (
@@ -237,17 +225,6 @@ export function CompareHubContent() {
                 );
               })}
             </div>
-          </div>
-
-          <div className="mt-14 border border-[#D3D2CD] bg-[#FBF8F3] p-6 md:mt-16 md:p-10">
-            <h2 className="font-funnel-sans text-2xl font-bold text-[#121212] md:text-3xl">
-              {t("ctaTitle")}
-            </h2>
-            <CtaBlock
-              downloadLabel={s("downloadCta")}
-              underTheHoodLabel={t("underTheHood")}
-              builtOnIrohLabel={t("builtOnIroh")}
-            />
           </div>
         </div>
       </section>
@@ -310,11 +287,7 @@ export function CompareLocalSendContent() {
     },
   ];
 
-  const faqs = [
-    { q: t("faq1q"), a: t("faq1a") },
-    { q: t("faq2q"), a: t("faq2a") },
-    { q: t("faq3q"), a: t("faq3a") },
-  ];
+  const faqs = buildLocalsendFaqs(t);
 
   return (
     <PageShell>
@@ -358,12 +331,6 @@ export function CompareLocalSendContent() {
             <SectionHeading icon={Question}>{t("faqTitle")}</SectionHeading>
             <FaqList items={faqs} />
           </div>
-
-          <CtaBlock
-            downloadLabel={s("downloadCta")}
-            underTheHoodLabel={tHub("underTheHood")}
-            builtOnIrohLabel={tHub("builtOnIroh")}
-          />
         </div>
       </section>
     </PageShell>
@@ -471,12 +438,217 @@ export function CompareBlipContent() {
             <SectionHeading icon={Question}>{t("faqTitle")}</SectionHeading>
             <FaqList items={faqs} />
           </div>
+        </div>
+      </section>
+    </PageShell>
+  );
+}
 
-          <CtaBlock
-            downloadLabel={s("downloadCta")}
-            underTheHoodLabel={tHub("underTheHood")}
-            builtOnIrohLabel={tHub("builtOnIroh")}
-          />
+export function CompareWormholeContent() {
+  const t = useTranslations("comparePage.wormhole");
+  const s = useTranslations("comparePage.shared");
+  const tHub = useTranslations("comparePage.hub");
+
+  const columns = [s("altsendme"), s("wormhole")];
+  const rows = [
+    {
+      feature: s("network"),
+      values: [text(s("internet")), text(s("internet"))],
+    },
+    {
+      feature: s("speed"),
+      values: [text(s("speedGigabit")), text(s("speedDirect"))],
+    },
+    {
+      feature: s("cli"),
+      values: [text(s("cliYes")), text(s("cliYes"))],
+    },
+    {
+      feature: s("license"),
+      values: [text(s("agpl")), text(s("foss"))],
+    },
+    {
+      feature: s("cost"),
+      values: [text(s("free")), text(s("free"))],
+    },
+    {
+      feature: s("encryption"),
+      values: [text(s("quic")), text(s("encryptedTcp"))],
+    },
+    {
+      feature: s("discovery"),
+      values: [text(s("tickets")), text(s("shortCodes"))],
+    },
+    {
+      feature: s("stack"),
+      values: [text(s("iroh")), text(tHub("table.protocolWormhole"))],
+    },
+    {
+      feature: tHub("table.resumable"),
+      values: [status(STATUS.yes, tHub("yes")), status(STATUS.no, tHub("no"))],
+    },
+    {
+      feature: tHub("table.platforms"),
+      values: [
+        text(tHub("table.platformsAltsendme")),
+        text(tHub("table.platformsWormhole")),
+      ],
+    },
+  ];
+
+  const faqs = buildWormholeFaqs(t);
+
+  return (
+    <PageShell>
+      <DarkHero
+        eyebrow={s("wormhole")}
+        title={t("title")}
+        lead={t("lead")}
+        backHref="/compare"
+        backLabel={s("backToCompare")}
+      />
+
+      <section className="w-full px-5 py-12 md:px-10 md:py-16 lg:px-[60px] lg:py-20">
+        <div className="mx-auto w-full max-w-[1200px]">
+          <SectionHeading icon={Scales}>{t("tableTitle")}</SectionHeading>
+          <ComparisonMatrix columns={columns} rows={rows} />
+
+          <div className="mt-14 md:mt-16">
+            <SectionHeading icon={Terminal}>{t("whenTitle")}</SectionHeading>
+            <div className="grid gap-4 md:grid-cols-2">
+              <WhenList
+                title={t("whenWormholeTitle")}
+                items={[
+                  t("whenWormhole1"),
+                  t("whenWormhole2"),
+                  t("whenWormhole3"),
+                ]}
+              />
+              <WhenList
+                highlighted
+                title={t("whenAltsendmeTitle")}
+                items={[
+                  t("whenAltsendme1"),
+                  t("whenAltsendme2"),
+                  t("whenAltsendme3"),
+                ]}
+              />
+            </div>
+          </div>
+
+          <div className="mt-14 md:mt-16">
+            <SectionHeading icon={Question}>{t("faqTitle")}</SectionHeading>
+            <FaqList items={faqs} />
+          </div>
+        </div>
+      </section>
+    </PageShell>
+  );
+}
+
+export function ComparePairdropContent() {
+  const t = useTranslations("comparePage.pairdrop");
+  const s = useTranslations("comparePage.shared");
+  const tHub = useTranslations("comparePage.hub");
+
+  const columns = [s("altsendme"), s("pairdrop")];
+  const rows = [
+    {
+      feature: s("network"),
+      values: [text(s("internet")), text(s("internet"))],
+    },
+    {
+      feature: s("speed"),
+      values: [text(s("speedGigabit")), text(s("speedBrowser"))],
+    },
+    {
+      feature: s("cli"),
+      values: [text(s("cliYes")), status(STATUS.partial, tHub("partial"))],
+    },
+    {
+      feature: s("license"),
+      values: [text(s("agpl")), text(s("foss"))],
+    },
+    {
+      feature: s("cost"),
+      values: [text(s("free")), text(s("free"))],
+    },
+    {
+      feature: s("encryption"),
+      values: [text(s("quic")), text(s("webrtcStack"))],
+    },
+    {
+      feature: s("discovery"),
+      values: [text(s("tickets")), text(s("pagePairing"))],
+    },
+    {
+      feature: s("stack"),
+      values: [text(s("iroh")), text(tHub("table.protocolPairdrop"))],
+    },
+    {
+      feature: tHub("table.resumable"),
+      values: [status(STATUS.yes, tHub("yes")), status(STATUS.no, tHub("no"))],
+    },
+    {
+      feature: tHub("table.unlimitedSize"),
+      values: [
+        status(STATUS.yes, tHub("yes")),
+        status(STATUS.partial, tHub("table.sizePairdrop")),
+      ],
+    },
+    {
+      feature: tHub("table.platforms"),
+      values: [
+        text(tHub("table.platformsAltsendme")),
+        text(tHub("table.platformsPairdrop")),
+      ],
+    },
+  ];
+
+  const faqs = buildPairdropFaqs(t);
+
+  return (
+    <PageShell>
+      <DarkHero
+        eyebrow={s("pairdrop")}
+        title={t("title")}
+        lead={t("lead")}
+        backHref="/compare"
+        backLabel={s("backToCompare")}
+      />
+
+      <section className="w-full px-5 py-12 md:px-10 md:py-16 lg:px-[60px] lg:py-20">
+        <div className="mx-auto w-full max-w-[1200px]">
+          <SectionHeading icon={Scales}>{t("tableTitle")}</SectionHeading>
+          <ComparisonMatrix columns={columns} rows={rows} />
+
+          <div className="mt-14 md:mt-16">
+            <SectionHeading icon={Browsers}>{t("whenTitle")}</SectionHeading>
+            <div className="grid gap-4 md:grid-cols-2">
+              <WhenList
+                title={t("whenPairdropTitle")}
+                items={[
+                  t("whenPairdrop1"),
+                  t("whenPairdrop2"),
+                  t("whenPairdrop3"),
+                ]}
+              />
+              <WhenList
+                highlighted
+                title={t("whenAltsendmeTitle")}
+                items={[
+                  t("whenAltsendme1"),
+                  t("whenAltsendme2"),
+                  t("whenAltsendme3"),
+                ]}
+              />
+            </div>
+          </div>
+
+          <div className="mt-14 md:mt-16">
+            <SectionHeading icon={Question}>{t("faqTitle")}</SectionHeading>
+            <FaqList items={faqs} />
+          </div>
         </div>
       </section>
     </PageShell>

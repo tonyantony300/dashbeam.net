@@ -10,6 +10,8 @@
 - [Compare](https://altsendme.com/en/compare): vs LocalSend, Blip, WeTransfer, FilePizza
 - [vs LocalSend](https://altsendme.com/en/compare/localsend): LocalSend alternative for the internet
 - [vs Blip](https://altsendme.com/en/compare/blip): Open-source Blip alternative
+- [vs Magic Wormhole](https://altsendme.com/en/compare/wormhole): GUI alternative with resumable folders
+- [vs PairDrop](https://altsendme.com/en/compare/pairdrop): Native alternative without browser WebRTC limits
 - [Under the hood](https://altsendme.com/en/under-the-hood): Tickets, blobs, QUIC, relays
 - [GitHub](https://github.com/tonyantony300/alt-sendme): Source code (AGPL-3.0)
 - [Iroh](https://www.iroh.computer): Networking stack

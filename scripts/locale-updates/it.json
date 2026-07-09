@@ -4,7 +4,7 @@
   },
   "hero": {
     "title": "L'esperienza di trasferimento file più veloce su questo pianeta",
-    "description": "Trasferimenti diretti e crittografati dai tuoi dispositivi a chiunque, ovunque — nessun account, nessun cloud storage in mezzo.",
+    "description": "Trasferimenti diretti e crittografati dai tuoi dispositivi a chiunque, ovunque, nessun account, nessun cloud storage in mezzo.",
     "airdropQuote": "Pensalo come AirDrop per qualsiasi dispositivo, qualsiasi rete."
   },
   "howItWorks": {
@@ -67,7 +67,7 @@
   },
   "underTheHoodPage": {
     "metaTitle": "Sotto il cofano",
-    "metaDescription": "Scopri come AltSendme abilita trasferimenti file peer-to-peer diretti con ticket, iroh, crittografia QUIC, NAT traversal e relay open source — senza account o indirizzi IP.",
+    "metaDescription": "Scopri come AltSendme abilita trasferimenti file peer-to-peer diretti con ticket, iroh, crittografia QUIC, NAT traversal e relay open source, senza account o indirizzi IP.",
     "title": "Sotto il cofano",
     "intro": "È come scp senza dover conoscere l'indirizzo IP. Aggiungi file ad AltSendme e otterrai un ticket incollabile da dare a chiunque abbia bisogno dei tuoi file. AltSendme collegherà i tuoi dispositivi direttamente e trasferirà i dati senza account o configurazione.",
     "heroAlt": "Grafica hero AltSendme",
@@ -131,6 +131,6 @@
     "email": "Inserisci la tua email",
     "message": "Scrivi qui",
     "submit": "Invia",
-    "imageAlt": "La Creazione di Adamo — tendere la mano per connettersi"
+    "imageAlt": "La Creazione di Adamo, tendere la mano per connettersi"
   }
 }

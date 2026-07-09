@@ -1,9 +1,9 @@
 import { getTranslations } from "next-intl/server";
 import { absoluteUrl } from "@/lib/seo";
-import { CompareLocalSendContent } from "@/components/ComparePageContent";
-import { buildLocalsendFaqs } from "@/constants/compareFaqs";
+import { ComparePairdropContent } from "@/components/ComparePageContent";
+import { buildPairdropFaqs } from "@/constants/compareFaqs";
 
-function CompareLocalSendJsonLd({ faqs, breadcrumbs }) {
+function ComparePairdropJsonLd({ faqs, breadcrumbs }) {
   const data = [
     {
       "@context": "https://schema.org",
@@ -37,26 +37,26 @@ function CompareLocalSendJsonLd({ faqs, breadcrumbs }) {
   );
 }
 
-export default async function CompareLocalSendPage({ params }) {
+export default async function ComparePairdropPage({ params }) {
   const { locale } = await params;
   const t = await getTranslations({
     locale,
-    namespace: "comparePage.localsend",
+    namespace: "comparePage.pairdrop",
   });
   const tFooter = await getTranslations({ locale, namespace: "footer" });
 
-  const faqs = buildLocalsendFaqs(t);
+  const faqs = buildPairdropFaqs(t);
 
   const breadcrumbs = [
     { name: "AltSendme", url: absoluteUrl(locale) },
     { name: tFooter("compare"), url: absoluteUrl(locale, "compare") },
-    { name: t("title"), url: absoluteUrl(locale, "compare/localsend") },
+    { name: t("title"), url: absoluteUrl(locale, "compare/pairdrop") },
   ];
 
   return (
     <>
-      <CompareLocalSendJsonLd faqs={faqs} breadcrumbs={breadcrumbs} />
-      <CompareLocalSendContent />
+      <ComparePairdropJsonLd faqs={faqs} breadcrumbs={breadcrumbs} />
+      <ComparePairdropContent />
     </>
   );
 }
