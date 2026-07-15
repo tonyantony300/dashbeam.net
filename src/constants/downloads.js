@@ -5,8 +5,8 @@ export const DONATE_LINKS = {
   githubSponsors: "https://github.com/sponsors/tonyantony300",
 };
 
-export const DESKTOP_VERSION = "0.5.0";
-export const ANDROID_VERSION = "v0.5.0";
+export const DESKTOP_VERSION = "0.6.0";
+export const ANDROID_VERSION = "v0.6.0";
 export const WEB_APP_URL = "https://app.altsendme.com";
 const DESKTOP_TAG = `v${DESKTOP_VERSION}`;
 
@@ -41,7 +41,7 @@ export const primaryDownloadsByOs = {
     tag: DESKTOP_TAG,
     translationKey: "getAppForMac",
     heroTranslationKey: "hero.downloadForMac",
-    size: "32 MB",
+    size: "34 MB",
   },
   web: {
     id: "web",
@@ -66,7 +66,7 @@ export const primaryDownloadsByOs = {
     tag: DESKTOP_TAG,
     translationKey: "getAppForWindows",
     heroTranslationKey: "hero.downloadForWindows",
-    size: "9 MB",
+    size: "10 MB",
   },
   linux: {
     id: "linux-appimage",
@@ -75,7 +75,7 @@ export const primaryDownloadsByOs = {
     tag: DESKTOP_TAG,
     translationKey: "getAppForLinux",
     heroTranslationKey: "hero.downloadForLinux",
-    size: "91 MB",
+    size: "92 MB",
   },
   "linux-arm64": {
     id: "linux-appimage-arm64",
@@ -93,7 +93,7 @@ export const primaryDownloadsByOs = {
     tag: ANDROID_VERSION,
     translationKey: "getAppForAndroid",
     heroTranslationKey: "hero.downloadForAndroid",
-    size: "46 MB",
+    size: "48 MB",
   },
 };
 
@@ -105,19 +105,19 @@ export const desktopPlatformGroups = [
         key: "universalDmg",
         file: `AltSendme_${DESKTOP_VERSION}_universal.dmg`,
         tag: DESKTOP_TAG,
-        size: "32 MB",
+        size: "34 MB",
       },
       {
         key: "x64Dmg",
         file: `AltSendme_${DESKTOP_VERSION}_x64.dmg`,
         tag: DESKTOP_TAG,
-        size: "17 MB",
+        size: "18 MB",
       },
       {
         key: "aarch64Dmg",
         file: `AltSendme_${DESKTOP_VERSION}_aarch64.dmg`,
         tag: DESKTOP_TAG,
-        size: "15 MB",
+        size: "16 MB",
       },
     ],
   },
@@ -131,16 +131,28 @@ export const desktopPlatformGroups = [
         size: "11 MB",
       },
       {
+        key: "portableZip",
+        file: `AltSendme_${DESKTOP_VERSION}_x64-portable.zip`,
+        tag: DESKTOP_TAG,
+        size: "15 MB",
+      },
+      {
         key: "msi",
         file: `AltSendme_${DESKTOP_VERSION}_x64_en-US.msi`,
         tag: DESKTOP_TAG,
-        size: "15 MB",
+        size: "16 MB",
       },
       {
         key: "arm64Exe",
         file: `AltSendme_${DESKTOP_VERSION}_arm64-setup.exe`,
         tag: DESKTOP_TAG,
-        size: "9 MB",
+        size: "10 MB",
+      },
+      {
+        key: "arm64PortableZip",
+        file: `AltSendme_${DESKTOP_VERSION}_arm64-portable.zip`,
+        tag: DESKTOP_TAG,
+        size: "15 MB",
       },
     ],
   },
@@ -151,19 +163,19 @@ export const desktopPlatformGroups = [
         key: "appImage",
         file: `AltSendme_${DESKTOP_VERSION}_amd64.AppImage`,
         tag: DESKTOP_TAG,
-        size: "91 MB",
+        size: "92 MB",
       },
       {
         key: "debian",
         file: `AltSendme_${DESKTOP_VERSION}_amd64.deb`,
         tag: DESKTOP_TAG,
-        size: "14 MB",
+        size: "15 MB",
       },
       {
         key: "rpm",
         file: `AltSendme-${DESKTOP_VERSION}-1.x86_64.rpm`,
         tag: DESKTOP_TAG,
-        size: "19 MB",
+        size: "20 MB",
       },
       {
         key: "aarch64AppImage",
@@ -181,7 +193,7 @@ export const desktopPlatformGroups = [
         key: "aarch64Rpm",
         file: `AltSendme-${DESKTOP_VERSION}-1.aarch64.rpm`,
         tag: DESKTOP_TAG,
-        size: "19 MB",
+        size: "20 MB",
       },
     ],
   },
@@ -195,19 +207,19 @@ export const mobilePlatformGroups = [
         key: "arm64Apk",
         file: `AltSendme-${ANDROID_VERSION}-arm64.apk`,
         tag: ANDROID_VERSION,
-        size: "46 MB",
+        size: "48 MB",
       },
       {
         key: "armv7Apk",
         file: `AltSendme-${ANDROID_VERSION}-armv7.apk`,
         tag: ANDROID_VERSION,
-        size: "33 MB",
+        size: "34 MB",
       },
       {
         key: "universalApk",
         file: `AltSendme-${ANDROID_VERSION}-universal.apk`,
         tag: ANDROID_VERSION,
-        size: "161 MB",
+        size: "169 MB",
       },
     ],
   },
