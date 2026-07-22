@@ -1,11 +1,14 @@
-![AltSendme](public/linkedin%20cover.jpg)
+# DashBeam (previously AltSendme)
+
+
+![DashBeam](public/linkedin%20cover.jpg)
 
 
 
-![AltSendme](public/theme.jpg)
+![DashBeam](public/theme.jpg)
 
 
-![AltSendme](public/shots.jpg)
+![DashBeam](public/shots.jpg)
 
 
 <h4 align="center">
@@ -24,6 +27,8 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the site.
+
+The marketing site is published at [https://dashbeam.net](https://dashbeam.net) (formerly AltSendme / altsendme.com).
 
 ## Contributing
 

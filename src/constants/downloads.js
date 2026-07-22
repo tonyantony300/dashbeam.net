@@ -1,4 +1,5 @@
-const RELEASE_BASE = "https://github.com/tonyantony300/alt-sendme/releases/download";
+const RELEASE_BASE =
+  "https://github.com/tonyantony300/dashbeam/releases/download";
 
 export const DONATE_LINKS = {
   buyMeACoffee: "https://buymeacoffee.com/tny_antny",

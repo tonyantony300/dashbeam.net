@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { PRESS_LINKS } from "@/lib/seo";
+import { BRAND_NAME, GITHUB_REPO_URL, PRESS_LINKS } from "@/lib/seo";
 
 const PRESS_ITEMS = [
   { name: "Softpedia", url: PRESS_LINKS.softpediaMac },
@@ -16,7 +16,7 @@ const FOOTER_NAV_GRID = [
   [
     {
       key: "sourceCode",
-      href: "https://github.com/tonyantony300/alt-sendme",
+      href: GITHUB_REPO_URL,
       external: true,
     },
     { key: "howItWorks", href: "/under-the-hood" },
@@ -126,15 +126,18 @@ export default function Footer() {
           <div className="flex items-center gap-4 md:gap-6">
             <Image
               src="/Altsendmelogo.png"
-              alt="AltSendme logo"
+              alt={`${BRAND_NAME} logo`}
               width={220}
               height={220}
               className="h-24 w-24 shrink-0 sm:h-32 sm:w-32 md:h-40 md:w-40 lg:h-48 lg:w-48"
             />
             <span className="min-w-0 font-funnel-sans text-[clamp(2.75rem,12.1vw,3.85rem)] font-extrabold leading-none tracking-tighter text-accent sm:text-[clamp(2.75rem,12vw,4.5rem)] md:text-[clamp(3rem,12vw,6rem)] lg:text-[clamp(3.5rem,15vw,10rem)]">
-              AltSendme
+              {BRAND_NAME}
             </span>
           </div>
+          <p className="font-inter text-xs text-white/60 sm:text-sm">
+            {t("formerlyKnownAs")}
+          </p>
           <div className="flex flex-col gap-2 font-inter text-xs text-white/60">
             <p>{t("asSeenIn")}</p>
             <p className="flex flex-wrap gap-x-1 gap-y-1">

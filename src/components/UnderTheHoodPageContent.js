@@ -155,7 +155,7 @@ export default function UnderTheHoodPageContent() {
               {t("downloadCta")}
             </Link>
             <a
-              href="https://github.com/tonyantony300/alt-sendme"
+              href="https://github.com/tonyantony300/dashbeam"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-[#D3D2CD] bg-white px-6 text-sm font-medium text-[#121212] transition-colors hover:border-[#73411F] hover:text-[#73411F] md:text-base"

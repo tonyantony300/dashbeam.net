@@ -1,6 +1,14 @@
 import { getTranslations } from "next-intl/server";
 import { DESKTOP_VERSION } from "@/constants/downloads";
-import { PRESS_LINKS, SITE_URL } from "@/lib/seo";
+import {
+  BRAND_FORMER_NAMES,
+  BRAND_NAME,
+  GITHUB_REPO_URL,
+  GITHUB_REPO_URL_LEGACY,
+  PRESS_LINKS,
+  SITE_URL,
+  absoluteUrl,
+} from "@/lib/seo";
 
 /** Homepage-only FAQ schema; FAQPage markup must match visible page content */
 export async function HomeFaqStructuredData({ locale }) {
@@ -15,6 +23,7 @@ export async function HomeFaqStructuredData({ locale }) {
     "faq6",
     "faq7",
     "faq8",
+    "faq9",
   ];
 
   // JSON-LD requires plain strings; strip rich-text tags like <link>/<compareLink>
@@ -48,7 +57,8 @@ export default async function StructuredData({ locale }) {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "AltSendme",
+    name: BRAND_NAME,
+    alternateName: BRAND_FORMER_NAMES,
     applicationCategory: "FileTransferApplication",
     operatingSystem: ["Windows", "macOS", "Linux", "Android", "Web"],
     offers: {
@@ -79,13 +89,15 @@ export default async function StructuredData({ locale }) {
       name: "tonyantony300",
       url: "https://github.com/tonyantony300",
     },
-    downloadUrl: "https://altsendme.com/en/downloads",
-    codeRepository: "https://github.com/tonyantony300/alt-sendme",
+    url: SITE_URL,
+    downloadUrl: absoluteUrl("en", "downloads"),
+    codeRepository: GITHUB_REPO_URL,
     isAccessibleForFree: true,
     softwareHelp: "https://www.iroh.computer/docs/faq",
     applicationSubCategory: "File Sharing",
     sameAs: [
-      "https://github.com/tonyantony300/alt-sendme",
+      GITHUB_REPO_URL,
+      GITHUB_REPO_URL_LEGACY,
       PRESS_LINKS.softpediaMac,
       PRESS_LINKS.softpediaLinux,
       PRESS_LINKS.softpediaWindows,
@@ -96,9 +108,9 @@ export default async function StructuredData({ locale }) {
       PRESS_LINKS.hnSendme,
       PRESS_LINKS.hnWormhole,
     ],
-    screenshot: "https://altsendme.com/og-image.png",
+    screenshot: `${SITE_URL}/og-image.png`,
     keywords:
-      "file transfer, peer-to-peer, P2P, LocalSend alternative, Blip alternative, encrypted, open source, iroh, sendme",
+      "DashBeam, open source Blip alternative, Blip alternative, blip.net alternative, AltSendme, Alt Send Me, alt-sendme, file transfer, peer-to-peer, P2P, LocalSend alternative, encrypted, open source, iroh, sendme",
     inLanguage: ["en", "fr", "th", "de", "zh", "ja", "ru", "ko", "it"],
     browserRequirements:
       "Native app recommended; web app available at app.altsendme.com",
@@ -110,8 +122,11 @@ export default async function StructuredData({ locale }) {
   const webSiteStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "AltSendme",
-    alternateName: "AltSendme - Peer-to-peer file transfer",
+    name: BRAND_NAME,
+    alternateName: [
+      ...BRAND_FORMER_NAMES,
+      "DashBeam - Peer-to-peer file transfer",
+    ],
     url: SITE_URL,
     inLanguage: locale,
     publisher: {

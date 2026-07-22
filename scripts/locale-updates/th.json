@@ -17,7 +17,7 @@
     }
   },
   "features": {
-    "title": "ทำไมผู้คนถึงชอบ AltSendme",
+    "title": "ทำไมผู้คนถึงชอบ DashBeam",
     "items": {
       "directSend": {
         "title": "ส่งไฟล์โดยตรง ไม่มีคนกลาง",
@@ -29,7 +29,7 @@
       },
       "noSizeLimits": {
         "title": "ไม่จำกัดขนาด ไม่จำกัดจริงๆ",
-        "description": "ตั้งแต่ KB's ถึง 999GB's AltSendme ช่วยให้คุณแชร์ไฟล์ขนาดไม่จำกัด"
+        "description": "ตั้งแต่ KB's ถึง 999GB's DashBeam ช่วยให้คุณแชร์ไฟล์ขนาดไม่จำกัด"
       },
       "blazingFast": {
         "title": "เร็วทันใจและเชื่อถือได้",
@@ -67,10 +67,10 @@
   },
   "underTheHoodPage": {
     "metaTitle": "เบื้องหลังการทำงาน",
-    "metaDescription": "เรียนรู้ว่า AltSendme เปิดใช้งานการถ่ายโอนไฟล์ peer-to-peer โดยตรงด้วยตั๋ว iroh การเข้ารหัส QUIC NAT traversal และ relay โอเพนซอร์ส, ไม่ต้องมีบัญชีหรือ IP address",
+    "metaDescription": "เรียนรู้ว่า DashBeam เปิดใช้งานการถ่ายโอนไฟล์ peer-to-peer โดยตรงด้วยตั๋ว iroh การเข้ารหัส QUIC NAT traversal และ relay โอเพนซอร์ส, ไม่ต้องมีบัญชีหรือ IP address",
     "title": "เบื้องหลังการทำงาน",
-    "intro": "เหมือน scp โดยไม่ต้องรู้ IP address เพิ่มไฟล์ใน AltSendme แล้วจะได้ตั๋วที่วางได้ให้ใครก็ตามที่ต้องการไฟล์ของคุณ AltSendme จะเชื่อมอุปกรณ์โดยตรงและถ่ายโอนข้อมูลโดยไม่ต้องมีบัญชีหรือการตั้งค่า",
-    "heroAlt": "กราฟิก hero ของ AltSendme",
+    "intro": "เหมือน scp โดยไม่ต้องรู้ IP address เพิ่มไฟล์ใน DashBeam แล้วจะได้ตั๋วที่วางได้ให้ใครก็ตามที่ต้องการไฟล์ของคุณ DashBeam จะเชื่อมอุปกรณ์โดยตรงและถ่ายโอนข้อมูลโดยไม่ต้องมีบัญชีหรือการตั้งค่า",
+    "heroAlt": "กราฟิก hero ของ DashBeam",
     "conceptsTitle": "แนวคิดสำคัญ",
     "concepts": {
       "blobs": "Blobs",
@@ -114,10 +114,10 @@
       },
       "relays": {
         "title": "Relay",
-        "body": "AltSendme ใช้ relay server สาธารณะโอเพนซอร์สเพื่อสร้างการเชื่อมต่อตรง เร่งเวลาเชื่อมต่อเริ่มต้น และเป็น fallback หากการเชื่อมต่อตรงล้มเหลว การเชื่อมต่อทั้งหมดเข้ารหัส E2E relay เป็น \"UDP socket อีกตัว\" สำหรับส่งแพ็กเก็ตที่เข้ารหัส <link>อ่านเพิ่มเติม</link>"
+        "body": "DashBeam ใช้ relay server สาธารณะโอเพนซอร์สเพื่อสร้างการเชื่อมต่อตรง เร่งเวลาเชื่อมต่อเริ่มต้น และเป็น fallback หากการเชื่อมต่อตรงล้มเหลว การเชื่อมต่อทั้งหมดเข้ารหัส E2E relay เป็น \"UDP socket อีกตัว\" สำหรับส่งแพ็กเก็ตที่เข้ารหัส <link>อ่านเพิ่มเติม</link>"
       }
     },
-    "downloadCta": "ดาวน์โหลด AltSendme",
+    "downloadCta": "ดาวน์โหลด DashBeam",
     "githubCta": "ดูบน GitHub"
   },
   "footer": {

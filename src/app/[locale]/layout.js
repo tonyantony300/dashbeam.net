@@ -11,9 +11,12 @@ import {
 import { Analytics } from "@vercel/analytics/next";
 import { routing } from "@/i18n/routing";
 import {
+  BRAND_NAME,
+  GITHUB_REPO_URL,
   OG_LOCALE_MAP,
   PRESS_LINKS,
   SEO_KEYWORDS,
+  SITE_URL,
   absoluteUrl,
   pageAlternates,
 } from "@/lib/seo";
@@ -56,10 +59,10 @@ export async function generateMetadata({ params }) {
   const t = await getTranslations({ locale });
 
   return {
-    metadataBase: new URL("https://altsendme.com"),
+    metadataBase: new URL(SITE_URL),
     title: {
       default: t("meta.title"),
-      template: "%s | AltSendme",
+      template: `%s | ${BRAND_NAME}`,
     },
     description: t("meta.description"),
     keywords: SEO_KEYWORDS,
@@ -67,9 +70,9 @@ export async function generateMetadata({ params }) {
       { name: "tonyantony300", url: "https://github.com/tonyantony300" },
     ],
     creator: "tonyantony300",
-    publisher: "AltSendme",
+    publisher: BRAND_NAME,
     other: {
-      "github:repository": "https://github.com/tonyantony300/alt-sendme",
+      "github:repository": GITHUB_REPO_URL,
       "review:softpedia-mac": PRESS_LINKS.softpediaMac,
       "review:softpedia-linux": PRESS_LINKS.softpediaLinux,
       "review:neowin": PRESS_LINKS.neowin,
@@ -78,7 +81,7 @@ export async function generateMetadata({ params }) {
       "apple-mobile-web-app-status-bar-style": "black-translucent",
       "format-detection": "telephone=no",
     },
-    applicationName: "AltSendme",
+    applicationName: BRAND_NAME,
     category: "File Transfer Software",
     classification: "Desktop Application",
     icons: {
@@ -96,7 +99,7 @@ export async function generateMetadata({ params }) {
       type: "website",
       locale: OG_LOCALE_MAP[locale] || "en_US",
       url: absoluteUrl(locale),
-      siteName: "AltSendme",
+      siteName: BRAND_NAME,
       title: t("meta.title"),
       description: t("meta.description"),
       images: [
@@ -104,10 +107,10 @@ export async function generateMetadata({ params }) {
           url: "/og-image.png",
           width: 1200,
           height: 630,
-          alt: "AltSendme - Peer-to-peer file transfer application",
+          alt: `${BRAND_NAME} - Peer-to-peer file transfer application`,
         },
       ],
-      seeAlso: "https://github.com/tonyantony300/alt-sendme",
+      seeAlso: GITHUB_REPO_URL,
     },
     twitter: {
       card: "summary_large_image",

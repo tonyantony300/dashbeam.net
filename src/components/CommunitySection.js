@@ -4,7 +4,9 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import GithubIcon from '@/components/GithubIcon';
 
-const GITHUB_URL = 'https://github.com/tonyantony300/alt-sendme';
+import { GITHUB_REPO_URL } from "@/lib/seo";
+
+const GITHUB_URL = GITHUB_REPO_URL;
 const DISCORD_URL = 'https://discord.gg/xwb7z22Eve';
 
 const AVATAR_IMAGES = [

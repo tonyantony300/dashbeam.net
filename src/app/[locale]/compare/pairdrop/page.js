@@ -48,7 +48,7 @@ export default async function ComparePairdropPage({ params }) {
   const faqs = buildPairdropFaqs(t);
 
   const breadcrumbs = [
-    { name: "AltSendme", url: absoluteUrl(locale) },
+    { name: "DashBeam", url: absoluteUrl(locale) },
     { name: tFooter("compare"), url: absoluteUrl(locale, "compare") },
     { name: t("title"), url: absoluteUrl(locale, "compare/pairdrop") },
   ];

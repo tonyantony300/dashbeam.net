@@ -20,7 +20,7 @@ export default function Header() {
           >
             <Image
               src="/Altsendmelogo.png"
-              alt="Altsendme logo"
+              alt="DashBeam logo"
               width={32}
               height={32}
               priority
@@ -50,13 +50,13 @@ export default function Header() {
             <span>Donate</span>
           </a>
           <a
-            href="https://github.com/tonyantony300/alt-sendme"
+            href="https://github.com/tonyantony300/dashbeam"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1 md:gap-2 font-funnel-sans text-sm font-semibold text-[#452815] px-1.5 py-1.5 rounded-md "
           >
             <GithubIcon size={14} className="shrink-0" />
-            <span>8.5K</span>
+            <span>8.7K</span>
           </a>
           <Link
             href="/downloads"

@@ -17,7 +17,7 @@
     }
   },
   "features": {
-    "title": "人们喜爱 AltSendme 的原因",
+    "title": "人们喜爱 DashBeam 的原因",
     "items": {
       "directSend": {
         "title": "直接发送文件。没有中间人。",
@@ -29,7 +29,7 @@
       },
       "noSizeLimits": {
         "title": "无大小限制。真正无限。",
-        "description": "从 KB's 到 999GB's。AltSendme 帮助您分享无限大小的文件。"
+        "description": "从 KB's 到 999GB's。DashBeam 帮助您分享无限大小的文件。"
       },
       "blazingFast": {
         "title": "极速且可靠",
@@ -67,10 +67,10 @@
   },
   "underTheHoodPage": {
     "metaTitle": "底层原理",
-    "metaDescription": "了解 AltSendme 如何通过票据、iroh、QUIC 加密、NAT 穿透和开源中继实现直接点对点文件传输, 无需账户或 IP 地址。",
+    "metaDescription": "了解 DashBeam 如何通过票据、iroh、QUIC 加密、NAT 穿透和开源中继实现直接点对点文件传输, 无需账户或 IP 地址。",
     "title": "底层原理",
-    "intro": "就像 scp，但无需知道 IP 地址。将文件添加到 AltSendme，它会给你一个可粘贴的票据，交给任何需要这些文件的人。AltSendme 会直接连接你的设备并传输数据，无需账户或配置。",
-    "heroAlt": "AltSendme 主视觉图",
+    "intro": "就像 scp，但无需知道 IP 地址。将文件添加到 DashBeam，它会给你一个可粘贴的票据，交给任何需要这些文件的人。DashBeam 会直接连接你的设备并传输数据，无需账户或配置。",
+    "heroAlt": "DashBeam 主视觉图",
     "conceptsTitle": "重要概念",
     "concepts": {
       "blobs": "Blobs",
@@ -114,10 +114,10 @@
       },
       "relays": {
         "title": "中继",
-        "body": "AltSendme 使用开源公共中继服务器来建立直接连接、加快初始连接，并在直接连接失败时提供回退。所有连接均端到端加密。中继只是发送加密数据包的“另一个 UDP 套接字”。<link>了解更多</link>。"
+        "body": "DashBeam 使用开源公共中继服务器来建立直接连接、加快初始连接，并在直接连接失败时提供回退。所有连接均端到端加密。中继只是发送加密数据包的“另一个 UDP 套接字”。<link>了解更多</link>。"
       }
     },
-    "downloadCta": "下载 AltSendme",
+    "downloadCta": "下载 DashBeam",
     "githubCta": "在 GitHub 上查看"
   },
   "footer": {

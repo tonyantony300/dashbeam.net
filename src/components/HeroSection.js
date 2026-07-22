@@ -41,11 +41,11 @@ export default function HeroSection() {
     {
       title: "Free, for files & folders of any size",
       description:
-        "AltSendme works by connecting sender and receiver directly, so there's no need to upload to a server, which means your transfers are truly private.",
+        "DashBeam works by connecting sender and receiver directly, so there's no need to upload to a server, which means your transfers are truly private.",
     },
     {
       title: "Fast",
-      description: "AltSendme can saturate a 4Gbps connection.",
+      description: "DashBeam can saturate a 4Gbps connection.",
     },
     {
       title: "Resumable fetching",
@@ -67,11 +67,11 @@ export default function HeroSection() {
         <div className="absolute inset-0 hero-grain mix-blend-overlay opacity-[0.22]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1380px] mx-auto flex flex-col">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto flex flex-col">
         <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-8 lg:gap-12">
         <div className="flex flex-col items-center lg:items-start">
           <a
-            href="https://github.com/tonyantony300/alt-sendme"
+            href="https://github.com/tonyantony300/dashbeam"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center lg:justify-start gap-2 font-funnel-sans text-sm text-black px-4 py-1.5 rounded-full mb-6 border-[0.5px] border-white/40 bg-white/20 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.5)] hover:bg-white/30 transition-colors"

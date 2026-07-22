@@ -17,7 +17,7 @@
     }
   },
   "features": {
-    "title": "사람들이 AltSendme를 사랑하는 이유",
+    "title": "사람들이 DashBeam를 사랑하는 이유",
     "items": {
       "directSend": {
         "title": "파일을 직접 전송. 중개자 없음.",
@@ -29,7 +29,7 @@
       },
       "noSizeLimits": {
         "title": "크기 제한 없음. 진정한 무제한.",
-        "description": "KB's부터 999GB's까지. AltSendme는 무제한 크기의 파일 공유를 돕습니다."
+        "description": "KB's부터 999GB's까지. DashBeam는 무제한 크기의 파일 공유를 돕습니다."
       },
       "blazingFast": {
         "title": "초고속 & 안정적",
@@ -67,10 +67,10 @@
   },
   "underTheHoodPage": {
     "metaTitle": "내부 구조",
-    "metaDescription": "AltSendme가 티켓, iroh, QUIC 암호화, NAT 트래버설, 오픈 소스 릴레이로 직접 P2P 파일 전송을 가능하게 하는 방법을 알아보세요, 계정이나 IP 주소가 필요 없습니다.",
+    "metaDescription": "DashBeam가 티켓, iroh, QUIC 암호화, NAT 트래버설, 오픈 소스 릴레이로 직접 P2P 파일 전송을 가능하게 하는 방법을 알아보세요, 계정이나 IP 주소가 필요 없습니다.",
     "title": "내부 구조",
-    "intro": "IP 주소를 알 필요 없이 scp처럼 사용할 수 있습니다. AltSendme에 파일을 추가하면 붙여넣을 수 있는 티켓이 생성되어 필요한 사람에게 전달할 수 있습니다. AltSendme는 기기를 직접 연결하고 계정이나 설정 없이 데이터를 전송합니다.",
-    "heroAlt": "AltSendme 히어로 그래픽",
+    "intro": "IP 주소를 알 필요 없이 scp처럼 사용할 수 있습니다. DashBeam에 파일을 추가하면 붙여넣을 수 있는 티켓이 생성되어 필요한 사람에게 전달할 수 있습니다. DashBeam는 기기를 직접 연결하고 계정이나 설정 없이 데이터를 전송합니다.",
+    "heroAlt": "DashBeam 히어로 그래픽",
     "conceptsTitle": "중요 개념",
     "concepts": {
       "blobs": "Blobs",
@@ -114,10 +114,10 @@
       },
       "relays": {
         "title": "릴레이",
-        "body": "AltSendme는 오픈 소스 공개 릴레이 서버를 사용해 직접 연결을 설정하고, 초기 연결 시간을 단축하며, 직접 연결 실패 시 폴백을 제공합니다. 모든 연결은 E2E 암호화됩니다. 릴레이는 암호화된 패킷을 보내는 \"또 다른 UDP 소켓\"입니다. <link>더 읽기</link>."
+        "body": "DashBeam는 오픈 소스 공개 릴레이 서버를 사용해 직접 연결을 설정하고, 초기 연결 시간을 단축하며, 직접 연결 실패 시 폴백을 제공합니다. 모든 연결은 E2E 암호화됩니다. 릴레이는 암호화된 패킷을 보내는 \"또 다른 UDP 소켓\"입니다. <link>더 읽기</link>."
       }
     },
-    "downloadCta": "AltSendme 다운로드",
+    "downloadCta": "DashBeam 다운로드",
     "githubCta": "GitHub에서 보기"
   },
   "footer": {

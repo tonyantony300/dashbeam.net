@@ -27,7 +27,7 @@ export default async function ComparePage({ params }) {
   const tFooter = await getTranslations({ locale, namespace: "footer" });
 
   const breadcrumbs = [
-    { name: "AltSendme", url: absoluteUrl(locale) },
+    { name: "DashBeam", url: absoluteUrl(locale) },
     { name: tFooter("compare"), url: absoluteUrl(locale, "compare") },
   ];
 

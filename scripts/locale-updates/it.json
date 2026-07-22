@@ -17,7 +17,7 @@
     }
   },
   "features": {
-    "title": "Perché le persone amano AltSendme",
+    "title": "Perché le persone amano DashBeam",
     "items": {
       "directSend": {
         "title": "Invia file direttamente. Nessun intermediario.",
@@ -29,7 +29,7 @@
       },
       "noSizeLimits": {
         "title": "Nessun limite di dimensione. Veramente illimitato.",
-        "description": "Da KB's a 999GB's. AltSendme ti aiuta a condividere file di dimensioni illimitate."
+        "description": "Da KB's a 999GB's. DashBeam ti aiuta a condividere file di dimensioni illimitate."
       },
       "blazingFast": {
         "title": "Velocissimo e affidabile",
@@ -67,10 +67,10 @@
   },
   "underTheHoodPage": {
     "metaTitle": "Sotto il cofano",
-    "metaDescription": "Scopri come AltSendme abilita trasferimenti file peer-to-peer diretti con ticket, iroh, crittografia QUIC, NAT traversal e relay open source, senza account o indirizzi IP.",
+    "metaDescription": "Scopri come DashBeam abilita trasferimenti file peer-to-peer diretti con ticket, iroh, crittografia QUIC, NAT traversal e relay open source, senza account o indirizzi IP.",
     "title": "Sotto il cofano",
-    "intro": "È come scp senza dover conoscere l'indirizzo IP. Aggiungi file ad AltSendme e otterrai un ticket incollabile da dare a chiunque abbia bisogno dei tuoi file. AltSendme collegherà i tuoi dispositivi direttamente e trasferirà i dati senza account o configurazione.",
-    "heroAlt": "Grafica hero AltSendme",
+    "intro": "È come scp senza dover conoscere l'indirizzo IP. Aggiungi file ad DashBeam e otterrai un ticket incollabile da dare a chiunque abbia bisogno dei tuoi file. DashBeam collegherà i tuoi dispositivi direttamente e trasferirà i dati senza account o configurazione.",
+    "heroAlt": "Grafica hero DashBeam",
     "conceptsTitle": "Concetti importanti",
     "concepts": {
       "blobs": "Blobs",
@@ -114,10 +114,10 @@
       },
       "relays": {
         "title": "Relay",
-        "body": "AltSendme usa server relay pubblici open source per stabilire connessioni dirette, accelerare i tempi di connessione iniziali e fornire un fallback se le connessioni dirette falliscono. Tutte le connessioni sono crittografate end-to-end. Il relay è \"solo un altro socket UDP\" per inviare pacchetti crittografati. <link>Scopri di più</link>."
+        "body": "DashBeam usa server relay pubblici open source per stabilire connessioni dirette, accelerare i tempi di connessione iniziali e fornire un fallback se le connessioni dirette falliscono. Tutte le connessioni sono crittografate end-to-end. Il relay è \"solo un altro socket UDP\" per inviare pacchetti crittografati. <link>Scopri di più</link>."
       }
     },
-    "downloadCta": "Scarica AltSendme",
+    "downloadCta": "Scarica DashBeam",
     "githubCta": "Vedi su GitHub"
   },
   "footer": {

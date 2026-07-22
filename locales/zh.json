@@ -1,6 +1,6 @@
 {
   "common": {
-    "logo": "AltSendme",
+    "logo": "DashBeam",
     "donate": "捐赠",
     "buyMeACoffee": "请我喝杯咖啡",
     "openSourceAgpl": "开源 | AGPL 3.0",
@@ -25,7 +25,7 @@
     "sectionLabel": "安全即时。\n3 个简单步骤即可使用。",
     "step1": {
       "title": "拖放文件或文件夹",
-      "description": "AltSendme 为您的文件创建一个安全的一次性代码（称为\"票据\"）"
+      "description": "DashBeam 为您的文件创建一个安全的一次性代码（称为\"票据\"）"
     },
     "step2": {
       "title": "分享票据",
@@ -37,7 +37,7 @@
     }
   },
   "features": {
-    "titleLine1": "人们喜爱 AltSendme 的原因",
+    "titleLine1": "人们喜爱 DashBeam 的原因",
     "titleLine2": "用于日常文件共享",
     "items": {
       "directSend": {
@@ -50,7 +50,7 @@
       },
       "noSizeLimits": {
         "title": "无大小限制。真正无限。",
-        "description": "从 KB's 到 999GB's。AltSendme 帮助您分享无限大小的文件。"
+        "description": "从 KB's 到 999GB's。DashBeam 帮助您分享无限大小的文件。"
       },
       "blazingFast": {
         "title": "极速且可靠",
@@ -75,8 +75,8 @@
     }
   },
   "comparison": {
-    "title": "为什么 AltSendme 更好",
-    "altSendme": "AltSendme",
+    "title": "为什么 DashBeam 更好",
+    "altSendme": "DashBeam",
     "cloudSharing": "云共享 (Drive, WeTransfer 等)",
     "accountRequired": "需要账户",
     "fileSizeLimit": "文件大小限制",
@@ -109,7 +109,7 @@
   "community": {
     "title": "为超越我们而构建。",
     "subtitle": "开源 & 社区驱动",
-    "description": "AltSendme 由全球贡献者公开构建。每一行代码都是公开的。每一项改进都会共享。我们一起正在构建一种更快、更私密的文件直传方式。",
+    "description": "DashBeam 由全球贡献者公开构建。每一行代码都是公开的。每一项改进都会共享。我们一起正在构建一种更快、更私密的文件直传方式。",
     "githubStars": "8.5k stars",
     "cardTitle": "加入我们的社区",
     "othersCount": "+ 65 其他人",
@@ -141,15 +141,15 @@
     }
   },
   "download": {
-    "title": "立即试用 AltSendme",
+    "title": "立即试用 DashBeam",
     "subtitle": "免费、开源，面向所有人开放"
   },
   "underTheHoodPage": {
     "metaTitle": "底层原理",
-    "metaDescription": "了解 AltSendme 如何通过票据、iroh、QUIC 加密、NAT 穿透和开源中继实现直接点对点文件传输, 无需账户或 IP 地址。",
+    "metaDescription": "了解 DashBeam 如何通过票据、iroh、QUIC 加密、NAT 穿透和开源中继实现直接点对点文件传输, 无需账户或 IP 地址。",
     "title": "底层原理",
-    "intro": "就像 scp，但无需知道 IP 地址。将文件添加到 AltSendme，它会给你一个可粘贴的票据，交给任何需要这些文件的人。AltSendme 会直接连接你的设备并传输数据，无需账户或配置。",
-    "heroAlt": "AltSendme 主视觉图",
+    "intro": "就像 scp，但无需知道 IP 地址。将文件添加到 DashBeam，它会给你一个可粘贴的票据，交给任何需要这些文件的人。DashBeam 会直接连接你的设备并传输数据，无需账户或配置。",
+    "heroAlt": "DashBeam 主视觉图",
     "conceptsTitle": "重要概念",
     "concepts": {
       "blobs": "Blobs",
@@ -193,17 +193,17 @@
       },
       "relays": {
         "title": "中继",
-        "body": "AltSendme 使用开源公共中继服务器来建立直接连接、加快初始连接，并在直接连接失败时提供回退。所有连接均端到端加密。中继只是发送加密数据包的“另一个 UDP 套接字”。<link>了解更多</link>。"
+        "body": "DashBeam 使用开源公共中继服务器来建立直接连接、加快初始连接，并在直接连接失败时提供回退。所有连接均端到端加密。中继只是发送加密数据包的“另一个 UDP 套接字”。<link>了解更多</link>。"
       }
     },
-    "downloadCta": "下载 AltSendme",
+    "downloadCta": "下载 DashBeam",
     "githubCta": "在 GitHub 上查看"
   },
   "downloadsPage": {
-    "metaTitle": "下载 AltSendme",
-    "metaDescription": "下载适用于 Windows、macOS、Linux 和 Android 的 AltSendme，或在 app.altsendme.com 使用网页版。免费开源的点对点文件传输，无大小限制。",
+    "metaTitle": "下载 DashBeam",
+    "metaDescription": "下载适用于 Windows、macOS、Linux 和 Android 的 DashBeam，或在 app.altsendme.com 使用网页版。免费开源的点对点文件传输，无大小限制。",
     "titleLine1": "下载",
-    "titleLine2": "AltSendme",
+    "titleLine2": "DashBeam",
     "statsLine": "10万+ 下载 | 支持 24 种语言 | 免费",
     "getAppForMac": "获取 Mac 版",
     "getAppForWindows": "获取 Windows 版",
@@ -214,7 +214,7 @@
     "moreFormats": "更多下载格式",
     "termsPrefix": "继续即表示您同意我们的",
     "licenseLink": "许可证",
-    "previewAlt": "AltSendme 桌面应用预览",
+    "previewAlt": "DashBeam 桌面应用预览",
     "desktop": "桌面端",
     "mobile": "移动端",
     "web": "网页版",
@@ -262,7 +262,7 @@
     },
     "donate": {
       "title": "支持自由开源软件",
-      "description": "AltSendme 完全免费、开源，且无广告或付费墙。如果您觉得它有用，请考虑支持其开发。每一份捐赠都有助于让这个项目保持免费、独立并持续维护。",
+      "description": "DashBeam 完全免费、开源，且无广告或付费墙。如果您觉得它有用，请考虑支持其开发。每一份捐赠都有助于让这个项目保持免费、独立并持续维护。",
       "badge": "AGPL 3.0 · 无广告 · 无追踪",
       "buyMeACoffee": "Buy Me a Coffee",
       "githubSponsors": "GitHub Sponsors"
@@ -288,10 +288,11 @@
     "designer": "ShravanKumar PS",
     "license": "©GNU Affero General Public License v3.0",
     "compare": "Compare",
-    "compareLocalsend": "AltSendme vs LocalSend",
-    "compareBlip": "AltSendme vs Blip",
-    "compareWormhole": "AltSendme vs Magic Wormhole",
-    "comparePairdrop": "AltSendme vs PairDrop"
+    "compareLocalsend": "DashBeam vs LocalSend",
+    "compareBlip": "DashBeam vs Blip",
+    "compareWormhole": "DashBeam vs Magic Wormhole",
+    "comparePairdrop": "DashBeam vs PairDrop",
+    "formerlyKnownAs": "曾用名 AltSendme（Alt Send Me、alt-sendme）"
   },
   "contact": {
     "title": "联系我们",
@@ -305,57 +306,61 @@
     "error": "出错了。请稍后再试。",
     "imageAlt": "创世纪·亚当的创造, 伸手连接",
     "metaTitle": "Contact",
-    "metaDescription": "Get in touch with the AltSendme team for support, partnership, or collaboration. Open-source peer-to-peer file transfer built on Iroh."
+    "metaDescription": "Get in touch with the DashBeam team for support, partnership, or collaboration. Open-source peer-to-peer file transfer built on Iroh."
   },
   "faq": {
     "title": "常见问题",
     "items": {
       "faq1": {
-        "question": "What is AltSendme and how does it work?",
-        "answer": "AltSendme is an open-source peer-to-peer file transfer app for desktop, Android, web, and CLI. It lets you send files and folders anywhere in the world with no accounts and no cloud storage. It is built on the <link>Iroh networking stack</link> and uses ticket-based sharing with NAT hole punching and encrypted relay fallback."
+        "question": "What is DashBeam and how does it work?",
+        "answer": "DashBeam is an open-source peer-to-peer file transfer app for desktop, Android, web, and CLI. It lets you send files and folders anywhere in the world with no accounts and no cloud storage. It is built on the <link>Iroh networking stack</link> and uses ticket-based sharing with NAT hole punching and encrypted relay fallback."
       },
       "faq2": {
-        "question": "Is AltSendme free to use?",
-        "answer": "Yes. AltSendme is free and open source (AGPL-3.0) with no file size limits, no upload quotas, and no accounts. If you benefit from this work, consider supporting development through Buy Me a Coffee or GitHub Sponsors."
+        "question": "Is DashBeam free to use?",
+        "answer": "Yes. DashBeam is free and open source (AGPL-3.0) with no file size limits, no upload quotas, and no accounts. If you benefit from this work, consider supporting development through Buy Me a Coffee or GitHub Sponsors."
       },
       "faq3": {
-        "question": "What file types can I transfer with AltSendme?",
+        "question": "What file types can I transfer with DashBeam?",
         "answer": "You can transfer anything: images, videos, documents, folders, and more. Integrity checks use BLAKE3 on both ends, so files are verified during send and receive. Transfers are resumable if interrupted."
       },
       "faq4": {
-        "question": "How secure is my data when using AltSendme?",
-        "answer": "AltSendme uses end-to-end encryption with QUIC + TLS 1.3. Files go directly between devices and are not stored on a cloud server. Relays only see encrypted traffic. Tickets authenticate the intended sender before a transfer starts."
+        "question": "How secure is my data when using DashBeam?",
+        "answer": "DashBeam uses end-to-end encryption with QUIC + TLS 1.3. Files go directly between devices and are not stored on a cloud server. Relays only see encrypted traffic. Tickets authenticate the intended sender before a transfer starts."
       },
       "faq5": {
-        "question": "How does AltSendme compare to FilePizza, Wormhole, and PairDrop?",
-        "answer": "Unlike browser-only WebRTC tools, AltSendme is a native app (plus Android, web, and CLI) built on Iroh/QUIC. You can send large files and full folders with pause/resume, fewer browser limits, and BLAKE3-verified streaming. See our <compareLink>full comparison</compareLink> for details."
+        "question": "How does DashBeam compare to FilePizza, Wormhole, and PairDrop?",
+        "answer": "Unlike browser-only WebRTC tools, DashBeam is a native app (plus Android, web, and CLI) built on Iroh/QUIC. You can send large files and full folders with pause/resume, fewer browser limits, and BLAKE3-verified streaming. See our <compareLink>full comparison</compareLink> for details."
       },
       "faq6": {
-        "question": "Do I need an internet connection to use AltSendme?",
-        "answer": "A network connection is required so devices can reach each other. On the same LAN/Wi-Fi, full internet is not required. Across different networks, internet is used for hole punching or encrypted relay fallback, so AltSendme works over the internet, not only on local Wi-Fi."
+        "question": "Do I need an internet connection to use DashBeam?",
+        "answer": "A network connection is required so devices can reach each other. On the same LAN/Wi-Fi, full internet is not required. Across different networks, internet is used for hole punching or encrypted relay fallback, so DashBeam works over the internet, not only on local Wi-Fi."
       },
       "faq7": {
-        "question": "Is AltSendme a LocalSend alternative for the internet?",
-        "answer": "Yes. LocalSend is excellent for nearby devices on the same local network. AltSendme is built for the same frictionless feel across any network, local or across the internet, using Iroh tickets, QUIC encryption, and optional relays. Compare them on our <compareLink>LocalSend comparison page</compareLink>."
+        "question": "Is DashBeam a LocalSend alternative for the internet?",
+        "answer": "Yes. LocalSend is excellent for nearby devices on the same local network. DashBeam is built for the same frictionless feel across any network, local or across the internet, using Iroh tickets, QUIC encryption, and optional relays. Compare them on our <compareLink>LocalSend comparison page</compareLink>."
       },
       "faq8": {
-        "question": "Is AltSendme an open-source Blip alternative?",
-        "answer": "Yes. AltSendme is a free, open-source Blip alternative: unlimited file size, no accounts, end-to-end encrypted peer-to-peer transfers, and apps for Windows, macOS, Linux, Android, and the web. See <compareLink>AltSendme vs Blip</compareLink>."
+        "question": "Is DashBeam an open-source Blip (blip.net) alternative?",
+        "answer": "Yes. DashBeam is a free, open-source alternative to Blip (blip.net): unlimited file size, no accounts, end-to-end encrypted peer-to-peer transfers, and apps for Windows, macOS, Linux, Android, and the web. See <compareLink>DashBeam vs Blip</compareLink>."
+      },
+      "faq9": {
+        "question": "DashBeam 和 AltSendme / Alt Send Me / alt-sendme 是同一个项目吗？",
+        "answer": "是的。DashBeam 是 AltSendme（也称为 Alt Send Me、alt-sendme 和 Altsendme）的新名称。它是同一个开源项目、同一个 GitHub 仓库，以及同一个点对点文件传输产品。"
       }
     },
     "viewMore": "View more questions",
     "viewFewer": "View fewer questions"
   },
   "meta": {
-    "title": "AltSendme | Send files anywhere over the internet | Open-source P2P",
-    "description": "Open-source LocalSend alternative for the internet and Blip alternative. Peer-to-peer file transfer for Windows, macOS, Linux, Android, and web, with no accounts, unlimited size, E2E encrypted with Iroh."
+    "title": "DashBeam | Open-source Blip alternative (blip.net) | P2P file transfer",
+    "description": "DashBeam is a free, open-source alternative to Blip (blip.net): peer-to-peer file transfer for Windows, macOS, Linux, Android, and web. No accounts, unlimited size, E2E encrypted with Iroh. 曾用名 AltSendme。"
   },
   "comparePage": {
     "hub": {
-      "metaTitle": "Compare AltSendme to LocalSend, Blip & Magic Wormhole",
-      "metaDescription": "See how AltSendme compares to LocalSend, Blip, Magic Wormhole, WeTransfer, and PairDrop. Open-source P2P with CLI, gigabit Iroh speeds, and transfers that work over the internet.",
-      "title": "How AltSendme compares",
-      "lead": "AltSendme is an open-source file transfer app powered by Iroh, bringing AirDrop-like sharing to any device and any network. With native apps, CLI, no file size limits, and gigabit-class transfer speeds, it outperforms browser WebRTC tools on large files.",
+      "metaTitle": "Compare DashBeam to Blip (blip.net), LocalSend, Magic Wormhole & more",
+      "metaDescription": "See how DashBeam compares to Blip (blip.net), LocalSend, Magic Wormhole, and PairDrop. Open-source Blip alternative with CLI, gigabit Iroh speeds, and transfers that work over the internet.",
+      "title": "How DashBeam compares",
+      "lead": "DashBeam is an open-source alternative to Blip (blip.net) and a LocalSend alternative for the internet, powered by Iroh. Native apps, CLI, no file size limits, and gigabit-class transfer speeds—without proprietary lock-in.",
       "tableTitle": "对比",
       "yes": "是",
       "no": "否",
@@ -404,79 +409,79 @@
         "catchPairdrop": "WebRTC/SCTP 吞吐上限；浏览器内存限制"
       },
       "deepDives": "Deep dives",
-      "localsendCardTitle": "AltSendme vs LocalSend",
+      "localsendCardTitle": "DashBeam vs LocalSend",
       "localsendCardDesc": "Looking for a LocalSend alternative that works over the internet? See the full breakdown.",
-      "blipCardTitle": "AltSendme vs Blip",
-      "blipCardDesc": "Need an open-source Blip alternative? Compare features, pricing, and privacy.",
+      "blipCardTitle": "DashBeam vs Blip",
+      "blipCardDesc": "Looking for an open-source Blip (blip.net) alternative? Compare features, pricing, and privacy.",
       "othersTitle": "Also compared to",
-      "othersLead": "AltSendme sits alongside other popular tools. Here is where it fits.",
+      "othersLead": "DashBeam sits alongside other popular tools. Here is where it fits.",
       "wetransfer": "WeTransfer / Drive",
-      "wetransferNote": "Cloud upload with size limits and accounts. AltSendme transfers directly with no middleman storage, and can push multi-gigabit when the path allows.",
+      "wetransferNote": "Cloud upload with size limits and accounts. DashBeam transfers directly with no middleman storage, and can push multi-gigabit when the path allows.",
       "wormhole": "Magic Wormhole",
-      "wormholeNote": "Great CLI UX with short codes. AltSendme pairs a full GUI + Android + web with the Iroh sendme CLI with the same tickets, gigabit-capable transfers.",
-      "ctaTitle": "Try AltSendme free",
-      "ctaButton": "Download AltSendme",
+      "wormholeNote": "Great CLI UX with short codes. DashBeam pairs a full GUI + Android + web with the Iroh sendme CLI with the same tickets, gigabit-capable transfers.",
+      "ctaTitle": "Try DashBeam free",
+      "ctaButton": "Download DashBeam",
       "underTheHood": "How it works under the hood",
       "builtOnIroh": "Built on Iroh",
-      "wormholeCardTitle": "AltSendme vs Magic Wormhole",
+      "wormholeCardTitle": "DashBeam vs Magic Wormhole",
       "wormholeCardDesc": "Love wormhole-send but want a GUI, Android, and resumable folders? See the full breakdown.",
-      "pairdropCardTitle": "AltSendme vs PairDrop",
+      "pairdropCardTitle": "DashBeam vs PairDrop",
       "pairdropCardDesc": "Outgrow browser WebRTC limits with native apps, resumable folders, and gigabit Iroh speeds."
     },
     "localsend": {
       "metaTitle": "LocalSend Alternative for the Internet",
-      "metaDescription": "AltSendme is a LocalSend alternative that works over the internet, not just the same Wi-Fi. Open-source P2P with Iroh gigabit speeds, tickets, Android, web, and CLI.",
+      "metaDescription": "DashBeam is a LocalSend alternative that works over the internet, not just the same Wi-Fi. Open-source P2P with Iroh gigabit speeds, tickets, Android, web, and CLI.",
       "title": "LocalSend alternative for the internet",
-      "lead": "LocalSend is excellent for nearby devices on the same network. AltSendme keeps that frictionless feel across the internet, and adds Iroh/QUIC networking that can saturate gigabit links, plus a real CLI compatible with sendme.",
-      "tableTitle": "LocalSend vs AltSendme",
+      "lead": "LocalSend is excellent for nearby devices on the same network. DashBeam keeps that frictionless feel across the internet, and adds Iroh/QUIC networking that can saturate gigabit links, plus a real CLI compatible with sendme.",
+      "tableTitle": "LocalSend vs DashBeam",
       "whenTitle": "When to use which",
       "whenLocalsendTitle": "Choose LocalSend when",
       "whenLocalsend1": "Both devices are on the same Wi-Fi or LAN",
       "whenLocalsend2": "You want automatic nearby device discovery",
       "whenLocalsend3": "You do not need internet-wide transfers",
-      "whenAltsendmeTitle": "Choose AltSendme when",
+      "whenAltsendmeTitle": "Choose DashBeam when",
       "whenAltsendme1": "Devices are on different networks or across the internet",
       "whenAltsendme2": "You want ticket-based sharing and Iroh speeds that can fill a gigabit pipe",
       "whenAltsendme3": "You need CLI/sendme interop, resumable large folders, or a web app",
       "faqTitle": "FAQ",
       "faq1q": "Does LocalSend work over the internet?",
-      "faq1a": "No. LocalSend is built for the same local network. It discovers nearby devices on your Wi-Fi or LAN and transfers directly between them. It does not support sending files to someone on a different network or across the internet. AltSendme fills that gap with Iroh tickets, NAT hole punching, and encrypted relays so peers can connect locally or worldwide.",
+      "faq1a": "No. LocalSend is built for the same local network. It discovers nearby devices on your Wi-Fi or LAN and transfers directly between them. It does not support sending files to someone on a different network or across the internet. DashBeam fills that gap with Iroh tickets, NAT hole punching, and encrypted relays so peers can connect locally or worldwide.",
       "faq2q": "Can LocalSend resume interrupted transfers?",
-      "faq2a": "Not yet. Resumable transfers are a long-standing LocalSend feature request but remain unshipped. If Wi-Fi drops or a transfer is interrupted, you start over from the beginning. AltSendme supports resumable transfers: large files and folders pick up where they left off, with BLAKE3 integrity verification on both ends.",
-      "faq3q": "Is AltSendme open source like LocalSend?",
-      "faq3a": "Yes. Both apps are free and open source with no accounts or upload limits. AltSendme is AGPL-3.0 and built on the Iroh networking stack; LocalSend is MIT-licensed. You can audit either codebase and run transfers without vendor lock-in.",
+      "faq2a": "Not yet. Resumable transfers are a long-standing LocalSend feature request but remain unshipped. If Wi-Fi drops or a transfer is interrupted, you start over from the beginning. DashBeam supports resumable transfers: large files and folders pick up where they left off, with BLAKE3 integrity verification on both ends.",
+      "faq3q": "Is DashBeam open source like LocalSend?",
+      "faq3a": "Yes. Both apps are free and open source with no accounts or upload limits. DashBeam is AGPL-3.0 and built on the Iroh networking stack; LocalSend is MIT-licensed. You can audit either codebase and run transfers without vendor lock-in.",
       "faq4q": "How does device discovery compare?",
-      "faq4a": "LocalSend scans your local network and lists nearby devices automatically, ideal when everyone shares the same Wi-Fi. AltSendme uses shareable Iroh tickets: one peer generates a ticket, the other pastes or scans it. That works on the same LAN and across the internet, without relying on broadcast discovery.",
-      "faq5q": "Does AltSendme have a CLI?",
-      "faq5a": "Yes. AltSendme interoperates with the official Iroh sendme CLI. Tickets work across the GUI and terminal for scripting and automation. LocalSend offers desktop and mobile apps but no CLI or browser client. AltSendme also includes a web app alongside Windows, macOS, Linux, and Android.",
+      "faq4a": "LocalSend scans your local network and lists nearby devices automatically, ideal when everyone shares the same Wi-Fi. DashBeam uses shareable Iroh tickets: one peer generates a ticket, the other pastes or scans it. That works on the same LAN and across the internet, without relying on broadcast discovery.",
+      "faq5q": "Does DashBeam have a CLI?",
+      "faq5a": "Yes. DashBeam interoperates with the official Iroh sendme CLI. Tickets work across the GUI and terminal for scripting and automation. LocalSend offers desktop and mobile apps but no CLI or browser client. DashBeam also includes a web app alongside Windows, macOS, Linux, and Android.",
       "faq6q": "Which is better for large folders?",
-      "faq6a": "For multi-gigabyte folders on an unreliable connection, resumability matters. LocalSend does not resume failed transfers, so a drop near the end means re-sending everything. AltSendme streams folders with pause and resume, can saturate gigabit links on native apps via QUIC, and verifies integrity with BLAKE3, better suited for big payloads that may not finish in one session."
+      "faq6a": "For multi-gigabyte folders on an unreliable connection, resumability matters. LocalSend does not resume failed transfers, so a drop near the end means re-sending everything. DashBeam streams folders with pause and resume, can saturate gigabit links on native apps via QUIC, and verifies integrity with BLAKE3, better suited for big payloads that may not finish in one session."
     },
     "blip": {
-      "metaTitle": "Open Source Blip Alternative",
-      "metaDescription": "AltSendme is a free, open-source Blip alternative. Unlimited P2P with CLI, Iroh gigabit speeds, no accounts, and apps for Windows, macOS, Linux, Android, and web.",
-      "title": "Open-source Blip alternative",
-      "lead": "Blip is a popular proprietary large-file transfer app. AltSendme is the open-source alternative: unlimited size, no accounts, a real CLI, end-to-end encrypted P2P on Iroh that can saturate gigabit connections, and full transparency under AGPL-3.0.",
-      "tableTitle": "Blip vs AltSendme",
+      "metaTitle": "Open Source Blip Alternative (blip.net) | DashBeam",
+      "metaDescription": "DashBeam is a free, open-source alternative to Blip (blip.net). Unlimited P2P with CLI, Iroh gigabit speeds, no accounts, and apps for Windows, macOS, Linux, Android, and web.",
+      "title": "Open-source Blip (blip.net) alternative",
+      "lead": "Blip (blip.net) is a popular proprietary large-file transfer app. DashBeam is the open-source alternative: unlimited size, no accounts, a real CLI, end-to-end encrypted P2P on Iroh that can saturate gigabit connections, and full transparency under AGPL-3.0.",
+      "tableTitle": "Blip vs DashBeam",
       "whenTitle": "When to use which",
       "whenBlipTitle": "Blip may fit if",
       "whenBlip1": "You already rely on Blip’s proprietary workflow",
       "whenBlip2": "You prefer a closed commercial product",
-      "whenAltsendmeTitle": "Choose AltSendme when",
+      "whenAltsendmeTitle": "Choose DashBeam when",
       "whenAltsendme1": "You want open source you can audit and self-host relays for",
       "whenAltsendme2": "You need free unlimited transfers, CLI/sendme interop, and no account lock-in",
       "whenAltsendme3": "You want Iroh networking that can push multi-gigabit on a good path",
       "faqTitle": "FAQ",
-      "faq1q": "Is there a free open-source Blip alternative?",
-      "faq1a": "Yes. AltSendme is free and open source, with unlimited peer-to-peer transfers, CLI support, and no cloud storage of your files.",
-      "faq2q": "Does AltSendme require an account?",
+      "faq1q": "Is there a free open-source Blip (blip.net) alternative?",
+      "faq1a": "Yes. DashBeam is a free, open-source alternative to Blip (blip.net), with unlimited peer-to-peer transfers, CLI support, and no cloud storage of your files.",
+      "faq2q": "Does DashBeam require an account?",
       "faq2a": "No. Drop a file, share a ticket, and transfer directly, with no signup. Use the GUI or the sendme-compatible CLI.",
-      "faq3q": "Is AltSendme end-to-end encrypted?",
+      "faq3q": "Is DashBeam end-to-end encrypted?",
       "faq3a": "Yes. Transfers use QUIC + TLS 1.3 on Iroh. Relays only forward encrypted packets, and native transfers can saturate gigabit links."
     },
     "shared": {
       "backToCompare": "All comparisons",
-      "downloadCta": "Download AltSendme",
+      "downloadCta": "Download DashBeam",
       "network": "Network reach",
       "license": "License",
       "cost": "Cost",
@@ -485,7 +490,7 @@
       "stack": "Networking stack",
       "cli": "CLI support",
       "speed": "Transfer speed",
-      "altsendme": "AltSendme",
+      "altsendme": "DashBeam",
       "localsend": "LocalSend",
       "blip": "Blip",
       "wormhole": "Magic Wormhole",
@@ -517,61 +522,61 @@
     },
     "wormhole": {
       "metaTitle": "Magic Wormhole Alternative with GUI & Resumable Transfers",
-      "metaDescription": "AltSendme is a Magic Wormhole alternative with native GUI apps, Android, web, and sendme CLI, plus Iroh/QUIC gigabit speeds and resumable folders.",
+      "metaDescription": "DashBeam is a Magic Wormhole alternative with native GUI apps, Android, web, and sendme CLI, plus Iroh/QUIC gigabit speeds and resumable folders.",
       "title": "Magic Wormhole alternative with a full GUI",
-      "lead": "Magic Wormhole pioneered secure CLI file sharing with memorable short codes. AltSendme shares the same values: open source, no accounts, end-to-end encryption, but ships official GUI apps for desktop, Android, and web, with resumable folders and Iroh/QUIC networking that can saturate gigabit links.",
-      "tableTitle": "Magic Wormhole vs AltSendme",
+      "lead": "Magic Wormhole pioneered secure CLI file sharing with memorable short codes. DashBeam shares the same values: open source, no accounts, end-to-end encryption, but ships official GUI apps for desktop, Android, and web, with resumable folders and Iroh/QUIC networking that can saturate gigabit links.",
+      "tableTitle": "Magic Wormhole vs DashBeam",
       "whenTitle": "When to use which",
       "whenWormholeTitle": "Choose Magic Wormhole when",
       "whenWormhole1": "You live in the terminal and love the wormhole-send workflow",
       "whenWormhole2": "Short human-readable codes via a mailbox relay are exactly what you need",
       "whenWormhole3": "You send occasional one-off files and do not need a GUI or resume",
-      "whenAltsendmeTitle": "Choose AltSendme when",
+      "whenAltsendmeTitle": "Choose DashBeam when",
       "whenAltsendme1": "You want native GUI apps on desktop, Android, and web, not CLI only",
       "whenAltsendme2": "You need resumable large-folder transfers that survive dropped connections",
       "whenAltsendme3": "You want Iroh/QUIC tickets that work across the GUI and sendme CLI",
       "faqTitle": "FAQ",
-      "faq1q": "Is AltSendme the same as Magic Wormhole?",
-      "faq1a": "No. They are different projects on different protocols. Magic Wormhole uses PAKE-secured encrypted TCP with short codes delivered through a relay mailbox. AltSendme is built on Iroh/QUIC with ticket-based sharing and the sendme CLI. Both are open source, end-to-end encrypted, and avoid cloud file storage, but tickets and wormhole codes are not interchangeable.",
+      "faq1q": "Is DashBeam the same as Magic Wormhole?",
+      "faq1a": "No. They are different projects on different protocols. Magic Wormhole uses PAKE-secured encrypted TCP with short codes delivered through a relay mailbox. DashBeam is built on Iroh/QUIC with ticket-based sharing and the sendme CLI. Both are open source, end-to-end encrypted, and avoid cloud file storage, but tickets and wormhole codes are not interchangeable.",
       "faq2q": "Does Magic Wormhole have an official GUI?",
-      "faq2a": "The core Magic Wormhole project is CLI-only (wormhole send). Community GUI frontends exist but are separately maintained and can lag behind the CLI. AltSendme ships official apps for Windows, macOS, Linux, Android, and a web client, all sharing tickets with the sendme CLI.",
+      "faq2a": "The core Magic Wormhole project is CLI-only (wormhole send). Community GUI frontends exist but are separately maintained and can lag behind the CLI. DashBeam ships official apps for Windows, macOS, Linux, Android, and a web client, all sharing tickets with the sendme CLI.",
       "faq3q": "How do wormhole codes compare to Iroh tickets?",
-      "faq3a": "Wormhole gives you a short code through a mailbox relay: the receiver types it in. AltSendme uses Iroh tickets: longer strings you paste or scan, encoding connection details for QUIC hole punching and relay fallback. Both avoid accounts. Tickets are better suited to streaming large folders with resume on Iroh.",
+      "faq3a": "Wormhole gives you a short code through a mailbox relay: the receiver types it in. DashBeam uses Iroh tickets: longer strings you paste or scan, encoding connection details for QUIC hole punching and relay fallback. Both avoid accounts. Tickets are better suited to streaming large folders with resume on Iroh.",
       "faq4q": "Can Magic Wormhole resume interrupted transfers?",
-      "faq4a": "No. If a wormhole transfer fails partway through, you start over. AltSendme supports resumable transfers with BLAKE3 integrity checks on both ends, important for multi-gigabyte folders on flaky Wi-Fi or long internet paths.",
+      "faq4a": "No. If a wormhole transfer fails partway through, you start over. DashBeam supports resumable transfers with BLAKE3 integrity checks on both ends, important for multi-gigabyte folders on flaky Wi-Fi or long internet paths.",
       "faq5q": "Which is faster for large files?",
-      "faq5a": "Wormhole can be fast on a direct TCP path between reachable peers. AltSendme uses QUIC over Iroh and can saturate gigabit links on native desktop and mobile apps. Iroh's hole punching establishes direct QUIC connections in most cases, with encrypted relays as fallback.",
+      "faq5a": "Wormhole can be fast on a direct TCP path between reachable peers. DashBeam uses QUIC over Iroh and can saturate gigabit links on native desktop and mobile apps. Iroh's hole punching establishes direct QUIC connections in most cases, with encrypted relays as fallback.",
       "faq6q": "Are both open source and free?",
-      "faq6a": "Yes. Magic Wormhole is MIT-licensed; AltSendme is AGPL-3.0. Neither requires accounts or charges for transfers. You can audit either codebase and run transfers without vendor lock-in."
+      "faq6a": "Yes. Magic Wormhole is MIT-licensed; DashBeam is AGPL-3.0. Neither requires accounts or charges for transfers. You can audit either codebase and run transfers without vendor lock-in."
     },
     "pairdrop": {
       "metaTitle": "PairDrop Alternative with Native Apps & Resumable Folders",
-      "metaDescription": "AltSendme is a PairDrop alternative with native desktop and Android apps, resumable folders, no browser memory ceiling, and gigabit Iroh/QUIC speeds.",
+      "metaDescription": "DashBeam is a PairDrop alternative with native desktop and Android apps, resumable folders, no browser memory ceiling, and gigabit Iroh/QUIC speeds.",
       "title": "PairDrop alternative without browser limits",
-      "lead": "PairDrop makes quick browser-based sharing effortless, especially on the same Wi-Fi. AltSendme targets the same frictionless feel as native apps on Iroh/QUIC: resumable folders, no in-browser memory ceiling, gigabit-class throughput, and tickets that work across GUI, web, and sendme CLI.",
-      "tableTitle": "PairDrop vs AltSendme",
+      "lead": "PairDrop makes quick browser-based sharing effortless, especially on the same Wi-Fi. DashBeam targets the same frictionless feel as native apps on Iroh/QUIC: resumable folders, no in-browser memory ceiling, gigabit-class throughput, and tickets that work across GUI, web, and sendme CLI.",
+      "tableTitle": "PairDrop vs DashBeam",
       "whenTitle": "When to use which",
       "whenPairdropTitle": "Choose PairDrop when",
       "whenPairdrop1": "You want zero install: just open a browser tab and send",
       "whenPairdrop2": "Files are small to medium and WebRTC speed limits are acceptable",
       "whenPairdrop3": "Everyone is on the same LAN and nearby discovery is enough",
-      "whenAltsendmeTitle": "Choose AltSendme when",
+      "whenAltsendmeTitle": "Choose DashBeam when",
       "whenAltsendme1": "You are moving large files or full folders that may not finish in one session",
       "whenAltsendme2": "You need resumability and throughput beyond WebRTC/SCTP browser ceilings",
       "whenAltsendme3": "You want desktop, Android, web, and sendme CLI sharing the same tickets",
       "faqTitle": "FAQ",
-      "faq1q": "How is AltSendme different from PairDrop?",
-      "faq1a": "PairDrop runs in the browser over WebRTC, great for quick shares, but capped by SCTP throughput and in-memory file handling. AltSendme is a native app on Iroh/QUIC with resumable folders, no browser RAM ceiling, gigabit-capable transfers on desktop and mobile, and sendme CLI interop.",
+      "faq1q": "How is DashBeam different from PairDrop?",
+      "faq1a": "PairDrop runs in the browser over WebRTC, great for quick shares, but capped by SCTP throughput and in-memory file handling. DashBeam is a native app on Iroh/QUIC with resumable folders, no browser RAM ceiling, gigabit-capable transfers on desktop and mobile, and sendme CLI interop.",
       "faq2q": "Does PairDrop work over the internet?",
-      "faq2a": "PairDrop can connect across the internet via WebRTC ICE/STUN, but throughput and file size are limited by the browser stack. AltSendme uses Iroh tickets, QUIC hole punching, and encrypted relays, built for large internet transfers without loading the entire file into browser memory.",
+      "faq2a": "PairDrop can connect across the internet via WebRTC ICE/STUN, but throughput and file size are limited by the browser stack. DashBeam uses Iroh tickets, QUIC hole punching, and encrypted relays, built for large internet transfers without loading the entire file into browser memory.",
       "faq3q": "Can PairDrop send folders?",
-      "faq3a": "The browser PWA focuses on individual files; reliable folder sending often depends on the CLI fork or workarounds. AltSendme sends full folders natively in the GUI and CLI, with pause and resume if the connection drops.",
+      "faq3a": "The browser PWA focuses on individual files; reliable folder sending often depends on the CLI fork or workarounds. DashBeam sends full folders natively in the GUI and CLI, with pause and resume if the connection drops.",
       "faq4q": "Why are browser transfers slower than native apps?",
-      "faq4a": "WebRTC data channels use SCTP inside the browser, which rarely saturates a fast connection and buffers file data in memory. AltSendme streams directly over QUIC with native disk I/O, better for multi-gigabyte payloads on gigabit links.",
-      "faq5q": "Do I need to install AltSendme?",
-      "faq5a": "PairDrop's main advantage is no install: open a tab and go. AltSendme offers a web client, but the best experience is the native desktop or Android app: resumable transfers, unlimited practical file size, CLI automation, and much higher throughput than a browser tab.",
+      "faq4a": "WebRTC data channels use SCTP inside the browser, which rarely saturates a fast connection and buffers file data in memory. DashBeam streams directly over QUIC with native disk I/O, better for multi-gigabyte payloads on gigabit links.",
+      "faq5q": "Do I need to install DashBeam?",
+      "faq5a": "PairDrop's main advantage is no install: open a tab and go. DashBeam offers a web client, but the best experience is the native desktop or Android app: resumable transfers, unlimited practical file size, CLI automation, and much higher throughput than a browser tab.",
       "faq6q": "Are both open source?",
-      "faq6a": "Yes. PairDrop is GPL-3.0; AltSendme is AGPL-3.0. Neither requires accounts. AltSendme adds auditable Iroh networking with self-hostable relays if you want full control over the infrastructure."
+      "faq6a": "Yes. PairDrop is GPL-3.0; DashBeam is AGPL-3.0. Neither requires accounts. DashBeam adds auditable Iroh networking with self-hostable relays if you want full control over the infrastructure."
     }
   }
 }

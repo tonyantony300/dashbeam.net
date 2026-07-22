@@ -13,6 +13,7 @@ const FAQ_KEYS = [
   "faq6",
   "faq7",
   "faq8",
+  "faq9",
 ];
 const INITIAL_VISIBLE_COUNT = 5;
 

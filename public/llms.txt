@@ -1,19 +1,19 @@
-# AltSendme
+# DashBeam
 
-> Open-source peer-to-peer file transfer over the internet. Built on Iroh. No accounts, unlimited size, E2E encrypted.
+> Open-source alternative to Blip (blip.net). Peer-to-peer file transfer over the internet. Built on Iroh. No accounts, unlimited size, E2E encrypted. Formerly known as AltSendme / Alt Send Me / alt-sendme.
 
 ## Docs
 
-- [Full product brief for AI systems](https://altsendme.com/llm.txt): Canonical facts, platforms, comparisons, press links
-- [Website](https://altsendme.com/en): Marketing home
-- [Downloads](https://altsendme.com/en/downloads): Desktop, Android, web, CLI
-- [Compare](https://altsendme.com/en/compare): vs LocalSend, Blip, WeTransfer, FilePizza
-- [vs LocalSend](https://altsendme.com/en/compare/localsend): LocalSend alternative for the internet
-- [vs Blip](https://altsendme.com/en/compare/blip): Open-source Blip alternative
-- [vs Magic Wormhole](https://altsendme.com/en/compare/wormhole): GUI alternative with resumable folders
-- [vs PairDrop](https://altsendme.com/en/compare/pairdrop): Native alternative without browser WebRTC limits
-- [Under the hood](https://altsendme.com/en/under-the-hood): Tickets, blobs, QUIC, relays
-- [GitHub](https://github.com/tonyantony300/alt-sendme): Source code (AGPL-3.0)
+- [Full product brief for AI systems](https://dashbeam.net/llm.txt): Canonical facts, platforms, comparisons, press links, rename notice
+- [Website](https://dashbeam.net/en): Marketing home
+- [Downloads](https://dashbeam.net/en/downloads): Desktop, Android, web, CLI
+- [Compare](https://dashbeam.net/en/compare): vs LocalSend, Blip, WeTransfer, FilePizza
+- [vs LocalSend](https://dashbeam.net/en/compare/localsend): LocalSend alternative for the internet
+- [vs Blip](https://dashbeam.net/en/compare/blip): Open-source Blip (blip.net) alternative
+- [vs Magic Wormhole](https://dashbeam.net/en/compare/wormhole): GUI alternative with resumable folders
+- [vs PairDrop](https://dashbeam.net/en/compare/pairdrop): Native alternative without browser WebRTC limits
+- [Under the hood](https://dashbeam.net/en/under-the-hood): Tickets, blobs, QUIC, relays
+- [GitHub](https://github.com/tonyantony300/dashbeam): Source code (AGPL-3.0)
 - [Iroh](https://www.iroh.computer): Networking stack
 - [Sendme CLI](https://www.iroh.computer/sendme): Interoperable CLI
 

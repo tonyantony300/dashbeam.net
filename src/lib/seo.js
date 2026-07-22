@@ -1,6 +1,18 @@
 import { routing } from "@/i18n/routing";
 
-export const SITE_URL = "https://altsendme.com";
+export const SITE_URL = "https://dashbeam.net";
+
+export const BRAND_NAME = "DashBeam";
+export const BRAND_FORMER_NAMES = [
+  "AltSendme",
+  "Alt Send Me",
+  "alt-sendme",
+  "Altsendme",
+  "AltSendMe",
+];
+export const GITHUB_REPO_URL = "https://github.com/tonyantony300/dashbeam";
+export const GITHUB_REPO_URL_LEGACY =
+  "https://github.com/tonyantony300/alt-sendme";
 
 export const OG_LOCALE_MAP = {
   en: "en_US",
@@ -54,8 +66,14 @@ export const SITE_ROUTES = [
 ];
 
 export const SEO_KEYWORDS = [
-  "open source blip alternative",
-  "blip alternative",
+  "DashBeam",
+  "open source Blip alternative",
+  "open source alternative to Blip",
+  "Blip alternative",
+  "blip.net alternative",
+  "alternative to blip.net",
+  "open source blip.net alternative",
+  "free Blip alternative",
   "LocalSend alternative for the internet",
   "LocalSend alternative",
   "WeTransfer alternative open source",
@@ -69,6 +87,10 @@ export const SEO_KEYWORDS = [
   "free file transfer",
   "unlimited file transfer",
   "AltSendme",
+  "Alt Send Me",
+  "alt-sendme",
+  "Altsendme",
+  "AltSendMe",
   "sendme",
   "iroh",
   "open source file transfer",

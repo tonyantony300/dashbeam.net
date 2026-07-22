@@ -1,7 +1,7 @@
 {
-  "name": "AltSendme - Peer-to-peer file transfer",
-  "short_name": "AltSendme",
-  "description": "Open-source peer-to-peer file transfer for Windows, macOS, Linux, Android, and web. LocalSend alternative for the internet. No accounts, unlimited size.",
+  "name": "DashBeam - Peer-to-peer file transfer",
+  "short_name": "DashBeam",
+  "description": "Open-source alternative to Blip (blip.net). Peer-to-peer file transfer for Windows, macOS, Linux, Android, and web. Formerly AltSendme. No accounts, unlimited size.",
   "start_url": "/en",
   "display": "standalone",
   "background_color": "#ffffff",

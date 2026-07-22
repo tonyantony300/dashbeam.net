@@ -17,7 +17,7 @@
     }
   },
   "features": {
-    "title": "AltSendmeが愛される理由",
+    "title": "DashBeamが愛される理由",
     "items": {
       "directSend": {
         "title": "ファイルを直接送信。仲介者なし。",
@@ -29,7 +29,7 @@
       },
       "noSizeLimits": {
         "title": "サイズ制限なし。真に無制限。",
-        "description": "KB'sから999GB'sまで。AltSendmeは無制限サイズのファイル共有を支援します。"
+        "description": "KB'sから999GB'sまで。DashBeamは無制限サイズのファイル共有を支援します。"
       },
       "blazingFast": {
         "title": "超高速＆信頼性",
@@ -67,10 +67,10 @@
   },
   "underTheHoodPage": {
     "metaTitle": "内部の仕組み",
-    "metaDescription": "AltSendmeがチケット、iroh、QUIC暗号化、NATトラバーサル、オープンソースリレーで直接P2Pファイル転送を実現する方法を学びましょう, アカウントやIPアドレスは不要です。",
+    "metaDescription": "DashBeamがチケット、iroh、QUIC暗号化、NATトラバーサル、オープンソースリレーで直接P2Pファイル転送を実現する方法を学びましょう, アカウントやIPアドレスは不要です。",
     "title": "内部の仕組み",
-    "intro": "IPアドレスを知らなくてもscpのように使えます。AltSendmeにファイルを追加すると、貼り付け可能なチケットが生成され、必要な人に渡せます。AltSendmeはデバイスを直接接続し、アカウントや設定なしでデータを転送します。",
-    "heroAlt": "AltSendmeヒーローグラフィック",
+    "intro": "IPアドレスを知らなくてもscpのように使えます。DashBeamにファイルを追加すると、貼り付け可能なチケットが生成され、必要な人に渡せます。DashBeamはデバイスを直接接続し、アカウントや設定なしでデータを転送します。",
+    "heroAlt": "DashBeamヒーローグラフィック",
     "conceptsTitle": "重要な概念",
     "concepts": {
       "blobs": "Blobs",
@@ -114,10 +114,10 @@
       },
       "relays": {
         "title": "リレー",
-        "body": "AltSendmeはオープンソースのパブリックリレーサーバーで直接接続の確立、初期接続時間の短縮、直接接続失敗時のフォールバックをサポートします。すべての接続はE2E暗号化されます。リレーは暗号化パケット送信用の「もう一つのUDPソケット」です。<link>詳しく読む</link>。"
+        "body": "DashBeamはオープンソースのパブリックリレーサーバーで直接接続の確立、初期接続時間の短縮、直接接続失敗時のフォールバックをサポートします。すべての接続はE2E暗号化されます。リレーは暗号化パケット送信用の「もう一つのUDPソケット」です。<link>詳しく読む</link>。"
       }
     },
-    "downloadCta": "AltSendmeをダウンロード",
+    "downloadCta": "DashBeamをダウンロード",
     "githubCta": "GitHubで見る"
   },
   "footer": {
