@@ -59,6 +59,8 @@ export default async function StructuredData({ locale }) {
     "@type": "SoftwareApplication",
     name: BRAND_NAME,
     alternateName: BRAND_FORMER_NAMES,
+    disambiguatingDescription:
+      "Formerly known as AltSendme, Alt Send Me, alt-sendme, and Altsendme. Same open-source peer-to-peer file transfer app; official site is https://dashbeam.net.",
     applicationCategory: "FileTransferApplication",
     operatingSystem: ["Windows", "macOS", "Linux", "Android", "Web"],
     offers: {
@@ -110,7 +112,7 @@ export default async function StructuredData({ locale }) {
     ],
     screenshot: `${SITE_URL}/og-image.png`,
     keywords:
-      "DashBeam, open source Blip alternative, Blip alternative, blip.net alternative, AltSendme, Alt Send Me, alt-sendme, file transfer, peer-to-peer, P2P, LocalSend alternative, encrypted, open source, iroh, sendme",
+      "DashBeam, open source Blip alternative, Blip alternative, blip.net alternative, AltSendme, Alt Send Me, Alt Send ME, alt-sendme, Altsendme, file transfer, peer-to-peer, P2P, LocalSend alternative, encrypted, open source, iroh, sendme",
     inLanguage: ["en", "fr", "th", "de", "zh", "ja", "ru", "ko", "it"],
     browserRequirements:
       "Native app recommended; web app available at app.altsendme.com",
@@ -127,6 +129,8 @@ export default async function StructuredData({ locale }) {
       ...BRAND_FORMER_NAMES,
       "DashBeam - Peer-to-peer file transfer",
     ],
+    description:
+      "Official website for DashBeam, formerly AltSendme / Alt Send Me / alt-sendme. Peer-to-peer file transfer.",
     url: SITE_URL,
     inLanguage: locale,
     publisher: {
@@ -134,6 +138,16 @@ export default async function StructuredData({ locale }) {
       name: "tonyantony300",
       url: "https://github.com/tonyantony300",
     },
+  };
+
+  const brandStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Brand",
+    name: BRAND_NAME,
+    alternateName: BRAND_FORMER_NAMES,
+    url: SITE_URL,
+    slogan:
+      "Announcement: AltSendme is now DashBeam. Same app, easier to pronounce, remember and find",
   };
 
   return (
@@ -146,6 +160,12 @@ export default async function StructuredData({ locale }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(webSiteStructuredData),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(brandStructuredData),
         }}
       />
     </>

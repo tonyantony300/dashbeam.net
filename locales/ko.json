@@ -11,6 +11,7 @@
     "title": "누구에게든, 어디서든 파일을 전송하는 가장 빠르고 매끄러운 방법.",
     "description": "파일이 기기에서 기기로 직접 전송됩니다, 암호화되며, 계정, 추적, 광고, 클라우드 저장소가 중간에 없습니다.",
     "airdropQuote": "모든 기기, 모든 네트워크를 위한 AirDrop이라고 생각하세요.",
+    "announcement": "공지: AltSendme가 이제 DashBeam입니다. 같은 앱이며, 발음·기억·검색이 더 쉬워졌습니다",
     "downloadForMac": "Mac용 다운로드",
     "downloadForWindows": "Windows용 다운로드",
     "downloadForLinux": "Linux용 다운로드",
@@ -110,7 +111,7 @@
     "title": "우리를 뛰어넘어 남도록.",
     "subtitle": "오픈 소스 & 커뮤니티 주도",
     "description": "DashBeam는 전 세계 기여자들에 의해 공개적으로 개발되고 있습니다. 모든 코드는 공개되어 있습니다. 모든 개선은 공유됩니다. 함께 사람들 사이에서 파일을 직접 보내는 더 빠르고 더 프라이빗한 방법을 만들고 있습니다.",
-    "githubStars": "8.5k 스타",
+    "githubStars": "8.7k 스타",
     "cardTitle": "커뮤니티에 참여하세요",
     "othersCount": "+ 65명",
     "cardDescription": "오픈 소스는 커뮤니티에 환원하고 우리가 만드는 것이 우리를 뛰어넘어 남도록 하는 방법입니다.",
@@ -352,8 +353,8 @@
     "viewFewer": "View fewer questions"
   },
   "meta": {
-    "title": "DashBeam | Open-source Blip alternative (blip.net) | P2P file transfer",
-    "description": "DashBeam is a free, open-source alternative to Blip (blip.net): peer-to-peer file transfer for Windows, macOS, Linux, Android, and web. No accounts, unlimited size, E2E encrypted with Iroh. 이전 이름 AltSendme."
+    "title": "DashBeam (이전 이름 AltSendme) | Open-source Blip alternative | P2P file transfer",
+    "description": "DashBeam (이전 이름 AltSendme, Alt Send Me, alt-sendme) is a free, open-source alternative to Blip (blip.net): peer-to-peer file transfer for Windows, macOS, Linux, Android, and web. No accounts, unlimited size, E2E encrypted with Iroh. Official site: dashbeam.net."
   },
   "comparePage": {
     "hub": {

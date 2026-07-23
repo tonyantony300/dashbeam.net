@@ -6,6 +6,7 @@ export const BRAND_NAME = "DashBeam";
 export const BRAND_FORMER_NAMES = [
   "AltSendme",
   "Alt Send Me",
+  "Alt Send ME",
   "alt-sendme",
   "Altsendme",
   "AltSendMe",
@@ -88,6 +89,7 @@ export const SEO_KEYWORDS = [
   "unlimited file transfer",
   "AltSendme",
   "Alt Send Me",
+  "Alt Send ME",
   "alt-sendme",
   "Altsendme",
   "AltSendMe",

@@ -1,0 +1,28 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "altsendme.com" }],
+      "destination": "https://dashbeam.net/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.altsendme.com" }],
+      "destination": "https://dashbeam.net/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "alt-sendme.com" }],
+      "destination": "https://dashbeam.net/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.alt-sendme.com" }],
+      "destination": "https://dashbeam.net/:path*",
+      "permanent": true
+    }
+  ]
+}

@@ -11,6 +11,7 @@
     "title": "Le moyen le plus rapide et le plus fluide de transférer des fichiers à n'importe qui, n'importe où.",
     "description": "Vos fichiers passent directement d'appareil à appareil, chiffrés, sans comptes, suivi, publicités ni stockage cloud intermédiaire.",
     "airdropQuote": "Pensez-y comme à AirDrop pour n'importe quel appareil, n'importe quel réseau.",
+    "announcement": "Annonce : AltSendme s'appelle désormais DashBeam. La même app, plus facile à prononcer, à retenir et à trouver",
     "downloadForMac": "Télécharger pour Mac",
     "downloadForWindows": "Télécharger pour Windows",
     "downloadForLinux": "Télécharger pour Linux",
@@ -110,7 +111,7 @@
     "title": "Construit pour nous survivre.",
     "subtitle": "Open Source & Porté par la communauté",
     "description": "DashBeam est développé en public par des contributeurs du monde entier. Chaque ligne de code est publique. Chaque amélioration est partagée. Ensemble, nous construisons un moyen plus rapide et plus privé d'envoyer des fichiers directement entre les personnes.",
-    "githubStars": "8,5k étoiles",
+    "githubStars": "8,7k étoiles",
     "cardTitle": "Rejoignez notre communauté",
     "othersCount": "+ 65 autres",
     "cardDescription": "L'open source est notre façon de redonner à la communauté et de garantir que ce que nous construisons nous survivra.",
@@ -352,8 +353,8 @@
     "viewFewer": "View fewer questions"
   },
   "meta": {
-    "title": "DashBeam | Open-source Blip alternative (blip.net) | P2P file transfer",
-    "description": "DashBeam is a free, open-source alternative to Blip (blip.net): peer-to-peer file transfer for Windows, macOS, Linux, Android, and web. No accounts, unlimited size, E2E encrypted with Iroh. Anciennement AltSendme."
+    "title": "DashBeam (anciennement AltSendme) | Open-source Blip alternative | P2P file transfer",
+    "description": "DashBeam (anciennement AltSendme, Alt Send Me, alt-sendme) is a free, open-source alternative to Blip (blip.net): peer-to-peer file transfer for Windows, macOS, Linux, Android, and web. No accounts, unlimited size, E2E encrypted with Iroh. Official site: dashbeam.net."
   },
   "comparePage": {
     "hub": {

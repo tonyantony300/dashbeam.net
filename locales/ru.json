@@ -11,6 +11,7 @@
     "title": "Самый быстрый и плавный способ передавать файлы кому угодно и куда угодно.",
     "description": "Ваши файлы идут напрямую с устройства на устройство, зашифровано, без аккаунтов, отслеживания, рекламы и облачного хранилища посередине.",
     "airdropQuote": "Думайте об этом как об AirDrop для любого устройства и любой сети.",
+    "announcement": "Объявление: AltSendme теперь DashBeam. То же приложение — легче произносить, запоминать и находить",
     "downloadForMac": "Скачать для Mac",
     "downloadForWindows": "Скачать для Windows",
     "downloadForLinux": "Скачать для Linux",
@@ -110,7 +111,7 @@
     "title": "Создано, чтобы пережить нас.",
     "subtitle": "Open Source и сообщество",
     "description": "DashBeam разрабатывается открыто участниками со всего мира. Каждая строка кода публична. Каждое улучшение доступно всем. Вместе мы создаём более быстрый и приватный способ отправки файлов напрямую между людьми.",
-    "githubStars": "8,5k звёзд",
+    "githubStars": "8,7k звёзд",
     "cardTitle": "Присоединяйтесь к сообществу",
     "othersCount": "+ 65 других",
     "cardDescription": "Open source - это наш способ отдать долг сообществу и убедиться, что то, что мы создаём, переживёт нас.",
@@ -352,8 +353,8 @@
     "viewFewer": "View fewer questions"
   },
   "meta": {
-    "title": "DashBeam | Open-source Blip alternative (blip.net) | P2P file transfer",
-    "description": "DashBeam is a free, open-source alternative to Blip (blip.net): peer-to-peer file transfer for Windows, macOS, Linux, Android, and web. No accounts, unlimited size, E2E encrypted with Iroh. Ранее AltSendme."
+    "title": "DashBeam (ранее AltSendme) | Open-source Blip alternative | P2P file transfer",
+    "description": "DashBeam (ранее AltSendme, Alt Send Me, alt-sendme) is a free, open-source alternative to Blip (blip.net): peer-to-peer file transfer for Windows, macOS, Linux, Android, and web. No accounts, unlimited size, E2E encrypted with Iroh. Official site: dashbeam.net."
   },
   "comparePage": {
     "hub": {

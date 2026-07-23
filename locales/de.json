@@ -11,6 +11,7 @@
     "title": "Der schnellste und reibungsloseste Weg, Dateien an jeden, überall zu senden.",
     "description": "Ihre Dateien gehen direkt von Gerät zu Gerät, verschlüsselt, ohne Konten, Tracking, Werbung oder Cloud-Speicher dazwischen.",
     "airdropQuote": "Stellen Sie es sich wie AirDrop für jedes Gerät, jedes Netzwerk vor.",
+    "announcement": "Ankündigung: AltSendme heißt jetzt DashBeam. Dieselbe App – leichter auszusprechen, zu merken und zu finden",
     "downloadForMac": "Für Mac herunterladen",
     "downloadForWindows": "Für Windows herunterladen",
     "downloadForLinux": "Für Linux herunterladen",
@@ -110,7 +111,7 @@
     "title": "Gebaut, um uns zu überdauern.",
     "subtitle": "Open Source & Community-getrieben",
     "description": "DashBeam wird öffentlich von Mitwirkenden auf der ganzen Welt entwickelt. Jede Codezeile ist öffentlich. Jede Verbesserung wird geteilt. Gemeinsam bauen wir einen schnelleren, privateren Weg, Dateien direkt zwischen Menschen zu senden.",
-    "githubStars": "8,5k Sterne",
+    "githubStars": "8,7k Sterne",
     "cardTitle": "Tritt unserer Community bei",
     "othersCount": "+ 65 weitere",
     "cardDescription": "Open Source ist unsere Art, der Community etwas zurückzugeben und sicherzustellen, dass das, was wir bauen, uns überdauert.",
@@ -352,8 +353,8 @@
     "viewFewer": "View fewer questions"
   },
   "meta": {
-    "title": "DashBeam | Open-source Blip alternative (blip.net) | P2P file transfer",
-    "description": "DashBeam is a free, open-source alternative to Blip (blip.net): peer-to-peer file transfer for Windows, macOS, Linux, Android, and web. No accounts, unlimited size, E2E encrypted with Iroh. Früher AltSendme."
+    "title": "DashBeam (früher AltSendme) | Open-source Blip alternative | P2P file transfer",
+    "description": "DashBeam (früher AltSendme, Alt Send Me, alt-sendme) is a free, open-source alternative to Blip (blip.net): peer-to-peer file transfer for Windows, macOS, Linux, Android, and web. No accounts, unlimited size, E2E encrypted with Iroh. Official site: dashbeam.net."
   },
   "comparePage": {
     "hub": {

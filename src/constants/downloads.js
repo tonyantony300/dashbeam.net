@@ -8,7 +8,7 @@ export const DONATE_LINKS = {
 
 export const DESKTOP_VERSION = "0.6.0";
 export const ANDROID_VERSION = "v0.6.0";
-export const WEB_APP_URL = "https://app.altsendme.com";
+export const WEB_APP_URL = "https://app.dashbeam.net";
 const DESKTOP_TAG = `v${DESKTOP_VERSION}`;
 
 export function releaseUrl(tag, filename) {

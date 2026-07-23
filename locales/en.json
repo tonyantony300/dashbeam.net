@@ -11,6 +11,7 @@
     "title": "The fastest, smoothest way to transfer files to anyone, anywhere.",
     "description": "Your files go straight from device to device - encrypted, with no accounts, tracking, ads, or cloud storage in between.",
     "airdropQuote": "Think of it like AirDrop for any device, any network.",
+    "announcement": "Announcement: AltSendme is now DashBeam. Same app, easier to pronounce, remember and find",
     "downloadForMac": "Download for Mac",
     "downloadForWindows": "Download for Windows",
     "downloadForLinux": "Download for Linux",
@@ -110,7 +111,7 @@
     "title": "Built To Outlive Us.",
     "subtitle": "Open Source & Community Driven",
     "description": "DashBeam is built in public by contributors around the world. Every line of code is public. Every improvement is shared. Together, we're building a faster, more private way to send files directly between people.",
-    "githubStars": "8.5k stars",
+    "githubStars": "8.7k stars",
     "cardTitle": "Join our Community",
     "othersCount": "+ 65 Others",
     "cardDescription": "Open source is our way of giving back to the community and making sure what we're building outlives us.",
@@ -571,7 +572,7 @@
     }
   },
   "meta": {
-    "title": "DashBeam | Open-source Blip alternative (blip.net) | P2P file transfer",
-    "description": "DashBeam is a free, open-source alternative to Blip (blip.net): peer-to-peer file transfer for Windows, macOS, Linux, Android, and web. No accounts, unlimited size, E2E encrypted with Iroh. Formerly AltSendme."
+    "title": "DashBeam (formerly AltSendme) | Open-source Blip alternative | P2P file transfer",
+    "description": "DashBeam (formerly AltSendme, Alt Send Me, alt-sendme) is a free, open-source alternative to Blip (blip.net): peer-to-peer file transfer for Windows, macOS, Linux, Android, and web. No accounts, unlimited size, E2E encrypted with Iroh. Official site: dashbeam.net."
   }
 }
