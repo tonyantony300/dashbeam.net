@@ -59,6 +59,7 @@ export const SITE_ROUTES = [
   "downloads",
   "under-the-hood",
   "contact",
+  "privacy",
   "compare",
   "compare/localsend",
   "compare/blip",

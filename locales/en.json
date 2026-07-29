@@ -285,6 +285,7 @@
     "compareWormhole": "vs Magic Wormhole",
     "comparePairdrop": "vs PairDrop",
     "contactUs": "Contact Us",
+    "privacy": "Privacy Policy",
     "buyMeACoffee": "Buy Me a Coffee",
     "discord": "Discord",
     "sourceCode": "Source Code",
@@ -574,5 +575,13 @@
   "meta": {
     "title": "DashBeam (formerly AltSendme) | Open-source Blip alternative | P2P file transfer",
     "description": "DashBeam (formerly AltSendme, Alt Send Me, alt-sendme) is a free, open-source alternative to Blip (blip.net): peer-to-peer file transfer for Windows, macOS, Linux, Android, and web. No accounts, unlimited size, E2E encrypted with Iroh. Official site: dashbeam.net."
+  },
+  "privacyPage": {
+    "metaTitle": "Privacy Policy",
+    "metaDescription": "DashBeam privacy policy: no accounts, no tracking, end-to-end encrypted peer-to-peer file transfer. Learn what data stays on your device and what relay servers can and cannot see.",
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: {date}",
+    "sourceNote": "This page mirrors the official policy in the DashBeam repository.",
+    "sourceLink": "View PRIVACY.md on GitHub"
   }
 }

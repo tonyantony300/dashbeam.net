@@ -31,6 +31,7 @@ const FOOTER_NAV_GRID = [
   ],
   [
     { key: "contactUs", href: "/contact" },
+    { key: "privacy", href: "/privacy" },
     {
       key: "githubSponsors",
       href: "https://github.com/sponsors/tonyantony300",

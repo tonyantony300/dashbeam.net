@@ -280,6 +280,7 @@
     "reportIssue": "Сообщить о проблеме",
     "downloads": "Загрузки",
     "contactUs": "Связаться с нами",
+    "privacy": "Конфиденциальность",
     "buyMeACoffee": "Buy Me a Coffee",
     "discord": "Discord",
     "sourceCode": "Исходный код",
@@ -579,5 +580,13 @@
       "faq6q": "Are both open source?",
       "faq6a": "Yes. PairDrop is GPL-3.0; DashBeam is AGPL-3.0. Neither requires accounts. DashBeam adds auditable Iroh networking with self-hostable relays if you want full control over the infrastructure."
     }
+  },
+  "privacyPage": {
+    "metaTitle": "Политика конфиденциальности",
+    "metaDescription": "Политика конфиденциальности DashBeam: без аккаунтов, без отслеживания, сквозное шифрование peer-to-peer передачи файлов.",
+    "title": "Политика конфиденциальности",
+    "lastUpdated": "Последнее обновление: {date}",
+    "sourceNote": "Эта страница соответствует официальной политике в репозитории DashBeam.",
+    "sourceLink": "Смотреть PRIVACY.md на GitHub"
   }
 }
