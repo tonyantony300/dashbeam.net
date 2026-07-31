@@ -109,7 +109,7 @@ export default function HomeFAQ() {
                 <AccordionTrigger className="px-5 py-5 font-sans text-base font-medium tracking-[-0.01em] focus-visible:ring-offset-0 md:text-[17px]">
                   {t(`items.${key}.question`)}
                 </AccordionTrigger>
-                <AccordionPanel className="max-w-[68ch] px-5 pb-5 font-sans text-[15px] leading-[1.7] text-muted-foreground">
+                <AccordionPanel className="max-w-[68ch] px-5 pb-5 font-sans text-[15px] leading-[1.7] text-muted-foreground md:text-base">
                   {renderAnswer(key)}
                 </AccordionPanel>
               </AccordionItem>

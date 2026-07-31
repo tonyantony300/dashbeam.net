@@ -119,10 +119,10 @@ export default function CommunitySection() {
               </div>
             </div>
 
-            <p className="mt-8 text-sm leading-relaxed text-muted-foreground md:text-[15px] md:leading-7">
+            <p className="mt-8 text-sm leading-relaxed text-muted-foreground md:text-base md:leading-7">
               {t("cardDescription")}
             </p>
-            <p className="mt-6 text-sm leading-relaxed text-muted-foreground md:text-[15px] md:leading-7">
+            <p className="mt-6 text-sm leading-relaxed text-muted-foreground md:text-base md:leading-7">
               {t("cardDescription2")}
             </p>
 

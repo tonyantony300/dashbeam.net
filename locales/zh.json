@@ -30,7 +30,9 @@
     "donationMessage": "您的捐赠让这个项目变得更好"
   },
   "howItWorks": {
-    "sectionLabel": "安全即时。\n3 个简单步骤即可使用。",
+    "sectionLabel": "安全即时。\n两种发送方式。",
+    "eyebrow": "使用方法",
+    "deck": "向任何人发送票据，或配对一次后一键发送到自己的设备。双方都无需账户。",
     "step1": {
       "title": "拖放文件或文件夹",
       "description": "DashBeam 为您的文件创建一个安全的一次性代码（称为\"票据\"）"
@@ -42,6 +44,17 @@
     "step3": {
       "title": "对方接收文件",
       "description": "您的朋友在其应用中粘贴票据，传输即开始。文件直接下载。"
+    },
+    "paired": {
+      "label": "经常发送？配对一次即可。",
+      "step1": {
+        "title": "配对一次",
+        "description": "在两台设备上输入一个短代码。只需一次，之后便保持配对。"
+      },
+      "step2": {
+        "title": "之后只需点击",
+        "description": "已配对的设备会直接显示在应用中。选择一台，文件即刻直传——无需复制票据。"
+      }
     }
   },
   "features": {
@@ -118,7 +131,7 @@
     "title": "为超越我们而构建。",
     "subtitle": "开源 & 社区驱动",
     "description": "DashBeam 由全球贡献者公开构建。每一行代码都是公开的。每一项改进都会共享。我们一起正在构建一种更快、更私密的文件直传方式。",
-    "githubStars": "8.7k stars",
+    "githubStars": "9.0k stars",
     "cardTitle": "加入我们的社区",
     "othersCount": "+ 65 其他人",
     "cardDescription": "开源是我们回馈社区的方式，也是确保我们所构建的东西能够超越我们的方式。",

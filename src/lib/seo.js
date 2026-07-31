@@ -13,7 +13,7 @@ export const BRAND_FORMER_NAMES = [
 ];
 export const GITHUB_REPO_URL = "https://github.com/tonyantony300/dashbeam";
 /** Shown as social proof in the header — bump this when the repo crosses a round number. */
-export const GITHUB_STAR_COUNT = "8.7K";
+export const GITHUB_STAR_COUNT = "9.0K";
 export const GITHUB_REPO_URL_LEGACY =
   "https://github.com/tonyantony300/alt-sendme";
 

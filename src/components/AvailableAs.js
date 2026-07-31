@@ -78,13 +78,13 @@ export default function AvailableAs() {
                   width={platform.width}
                 />
               </div>
-              <h3 className="mb-1.5 px-1 font-sans text-[17px] font-semibold tracking-[-0.01em] text-card-foreground">
+              <h3 className="mb-1.5 px-1 font-sans text-[17px] font-semibold tracking-[-0.01em] text-card-foreground md:text-lg">
                 {t(`${platform.key}.title`)}
               </h3>
-              <p className="mb-4 grow px-1 font-sans text-sm leading-relaxed text-muted-foreground">
+              <p className="mb-4 grow px-1 font-sans text-sm leading-relaxed text-muted-foreground md:text-base">
                 {t(`${platform.key}.description`)}
               </p>
-              <span className="mt-auto inline-flex items-center gap-1.5 px-1 font-sans text-sm font-semibold text-brand-brown">
+              <span className="mt-auto inline-flex items-center gap-1.5 px-1 font-sans text-sm font-semibold text-brand-brown md:text-[15px]">
                 {platform.external ? t("openWeb") : t("download")}
                 <ArrowUpRight
                   aria-hidden="true"

@@ -41,7 +41,7 @@ export default function PartnerSection() {
           <h3 className="font-sans text-lg font-semibold leading-snug tracking-[-0.01em] md:text-xl">
             {t("ctaTitle")}
           </h3>
-          <p className="mt-2.5 max-w-[46ch] font-sans text-[15px] leading-relaxed text-neutral-900/70">
+          <p className="mt-2.5 max-w-[46ch] font-sans text-sm leading-relaxed text-neutral-900/70 md:text-base">
             {t("ctaDescription")}
           </p>
           <div className="mt-auto w-fit self-start pt-6 md:pt-8">

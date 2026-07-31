@@ -48,10 +48,10 @@ export default function FeaturesSection() {
             <span className="mb-3.5 flex size-9 items-center justify-center rounded-frame bg-brand-tan/15 text-brand-tan">
               <Icon aria-hidden="true" size={18} weight="regular" />
             </span>
-            <h3 className="mb-1.5 font-sans text-base font-semibold leading-snug tracking-[-0.01em] text-surface-inverse-foreground">
+            <h3 className="mb-1.5 font-sans text-base font-semibold leading-snug tracking-[-0.01em] text-surface-inverse-foreground md:text-[17px]">
               {t(`items.${key}.title`)}
             </h3>
-            <p className="font-sans text-sm leading-relaxed text-surface-inverse-muted">
+            <p className="font-sans text-sm leading-relaxed text-surface-inverse-muted md:text-base">
               {t(`items.${key}.description`)}
             </p>
           </div>

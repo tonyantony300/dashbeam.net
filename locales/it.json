@@ -30,7 +30,9 @@
     "donationMessage": "Le tue donazioni rendono questo progetto migliore"
   },
   "howItWorks": {
-    "sectionLabel": "Sicuro e istantaneo.\nFunziona in 3 semplici passaggi.",
+    "sectionLabel": "Sicuro e istantaneo.\nDue modi per inviare.",
+    "eyebrow": "Come funziona",
+    "deck": "Invia un ticket a chiunque, oppure accoppia una volta e invia ai tuoi dispositivi con un clic. Nessun account da nessuna delle due parti.",
     "step1": {
       "title": "Trascina un file o una cartella",
       "description": "DashBeam crea un codice monouso sicuro (chiamato \"ticket\") per il tuo file"
@@ -42,6 +44,17 @@
     "step3": {
       "title": "Ricevono il file",
       "description": "Il tuo amico incolla il ticket nella sua app e il trasferimento inizia. Il file si scarica direttamente."
+    },
+    "paired": {
+      "label": "Invii spesso? Accoppia una volta.",
+      "step1": {
+        "title": "Accoppia una volta",
+        "description": "Inserisci un codice breve su entrambi i dispositivi. Una volta sola, poi restano accoppiati."
+      },
+      "step2": {
+        "title": "Poi basta un clic",
+        "description": "I dispositivi accoppiati compaiono direttamente nell'app. Scegline uno e il file parte subito — nessun ticket da copiare."
+      }
     }
   },
   "features": {
@@ -118,7 +131,7 @@
     "title": "Costruito per sopravviverci.",
     "subtitle": "Open Source & Guidato dalla community",
     "description": "DashBeam è sviluppato in pubblico da contributori in tutto il mondo. Ogni riga di codice è pubblica. Ogni miglioramento è condiviso. Insieme, stiamo costruendo un modo più veloce e privato di inviare file direttamente tra le persone.",
-    "githubStars": "8,7k stelle",
+    "githubStars": "9,0k stelle",
     "cardTitle": "Unisciti alla nostra community",
     "othersCount": "+ 65 altri",
     "cardDescription": "L'open source è il nostro modo di restituire alla community e assicurarci che ciò che stiamo costruendo ci sopravviva.",

@@ -30,7 +30,9 @@
     "donationMessage": "Vos dons rendent ce projet meilleur"
   },
   "howItWorks": {
-    "sectionLabel": "Sécurisé et instantané.\nFonctionne en 3 étapes simples.",
+    "sectionLabel": "Sécurisé et instantané.\nDeux façons d'envoyer.",
+    "eyebrow": "Comment ça marche",
+    "deck": "Envoyez un ticket à n'importe qui, ou appairez une fois et envoyez à vos propres appareils en un clic. Aucun compte des deux côtés.",
     "step1": {
       "title": "Déposer un fichier ou un dossier",
       "description": "DashBeam crée un code à usage unique sécurisé (appelé « ticket ») pour votre fichier"
@@ -42,6 +44,17 @@
     "step3": {
       "title": "Ils reçoivent le fichier",
       "description": "Votre ami colle le ticket dans son application et le transfert commence. Le fichier se télécharge directement."
+    },
+    "paired": {
+      "label": "Vous envoyez souvent ? Appairez une fois.",
+      "step1": {
+        "title": "Appairez une fois",
+        "description": "Saisissez un code court sur les deux appareils. Une seule fois, et ils restent appairés."
+      },
+      "step2": {
+        "title": "Ensuite, un simple clic",
+        "description": "Vos appareils appairés apparaissent directement dans l'application. Choisissez-en un et le fichier part aussitôt — aucun ticket à copier."
+      }
     }
   },
   "features": {
@@ -118,7 +131,7 @@
     "title": "Construit pour nous survivre.",
     "subtitle": "Open Source & Porté par la communauté",
     "description": "DashBeam est développé en public par des contributeurs du monde entier. Chaque ligne de code est publique. Chaque amélioration est partagée. Ensemble, nous construisons un moyen plus rapide et plus privé d'envoyer des fichiers directement entre les personnes.",
-    "githubStars": "8,7k étoiles",
+    "githubStars": "9,0k étoiles",
     "cardTitle": "Rejoignez notre communauté",
     "othersCount": "+ 65 autres",
     "cardDescription": "L'open source est notre façon de redonner à la communauté et de garantir que ce que nous construisons nous survivra.",
