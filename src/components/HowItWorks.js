@@ -1,50 +1,49 @@
 "use client";
 
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
+import { Section, SectionOpener } from "@/components/Section";
+import { tx } from "@/lib/tx";
 
 export default function HowItWorks() {
-  const t = useTranslations('howItWorks');
+  const t = useTranslations("howItWorks");
 
   const steps = [
-    {
-      title: t('step1.title'),
-      description: t('step1.description'),
-    },
-    {
-      title: t('step2.title'),
-      description: t('step2.description'),
-    },
-    {
-      title: t('step3.title'),
-      description: t('step3.description'),
-    },
+    { title: t("step1.title"), description: t("step1.description") },
+    { title: t("step2.title"), description: t("step2.description") },
+    { title: t("step3.title"), description: t("step3.description") },
   ];
 
   return (
-    <section id="how-it-works-section" className="relative w-full scroll-mt-24 pt-12 pb-16 px-5 md:px-10 md:pb-20 lg:px-[60px] lg:pb-24 text-zinc-100 overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none isolate" aria-hidden="true">
-        <div className="absolute inset-0 bg-dark" />
-        <div className="absolute inset-0 dark-grain" />
-        <div className="absolute inset-0 dark-grain" />
-        <div className="absolute inset-0 dark-grain" />
-      </div>
+    <Section id="how-it-works-section">
+      <SectionOpener
+        deck={tx(
+          t,
+          "deck",
+          "One ticket, sent however you already talk to people. No account on either end.",
+        )}
+        eyebrow={tx(t, "eyebrow", "How it works")}
+        title={t("sectionLabel")}
+      />
 
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto">
-        <div className="px-5 pt-10">
-          <h3 className="font-funnel-sans text-[32px] leading-[1.2] text-center text-accent font-bold mb-8 whitespace-pre-line md:text-[40px] md:mb-10 lg:mb-12">{t('sectionLabel')}</h3>
-        </div>
-
-        <div className="md:flex sm:gap-5">
-          {steps.map((step, index) => (
-            <div key={step.title} className="text-center md:text-left md:w-1/3 p-5 pb-10">
-              <h3 className="font-funnel-sans text-2xl font-bold text-accent">
-              {index + 1}. {step.title}
-              </h3>
-              <p className="mt-1 text-sm/6 text-zinc-400 font-funnel-sans">{step.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+      {/* Numbered because these genuinely happen in order. */}
+      <ol className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-3">
+        {steps.map((step, index) => (
+          <li key={step.title}>
+            <span
+              aria-hidden="true"
+              className="mb-4 block font-heading text-[40px] font-medium leading-none text-brand-brown/45"
+            >
+              {index + 1}
+            </span>
+            <h3 className="mb-2 font-sans text-lg font-semibold tracking-[-0.01em] md:text-xl">
+              {step.title}
+            </h3>
+            <p className="max-w-[42ch] font-sans text-sm leading-relaxed text-muted-foreground md:text-[15px]">
+              {step.description}
+            </p>
+          </li>
+        ))}
+      </ol>
+    </Section>
   );
 }

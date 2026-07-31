@@ -6,7 +6,7 @@ import UnderTheHoodPageContent from "@/components/UnderTheHoodPageContent";
 
 export default function UnderTheHoodPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="theme-light flex min-h-screen flex-col bg-cream">
       <Header />
       <main className="flex w-full flex-1 flex-col">
         <UnderTheHoodPageContent />

@@ -11,27 +11,27 @@ export const STATUS = {
 };
 
 const TABLE_CELL_TEXT =
-  "font-inter text-xs leading-relaxed text-[#4D4D4D] sm:text-sm";
+  "font-inter text-xs leading-relaxed text-muted-foreground sm:text-sm";
 const TABLE_HEADER_TEXT =
-  "font-funnel-sans text-xs font-semibold leading-snug text-[#121212] sm:text-sm";
+  "font-sans text-xs font-semibold leading-snug text-foreground sm:text-sm";
 
 function StatusIcon({ status }) {
   if (status === STATUS.yes) {
     return (
-      <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#E8F5E9] text-[#1B5E20]">
+      <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-success/15 text-success-foreground">
         <Check size={14} weight="bold" aria-hidden="true" />
       </span>
     );
   }
   if (status === STATUS.no) {
     return (
-      <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#FCE8E6] text-[#B3261E]">
+      <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-destructive/15 text-destructive-foreground">
         <X size={14} weight="bold" aria-hidden="true" />
       </span>
     );
   }
   return (
-    <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#F5F4F1] text-[#73411F]">
+    <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-table-header text-table-accent">
       <Minus size={14} weight="bold" aria-hidden="true" />
     </span>
   );
@@ -121,7 +121,7 @@ export default function ComparisonMatrix({
             return (
               <p
                 key={row.title}
-                className="pt-2 font-funnel-sans text-sm font-semibold uppercase tracking-[0.12em] text-[#73411F] sm:text-base"
+                className="pt-2 font-sans text-sm font-semibold uppercase tracking-[0.12em] text-table-accent sm:text-base"
               >
                 {row.title}
               </p>
@@ -131,14 +131,14 @@ export default function ComparisonMatrix({
           return (
             <article
               key={row.feature}
-              className={`border border-[#D3D2CD] p-4 sm:p-5 ${
-                row.highlighted ? "bg-[#FBF8F3]" : "bg-white"
+              className={`rounded-card border border-border p-4 sm:p-5 ${
+                row.highlighted ? "bg-table-surface-highlight" : "bg-table-surface"
               }`}
             >
               {row.feature ? (
                 <h3
-                  className={`font-funnel-sans text-base font-semibold sm:text-lg ${
-                    row.highlighted ? "text-[#73411F]" : "text-[#121212]"
+                  className={`font-sans text-base font-semibold sm:text-lg ${
+                    row.highlighted ? "text-table-accent" : "text-foreground"
                   }`}
                 >
                   {row.feature}
@@ -153,14 +153,14 @@ export default function ComparisonMatrix({
                     <li
                       key={`${row.feature}-${col}`}
                       className={`grid grid-cols-[minmax(0,1fr)_minmax(5.5rem,9.5rem)] items-center gap-x-4 px-2 py-3 ${
-                        colIndex > 0 ? "border-t border-[#E8E7E2]" : ""
-                      } ${isHighlighted ? "rounded-md bg-[#FBF8F3]" : ""}`}
+                        colIndex > 0 ? "border-t border-border" : ""
+                      } ${isHighlighted ? "rounded-md bg-table-surface-highlight" : ""}`}
                     >
                       <span
-                        className={`min-w-0 font-funnel-sans text-sm ${
+                        className={`min-w-0 font-sans text-sm ${
                           isHighlighted
-                            ? "font-semibold text-[#73411F]"
-                            : "font-medium text-[#121212]"
+                            ? "font-semibold text-table-accent"
+                            : "font-medium text-foreground"
                         }`}
                       >
                         {col}
@@ -179,22 +179,22 @@ export default function ComparisonMatrix({
 
       {/* Desktop table */}
       <div className="hidden lg:block">
-        <div className="overflow-x-auto border border-[#D3D2CD] bg-white">
+        <div className="overflow-x-auto rounded-card border border-border bg-table-surface">
           <table className="w-full min-w-[1040px] border-collapse">
             <thead>
-              <tr className="border-b border-[#D3D2CD] bg-[#F5F4F1]">
+              <tr className="border-b border-border bg-table-header">
                 <th
-                  className={`sticky left-0 z-30 w-48 min-w-48 border-r border-[#D3D2CD] bg-[#F5F4F1] px-5 py-4 text-left ${TABLE_HEADER_TEXT}`}
+                  className={`sticky left-0 z-30 w-48 min-w-48 border-r border-border bg-table-header px-5 py-4 text-left ${TABLE_HEADER_TEXT}`}
                 >
                   {/* feature column */}
                 </th>
                 {columns.map((col, index) => (
                   <th
                     key={col}
-                    className={`min-w-[9.5rem] border-r border-[#D3D2CD] px-5 py-4 text-center last:border-r-0 ${TABLE_HEADER_TEXT} ${
+                    className={`min-w-[9.5rem] border-r border-border px-5 py-4 text-center last:border-r-0 ${TABLE_HEADER_TEXT} ${
                       index === highlightColumnIndex
-                        ? "bg-[#FBF8F3] text-[#73411F]"
-                        : "text-[#121212]"
+                        ? "bg-table-surface-highlight text-table-accent"
+                        : "text-foreground"
                     }`}
                   >
                     {col}
@@ -209,11 +209,11 @@ export default function ComparisonMatrix({
                 return tableRows.map((row) => {
                   if (row.kind === "section") {
                     return (
-                      <tr key={row.title} className="border-b border-[#D3D2CD]">
+                      <tr key={row.title} className="border-b border-border">
                         <th
                           colSpan={columns.length + 1}
                           scope="colgroup"
-                          className="sticky left-0 bg-[#F5F4F1] px-5 py-3 text-left font-funnel-sans text-xs font-semibold uppercase tracking-[0.12em] text-[#73411F] sm:text-sm"
+                          className="sticky left-0 bg-table-header px-5 py-3 text-left font-sans text-xs font-semibold uppercase tracking-[0.12em] text-table-accent sm:text-sm"
                         >
                           {row.title}
                         </th>
@@ -227,22 +227,22 @@ export default function ComparisonMatrix({
                   return (
                     <tr
                       key={row.feature}
-                      className={`border-b border-[#D3D2CD] last:border-b-0 ${
+                      className={`border-b border-border last:border-b-0 ${
                         row.highlighted
-                          ? "bg-[#FBF8F3]"
+                          ? "bg-table-surface-highlight"
                           : zebra
-                            ? "bg-[#FAFAF8]"
+                            ? "bg-table-surface-alt"
                             : ""
                       }`}
                     >
                       <th
                         scope="row"
-                        className={`sticky left-0 z-20 w-48 min-w-48 border-r border-[#D3D2CD] px-5 py-4 text-center align-middle ${TABLE_HEADER_TEXT} ${
+                        className={`sticky left-0 z-20 w-48 min-w-48 border-r border-border px-5 py-4 text-center align-middle ${TABLE_HEADER_TEXT} ${
                           row.highlighted
-                            ? "bg-[#FBF8F3] text-[#73411F]"
+                            ? "bg-table-surface-highlight text-table-accent"
                             : zebra
-                              ? "bg-[#FAFAF8] text-[#121212]"
-                              : "bg-white text-[#121212]"
+                              ? "bg-table-surface-alt text-foreground"
+                              : "bg-table-surface text-foreground"
                         }`}
                       >
                         {row.feature}
@@ -250,16 +250,16 @@ export default function ComparisonMatrix({
                       {row.values.map((cell, cellIndex) => {
                         const highlighted = cellIndex === highlightColumnIndex;
                         const stickyBg = row.highlighted
-                          ? "bg-[#FBF8F3]"
+                          ? "bg-table-surface-highlight"
                           : zebra
-                            ? "bg-[#FAFAF8]"
-                            : "bg-white";
+                            ? "bg-table-surface-alt"
+                            : "bg-table-surface";
 
                         return (
                           <td
                             key={`${row.feature}-${cellIndex}`}
-                            className={`min-w-[9.5rem] border-r border-[#D3D2CD] px-5 py-4 text-center align-middle last:border-r-0 ${
-                              highlighted ? "bg-[#FBF8F3]/80" : stickyBg
+                            className={`min-w-[9.5rem] border-r border-border px-5 py-4 text-center align-middle last:border-r-0 ${
+                              highlighted ? "bg-table-surface-highlight/80" : stickyBg
                             }`}
                           >
                             {renderCell(cell)}

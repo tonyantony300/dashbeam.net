@@ -173,7 +173,7 @@ export default function PrivacyPageContent() {
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-[800px] px-5 py-12 md:px-10 md:py-16 lg:py-20">
-          <h1 className="font-funnel-sans text-[40px] font-bold leading-[1.1] tracking-tight text-accent md:text-[52px]">
+          <h1 className="font-funnel-sans text-[40px] font-bold leading-[1.1] tracking-tight text-tan md:text-[52px]">
             {t("title")}
           </h1>
           <p className="mt-4 font-inter text-sm text-zinc-400 md:text-base">

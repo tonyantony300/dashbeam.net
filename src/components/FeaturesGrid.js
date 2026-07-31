@@ -41,17 +41,17 @@ export default function FeaturesGrid() {
 
   return (
     <section id="features-section" className="flex flex-col items-center scroll-mt-24 py-10 px-5 w-full md:px-10 lg:px-[60px]">
-      <h2 className="font-swear-display text-[32px] leading-[1.2] text-center text-foreground font-normal mb-8 max-w-[600px] md:text-[40px] md:mb-10 lg:mb-12">
+      <h2 className="font-swear-display text-[32px] leading-[1.2] text-center text-ink font-normal mb-8 max-w-[600px] md:text-[40px] md:mb-10 lg:mb-12">
         {t('features.title')}
       </h2>
 
       <div className="w-full max-w-[1000px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {features.map((feature) => (
-          <div key={feature.key} className="flex flex-col items-center gap-2 border-2 border-foreground rounded-[20px] p-6 bg-background">
-            <h3 className="font-swear-display  text-lg text-foreground font-bold md:text-xl">
+          <div key={feature.key} className="flex flex-col items-center gap-2 border-2 border-ink rounded-[20px] p-6 bg-cream">
+            <h3 className="font-swear-display  text-lg text-ink font-bold md:text-xl">
               {feature.title}
             </h3>
-            <p className="font-fanwood-text text-base text-center text-foreground md:text-lg">
+            <p className="font-fanwood-text text-base text-center text-ink md:text-lg">
               {feature.description}
             </p>
           </div>

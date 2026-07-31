@@ -35,7 +35,9 @@
     "step3": {
       "title": "They receive file",
       "description": "Your friend pastes the ticket in their app, and the transfer begins. file downloads directly."
-    }
+    },
+    "eyebrow": "How it works",
+    "deck": "One ticket, sent however you already talk to people. No account on either end."
   },
   "features": {
     "titleLine1": "Why People Love DashBeam",
@@ -73,7 +75,10 @@
         "title": "Free & OpenSource",
         "description": "Built by community. Open by Design. Transparency and private by default."
       }
-    }
+    },
+    "eyebrow": "Why DashBeam",
+    "title": "Built for everyday file sharing.",
+    "deck": "No accounts, no quotas, no ceiling. These are the guarantees behind every transfer."
   },
   "comparison": {
     "title": "Why DashBeam Is Better",
@@ -105,7 +110,9 @@
     "testmuAlt": "TestMu AI, formerly LambdaTest",
     "ctaTitle": "Interested in Partnership?",
     "ctaDescription": "We're always looking for organizations that want to collaborate and support open-source development.",
-    "ctaButton": "Get in Touch"
+    "ctaButton": "Get in Touch",
+    "eyebrow": "Partners",
+    "deck": "Tools and teams helping keep DashBeam free and open source."
   },
   "community": {
     "title": "Built To Outlive Us.",
@@ -139,7 +146,9 @@
     "web": {
       "title": "Web",
       "description": "Transfer files and folders without installing anything. Share with Desktop, Mobile or CLI"
-    }
+    },
+    "eyebrow": "Platforms",
+    "deck": "Native apps, a terminal client, and a browser build, all speaking the same protocol."
   },
   "download": {
     "title": "Try DashBeam now",
@@ -351,7 +360,11 @@
         "question": "Is DashBeam the same as AltSendme / Alt Send Me / alt-sendme?",
         "answer": "Yes. DashBeam is the new name for AltSendme (also known as Alt Send Me, alt-sendme, and Altsendme). It is the same open-source project, the same GitHub repository, and the same peer-to-peer file transfer product."
       }
-    }
+    },
+    "eyebrow": "Questions",
+    "headline": "Frequently asked.",
+    "deck": "How transfers work, what they cost, and what leaves your machine.",
+    "stillStuck": "Still stuck? Contact us"
   },
   "comparePage": {
     "hub": {
@@ -418,7 +431,9 @@
       "ctaTitle": "Try DashBeam free",
       "ctaButton": "Download DashBeam",
       "underTheHood": "How it works under the hood",
-      "builtOnIroh": "Built on Iroh"
+      "builtOnIroh": "Built on Iroh",
+      "eyebrow": "Comparison",
+      "tableDeck": "How DashBeam lines up against the other ways to move a file."
     },
     "localsend": {
       "metaTitle": "LocalSend Alternative for the Internet",

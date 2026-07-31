@@ -21,32 +21,33 @@ import {
   pageAlternates,
 } from "@/lib/seo";
 import StructuredData from "./StructuredData";
+import ThemeProvider from "@/components/ThemeProvider";
 import "../globals.css";
 import "../../styles/home-sections.css";
 
 const funnelSans = Funnel_Sans({
-  variable: "--font-funnel-sans",
+  variable: "--ff-funnel-sans",
   subsets: ["latin"],
 });
 
 const newsreader = Newsreader({
-  variable: "--font-newsreader",
+  variable: "--ff-newsreader",
   subsets: ["latin"],
 });
 
 const libreFranklin = Libre_Franklin({
-  variable: "--font-libre-franklin",
+  variable: "--ff-libre-franklin",
   subsets: ["latin"],
 });
 
 const koulen = Koulen({
-  variable: "--font-koulen",
+  variable: "--ff-koulen",
   subsets: ["latin"],
   weight: "400",
 });
 
 const inter = Inter({
-  variable: "--font-inter",
+  variable: "--ff-inter",
   subsets: ["latin"],
 });
 
@@ -144,7 +145,7 @@ export default async function LocaleLayout({ children, params }) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="keywords" content={SEO_KEYWORDS.join(", ")} />
@@ -159,11 +160,13 @@ export default async function LocaleLayout({ children, params }) {
       <body
         className={`${funnelSans.variable} ${newsreader.variable} ${libreFranklin.variable} ${koulen.variable} ${inter.variable}`}
       >
-        <NextIntlClientProvider messages={messages}>
-          <StructuredData locale={locale} />
-          {children}
-          <Analytics />
-        </NextIntlClientProvider>
+        <ThemeProvider>
+          <NextIntlClientProvider messages={messages}>
+            <StructuredData locale={locale} />
+            {children}
+            <Analytics />
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -45,7 +45,7 @@ const TIERS = [
 
 function PartnerCell({ partner, t }) {
   const baseClass =
-    'group flex h-full min-h-[72px] items-center justify-center bg-[#FBF8F2] px-4 py-4 transition-colors hover:bg-[#F6F2EA] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-dark md:min-h-[80px]';
+    'group flex h-full min-h-[72px] items-center justify-center bg-[#FBF8F2] px-4 py-4 transition-colors hover:bg-[#F6F2EA] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tan focus-visible:ring-offset-2 focus-visible:ring-offset-dark md:min-h-[80px]';
 
   if (partner.type === 'logo') {
     const content = (
@@ -125,7 +125,7 @@ export default function PartnerSection() {
       </div>
 
       <div className="relative z-10 w-full max-w-[960px] mx-auto">
-        <h2 className="font-funnel-sans text-[32px] leading-[1.2] text-center text-accent font-bold mb-8 md:text-[40px] md:mb-10">
+        <h2 className="font-funnel-sans text-[32px] leading-[1.2] text-center text-tan font-bold mb-8 md:text-[40px] md:mb-10">
           {t('title')}
         </h2>
 
@@ -139,18 +139,18 @@ export default function PartnerSection() {
             />
           ))}
 
-          <div className="flex flex-col gap-3 border-t border-zinc-700/60 bg-accent px-6 py-6 text-foreground md:flex-row md:items-center md:justify-between md:px-8 md:py-7">
+          <div className="flex flex-col gap-3 border-t border-zinc-700/60 bg-tan px-6 py-6 text-ink md:flex-row md:items-center md:justify-between md:px-8 md:py-7">
             <div className="md:max-w-[70%]">
               <h3 className="font-funnel-sans text-base font-semibold leading-snug md:text-lg">
                 {t('ctaTitle')}
               </h3>
-              <p className="mt-1 font-funnel-sans text-sm leading-relaxed text-foreground/70">
+              <p className="mt-1 font-funnel-sans text-sm leading-relaxed text-ink/70">
                 {t('ctaDescription')}
               </p>
             </div>
             <Link
               href="/contact"
-              className="inline-flex w-fit shrink-0 items-center justify-center rounded-md bg-dark px-4 py-2 font-funnel-sans text-sm font-medium text-white transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-accent"
+              className="inline-flex w-fit shrink-0 items-center justify-center rounded-md bg-dark px-4 py-2 font-funnel-sans text-sm font-medium text-white transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-tan"
             >
               {t('ctaButton')}
             </Link>

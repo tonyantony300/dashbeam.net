@@ -62,7 +62,7 @@ export default function Footer() {
       <div className="px-5 pb-14 pt-12 md:px-10 md:pb-20 md:pt-14 lg:px-[60px] lg:pb-12 lg:pt-10">
         <div className="mx-auto flex max-w-[1200px] flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-xl lg:max-w-lg lg:shrink-0">
-            <h2 className="font-funnel-sans text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl lg:text-[40px]">
+            <h2 className="font-heading text-[28px] font-medium leading-[1.1] tracking-[-0.015em] text-white sm:text-[34px] lg:text-[44px]">
               {t.rich("headline", {
                 br: () => <br />,
               })}
@@ -73,7 +73,7 @@ export default function Footer() {
                 href="https://www.iroh.computer"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline underline-offset-[3px] font-bold text-accent"
+                className="hover:underline underline-offset-[3px] font-bold text-brand-tan"
               >
                 iroh
               </a>
@@ -132,7 +132,7 @@ export default function Footer() {
               height={220}
               className="h-24 w-24 shrink-0 sm:h-32 sm:w-32 md:h-40 md:w-40 lg:h-48 lg:w-48"
             />
-            <span className="min-w-0 font-funnel-sans text-[clamp(2.75rem,12.1vw,3.85rem)] font-extrabold leading-none tracking-tighter text-accent sm:text-[clamp(2.75rem,12vw,4.5rem)] md:text-[clamp(3rem,12vw,6rem)] lg:text-[clamp(3.5rem,15vw,10rem)]">
+            <span className="min-w-0 font-sans text-[clamp(2.75rem,12.1vw,3.85rem)] font-extrabold leading-none tracking-tighter text-brand-tan sm:text-[clamp(2.75rem,12vw,4.5rem)] md:text-[clamp(3rem,12vw,6rem)] lg:text-[clamp(3.5rem,15vw,10rem)]">
               {BRAND_NAME}
             </span>
           </div>

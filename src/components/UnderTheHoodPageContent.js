@@ -38,7 +38,7 @@ export default function UnderTheHoodPageContent() {
         <div className="relative z-10 mx-auto w-full max-w-[1200px] px-5 py-12 md:px-10 md:py-16  lg:px-0 lg:py-20">
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
             <div>
-              <h1 className="font-funnel-sans text-[40px] font-bold leading-[1.1] tracking-tight text-accent md:text-[52px] lg:text-[60px]">
+              <h1 className="font-funnel-sans text-[40px] font-bold leading-[1.1] tracking-tight text-tan md:text-[52px] lg:text-[60px]">
                 {t("title")}
               </h1>
               <p className="mt-6 font-inter text-base leading-relaxed text-zinc-300 md:text-lg">

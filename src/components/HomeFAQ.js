@@ -2,7 +2,17 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { ChevronDown } from "lucide-react";
 import { Link } from "@/i18n/routing";
+import { Section, SectionOpener } from "@/components/Section";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionPanel,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import { tx } from "@/lib/tx";
 
 const FAQ_KEYS = [
   "faq1",
@@ -17,64 +27,9 @@ const FAQ_KEYS = [
 ];
 const INITIAL_VISIBLE_COUNT = 5;
 
-function PlusIcon() {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M8 3V13M3 8H13"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function ChevronDownIcon({ expanded }) {
-  return (
-    <svg
-      width="14"
-      height="8"
-      viewBox="0 0 14 8"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      className={`text-section-text transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
-    >
-      <path
-        d="M1 1L7 7L13 1"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 export default function HomeFAQ() {
   const t = useTranslations("faq");
-  const [openItems, setOpenItems] = useState(new Set());
   const [showAll, setShowAll] = useState(false);
-
-  const toggleItem = (id) => {
-    setOpenItems((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) {
-        next.delete(id);
-      } else {
-        next.add(id);
-      }
-      return next;
-    });
-  };
 
   const compareHrefForKey = (key) => {
     if (key === "faq7") return "/compare/localsend";
@@ -87,10 +42,10 @@ export default function HomeFAQ() {
       return t.rich(`items.${key}.answer`, {
         link: (chunks) => (
           <a
+            className="text-brand-brown underline underline-offset-[3px] transition-opacity hover:opacity-80"
             href="https://www.iroh.computer/docs/faq"
-            target="_blank"
             rel="noopener noreferrer"
-            className="underline hover:opacity-80 transition-opacity"
+            target="_blank"
           >
             {chunks}
           </a>
@@ -101,8 +56,8 @@ export default function HomeFAQ() {
       return t.rich(`items.${key}.answer`, {
         compareLink: (chunks) => (
           <Link
+            className="text-brand-brown underline underline-offset-[3px] transition-opacity hover:opacity-80"
             href={compareHrefForKey(key)}
-            className="underline hover:opacity-80 transition-opacity"
           >
             {chunks}
           </Link>
@@ -112,75 +67,69 @@ export default function HomeFAQ() {
     return t(`items.${key}.answer`);
   };
 
+  const visibleKeys = showAll
+    ? FAQ_KEYS
+    : FAQ_KEYS.slice(0, INITIAL_VISIBLE_COUNT);
   const hasHiddenItems = FAQ_KEYS.length > INITIAL_VISIBLE_COUNT;
 
   return (
-    <section className="home-section">
-      <div className="home-section__container">
-        <div className="home-faq__panel">
-          <div className="home-faq__title-col">
-            <h2 className="home-faq__title">{t("title")}</h2>
-          </div>
-
-          <div className="home-faq__content">
-            <div className="home-faq__spacer" />
-
-            {FAQ_KEYS.map((key, index) => {
-              const questionId = `home-faq-question-${index}`;
-              const answerId = `home-faq-answer-${index}`;
-              const isOpen = openItems.has(questionId);
-              const isHidden = !showAll && index >= INITIAL_VISIBLE_COUNT;
-
-              return (
-                <div
-                  key={key}
-                  className={`home-faq__item ${isHidden ? "hidden" : ""}`}
-                >
-                  <h3 className="m-0">
-                    <button
-                      id={questionId}
-                      type="button"
-                      aria-expanded={isOpen}
-                      aria-controls={answerId}
-                      onClick={() => toggleItem(questionId)}
-                      className="home-faq__toggle"
-                    >
-                      <span className="home-faq__question">
-                        {t(`items.${key}.question`)}
-                      </span>
-                      <span
-                        className={`home-faq__icon ${isOpen ? "rotate-45" : ""}`}
-                      >
-                        <PlusIcon />
-                      </span>
-                    </button>
-                  </h3>
-                  <div
-                    id={answerId}
-                    role="region"
-                    aria-labelledby={questionId}
-                    hidden={!isOpen}
-                    className="home-faq__answer"
-                  >
-                    {renderAnswer(key)}
-                  </div>
-                </div>
-              );
-            })}
-
-            {hasHiddenItems && (
-              <button
-                type="button"
-                onClick={() => setShowAll((prev) => !prev)}
-                className="home-faq__more"
-              >
-                <span>{showAll ? t("viewFewer") : t("viewMore")}</span>
-                <ChevronDownIcon expanded={showAll} />
-              </button>
+    <Section>
+      <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-14">
+        <aside className="flex flex-col lg:sticky lg:top-24">
+          <SectionOpener
+            className="mb-0"
+            deck={tx(
+              t,
+              "deck",
+              "How transfers work, what they cost, and what leaves your machine.",
             )}
-          </div>
+            eyebrow={tx(t, "eyebrow", "Questions")}
+            title={tx(t, "headline", t("title"))}
+          />
+          <Button
+            className="mt-6 self-start font-sans"
+            render={<Link href="/contact" />}
+            variant="outline"
+          >
+            {tx(t, "stillStuck", "Still stuck? Contact us")}
+          </Button>
+        </aside>
+
+        <div className="flex flex-col gap-2.5">
+          <Accordion className="flex flex-col gap-2.5" multiple>
+            {visibleKeys.map((key) => (
+              <AccordionItem
+                className="overflow-hidden rounded-card border border-border bg-card transition-colors duration-150 data-[panel-open]:border-primary/25 data-[panel-open]:bg-muted"
+                key={key}
+                value={key}
+              >
+                <AccordionTrigger className="px-5 py-5 font-sans text-base font-medium tracking-[-0.01em] focus-visible:ring-offset-0 md:text-[17px]">
+                  {t(`items.${key}.question`)}
+                </AccordionTrigger>
+                <AccordionPanel className="max-w-[68ch] px-5 pb-5 font-sans text-[15px] leading-[1.7] text-muted-foreground">
+                  {renderAnswer(key)}
+                </AccordionPanel>
+              </AccordionItem>
+            ))}
+          </Accordion>
+
+          {hasHiddenItems && (
+            <Button
+              className="h-auto self-start font-sans text-sm font-medium sm:h-auto"
+              onClick={() => setShowAll((prev) => !prev)}
+              variant="ghost"
+            >
+              <span>{showAll ? t("viewFewer") : t("viewMore")}</span>
+              <ChevronDown
+                aria-hidden="true"
+                className={`transition-transform duration-300 ${
+                  showAll ? "rotate-180" : ""
+                }`}
+              />
+            </Button>
+          )}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

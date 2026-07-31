@@ -7,12 +7,12 @@ export default function Testimonial() {
 
   return (
     <section className="flex flex-col items-center py-10 px-5 w-full md:px-10 lg:px-[60px]">
-      <h2 className="font-swear-display text-[32px] leading-[1.2] text-center text-foreground font-normal mb-8 max-w-[600px] md:text-[40px] md:mb-10 lg:mb-12">
+      <h2 className="font-swear-display text-[32px] leading-[1.2] text-center text-ink font-normal mb-8 max-w-[600px] md:text-[40px] md:mb-10 lg:mb-12">
         {t("testimonial.title")}
       </h2>
 
       <div className="flex flex-col items-center gap-4 max-w-[800px]">
-        <div className="flex items-center gap-2 font-federo text-xl text-center text-foreground font-medium md:text-2xl">
+        <div className="flex items-center gap-2 font-federo text-xl text-center text-ink font-medium md:text-2xl">
           <div className="flex items-center gap-1">
             {/* 4 full stars */}
             {[...Array(4)].map((_, i) => (
@@ -55,7 +55,7 @@ export default function Testimonial() {
           </div>
           <strong>{t("testimonial.rating")}</strong>
         </div>
-        <p className="font-fanwood-text text-lg text-center text-foreground italic md:text-xl">
+        <p className="font-fanwood-text text-lg text-center text-ink italic md:text-xl">
           {`"${t("testimonial.quote")}"`}
         </p>
       </div>

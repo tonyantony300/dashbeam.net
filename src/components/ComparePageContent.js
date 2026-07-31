@@ -28,7 +28,7 @@ import {
 
 function PageShell({ children }) {
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="theme-light flex min-h-screen flex-col bg-cream">
       <Header />
       <main className="flex w-full flex-1 flex-col font-funnel-sans">
         {children}
@@ -51,18 +51,18 @@ function DarkHero({ eyebrow, title, lead, backHref, backLabel }) {
         {backHref && (
           <Link
             href={backHref}
-            className="mb-6 inline-flex items-center gap-2 font-inter text-sm text-zinc-400 transition-colors hover:text-accent"
+            className="mb-6 inline-flex items-center gap-2 font-inter text-sm text-zinc-400 transition-colors hover:text-tan"
           >
             <ArrowLeft size={16} weight="bold" aria-hidden="true" />
             {backLabel}
           </Link>
         )}
         {eyebrow && (
-          <p className="mb-3 font-inter text-xs font-medium uppercase tracking-[0.14em] text-accent/80 md:text-sm">
+          <p className="mb-3 font-inter text-xs font-medium uppercase tracking-[0.14em] text-tan/80 md:text-sm">
             {eyebrow}
           </p>
         )}
-        <h1 className="max-w-3xl font-funnel-sans text-[36px] font-bold leading-[1.1] tracking-tight text-accent md:text-[48px] lg:text-[56px]">
+        <h1 className="max-w-3xl font-funnel-sans text-[36px] font-bold leading-[1.1] tracking-tight text-tan md:text-[48px] lg:text-[56px]">
           {title}
         </h1>
         <p className="mt-5 max-w-2xl font-inter text-base leading-relaxed text-zinc-300 md:text-lg">

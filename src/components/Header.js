@@ -7,27 +7,29 @@ import GithubIcon from "@/components/GithubIcon";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
 import { Link } from "@/i18n/routing";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ThemeToggle from "@/components/ThemeToggle";
+import { Button } from "@/components/ui/button";
 
 export default function Header() {
   const t = useTranslations();
 
   return (
     <>
-      <header className="w-full py-3 px-5 md:px-10 lg:px-[60px] border-b border-[#aeadad] sticky top-0 z-[100] bg-background">
-        <div className="flex justify-between items-center max-w-[1200px] mx-auto">
-          <div className="flex items-center gap-4">
+      <header className="sticky top-0 z-[100] w-full border-b border-border bg-background/85 px-5 py-3 backdrop-blur-md md:px-10 lg:px-[60px]">
+        <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-2">
+          <div className="flex min-w-0 items-center gap-4">
             <Link
+              className="flex items-center gap-1 transition-opacity hover:opacity-70 md:gap-3"
               href="/"
-              className="flex items-center gap-1 md:gap-3 hover:opacity-70 transition-opacity"
             >
               <Image
-                src="/Altsendmelogo.png"
                 alt="DashBeam logo"
-                width={32}
                 height={32}
                 priority
+                src="/Altsendmelogo.png"
+                width={32}
               />
-              <span className="font-funnel-sans text-2xl text-[#452815] font-extrabold tracking-tighter lg:text-[28px]">
+              <span className="truncate font-sans text-xl font-extrabold tracking-tighter text-primary sm:text-2xl lg:text-[28px]">
                 {t("common.logo")}
               </span>
             </Link>
@@ -35,43 +37,54 @@ export default function Header() {
               <LanguageSwitcher />
             </div>
           </div>
-          <nav className="flex items-center gap-3 md:gap-6">
-            <a
-              href="https://github.com/sponsors/tonyantony300"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub Sponsors"
-              className="md:flex hidden items-center gap-1 rounded-md px-1.5 py-1.5 font-funnel-sans text-sm font-semibold text-[#452815] transition-opacity hover:opacity-70"
+
+          <nav className="flex items-center gap-1 md:gap-2">
+            <Button
+              className="hidden font-sans font-semibold text-primary md:inline-flex"
+              render={
+                <a
+                  aria-label="GitHub Sponsors"
+                  href="https://github.com/sponsors/tonyantony300"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                />
+              }
+              size="sm"
+              variant="ghost"
             >
-              <Heart
-                size={16}
-                weight="fill"
-                className="shrink-0 text-[#452815]"
-                aria-hidden="true"
-              />
+              <Heart aria-hidden="true" size={16} weight="fill" />
               <span>Donate</span>
-            </a>
-            <a
-              href="https://github.com/tonyantony300/dashbeam"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1 md:gap-2 font-funnel-sans text-sm font-semibold text-[#452815] px-1.5 py-1.5 rounded-md "
+            </Button>
+
+            {/* Hidden on the narrowest screens so the logo and theme selector
+                both fit without truncating. */}
+            <Button
+              className="hidden font-sans font-semibold text-primary sm:inline-flex"
+              render={
+                <a
+                  href="https://github.com/tonyantony300/dashbeam"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                />
+              }
+              size="sm"
+              variant="ghost"
             >
-              <GithubIcon size={14} className="shrink-0" />
+              <GithubIcon className="shrink-0" size={14} />
               <span>8.7K</span>
-            </a>
-            <Link
-              href="/downloads"
-              className="flex shrink-0 items-center gap-1 rounded-md px-1.5 py-1.5 font-funnel-sans text-sm font-semibold text-[#452815] transition-opacity hover:opacity-70"
+            </Button>
+
+            <Button
+              className="font-sans font-semibold text-primary"
+              render={<Link href="/downloads" />}
+              size="sm"
+              variant="ghost"
             >
-              <DownloadSimple
-                size={14}
-                weight="bold"
-                className="shrink-0 text-[#452815]"
-                aria-hidden="true"
-              />
-              <span>Downloads</span>
-            </Link>
+              <DownloadSimple aria-hidden="true" size={14} weight="bold" />
+              <span className="hidden sm:inline">Downloads</span>
+            </Button>
+
+            <ThemeToggle className="ml-1 shrink-0" />
           </nav>
         </div>
       </header>

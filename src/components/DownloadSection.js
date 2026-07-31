@@ -43,23 +43,23 @@ export default function DownloadSection() {
       <div id="download-android" className="scroll-mt-24" aria-hidden="true" />
       <div id="download-cli" className="scroll-mt-24" aria-hidden="true" />
       <div id="download-web" className="scroll-mt-24" aria-hidden="true" />
-      <h2 className="font-swear-display text-[32px] leading-[1.2] text-center text-foreground font-normal mb-4 max-w-[600px] md:text-[40px] md:mb-6 lg:mb-8">
+      <h2 className="font-swear-display text-[32px] leading-[1.2] text-center text-ink font-normal mb-4 max-w-[600px] md:text-[40px] md:mb-6 lg:mb-8">
         {t('download.title')}
       </h2>
 
-      <p className="font-fanwood-text text-lg text-center text-foreground mb-8 max-w-[600px] md:text-xl md:mb-10">
+      <p className="font-fanwood-text text-lg text-center text-ink mb-8 max-w-[600px] md:text-xl md:mb-10">
         {t('download.subtitle')}
       </p>
 
       <div className="relative w-full max-w-[460px] lg:max-w-[660px] download-container mb-6">
         {/* Button Group */}
-        <div className="flex group hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] shadow-[0px_3px_0px_0px_rgba(0,0,0,1)] rounded-2xl transition-all border-2 border-foreground bg-transparent w-full rounded-[20px] lg:w-auto">
+        <div className="flex group hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] shadow-[0px_3px_0px_0px_rgba(0,0,0,1)] rounded-2xl transition-all border-2 border-ink bg-transparent w-full rounded-[20px] lg:w-auto">
           {/* Main Download Button */}
           <a
             href={primaryDownload.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all h-16 rounded-[20px] px-4 text-base md:px-6 md:text-lg lg:text-xl flex-1 rounded-r-none border-0 shadow-none group-hover:shadow-none transform-none group-hover:transform-none bg-transparent hover:bg-transparent text-foreground"
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all h-16 rounded-[20px] px-4 text-base md:px-6 md:text-lg lg:text-xl flex-1 rounded-r-none border-0 shadow-none group-hover:shadow-none transform-none group-hover:transform-none bg-transparent hover:bg-transparent text-ink"
           >
             <Image
               src={primaryDownload.icon}
@@ -77,7 +77,7 @@ export default function DownloadSection() {
               e.stopPropagation();
               setIsDropdownOpen(!isDropdownOpen);
             }}
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all h-16 rounded-[20px] px-3 rounded-l-none border-0 flex-shrink-0 shadow-none group-hover:shadow-none transform-none group-hover:transform-none bg-transparent hover:bg-transparent text-foreground border-l-2 border-foreground"
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all h-16 rounded-[20px] px-3 rounded-l-none border-0 flex-shrink-0 shadow-none group-hover:shadow-none transform-none group-hover:transform-none bg-transparent hover:bg-transparent text-ink border-l-2 border-ink"
           >
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
@@ -99,7 +99,7 @@ export default function DownloadSection() {
 
         {/* Dropdown Menu */}
         {isDropdownOpen && (
-          <div className="absolute top-full mt-2 right-0 w-full lg:w-[300px] bg-background rounded-[20px] overflow-hidden shadow-[0px_4px_0px_0px_rgba(0,0,0,1)] border-2 border-foreground z-40">
+          <div className="absolute top-full mt-2 right-0 w-full lg:w-[300px] bg-cream rounded-[20px] overflow-hidden shadow-[0px_4px_0px_0px_rgba(0,0,0,1)] border-2 border-ink z-40">
             <div className="m-1 overflow-hidden">
               {downloadOptions.map((option) => (
                 <a
@@ -107,7 +107,7 @@ export default function DownloadSection() {
                   href={option.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full flex items-center justify-between px-4 py-3 text-left hover:text-foreground hover:bg-foreground hover:bg-opacity-5 rounded-2xl transition-all whitespace-nowrap"
+                  className="w-full flex items-center justify-between px-4 py-3 text-left hover:text-ink hover:bg-ink hover:bg-opacity-5 rounded-2xl transition-all whitespace-nowrap"
                 >
                   <div className="flex items-center gap-3 min-w-0">
                     <Image

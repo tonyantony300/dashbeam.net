@@ -35,15 +35,15 @@ export default function ComparisonTable() {
 
   return (
     <section className="flex flex-col items-center py-10 px-5 w-full md:px-10 lg:px-[60px]">
-      <h2 className="font-swear-display text-[32px] leading-[1.2] text-center text-foreground font-normal mb-8 max-w-[600px] md:text-[40px] md:mb-10 lg:mb-12">
+      <h2 className="font-swear-display text-[32px] leading-[1.2] text-center text-ink font-normal mb-8 max-w-[600px] md:text-[40px] md:mb-10 lg:mb-12">
         {t('comparison.title')}
       </h2>
 
       <div className="w-full max-w-[1000px] overflow-x-auto">
-        <div className="min-w-full border-2 border-foreground rounded-[20px] overflow-hidden">
+        <div className="min-w-full border-2 border-ink rounded-[20px] overflow-hidden">
           <table className="w-full">
             <thead>
-              <tr className="border-b-2 border-foreground bg-background">
+              <tr className="border-b-2 border-ink bg-cream">
                 <th className="font-federo text-base text-left p-4 md:text-lg md:p-6"></th>
                 <th className="font-swear-display text-base text-center p-4 md:text-lg md:p-6">
                   {t('comparison.altSendme')}
@@ -57,7 +57,7 @@ export default function ComparisonTable() {
               {comparisons.map((comparison, index) => (
                 <tr 
                   key={index} 
-                  className={`border-b-2 border-foreground ${index === comparisons.length - 1 ? '' : 'border-b-2'}`}
+                  className={`border-b-2 border-ink ${index === comparisons.length - 1 ? '' : 'border-b-2'}`}
                 >
                   <td className="font-federo text-base font-medium p-4 md:text-lg md:p-6">
                     {comparison.feature}

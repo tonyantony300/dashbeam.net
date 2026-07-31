@@ -195,7 +195,7 @@ export default function DownloadsPageContent() {
 
           <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:items-center sm:gap-4">
             <div className="relative w-full sm:w-auto" ref={dropdownRef}>
-              <div className="flex h-12 w-full overflow-hidden rounded-md border-4 border-accent bg-[#452815] sm:w-auto">
+              <div className="flex h-12 w-full overflow-hidden rounded-md border-4 border-tan bg-[#452815] sm:w-auto">
                 <a
                   href={primaryUrl}
                   target="_blank"
@@ -255,7 +255,7 @@ export default function DownloadsPageContent() {
             <button
               type="button"
               onClick={scrollToPlatforms}
-              className="inline-flex h-12 w-full items-center justify-center gap-3 rounded-md border-4 border-accent bg-[#E5DACC] px-6 text-base font-medium text-[#73411F] transition-colors hover:bg-[#D9CCB5] sm:w-auto"
+              className="inline-flex h-12 w-full items-center justify-center gap-3 rounded-md border-4 border-tan bg-[#E5DACC] px-6 text-base font-medium text-[#73411F] transition-colors hover:bg-[#D9CCB5] sm:w-auto"
             >
               <span>{t("otherPlatforms")}</span>
               <DownloadIcon className="h-5 w-5 shrink-0" fill="#73411F" />
@@ -265,7 +265,7 @@ export default function DownloadsPageContent() {
               href={WEB_APP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 w-full items-center justify-center gap-3 rounded-md border-4 border-accent bg-[#452815] px-6 text-base font-medium text-[#F5F4F0] transition-colors hover:bg-[#5a3419] sm:w-auto"
+              className="inline-flex h-12 w-full items-center justify-center gap-3 rounded-md border-4 border-tan bg-[#452815] px-6 text-base font-medium text-[#F5F4F0] transition-colors hover:bg-[#5a3419] sm:w-auto"
             >
               <span>{t("tryOnWeb")}</span>
             </a>

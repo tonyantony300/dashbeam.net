@@ -6,7 +6,7 @@ import Contact from '@/components/Contact';
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="theme-light min-h-screen bg-cream flex flex-col">
       <Header />
       <main className="flex-1 flex flex-col w-full">
         <Contact />
