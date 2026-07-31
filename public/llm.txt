@@ -16,7 +16,7 @@ DashBeam is the same project previously known as **AltSendme**, **Alt Send Me**,
 - **GitHub (legacy URL)**: https://github.com/tonyantony300/alt-sendme
 - **Discord**: https://discord.gg/xwb7z22Eve
 - **License**: AGPL-3.0
-- **Latest version**: 0.6.0
+- **Latest version**: 0.6.2
 - **Developer**: tonyantony300
 - **Former names**: AltSendme, Alt Send Me, alt-sendme, Altsendme, AltSendMe
 

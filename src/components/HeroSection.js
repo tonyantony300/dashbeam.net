@@ -2,226 +2,231 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
+import { ChevronsUpDown } from "lucide-react";
 import {
   detectPlatform,
   getDownloadOptions,
   getPrimaryDownloadOption,
   WEB_APP_URL,
-} from '@/constants/downloads';
+} from "@/constants/downloads";
+import { Button } from "@/components/ui/button";
+import {
+  Menu,
+  MenuLinkItem,
+  MenuPopup,
+  MenuTrigger,
+} from "@/components/ui/menu";
+import { tx } from "@/lib/tx";
+
+const HERO_FEATURES = [
+  {
+    title: "Free, for files & folders of any size",
+    description:
+      "DashBeam works by connecting sender and receiver directly, so there's no need to upload to a server, which means your transfers are truly private.",
+  },
+  {
+    title: "Fast",
+    description: "DashBeam can saturate a 4Gbps connection.",
+  },
+  {
+    title: "Resumable fetching",
+    description: "Interrupted downloads pick up where they left off.",
+  },
+  {
+    title: "Integrity checks",
+    description:
+      "Data is automatically verified for correctness on both send and receive.",
+  },
+];
 
 export default function HeroSection() {
   const t = useTranslations();
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [platform, setPlatform] = useState({ os: "mac", arch: "x64" });
 
   useEffect(() => {
     setPlatform(detectPlatform());
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (isDropdownOpen && !event.target.closest('.download-container')) {
-        setIsDropdownOpen(false);
-      }
-    };
-
-    if (isDropdownOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    }
-  }, [isDropdownOpen]);
-
   const downloadOptions = getDownloadOptions(t);
-  const primaryDownload = getPrimaryDownloadOption(t, platform.os, platform.arch);
-
-  const heroFeatures = [
-    {
-      title: "Free, for files & folders of any size",
-      description:
-        "DashBeam works by connecting sender and receiver directly, so there's no need to upload to a server, which means your transfers are truly private.",
-    },
-    {
-      title: "Fast",
-      description: "DashBeam can saturate a 4Gbps connection.",
-    },
-    {
-      title: "Resumable fetching",
-      description: "Interrupted downloads pick up where they left off.",
-    },
-    {
-      title: "Integrity checks",
-      description:
-        "Data is automatically verified for correctness on both send and receive.",
-    },
-  ];
+  const primaryDownload = getPrimaryDownloadOption(
+    t,
+    platform.os,
+    platform.arch,
+  );
 
   return (
-    <section className="relative w-full min-h-[559px] md:min-h-[60vh] lg:min-h-[70vh] xl:min-h-[80vh] flex flex-col items-center lg:items-start justify-center overflow-hidden py-10 lg:pt-20 px-5 md:px-10 lg:px-[60px]">
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div
-          className="absolute inset-0 bg-[url('/heroImage.jpg')] bg-[length:auto_100%] lg:bg-cover bg-center bg-no-repeat"
-        />
-        <div className="absolute inset-0 hero-grain mix-blend-overlay opacity-[0.22]" />
+    <section className="relative flex min-h-[559px] w-full flex-col items-center justify-center overflow-hidden px-5 py-16 md:min-h-[60vh] md:px-10 md:py-20 lg:items-start lg:px-[60px] lg:py-24 xl:min-h-[80vh]">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[url('/heroImage.jpg')] bg-[length:auto_100%] bg-center bg-no-repeat lg:bg-cover" />
+        <div className="absolute inset-0 hero-grain opacity-[0.22] mix-blend-overlay" />
+        {/* Transparent in light mode; darkens the photograph in dark mode so
+            the copy layered on top keeps its contrast. */}
+        <div className="absolute inset-0 bg-scrim" />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto flex flex-col">
-        <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-8 lg:gap-12">
-        <div className="flex flex-col items-center lg:items-start">
-          <a
-            href="https://github.com/tonyantony300/dashbeam"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center lg:justify-start gap-2 font-funnel-sans text-sm text-black px-4 py-1.5 rounded-full mb-6 border-[0.5px] border-white/40 bg-white/20 backdrop-blur-md shadow-[0_2px_8px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.5)] hover:bg-white/30 transition-colors"
-          >
-            {t('common.openSourceAgpl')}
-          </a>
+      <div className="relative z-10 mx-auto flex w-full max-w-[1200px] flex-col">
+        <div className="flex flex-col items-center justify-center gap-8 lg:flex-row lg:justify-start lg:gap-12">
+          <div className="flex flex-col items-center lg:items-start">
+            <a
+              className="mb-6 flex items-center justify-center gap-2 rounded-full border-[0.5px] border-white/40 bg-white/20 px-4 py-1.5 font-sans text-sm text-black shadow-[0_2px_8px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.5)] backdrop-blur-md transition-colors hover:bg-white/30 lg:justify-start dark:border-white/25 dark:bg-white/10 dark:text-white"
+              href="https://github.com/tonyantony300/dashbeam"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {t("common.openSourceAgpl")}
+            </a>
 
-          <h1 className="font-funnel-sans text-[41px] leading-[1.2] text-center lg:text-left text-black font-bold mb-6 max-w-[600px] md:text-[56px] md:mb-6 md:max-w-[800px] lg:mb-8 lg:max-w-[1000px] tracking-tight">
-            {t('hero.title')}
-          </h1>
+            <h1 className="mb-6 max-w-[620px] text-balance text-center font-heading text-[42px] font-medium leading-[1.04] tracking-[-0.02em] text-black md:max-w-[760px] md:text-[62px] lg:mb-8 lg:text-left dark:text-white">
+              {t("hero.title")}
+            </h1>
 
-          <p className="font-funnel-sans text-base text-center lg:text-left text-black mb-6 max-w-[600px] md:text-lg md:mb-8">
-            {t('hero.description')}
-          </p>
-
-          <div className="flex flex-col items-center lg:items-start gap-3 mb-6 md:mb-8">
-            <p className="font-funnel-sans text-sm text-center lg:text-left text-black italic max-w-[600px] md:text-base">
-              {t('hero.airdropQuote')}
+            <p className="mb-6 max-w-[600px] text-center font-sans text-base text-black md:mb-8 md:text-lg lg:text-left dark:text-zinc-200">
+              {t("hero.description")}
             </p>
-          </div>
 
-          <div className="w-full max-w-[460px] lg:max-w-[660px] flex flex-col items-center lg:items-start">
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full mb-8">
-              <div className="relative w-full sm:w-auto flex-shrink-0">
-                <span className="pointer-events-none absolute -right-1 -top-3 z-10 rounded-full bg-yc-red px-2 py-0.5 font-funnel-sans text-[9px] font-bold uppercase tracking-[0.1em] text-white shadow-[0_2px_10px_rgba(220,38,38,0.5)] ring-2 ring-white">
-                  {t('hero.newBadge')}
-                </span>
-                <a
-                  href={WEB_APP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all h-16 px-6 text-base md:text-lg lg:text-xl bg-white text-dark hover:opacity-90 font-funnel-sans"
-                >
-                  {t('hero.sendNow')}
-                </a>
-              </div>
+            <p className="mb-6 max-w-[600px] text-center font-sans text-sm italic text-black md:mb-8 md:text-base lg:text-left dark:text-zinc-300">
+              {t("hero.airdropQuote")}
+            </p>
 
-            <div className="relative w-full rounded-[20px] lg:w-auto download-container flex-1 sm:flex-initial">
-              <div className="flex group hover:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] rounded-xl transition-all bg-dark w-full lg:w-auto ">
-                <a
-                  href={primaryDownload.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all h-16 px-4 text-base md:px-6 md:text-lg lg:text-xl flex-1 rounded-r-none border-0 shadow-none group-hover:shadow-none transform-none group-hover:transform-none bg-dark hover:opacity-90 text-white"
-                >
-                  <Image
-                    src={primaryDownload.icon}
-                    alt=""
-                    width={20}
-                    height={20}
-                    className="flex-shrink-0 brightness-0 invert"
-                  />
-                  <span className="font-funnel-sans font-medium">{primaryDownload.label}</span>
-                </a>
-
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setIsDropdownOpen(!isDropdownOpen);
-                  }}
-                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all h-16 px-3 rounded-l-none border-0 flex-shrink-0 shadow-none group-hover:shadow-none transform-none group-hover:transform-none bg-dark hover:opacity-90 text-white border-l-[0.5px] border-white"
-                >
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="24" 
-                    height="24" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                    className={`transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
-                  >
-                    <path d="m7 15 5 5 5-5"></path>
-                    <path d="m7 9 5-5 5 5"></path>
-                  </svg>
-                </button>
-              </div>
-
-              {isDropdownOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 mt-2 w-full lg:w-[400px] overflow-hidden rounded-xl border border-section-border bg-dark shadow-lg z-40">
-                  {downloadOptions.map((option) => (
+            <div className="flex w-full max-w-[460px] flex-col items-center lg:max-w-[660px] lg:items-start">
+              <div className="flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center">
+                <Button
+                  className="h-12 w-full shrink-0 border-transparent bg-brand-brown px-5 font-sans font-semibold text-primary-foreground shadow-card hover:opacity-90 sm:h-11 sm:w-auto dark:text-neutral-900"
+                  render={
                     <a
-                      key={option.id}
-                      href={option.url}
-                      target="_blank"
+                      href={WEB_APP_URL}
                       rel="noopener noreferrer"
-                      className="flex w-full items-center justify-between border-b border-white/10 px-5 py-3 text-left text-sm font-medium text-white transition-colors last:border-b-0 hover:bg-white/10 md:text-base whitespace-nowrap"
-                    >
-                      <div className="flex min-w-0 items-center gap-3">
-                        <Image
-                          src={option.icon}
-                          alt=""
-                          width={20}
-                          height={20}
-                          className="flex-shrink-0 brightness-0 invert"
+                      target="_blank"
+                    />
+                  }
+                  size="xl"
+                >
+                  {t("hero.sendNow")}
+                </Button>
+
+                {/* Split button: the halves stay transparent so the shared
+                    brand-brown shell reads as one control, and each half tints
+                    itself on hover instead of shifting its own background. */}
+                <div className="flex w-full rounded-lg bg-brand-brown shadow-card sm:w-auto">
+                  <Button
+                    className="h-12 flex-1 rounded-e-none border-transparent bg-transparent px-5 font-sans font-semibold text-primary-foreground shadow-none hover:bg-white/10 sm:h-11 sm:flex-initial dark:text-neutral-900 dark:hover:bg-black/10"
+                    render={
+                      <a
+                        href={primaryDownload.url}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      />
+                    }
+                    size="xl"
+                    variant="ghost"
+                  >
+                    <Image
+                      alt=""
+                      className={
+                        primaryDownload.keepIconColor
+                          ? "shrink-0"
+                          : "shrink-0 brightness-0 invert dark:invert-0"
+                      }
+                      height={18}
+                      src={primaryDownload.icon}
+                      width={18}
+                    />
+                    <span>{primaryDownload.label}</span>
+                  </Button>
+
+                  <Menu>
+                    <MenuTrigger
+                      render={
+                        <Button
+                          aria-label={tx(
+                            t,
+                            "hero.moreDownloadOptions",
+                            "More download options",
+                          )}
+                          className="h-12 shrink-0 rounded-s-none border-transparent border-s-white/25 bg-transparent px-3 text-primary-foreground shadow-none hover:bg-white/10 sm:h-11 dark:border-s-black/15 dark:text-neutral-900 dark:hover:bg-black/10"
+                          size="xl"
+                          variant="ghost"
                         />
-                        <span className="font-funnel-sans truncate">{option.label}</span>
-                      </div>
-                      <span className="ml-2 flex-shrink-0 font-funnel-sans text-sm text-white/60">{option.size}</span>
-                    </a>
-                  ))}
+                      }
+                    >
+                      <ChevronsUpDown
+                        aria-hidden="true"
+                        className="size-4 opacity-70"
+                      />
+                    </MenuTrigger>
+                    <MenuPopup
+                      align="end"
+                      className="min-w-[280px] lg:min-w-[400px]"
+                    >
+                      {downloadOptions.map((option) => (
+                        <MenuLinkItem
+                          className="justify-between py-2.5"
+                          href={option.url}
+                          key={option.id}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        >
+                          <span className="flex min-w-0 items-center gap-3">
+                            <Image
+                              alt=""
+                              className={
+                                option.keepIconColor
+                                  ? "shrink-0"
+                                  : "shrink-0 dark:brightness-0 dark:invert"
+                              }
+                              height={20}
+                              src={option.icon}
+                              width={20}
+                            />
+                            <span className="truncate font-sans">
+                              {option.label}
+                            </span>
+                          </span>
+                          <span className="ms-2 shrink-0 font-sans text-sm text-muted-foreground">
+                            {option.size}
+                          </span>
+                        </MenuLinkItem>
+                      ))}
+                    </MenuPopup>
+                  </Menu>
                 </div>
-              )}
+              </div>
             </div>
+          </div>
+
+          <div className="relative z-20 w-full rounded-[18px] border border-black/20 bg-white/30 p-1.5 shadow-[2px_2px_12px_2px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-md md:max-w-[575px] lg:max-w-[690px] dark:border-white/15 dark:bg-white/10">
+            <div className="overflow-hidden rounded-card">
+              <Image
+                alt="DashBeam app demo"
+                className="h-auto w-full object-contain"
+                height={800}
+                priority
+                src="/altsendme-demo.gif"
+                unoptimized
+                width={1200}
+              />
             </div>
           </div>
         </div>
 
-        <div className="relative z-20 w-full md:max-w-[575px] lg:max-w-[690px] rounded-[20px] border border-foreground/20 bg-white/30 backdrop-blur-md p-1.5 shadow-[2px_2px_12px_2px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.6)]">
-
-          <div className="rounded-xl overflow-hidden">
-            <Image
-              src="/altsendme-demo.gif"
-              alt="AltSendMe app demo"
-              width={1200}
-              height={800}
-              className="w-full h-auto object-contain"
-              priority
-              unoptimized
-            />
-          </div>
-        </div>
-        </div>
-
-        <div className="w-full mt-12 lg:mt-16 border border-foreground/15 bg-background/40 backdrop-blur-sm">
-          <div className="p-6 md:p-8 border-b border-foreground/15">
-            <h2 className="font-federo text-sm md:text-base font-bold uppercase tracking-wide text-foreground mb-2">
-              {heroFeatures[0].title}
+        <div className="mt-12 w-full overflow-hidden rounded-card border border-black/15 bg-white/40 backdrop-blur-sm lg:mt-16 dark:border-white/15 dark:bg-black/40">
+          <div className="border-b border-black/15 p-6 md:p-8 dark:border-white/15">
+            <h2 className="mb-2 font-sans text-sm font-bold uppercase tracking-wide text-black md:text-base dark:text-white">
+              {HERO_FEATURES[0].title}
             </h2>
-            <p className="font-funnel-sans text-sm md:text-base text-foreground leading-relaxed">
-              {heroFeatures[0].description}
+            <p className="font-sans text-sm leading-relaxed text-black md:text-base dark:text-zinc-200">
+              {HERO_FEATURES[0].description}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3">
-            {heroFeatures.slice(1).map((feature, index) => (
-              <div
-                key={feature.title}
-                className={`p-6 md:p-8 ${
-                  index < heroFeatures.length - 2
-                    ? "border-b border-foreground/15 md:border-b-0 md:border-r"
-                    : ""
-                }`}
-              >
-                <h3 className="font-funnel-sans text-sm md:text-base font-bold uppercase tracking-wide text-foreground mb-2">
+          <div className="grid grid-cols-1 divide-y divide-black/15 md:grid-cols-3 md:divide-x md:divide-y-0 dark:divide-white/15">
+            {HERO_FEATURES.slice(1).map((feature) => (
+              <div className="p-6 md:p-8" key={feature.title}>
+                <h3 className="mb-2 font-sans text-sm font-bold uppercase tracking-wide text-black md:text-base dark:text-white">
                   {feature.title}
                 </h3>
-                <p className="font-funnel-sans text-sm md:text-base text-foreground leading-relaxed">
+                <p className="font-sans text-sm leading-relaxed text-black md:text-base dark:text-zinc-200">
                   {feature.description}
                 </p>
               </div>

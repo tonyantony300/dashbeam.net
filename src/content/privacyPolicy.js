@@ -130,8 +130,8 @@ export const privacyPolicy = {
               heading: "Your Control",
               bullets: [
                 "By default, DashBeam uses the discovery servers operated by the Iroh project (n0).",
-                "You can configure a custom self-hosted discovery server in Settings → Infra. Discovery is independent of relays — you can self-host either, both, or neither.",
-                "Custom discovery publishes over HTTPS pkarr. If you also set a DNS origin (advanced real-DNS path), resolution may use your system DNS resolver for TXT lookups under that origin, in addition to HTTPS — the same class of disclosure as default n0 DNS discovery.",
+                "You can configure a custom self-hosted discovery server in Settings → Infra. Discovery is independent of relays: you can self-host either, both, or neither.",
+                "Custom discovery publishes over HTTPS pkarr. If you also set a DNS origin (advanced real-DNS path), resolution may use your system DNS resolver for TXT lookups under that origin, in addition to HTTPS. That is the same class of disclosure as default n0 DNS discovery.",
                 "Discovery records are self-authenticating: a discovery server never sees file contents or names, only small signed address records.",
               ],
             },
@@ -173,7 +173,7 @@ export const privacyPolicy = {
       plainBullets: [
         "No personal information is collected",
         "File contents are not tracked",
-        "Files are not stored or accessed on any servers — there is no server-side file storage",
+        "Files are not stored or accessed on any servers: there is no server-side file storage",
         "Tracking services or cookies are not used by the app",
         "Data is not shared with third parties for advertising or analytics",
       ],

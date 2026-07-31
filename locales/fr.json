@@ -3,9 +3,16 @@
     "logo": "DashBeam",
     "donate": "Faire un don",
     "buyMeACoffee": "Offrez-moi un café",
-    "openSourceAgpl": "Open Source | AGPL 3.0",
+    "openSourceAgpl": "Gratuit | Open Source",
     "contactUs": "Contactez-nous",
     "license": "© GNU Affero General Public License v3.0"
+  },
+  "header": {
+    "getApp": "Obtenir l'app",
+    "menu": "Menu",
+    "theme": "Thème",
+    "language": "Langue",
+    "starsAria": "{count} étoiles sur GitHub"
   },
   "hero": {
     "title": "Le moyen le plus rapide et le plus fluide de transférer des fichiers à n'importe qui, n'importe où.",
@@ -23,7 +30,9 @@
     "donationMessage": "Vos dons rendent ce projet meilleur"
   },
   "howItWorks": {
-    "sectionLabel": "Sécurisé et instantané.\nFonctionne en 3 étapes simples.",
+    "sectionLabel": "Sécurisé et instantané.\nDeux façons d'envoyer.",
+    "eyebrow": "Comment ça marche",
+    "deck": "Envoyez un ticket à n'importe qui, ou appairez une fois et envoyez à vos propres appareils en un clic. Aucun compte des deux côtés.",
     "step1": {
       "title": "Déposer un fichier ou un dossier",
       "description": "DashBeam crée un code à usage unique sécurisé (appelé « ticket ») pour votre fichier"
@@ -35,6 +44,17 @@
     "step3": {
       "title": "Ils reçoivent le fichier",
       "description": "Votre ami colle le ticket dans son application et le transfert commence. Le fichier se télécharge directement."
+    },
+    "paired": {
+      "label": "Vous envoyez souvent ? Appairez une fois.",
+      "step1": {
+        "title": "Appairez une fois",
+        "description": "Saisissez un code court sur les deux appareils. Une seule fois, et ils restent appairés."
+      },
+      "step2": {
+        "title": "Ensuite, un simple clic",
+        "description": "Vos appareils appairés apparaissent directement dans l'application. Choisissez-en un et le fichier part aussitôt. Aucun ticket à copier."
+      }
     }
   },
   "features": {
@@ -73,7 +93,10 @@
         "title": "Gratuit & Open Source",
         "description": "Construit par la communauté. Ouvert par conception. Transparence et confidentialité par défaut."
       }
-    }
+    },
+    "eyebrow": "Why DashBeam",
+    "title": "Built for everyday file sharing.",
+    "deck": "No accounts, no quotas, no ceiling. These are the guarantees behind every transfer."
   },
   "comparison": {
     "title": "Pourquoi DashBeam est meilleur",
@@ -105,13 +128,15 @@
     "testmuAlt": "TestMu AI, anciennement LambdaTest",
     "ctaTitle": "Intéressé par un partenariat ?",
     "ctaDescription": "Nous recherchons toujours des organisations qui souhaitent collaborer et soutenir le développement open source.",
-    "ctaButton": "Nous contacter"
+    "ctaButton": "Nous contacter",
+    "eyebrow": "Partners",
+    "deck": "Tools and teams helping keep DashBeam free and open source."
   },
   "community": {
     "title": "Construit pour nous survivre.",
     "subtitle": "Open Source & Porté par la communauté",
     "description": "DashBeam est développé en public par des contributeurs du monde entier. Chaque ligne de code est publique. Chaque amélioration est partagée. Ensemble, nous construisons un moyen plus rapide et plus privé d'envoyer des fichiers directement entre les personnes.",
-    "githubStars": "8,7k étoiles",
+    "githubStars": "9,0k étoiles",
     "cardTitle": "Rejoignez notre communauté",
     "othersCount": "+ 65 autres",
     "cardDescription": "L'open source est notre façon de redonner à la communauté et de garantir que ce que nous construisons nous survivra.",
@@ -139,7 +164,9 @@
     "web": {
       "title": "Web",
       "description": "Transférez des fichiers et dossiers sans rien installer. Partagez avec Desktop, Mobile ou CLI."
-    }
+    },
+    "eyebrow": "Platforms",
+    "deck": "Native apps, a terminal client, and a browser build, all speaking the same protocol."
   },
   "download": {
     "title": "Essayez DashBeam maintenant",
@@ -147,7 +174,7 @@
   },
   "underTheHoodPage": {
     "metaTitle": "Sous le capot",
-    "metaDescription": "Découvrez comment DashBeam permet des transferts de fichiers peer-to-peer directs avec des tickets, iroh, le chiffrement QUIC, le traversée NAT et des relais open source, sans comptes ni adresses IP.",
+    "metaDescription": "Découvrez comment DashBeam permet des transferts de fichiers peer-to-peer directs avec des tickets, iroh, le chiffrement QUIC, le traversée NAT, l'appairage d'appareils et des relais open source, sans comptes ni adresses IP.",
     "title": "Sous le capot",
     "intro": "C'est comme scp sans avoir besoin de connaître l'adresse IP. Ajoutez des fichiers à DashBeam, et il vous donnera un ticket collable que vous pourrez transmettre à quiconque a besoin de vos fichiers. DashBeam connectera vos appareils directement et transférera les données sans comptes ni configuration.",
     "heroAlt": "Graphique hero DashBeam",
@@ -195,6 +222,18 @@
       "relays": {
         "title": "Relais",
         "body": "DashBeam utilise des serveurs relais publics open source pour établir des connexions directes, accélérer les connexions initiales et servir de repli si les connexions directes échouent. Toutes les connexions sont chiffrées de bout en bout. Le relais est « juste un autre socket UDP » pour envoyer des paquets chiffrés. <link>En savoir plus</link>."
+      },
+      "pairing": {
+        "title": "Appairage & canal de contrôle",
+        "intro": "Les tickets fonctionnent avec n'importe qui, mais entre vos propres appareils, le copier-coller devient vite pénible. L'appairage permet à deux appareils de se souvenir l'un de l'autre et d'échanger des tickets via un second canal dédié : un protocole distinct sur le même endpoint iroh, séparé du chemin de transfert des blobs.",
+        "items": {
+          "pairingCode": "Code d'appairage : l'hôte ouvre une courte fenêtre d'appairage et affiche un code qui n'est autre que son identifiant d'endpoint, sous forme de QR code ou de chaîne à coller. Rien d'autre n'est échangé hors connexion ; une indication de relais n'est jointe que si l'hôte utilise son propre relais.",
+          "closed": "Fermé par défaut : en dehors de cette fenêtre, le canal de contrôle refuse les connexions de tout appareil non appairé, avant même d'avoir lu le moindre message.",
+          "proof": "Preuve mutuelle : chaque partie signe du matériel de clé exporté depuis la connexion QUIC en cours avec sa clé d'appareil Ed25519, et vérifie la signature de l'autre par rapport à l'identifiant d'endpoint auquel elle parle. La signature est liée à cette connexion précise et ne peut donc pas être rejouée sur une autre.",
+          "consent": "Consentement des deux côtés : un appairage n'est conservé que si les deux appareils acceptent de se souvenir l'un de l'autre. Chacun peut l'oublier ensuite ; cet oubli est signé et transmis pour prendre effet des deux côtés.",
+          "presence": "Présence, pas de sondage : les appareils appairés maintiennent la connexion de contrôle ouverte et prouvent à nouveau leur identité à chaque reconnexion. Le statut en ligne/hors ligne découle directement de l'état de cette connexion ; les coupures sont retentées avec un délai croissant.",
+          "invites": "Des invitations, pas des raccourcis : partager vers un appareil appairé génère toujours un ticket de blob ordinaire à usage unique. Le canal de contrôle se contente de le livrer sous forme d'invitation dans l'application, que le destinataire accepte ou refuse. Le transfert emprunte exactement le même chemin qu'un ticket collé."
+        }
       }
     },
     "downloadCta": "Télécharger DashBeam",
@@ -273,12 +312,21 @@
     "quote": "C'est comme un lien AirDrop privé et unique, pour n'importe qui, n'importe où."
   },
   "footer": {
+    "groupProduct": "Produit",
+    "groupCompare": "Comparatifs",
+    "groupCommunity": "Communauté",
+    "groupSupport": "Soutenir",
     "headline": "Envoyez des fichiers directement<br></br>à n'importe qui, n'importe où.",
     "builtOn": "Construit sur",
     "iroh": "iroh",
     "howItWorks": "Comment ça marche",
     "reportIssue": "Signaler un problème",
     "downloads": "Téléchargements",
+    "compare": "Compare",
+    "compareLocalsend": "DashBeam vs LocalSend",
+    "compareBlip": "DashBeam vs Blip",
+    "compareWormhole": "DashBeam vs Magic Wormhole",
+    "comparePairdrop": "DashBeam vs PairDrop",
     "contactUs": "Contactez-nous",
     "privacy": "Confidentialité",
     "buyMeACoffee": "Buy Me a Coffee",
@@ -289,11 +337,6 @@
     "websiteBy": "Site web conçu par",
     "designer": "ShravanKumar PS",
     "license": "©GNU Affero General Public License v3.0",
-    "compare": "Compare",
-    "compareLocalsend": "DashBeam vs LocalSend",
-    "compareBlip": "DashBeam vs Blip",
-    "compareWormhole": "DashBeam vs Magic Wormhole",
-    "comparePairdrop": "DashBeam vs PairDrop",
     "formerlyKnownAs": "Anciennement connu sous le nom AltSendme (Alt Send Me, alt-sendme)"
   },
   "contact": {
@@ -312,6 +355,8 @@
   },
   "faq": {
     "title": "Questions fréquemment posées",
+    "viewMore": "View more questions",
+    "viewFewer": "View fewer questions",
     "items": {
       "faq1": {
         "question": "What is DashBeam and how does it work?",
@@ -350,19 +395,17 @@
         "answer": "Oui. DashBeam est le nouveau nom d'AltSendme (aussi connu sous Alt Send Me, alt-sendme et Altsendme). C'est le même projet open source, le même dépôt GitHub et le même produit de transfert de fichiers peer-to-peer."
       }
     },
-    "viewMore": "View more questions",
-    "viewFewer": "View fewer questions"
-  },
-  "meta": {
-    "title": "DashBeam (anciennement AltSendme) | Open-source Blip alternative | P2P file transfer",
-    "description": "DashBeam (anciennement AltSendme, Alt Send Me, alt-sendme) is a free, open-source alternative to Blip (blip.net): peer-to-peer file transfer for Windows, macOS, Linux, Android, and web. No accounts, unlimited size, E2E encrypted with Iroh. Official site: dashbeam.net."
+    "eyebrow": "Questions",
+    "headline": "Frequently asked.",
+    "deck": "How transfers work, what they cost, and what leaves your machine.",
+    "stillStuck": "Still stuck? Contact us"
   },
   "comparePage": {
     "hub": {
       "metaTitle": "Compare DashBeam to Blip (blip.net), LocalSend, Magic Wormhole & more",
       "metaDescription": "See how DashBeam compares to Blip (blip.net), LocalSend, Magic Wormhole, and PairDrop. Open-source Blip alternative with CLI, gigabit Iroh speeds, and transfers that work over the internet.",
       "title": "How DashBeam compares",
-      "lead": "DashBeam is an open-source alternative to Blip (blip.net) and a LocalSend alternative for the internet, powered by Iroh. Native apps, CLI, no file size limits, and gigabit-class transfer speeds—without proprietary lock-in.",
+      "lead": "DashBeam is an open-source alternative to Blip (blip.net) and a LocalSend alternative for the internet, powered by Iroh. Native apps, CLI, no file size limits, and gigabit-class transfer speeds, without proprietary lock-in.",
       "tableTitle": "La comparaison",
       "yes": "Oui",
       "no": "Non",
@@ -415,20 +458,18 @@
       "localsendCardDesc": "Looking for a LocalSend alternative that works over the internet? See the full breakdown.",
       "blipCardTitle": "DashBeam vs Blip",
       "blipCardDesc": "Looking for an open-source Blip (blip.net) alternative? Compare features, pricing, and privacy.",
-      "othersTitle": "Also compared to",
-      "othersLead": "DashBeam sits alongside other popular tools. Here is where it fits.",
-      "wetransfer": "WeTransfer / Drive",
-      "wetransferNote": "Cloud upload with size limits and accounts. DashBeam transfers directly with no middleman storage, and can push multi-gigabit when the path allows.",
-      "wormhole": "Magic Wormhole",
-      "wormholeNote": "Great CLI UX with short codes. DashBeam pairs a full GUI + Android + web with the Iroh sendme CLI with the same tickets, gigabit-capable transfers.",
+      "wormholeCardTitle": "DashBeam vs Magic Wormhole",
+      "wormholeCardDesc": "Love wormhole-send but want a GUI, Android, and resumable folders? See the full breakdown.",
+      "pairdropCardTitle": "DashBeam vs PairDrop",
+      "pairdropCardDesc": "Outgrow browser WebRTC limits with native apps, resumable folders, and gigabit Iroh speeds.",
       "ctaTitle": "Try DashBeam free",
       "ctaButton": "Download DashBeam",
       "underTheHood": "How it works under the hood",
       "builtOnIroh": "Built on Iroh",
-      "wormholeCardTitle": "DashBeam vs Magic Wormhole",
-      "wormholeCardDesc": "Love wormhole-send but want a GUI, Android, and resumable folders? See the full breakdown.",
-      "pairdropCardTitle": "DashBeam vs PairDrop",
-      "pairdropCardDesc": "Outgrow browser WebRTC limits with native apps, resumable folders, and gigabit Iroh speeds."
+      "eyebrow": "Comparison",
+      "tableDeck": "How DashBeam lines up against the other ways to move a file.",
+      "deepDivesEyebrow": "Head to head",
+      "deepDivesDeck": "Every row above, argued out one rival at a time: where each tool wins, and where it stops."
     },
     "localsend": {
       "metaTitle": "LocalSend Alternative for the Internet",
@@ -480,47 +521,6 @@
       "faq2a": "No. Drop a file, share a ticket, and transfer directly, with no signup. Use the GUI or the sendme-compatible CLI.",
       "faq3q": "Is DashBeam end-to-end encrypted?",
       "faq3a": "Yes. Transfers use QUIC + TLS 1.3 on Iroh. Relays only forward encrypted packets, and native transfers can saturate gigabit links."
-    },
-    "shared": {
-      "backToCompare": "All comparisons",
-      "downloadCta": "Download DashBeam",
-      "network": "Network reach",
-      "license": "License",
-      "cost": "Cost",
-      "encryption": "Encryption",
-      "discovery": "How peers connect",
-      "stack": "Networking stack",
-      "cli": "CLI support",
-      "speed": "Transfer speed",
-      "altsendme": "DashBeam",
-      "localsend": "LocalSend",
-      "blip": "Blip",
-      "wormhole": "Magic Wormhole",
-      "cloud": "WeTransfer / Drive",
-      "internet": "Internet + LAN",
-      "lan": "LAN / same Wi-Fi",
-      "agpl": "AGPL-3.0 (open source)",
-      "foss": "Open source",
-      "proprietary": "Proprietary",
-      "free": "Free",
-      "freemium": "Free / paid tiers",
-      "quic": "QUIC + TLS 1.3 E2E",
-      "tickets": "Share a ticket",
-      "nearby": "Nearby discovery",
-      "iroh": "Iroh",
-      "httpsLocal": "HTTPS on local network",
-      "cloudUpload": "Upload to cloud",
-      "cliYes": "Yes, sendme-compatible CLI",
-      "cliNo": "No dedicated CLI",
-      "speedGigabit": "Can saturate gigabit (Iroh/QUIC)",
-      "speedLan": "Fast on LAN",
-      "speedTypical": "Typical app speeds",
-      "speedBrowser": "Browser / WebRTC limited",
-      "speedDirect": "Fast when direct (TCP)",
-      "encryptedTcp": "Encrypted TCP (PAKE)",
-      "shortCodes": "Short code via relay",
-      "webrtcStack": "WebRTC / DTLS (SCTP)",
-      "pagePairing": "Page pairing / LAN scan"
     },
     "wormhole": {
       "metaTitle": "Magic Wormhole Alternative with GUI & Resumable Transfers",
@@ -579,7 +579,56 @@
       "faq5a": "PairDrop's main advantage is no install: open a tab and go. DashBeam offers a web client, but the best experience is the native desktop or Android app: resumable transfers, unlimited practical file size, CLI automation, and much higher throughput than a browser tab.",
       "faq6q": "Are both open source?",
       "faq6a": "Yes. PairDrop is GPL-3.0; DashBeam is AGPL-3.0. Neither requires accounts. DashBeam adds auditable Iroh networking with self-hostable relays if you want full control over the infrastructure."
+    },
+    "shared": {
+      "backToCompare": "All comparisons",
+      "eyebrowTable": "Side by side",
+      "eyebrowWhen": "Which one",
+      "eyebrowFaq": "Questions",
+      "downloadCta": "Download DashBeam",
+      "network": "Network reach",
+      "license": "License",
+      "cost": "Cost",
+      "encryption": "Encryption",
+      "discovery": "How peers connect",
+      "stack": "Networking stack",
+      "cli": "CLI support",
+      "speed": "Transfer speed",
+      "altsendme": "DashBeam",
+      "blip": "Blip",
+      "localsend": "LocalSend",
+      "wormhole": "Magic Wormhole",
+      "pairdrop": "PairDrop",
+      "cloud": "WeTransfer / Drive",
+      "internet": "Internet + LAN",
+      "lan": "LAN / same Wi-Fi",
+      "agpl": "AGPL-3.0 (open source)",
+      "foss": "Open source",
+      "proprietary": "Proprietary",
+      "free": "Free",
+      "freemium": "Free / paid tiers",
+      "quic": "QUIC + TLS 1.3 E2E",
+      "tickets": "Share a ticket",
+      "nearby": "Nearby discovery",
+      "iroh": "Iroh",
+      "httpsLocal": "HTTPS on local network",
+      "cloudUpload": "Upload to cloud",
+      "cliYes": "Yes, sendme-compatible CLI",
+      "cliNo": "No dedicated CLI",
+      "speedGigabit": "Can saturate gigabit (Iroh/QUIC)",
+      "speedLan": "Fast on LAN",
+      "speedTypical": "Typical app speeds",
+      "speedBrowser": "Browser / WebRTC limited",
+      "speedDirect": "Fast when direct (TCP)",
+      "encryptedTcp": "Encrypted TCP (PAKE)",
+      "shortCodes": "Short code via relay",
+      "webrtcStack": "WebRTC / DTLS (SCTP)",
+      "pagePairing": "Page pairing / LAN scan"
     }
+  },
+  "meta": {
+    "title": "DashBeam (anciennement AltSendme) | Open-source Blip alternative | P2P file transfer",
+    "description": "DashBeam (anciennement AltSendme, Alt Send Me, alt-sendme) is a free, open-source alternative to Blip (blip.net): peer-to-peer file transfer for Windows, macOS, Linux, Android, and web. No accounts, unlimited size, E2E encrypted with Iroh. Official site: dashbeam.net."
   },
   "privacyPage": {
     "metaTitle": "Politique de confidentialité",

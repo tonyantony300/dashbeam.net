@@ -1,50 +1,99 @@
 "use client";
 
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
+import { Section, SectionOpener } from "@/components/Section";
+import { tx } from "@/lib/tx";
 
 export default function HowItWorks() {
-  const t = useTranslations('howItWorks');
+  const t = useTranslations("howItWorks");
 
   const steps = [
+    { title: t("step1.title"), description: t("step1.description") },
+    { title: t("step2.title"), description: t("step2.description") },
+    { title: t("step3.title"), description: t("step3.description") },
+  ];
+
+  // The pairing track is the repeat-use path: one setup, and the ticket step
+  // disappears for good. It stays subordinate to the ticket flow because the
+  // ticket flow is the one that works with someone who has never opened
+  // DashBeam — that's still the first thing a visitor needs to believe.
+  const pairedSteps = [
     {
-      title: t('step1.title'),
-      description: t('step1.description'),
+      title: tx(t, "paired.step1.title", "Pair once"),
+      description: tx(
+        t,
+        "paired.step1.description",
+        "Enter a short code on both devices. One time, and they stay paired.",
+      ),
     },
     {
-      title: t('step2.title'),
-      description: t('step2.description'),
-    },
-    {
-      title: t('step3.title'),
-      description: t('step3.description'),
+      title: tx(t, "paired.step2.title", "Then just click"),
+      description: tx(
+        t,
+        "paired.step2.description",
+        "Paired devices show up right in the app. Pick one and the file goes straight over. No ticket to copy.",
+      ),
     },
   ];
 
   return (
-    <section id="how-it-works-section" className="relative w-full scroll-mt-24 pt-12 pb-16 px-5 md:px-10 md:pb-20 lg:px-[60px] lg:pb-24 text-zinc-100 overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none isolate" aria-hidden="true">
-        <div className="absolute inset-0 bg-dark" />
-        <div className="absolute inset-0 dark-grain" />
-        <div className="absolute inset-0 dark-grain" />
-        <div className="absolute inset-0 dark-grain" />
-      </div>
+    <Section id="how-it-works-section">
+      <SectionOpener
+        deck={tx(
+          t,
+          "deck",
+          "Send a ticket to anyone, or pair once and send to your own devices in a click. No account on either end.",
+        )}
+        eyebrow={tx(t, "eyebrow", "How it works")}
+        title={t("sectionLabel")}
+      />
 
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto">
-        <div className="px-5 pt-10">
-          <h3 className="font-funnel-sans text-[32px] leading-[1.2] text-center text-accent font-bold mb-8 whitespace-pre-line md:text-[40px] md:mb-10 lg:mb-12">{t('sectionLabel')}</h3>
-        </div>
+      {/* Numbered because these genuinely happen in order. */}
+      <ol className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-3">
+        {steps.map((step, index) => (
+          <li key={step.title}>
+            <span
+              aria-hidden="true"
+              className="mb-4 block font-heading text-[40px] font-medium leading-none text-brand-brown/45"
+            >
+              {index + 1}
+            </span>
+            <h3 className="mb-2 font-sans text-lg font-semibold tracking-[-0.01em] md:text-xl">
+              {step.title}
+            </h3>
+            <p className="max-w-[42ch] font-sans text-sm leading-relaxed text-muted-foreground md:text-base">
+              {step.description}
+            </p>
+          </li>
+        ))}
+      </ol>
 
-        <div className="md:flex sm:gap-5">
-          {steps.map((step, index) => (
-            <div key={step.title} className="text-center md:text-left md:w-1/3 p-5 pb-10">
-              <h3 className="font-funnel-sans text-2xl font-bold text-accent">
-              {index + 1}. {step.title}
-              </h3>
-              <p className="mt-1 text-sm/6 text-zinc-400 font-funnel-sans">{step.description}</p>
-            </div>
+      {/* A second track rather than more steps: pairing replaces step 2, it
+          doesn't follow step 3. The rule and the lighter scale carry that. */}
+      <div className="mt-12 border-t border-border pt-10 md:mt-14">
+        <h3 className="mb-8 font-sans text-[11px] font-bold uppercase leading-none tracking-[0.16em] text-brand-brown md:mb-10">
+          {tx(t, "paired.label", "Sending often? Pair once.")}
+        </h3>
+
+        <ol className="grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-3">
+          {pairedSteps.map((step, index) => (
+            <li key={step.title}>
+              <span
+                aria-hidden="true"
+                className="mb-3 block font-heading text-[28px] font-medium leading-none text-brand-brown/45"
+              >
+                {index + 1}
+              </span>
+              <h4 className="mb-2 font-sans text-base font-semibold tracking-[-0.01em] md:text-lg">
+                {step.title}
+              </h4>
+              <p className="max-w-[42ch] font-sans text-sm leading-relaxed text-muted-foreground md:text-base">
+                {step.description}
+              </p>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
-    </section>
+    </Section>
   );
 }

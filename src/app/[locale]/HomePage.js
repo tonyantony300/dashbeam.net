@@ -11,12 +11,13 @@ import CompareHubMatrixSection from "@/components/CompareHubMatrixSection";
 import PartnerSection from "@/components/PartnerSection";
 import CommunitySection from "@/components/CommunitySection";
 import DonateCard from "@/components/DonateCard";
+import { Section } from "@/components/Section";
 
 export default function HomePage() {
   return (
-    <div className="absolute inset-x-0 mx-auto min-h-screen w-full bg-background flex flex-col">
+    <div className="flex min-h-screen w-full flex-col bg-background">
       <Header />
-      <main className="flex-1 flex flex-col w-full">
+      <main className="flex w-full flex-1 flex-col">
         <HeroSection />
         <HowItWorks />
         <AvailableAs />
@@ -25,13 +26,11 @@ export default function HomePage() {
         <PartnerSection />
         <CommunitySection />
         <HomeFAQ />
-      </main>
 
-      <section className="home-section scroll-mt-24">
-        <div className="home-section__container">
+        <Section className="pt-0">
           <DonateCard className="w-full" />
-        </div>
-      </section>
+        </Section>
+      </main>
 
       <Footer />
     </div>

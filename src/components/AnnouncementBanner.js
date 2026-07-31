@@ -8,9 +8,9 @@ export default function AnnouncementBanner() {
   return (
     <div
       role="status"
-      className="w-full bg-dark px-5 py-3 text-center md:px-10 lg:px-[60px]"
+      className="w-full border-b border-surface-inverse-border bg-surface-inverse px-5 py-3 text-center md:px-10 lg:px-[60px]"
     >
-      <p className="mx-auto max-w-[1200px] font-funnel-sans text-xs leading-tight text-white md:text-sm lg:text-left">
+      <p className="mx-auto max-w-[1200px] font-sans text-xs leading-tight text-surface-inverse-foreground md:text-sm lg:text-left">
         <span aria-hidden="true">📣 </span>
         {t("announcement")}
       </p>

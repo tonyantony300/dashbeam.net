@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
 
 @layer base {
   html,
@@ -23,37 +23,36 @@
   }
 
   body {
-    @apply text-foreground bg-background font-fanwood-text;
+    @apply bg-background text-foreground font-sans;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   * {
-    @apply box-border p-0 m-0;
+    @apply box-border p-0 m-0 border-border;
   }
 
   a {
     @apply text-inherit no-underline;
   }
-  
 
   /* Override browser autocomplete background colors */
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
   input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px #f1ece6 inset !important;
-    -webkit-text-fill-color: #000000 !important;
-    box-shadow: 0 0 0 30px #f1ece6 inset !important;
+    -webkit-box-shadow: 0 0 0 30px var(--background) inset !important;
+    -webkit-text-fill-color: var(--foreground) !important;
+    box-shadow: 0 0 0 30px var(--background) inset !important;
   }
 
   textarea:-webkit-autofill,
   textarea:-webkit-autofill:hover,
   textarea:-webkit-autofill:focus,
   textarea:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px #f1ece6 inset !important;
-    -webkit-text-fill-color: #000000 !important;
-    box-shadow: 0 0 0 30px #f1ece6 inset !important;
+    -webkit-box-shadow: 0 0 0 30px var(--background) inset !important;
+    -webkit-text-fill-color: var(--foreground) !important;
+    box-shadow: 0 0 0 30px var(--background) inset !important;
   }
 }
 
@@ -68,20 +67,227 @@ summary {
   cursor: pointer;
 }
 
-@layer utilities {
-  .hero-grain {
-    pointer-events: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 150px 150px;
-  }
+@utility hero-grain {
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 150px 150px;
+}
 
-  .dark-grain {
-    pointer-events: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-    background-size: 100px 100px;
-    mix-blend-mode: soft-light;
-    opacity: 0.05;
+@utility dark-grain {
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 100px 100px;
+  mix-blend-mode: soft-light;
+  opacity: 0.05;
+}
+
+/* ---------------------------------------------------------------------------
+   coss ui design tokens.
+
+   Light is the DashBeam brand palette (cream / brown / tan); dark is the coss
+   neutral scale, taken verbatim from @coss/colors-neutral.
+--------------------------------------------------------------------------- */
+:root {
+  color-scheme: light;
+  --radius: 0.625rem;
+
+  --background: #f1ece6;
+  --foreground: #1a1207;
+  --card: #fbf8f3;
+  --card-foreground: #1a1207;
+  --popover: #fbf8f3;
+  --popover-foreground: #1a1207;
+  --primary: #452815;
+  --primary-foreground: #f5f4f0;
+  --secondary: #e8d2b8;
+  --secondary-foreground: #452815;
+  --muted: #f5f4f1;
+  /* Warm grey rather than neutral: a pure grey on a cream ground reads
+     unconsidered next to the brown. */
+  --muted-foreground: #6b5f52;
+  --accent: --alpha(var(--color-black) / 5%);
+  --accent-foreground: #1a1207;
+  --border: #ddd6cb;
+  --input: #cbc6bf;
+  --ring: #452815;
+
+  --destructive: var(--color-red-500);
+  --destructive-foreground: var(--color-red-700);
+  --info: var(--color-blue-500);
+  --info-foreground: var(--color-blue-700);
+  --success: var(--color-emerald-500);
+  --success-foreground: var(--color-emerald-700);
+  --warning: var(--color-amber-500);
+  --warning-foreground: var(--color-amber-700);
+
+  --code: #fbf8f3;
+  --code-foreground: var(--foreground);
+  --code-highlight: --alpha(var(--color-black) / 4%);
+
+  --shadow-card:
+    0 1px 2px rgb(69 40 21 / 0.05), 0 8px 24px -12px rgb(69 40 21 / 0.16);
+  --shadow-card-lift:
+    0 2px 4px rgb(69 40 21 / 0.06), 0 18px 40px -16px rgb(69 40 21 / 0.24);
+
+  /* Brand extras -------------------------------------------------------- */
+  /* The inverse band. Warm near-black so it belongs to the same family as
+     the cream; in dark mode it inverts to an elevated card surface so the
+     band still reads as distinct. */
+  --surface-inverse: #171310;
+  --surface-inverse-foreground: var(--color-zinc-100);
+  --surface-inverse-muted: var(--color-zinc-400);
+  --surface-inverse-border: --alpha(var(--color-white) / 12%);
+  /* Tinted bed behind product screenshots so ragged source images sit in a
+     consistent frame. */
+  --frame: #f0e2d0;
+  /* Overlay laid on top of the hero / community photographs. */
+  --scrim: transparent;
+  --brand-brown: #452815;
+  --brand-tan: #e8d2b8;
+
+  /* Comparison matrix surfaces (shared with the /compare pages). */
+  --table-surface: #ffffff;
+  --table-surface-alt: #fafaf8;
+  --table-surface-highlight: #fbf8f3;
+  --table-header: #f5f4f1;
+  --table-accent: #73411f;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: color-mix(in srgb, var(--color-neutral-950) 95%, var(--color-white));
+  --foreground: var(--color-neutral-100);
+  --card: color-mix(in srgb, var(--background) 98%, var(--color-white));
+  --card-foreground: var(--color-neutral-100);
+  --popover: color-mix(in srgb, var(--background) 98%, var(--color-white));
+  --popover-foreground: var(--color-neutral-100);
+  --primary: var(--color-neutral-100);
+  --primary-foreground: var(--color-neutral-800);
+  --secondary: --alpha(var(--color-white) / 6%);
+  --secondary-foreground: var(--color-neutral-100);
+  --muted: --alpha(var(--color-white) / 4%);
+  --muted-foreground: color-mix(in srgb, var(--color-neutral-500) 90%, var(--color-white));
+  --accent: --alpha(var(--color-white) / 5%);
+  --accent-foreground: var(--color-neutral-100);
+  --border: --alpha(var(--color-white) / 8%);
+  --input: --alpha(var(--color-white) / 10%);
+  --ring: var(--color-neutral-500);
+
+  --destructive: color-mix(in srgb, var(--color-red-500) 90%, var(--color-white));
+  --destructive-foreground: var(--color-red-400);
+  --info: var(--color-blue-500);
+  --info-foreground: var(--color-blue-400);
+  --success: var(--color-emerald-500);
+  --success-foreground: var(--color-emerald-400);
+  --warning: var(--color-amber-500);
+  --warning-foreground: var(--color-amber-400);
+
+  --code: color-mix(in srgb, var(--background) 98%, var(--color-white));
+  --code-foreground: var(--foreground);
+  --code-highlight: --alpha(var(--color-white) / 4%);
+
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px -12px rgb(0 0 0 / 0.6);
+  --shadow-card-lift:
+    0 2px 4px rgb(0 0 0 / 0.45), 0 18px 40px -16px rgb(0 0 0 / 0.7);
+
+  --surface-inverse: color-mix(in srgb, var(--background) 96%, var(--color-white));
+  --surface-inverse-foreground: var(--color-neutral-100);
+  --surface-inverse-muted: color-mix(in srgb, var(--color-neutral-500) 90%, var(--color-white));
+  --surface-inverse-border: --alpha(var(--color-white) / 8%);
+  --frame: --alpha(var(--color-white) / 6%);
+  --scrim: --alpha(var(--color-black) / 62%);
+  --brand-brown: #e0c9ae;
+  --brand-tan: #e8d2b8;
+
+  --table-surface: var(--card);
+  --table-surface-alt: color-mix(in srgb, var(--card) 97%, var(--color-white));
+  --table-surface-highlight: color-mix(in srgb, var(--card) 92%, var(--color-white));
+  --table-header: color-mix(in srgb, var(--card) 95%, var(--color-white));
+  --table-accent: #e0c9ae;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+
+  --color-code: var(--code);
+  --color-code-foreground: var(--code-foreground);
+  --color-code-highlight: var(--code-highlight);
+
+  --color-surface-inverse: var(--surface-inverse);
+  --color-surface-inverse-foreground: var(--surface-inverse-foreground);
+  --color-surface-inverse-muted: var(--surface-inverse-muted);
+  --color-surface-inverse-border: var(--surface-inverse-border);
+  --color-frame: var(--frame);
+  --color-scrim: var(--scrim);
+  --color-brand-brown: var(--brand-brown);
+  --color-brand-tan: var(--brand-tan);
+
+  --color-table-surface: var(--table-surface);
+  --color-table-surface-alt: var(--table-surface-alt);
+  --color-table-surface-highlight: var(--table-surface-highlight);
+  --color-table-header: var(--table-header);
+  --color-table-accent: var(--table-accent);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  /* Surfaces are softer than controls: 14px cards, 10px controls, 8px frames. */
+  --radius-card: 14px;
+  --radius-frame: 8px;
+
+  --shadow-card: var(--shadow-card);
+  --shadow-card-lift: var(--shadow-card-lift);
+
+  --font-sans: var(--ff-funnel-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--ff-newsreader), Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+@layer base {
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: var(--font-mono);
+  }
+}
+
+/* The Buy Me a Coffee widget injects a fixed floating button we don't control.
+   On desktop it overlaps the hero and pulls against the download CTA, so it is
+   hidden there; on narrow screens it stays, since that is the only floating
+   support affordance mobile users get. Outside @layer so it beats the widget's
+   own inline styles without !important on the layout properties. */
+@media (min-width: 1024px) {
+  #bmc-wbtn,
+  #bmc-wbtn + div {
+    display: none !important;
   }
 }

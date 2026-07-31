@@ -1,9 +1,11 @@
 "use client";
 
 import { Copy, Check } from "@phosphor-icons/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { ChevronsUpDown } from "lucide-react";
 import DonateCard from "@/components/DonateCard";
+import { PAGE_OPENER_MIN_H } from "@/components/Section";
 import {
   desktopPlatformGroups,
   detectPlatform,
@@ -14,6 +16,13 @@ import {
   mobilePlatformGroups,
   WEB_APP_URL,
 } from "@/constants/downloads";
+import { Button } from "@/components/ui/button";
+import {
+  Menu,
+  MenuLinkItem,
+  MenuPopup,
+  MenuTrigger,
+} from "@/components/ui/menu";
 
 function DownloadIcon({ className = "", fill = "currentColor" }) {
   return (
@@ -32,12 +41,13 @@ function DownloadIcon({ className = "", fill = "currentColor" }) {
   );
 }
 
+const ROW = "grid grid-cols-2 gap-4 border-t border-border py-6 md:py-8";
+const ROW_LABEL = "font-sans text-base font-medium text-foreground md:text-lg";
+
 function PlatformDownloadRow({ platformKey, links, t }) {
   return (
-    <div className="grid grid-cols-2 gap-4 border-t border-[#D3D2CD] py-6 md:min-h-[120px] md:py-8">
-      <div className="font-funnel-sans text-base font-medium text-[#121212] md:text-lg">
-        {t(`platforms.${platformKey}`)}
-      </div>
+    <div className={`${ROW} md:min-h-[120px]`}>
+      <div className={ROW_LABEL}>{t(`platforms.${platformKey}`)}</div>
       <div className="flex flex-col gap-3">
         {links.map((link) => (
           <a
@@ -45,14 +55,14 @@ function PlatformDownloadRow({ platformKey, links, t }) {
             href={getDownloadHref(link)}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-start justify-between gap-3 font-funnel-sans text-sm text-[#4D4D4D] transition-colors hover:text-[#73411F] md:text-base"
+            className="group flex items-start justify-between gap-3 font-sans text-sm text-muted-foreground transition-colors hover:text-brand-brown md:text-base"
           >
             <span className="flex items-start gap-3">
-              <DownloadIcon className="mt-0.5 h-5 w-5 shrink-0 text-[#121212] transition-colors group-hover:text-[#73411F]" />
+              <DownloadIcon className="mt-0.5 h-5 w-5 shrink-0 text-foreground transition-colors group-hover:text-brand-brown" />
               <span>{t(`links.${link.key}`)}</span>
             </span>
             {link.size && (
-              <span className="shrink-0 text-[#737373] group-hover:text-[#73411F]">
+              <span className="shrink-0 text-muted-foreground group-hover:text-brand-brown">
                 {link.size}
               </span>
             )}
@@ -81,7 +91,7 @@ function CopyCommandButton({ copyText, copyLabel, copiedLabel }) {
       type="button"
       onClick={handleCopy}
       aria-label={copied ? copiedLabel : copyLabel}
-      className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[#D3D2CD] text-[#121212] transition-colors hover:bg-[#E7E6DF] hover:text-[#73411F]"
+      className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-border text-foreground transition-colors hover:bg-muted hover:text-brand-brown focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
     >
       {copied ? (
         <Check size={18} weight="bold" aria-hidden="true" />
@@ -95,7 +105,7 @@ function CopyCommandButton({ copyText, copyLabel, copiedLabel }) {
 function CliCommandLine({ command, copyText, copyLabel, copiedLabel }) {
   return (
     <div className="flex items-start justify-between gap-4">
-      <code className="block min-w-0 flex-1 break-all font-mono text-xs text-[#121212] md:text-sm">
+      <code className="block min-w-0 flex-1 break-all font-mono text-xs text-foreground md:text-sm">
         {command}
       </code>
       <CopyCommandButton
@@ -109,12 +119,12 @@ function CliCommandLine({ command, copyText, copyLabel, copiedLabel }) {
 
 function CliDownloadRow({ label, intro, commands, copyLabel, copiedLabel }) {
   return (
-    <div className="grid grid-cols-2 gap-4 border-t border-[#D3D2CD] py-6 md:min-h-[120px] md:py-8">
-      <div className="font-funnel-sans text-base font-medium text-[#121212] md:text-lg">
-        {label}
-      </div>
+    <div className={`${ROW} md:min-h-[120px]`}>
+      <div className={ROW_LABEL}>{label}</div>
       <div>
-        <p className="mb-3 font-funnel-sans text-sm text-[#4D4D4D] md:text-base">{intro}</p>
+        <p className="mb-3 font-sans text-sm text-muted-foreground md:text-base">
+          {intro}
+        </p>
         <div className="flex flex-col gap-3">
           {commands.map((item) => (
             <CliCommandLine
@@ -133,9 +143,9 @@ function CliDownloadRow({ label, intro, commands, copyLabel, copiedLabel }) {
 
 function CliNotesRow({ copyNote, runNote }) {
   return (
-    <div className="grid grid-cols-2 gap-4 border-t border-[#D3D2CD] py-6 md:py-8">
+    <div className={ROW}>
       <div aria-hidden="true" />
-      <div className="flex flex-col gap-2 font-funnel-sans text-sm text-[#4D4D4D] md:text-base">
+      <div className="flex flex-col gap-2 font-sans text-sm text-muted-foreground md:text-base">
         <p>{copyNote}</p>
         <p>{runNote}</p>
       </div>
@@ -147,25 +157,10 @@ export default function DownloadsPageContent() {
   const t = useTranslations("downloadsPage");
   const tHero = useTranslations("hero");
   const [platform, setPlatform] = useState({ os: "mac", arch: "x64" });
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const dropdownRef = useRef(null);
 
   useEffect(() => {
     setPlatform(detectPlatform());
   }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsDropdownOpen(false);
-      }
-    };
-
-    if (isDropdownOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => document.removeEventListener("mousedown", handleClickOutside);
-    }
-  }, [isDropdownOpen]);
 
   const primary = getPrimaryDownload(platform.os, platform.arch);
   const alternateDownloads = getAlternateDownloadsForOs(platform.os, platform.arch);
@@ -176,99 +171,116 @@ export default function DownloadsPageContent() {
   };
 
   return (
-    <div className="w-full font-funnel-sans">
-      <section className="relative flex min-h-[420px] w-full items-start overflow-hidden px-5 py-14 md:min-h-[480px] md:px-10 md:py-16 lg:min-h-[540px] lg:px-[60px] lg:py-20">
+    <div className="w-full font-sans">
+      {/* Not a PageHero: this band carries the download CTAs and a photograph,
+          so it follows the landing hero's pattern instead — same scrim, same
+          grain, so the copy holds contrast once the photo darkens in dark. */}
+      <section
+        className={`relative flex w-full items-center overflow-hidden px-5 py-14 md:px-10 md:py-16 lg:px-[60px] lg:py-20 ${PAGE_OPENER_MIN_H}`}
+      >
         <div className="pointer-events-none absolute inset-0" aria-hidden="true">
           <div className="absolute inset-0 bg-[url('/communityBg.webp')] bg-cover bg-center bg-no-repeat" />
           <div className="absolute inset-0 hero-grain mix-blend-overlay opacity-[0.18]" />
+          <div className="absolute inset-0 bg-scrim" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-[1200px]">
-          <h1 className="mb-4 font-funnel-sans text-[40px] font-bold leading-[1.1] tracking-tight text-[#452815] md:text-[56px] lg:text-[64px]">
+          <h1 className="mb-4 font-heading text-[40px] font-medium leading-[1.05] tracking-[-0.015em] text-brand-brown md:text-[56px] lg:text-[64px]">
             <span className="block">{t("titleLine1")}</span>
             <span className="block">{t("titleLine2")}</span>
           </h1>
 
-          <p className="mb-8 font-funnel-sans text-sm font-medium text-[#452815] md:text-base">
+          <p className="mb-8 font-sans text-sm font-medium text-brand-brown md:text-base">
             {t("statsLine")}
           </p>
 
-          <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:items-center sm:gap-4">
-            <div className="relative w-full sm:w-auto" ref={dropdownRef}>
-              <div className="flex h-12 w-full overflow-hidden rounded-md border-4 border-accent bg-[#452815] sm:w-auto">
-                <a
-                  href={primaryUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex h-full flex-1 items-center justify-center gap-3 px-6 text-base font-medium text-[#F5F4F0] transition-colors hover:bg-[#5a3419] sm:flex-initial"
-                >
-                  <span>{tHero(primary.heroTranslationKey.replace(/^hero\./, ""))}</span>
-                  <DownloadIcon className="h-5 w-5 shrink-0" fill="#F5F4F0" />
-                </a>
+          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
+            {/* Same split button as the landing hero: the halves stay
+                transparent so the shared brand-brown shell reads as one
+                control, and each half tints itself on hover. */}
+            <div className="flex w-full rounded-lg bg-brand-brown shadow-card sm:w-auto">
+              <Button
+                className="h-12 flex-1 rounded-e-none border-transparent bg-transparent px-5 font-sans font-semibold text-primary-foreground shadow-none hover:bg-white/10 sm:h-11 sm:flex-initial dark:text-neutral-900 dark:hover:bg-black/10"
+                render={
+                  <a
+                    href={primaryUrl}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  />
+                }
+                size="xl"
+                variant="ghost"
+              >
+                <span>
+                  {tHero(primary.heroTranslationKey.replace(/^hero\./, ""))}
+                </span>
+                <DownloadIcon className="size-5 shrink-0" />
+              </Button>
 
-                {alternateDownloads.length > 0 && (
-                  <button
-                    type="button"
-                    aria-expanded={isDropdownOpen}
-                    aria-label={t("moreFormats")}
-                    onClick={() => setIsDropdownOpen((open) => !open)}
-                    className="inline-flex h-full w-11 shrink-0 items-center justify-center border-l border-[#F5F4F0]/20 text-[#F5F4F0] transition-colors hover:bg-[#5a3419]"
+              {alternateDownloads.length > 0 && (
+                <Menu>
+                  <MenuTrigger
+                    render={
+                      <Button
+                        aria-label={t("moreFormats")}
+                        className="h-12 shrink-0 rounded-s-none border-transparent border-s-white/25 bg-transparent px-3 text-primary-foreground shadow-none hover:bg-white/10 sm:h-11 dark:border-s-black/15 dark:text-neutral-900 dark:hover:bg-black/10"
+                        size="xl"
+                        variant="ghost"
+                      />
+                    }
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className={`transition-transform ${isDropdownOpen ? "rotate-180" : ""}`}
-                    >
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
-                  </button>
-                )}
-              </div>
-
-              {isDropdownOpen && alternateDownloads.length > 0 && (
-                <div className="absolute left-0 right-0 top-full w-full z-20 mt-2 overflow-hidden rounded-md border border-[#73411F]/20 bg-[#5a3419] shadow-lg sm:right-auto sm:min-w-[240px]">
-                  {alternateDownloads.map((link) => (
-                    <a
-                      key={link.key}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-between gap-3 border-b border-[#F5F4F0]/10 px-5 py-3 text-left text-sm font-medium text-[#F5F4F0] transition-colors last:border-b-0 hover:bg-[#73411F] md:text-base"
-                    >
-                      <span>{t(`links.${link.key}`)}</span>
-                      {link.size && (
-                        <span className="shrink-0 text-[#F5F4F0]/60">{link.size}</span>
-                      )}
-                    </a>
-                  ))}
-                </div>
+                    <ChevronsUpDown
+                      aria-hidden="true"
+                      className="size-4 opacity-70"
+                    />
+                  </MenuTrigger>
+                  <MenuPopup align="end" className="min-w-[280px]">
+                    {alternateDownloads.map((link) => (
+                      <MenuLinkItem
+                        className="justify-between py-2.5"
+                        href={link.href}
+                        key={link.key}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <span className="truncate font-sans">
+                          {t(`links.${link.key}`)}
+                        </span>
+                        {link.size && (
+                          <span className="ms-2 shrink-0 font-sans text-sm text-muted-foreground">
+                            {link.size}
+                          </span>
+                        )}
+                      </MenuLinkItem>
+                    ))}
+                  </MenuPopup>
+                </Menu>
               )}
             </div>
 
-            <button
-              type="button"
+            <Button
+              className="h-12 w-full shrink-0 border-transparent bg-brand-brown px-5 font-sans font-semibold text-primary-foreground shadow-card hover:opacity-90 sm:h-11 sm:w-auto dark:text-neutral-900"
+              render={
+                <a href={WEB_APP_URL} rel="noopener noreferrer" target="_blank" />
+              }
+              size="xl"
+            >
+              {t("tryOnWeb")}
+            </Button>
+
+            {/* Tertiary, and last: this only scrolls further down the page, so
+                it takes the outline shell rather than a third solid brown
+                button. It still needs a defined surface of its own to hold
+                against the photograph. */}
+            <Button
+              className="h-12 w-full shrink-0 px-5 font-sans font-semibold sm:h-11 sm:w-auto"
               onClick={scrollToPlatforms}
-              className="inline-flex h-12 w-full items-center justify-center gap-3 rounded-md border-4 border-accent bg-[#E5DACC] px-6 text-base font-medium text-[#73411F] transition-colors hover:bg-[#D9CCB5] sm:w-auto"
+              size="xl"
+              variant="outline"
             >
               <span>{t("otherPlatforms")}</span>
-              <DownloadIcon className="h-5 w-5 shrink-0" fill="#73411F" />
-            </button>
-
-            <a
-              href={WEB_APP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-12 w-full items-center justify-center gap-3 rounded-md border-4 border-accent bg-[#452815] px-6 text-base font-medium text-[#F5F4F0] transition-colors hover:bg-[#5a3419] sm:w-auto"
-            >
-              <span>{t("tryOnWeb")}</span>
-            </a>
+              <DownloadIcon className="size-5 shrink-0" />
+            </Button>
           </div>
         </div>
       </section>
@@ -280,10 +292,10 @@ export default function DownloadsPageContent() {
         <div className="mx-auto w-full max-w-[1200px]">
           <div className="grid gap-12 md:grid-cols-[6fr_4fr] md:gap-16">
             <div id="download-desktop">
-              <h2 className="mb-6 font-funnel-sans text-2xl font-semibold text-[#121212] md:text-[28px]">
+              <h2 className="mb-6 font-heading text-2xl font-medium tracking-[-0.015em] text-foreground md:text-[28px]">
                 {t("desktop")}
               </h2>
-              <div className="border-t border-[#D3D2CD]">
+              <div className="border-t border-border">
                 {desktopPlatformGroups.map((group) => (
                   <PlatformDownloadRow
                     key={group.key}
@@ -312,10 +324,10 @@ export default function DownloadsPageContent() {
             </div>
 
             <div id="download-android">
-              <h2 className="mb-6 font-funnel-sans text-2xl font-semibold text-[#121212] md:text-[28px]">
+              <h2 className="mb-6 font-heading text-2xl font-medium tracking-[-0.015em] text-foreground md:text-[28px]">
                 {t("mobile")}
               </h2>
-              <div className="border-t border-[#D3D2CD]">
+              <div className="border-t border-border">
                 {mobilePlatformGroups.map((group) => (
                   <PlatformDownloadRow
                     key={group.key}
@@ -328,10 +340,10 @@ export default function DownloadsPageContent() {
             </div>
 
             <div id="download-cli" className="md:col-span-2">
-              <h2 className="mb-6 font-funnel-sans text-2xl font-semibold text-[#121212] md:text-[28px]">
+              <h2 className="mb-6 font-heading text-2xl font-medium tracking-[-0.015em] text-foreground md:text-[28px]">
                 {t("cli.title")}
               </h2>
-              <div className="border-t border-[#D3D2CD]">
+              <div className="border-t border-border">
                 <CliDownloadRow
                   label={t("cli.platforms.bash")}
                   intro={t("cli.bashIntro")}
