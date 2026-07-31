@@ -273,6 +273,10 @@
     "quote": "それは、誰でも、どこでも使えるプライベートな一度限りのAirDropリンクのようなものです。"
   },
   "footer": {
+    "groupProduct": "プロダクト",
+    "groupCompare": "比較",
+    "groupCommunity": "コミュニティ",
+    "groupSupport": "サポート",
     "headline": "ファイルを直接<br></br>誰にでも、どこへでも送信。",
     "builtOn": "Built on",
     "iroh": "iroh",

@@ -273,6 +273,10 @@
     "quote": "Es ist wie ein privater, einmaliger AirDrop-Link für jeden, überall."
   },
   "footer": {
+    "groupProduct": "Produkt",
+    "groupCompare": "Vergleich",
+    "groupCommunity": "Community",
+    "groupSupport": "Unterstützen",
     "headline": "Dateien direkt<br></br>an jeden, überall senden.",
     "builtOn": "Basiert auf",
     "iroh": "iroh",

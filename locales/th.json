@@ -273,6 +273,10 @@
     "quote": "มันเหมือนลิงก์ AirDrop ส่วนตัวครั้งเดียว สำหรับใครก็ได้ ที่ไหนก็ได้"
   },
   "footer": {
+    "groupProduct": "ผลิตภัณฑ์",
+    "groupCompare": "เปรียบเทียบ",
+    "groupCommunity": "ชุมชน",
+    "groupSupport": "สนับสนุน",
     "headline": "ส่งไฟล์ตรง<br></br>ถึงใครก็ได้ ที่ไหนก็ได้",
     "builtOn": "สร้างบน",
     "iroh": "iroh",

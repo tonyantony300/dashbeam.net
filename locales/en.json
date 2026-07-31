@@ -282,6 +282,10 @@
     "quote": "It's like a private, one-time AirDrop link for anyone, anywhere."
   },
   "footer": {
+    "groupProduct": "Product",
+    "groupCompare": "Compare",
+    "groupCommunity": "Community",
+    "groupSupport": "Support",
     "headline": "Send files directly<br></br>to anyone, anywhere.",
     "builtOn": "Built on",
     "iroh": "iroh",

@@ -15,7 +15,11 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-[100] w-full border-b border-border bg-background/85 px-5 py-3 backdrop-blur-md md:px-10 lg:px-[60px]">
+      {/* z-50 matches the portal layer used by select/menu/tooltip popups.
+          Anything higher paints the header over its own dropdowns, since
+          those portal into the end of <body> and only win the tie on DOM
+          order. It still clears every in-page layer (max z-40). */}
+      <header className="sticky top-0 z-50 w-full border-b border-border bg-background/85 px-5 py-3 backdrop-blur-md md:px-10 lg:px-[60px]">
         <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-2">
           <div className="flex min-w-0 items-center gap-4">
             <Link

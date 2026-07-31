@@ -273,6 +273,10 @@
     "quote": "누구나, 어디서나 사용할 수 있는 비공개 일회용 AirDrop 링크와 같습니다."
   },
   "footer": {
+    "groupProduct": "제품",
+    "groupCompare": "비교",
+    "groupCommunity": "커뮤니티",
+    "groupSupport": "후원",
     "headline": "파일을 직접<br></br>누구에게든, 어디로든 전송하세요.",
     "builtOn": "기반",
     "iroh": "iroh",

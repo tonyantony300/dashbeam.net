@@ -273,6 +273,10 @@
     "quote": "它就像一个私密的一次性 AirDrop 链接，适用于任何人，任何地方。"
   },
   "footer": {
+    "groupProduct": "产品",
+    "groupCompare": "对比",
+    "groupCommunity": "社区",
+    "groupSupport": "支持",
     "headline": "将文件直接<br></br>发送给任何人，任何地方。",
     "builtOn": "基于",
     "iroh": "iroh",
