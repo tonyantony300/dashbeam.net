@@ -53,7 +53,7 @@
       },
       "step2": {
         "title": "之后只需点击",
-        "description": "已配对的设备会直接显示在应用中。选择一台，文件即刻直传——无需复制票据。"
+        "description": "已配对的设备会直接显示在应用中。选择一台，文件即刻直传，无需复制票据。"
       }
     }
   },
@@ -167,7 +167,7 @@
   },
   "underTheHoodPage": {
     "metaTitle": "底层原理",
-    "metaDescription": "了解 DashBeam 如何通过票据、iroh、QUIC 加密、NAT 穿透和开源中继实现直接点对点文件传输, 无需账户或 IP 地址。",
+    "metaDescription": "了解 DashBeam 如何通过票据、iroh、QUIC 加密、NAT 穿透、设备配对和开源中继实现直接点对点文件传输, 无需账户或 IP 地址。",
     "title": "底层原理",
     "intro": "就像 scp，但无需知道 IP 地址。将文件添加到 DashBeam，它会给你一个可粘贴的票据，交给任何需要这些文件的人。DashBeam 会直接连接你的设备并传输数据，无需账户或配置。",
     "heroAlt": "DashBeam 主视觉图",
@@ -215,6 +215,18 @@
       "relays": {
         "title": "中继",
         "body": "DashBeam 使用开源公共中继服务器来建立直接连接、加快初始连接，并在直接连接失败时提供回退。所有连接均端到端加密。中继只是发送加密数据包的“另一个 UDP 套接字”。<link>了解更多</link>。"
+      },
+      "pairing": {
+        "title": "配对与控制通道",
+        "intro": "ticket 对任何人都适用，但在自己的设备之间每次都复制粘贴就太麻烦了。配对让两台设备互相记住对方，并通过第二条专用通道交换 ticket——同一个 iroh 端点上的独立协议，与 blob 的传输路径彼此分开。",
+        "items": {
+          "pairingCode": "配对码：主机打开一个短暂的配对窗口，显示的配对码就是它自己的端点 ID，可以是二维码或可粘贴的字符串。除此之外没有任何信息在连接之外传递；只有当主机使用自建 relay 时，才会附带一个 relay 提示。",
+          "closed": "默认关闭：在该窗口之外，控制通道会拒绝任何未配对设备的连接，甚至在读取第一条消息之前就拒绝。",
+          "proof": "双向证明：双方各自用自己的 Ed25519 设备密钥，对从当前 QUIC 连接导出的密钥材料签名，并用对方的端点 ID 验证其签名。签名与这一条连接绑定，因此无法在其他连接上重放。",
+          "consent": "双方都要同意：只有两台设备都同意记住对方，配对才会保留。任何一方之后都可以解除，解除请求会被签名并送达对方，因此在两台设备上同时生效。",
+          "presence": "在线状态而非轮询：已配对的设备会保持控制连接常开，并在每次重连时重新证明身份。在线／离线直接取决于该连接是否仍然存活；断开后会以逐渐拉长的间隔重试。",
+          "invites": "是邀请，不是捷径：向已配对设备分享时，仍然会照常生成一次性的 blob ticket。控制通道只是把它作为应用内邀请送达，由接收方选择接受或拒绝。传输本身走的路径与粘贴 ticket 完全相同。"
+        }
       }
     },
     "downloadCta": "下载 DashBeam",
@@ -386,7 +398,7 @@
       "metaTitle": "Compare DashBeam to Blip (blip.net), LocalSend, Magic Wormhole & more",
       "metaDescription": "See how DashBeam compares to Blip (blip.net), LocalSend, Magic Wormhole, and PairDrop. Open-source Blip alternative with CLI, gigabit Iroh speeds, and transfers that work over the internet.",
       "title": "How DashBeam compares",
-      "lead": "DashBeam is an open-source alternative to Blip (blip.net) and a LocalSend alternative for the internet, powered by Iroh. Native apps, CLI, no file size limits, and gigabit-class transfer speeds—without proprietary lock-in.",
+      "lead": "DashBeam is an open-source alternative to Blip (blip.net) and a LocalSend alternative for the internet, powered by Iroh. Native apps, CLI, no file size limits, and gigabit-class transfer speeds, without proprietary lock-in.",
       "tableTitle": "对比",
       "yes": "是",
       "no": "否",

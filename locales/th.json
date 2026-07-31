@@ -167,7 +167,7 @@
   },
   "underTheHoodPage": {
     "metaTitle": "เบื้องหลังการทำงาน",
-    "metaDescription": "เรียนรู้ว่า DashBeam เปิดใช้งานการถ่ายโอนไฟล์ peer-to-peer โดยตรงด้วยตั๋ว iroh การเข้ารหัส QUIC NAT traversal และ relay โอเพนซอร์ส, ไม่ต้องมีบัญชีหรือ IP address",
+    "metaDescription": "เรียนรู้ว่า DashBeam เปิดใช้งานการถ่ายโอนไฟล์ peer-to-peer โดยตรงด้วยตั๋ว iroh การเข้ารหัส QUIC NAT traversal การจับคู่อุปกรณ์ และ relay โอเพนซอร์ส, ไม่ต้องมีบัญชีหรือ IP address",
     "title": "เบื้องหลังการทำงาน",
     "intro": "เหมือน scp โดยไม่ต้องรู้ IP address เพิ่มไฟล์ใน DashBeam แล้วจะได้ตั๋วที่วางได้ให้ใครก็ตามที่ต้องการไฟล์ของคุณ DashBeam จะเชื่อมอุปกรณ์โดยตรงและถ่ายโอนข้อมูลโดยไม่ต้องมีบัญชีหรือการตั้งค่า",
     "heroAlt": "กราฟิก hero ของ DashBeam",
@@ -215,6 +215,18 @@
       "relays": {
         "title": "Relay",
         "body": "DashBeam ใช้ relay server สาธารณะโอเพนซอร์สเพื่อสร้างการเชื่อมต่อตรง เร่งเวลาเชื่อมต่อเริ่มต้น และเป็น fallback หากการเชื่อมต่อตรงล้มเหลว การเชื่อมต่อทั้งหมดเข้ารหัส E2E relay เป็น \"UDP socket อีกตัว\" สำหรับส่งแพ็กเก็ตที่เข้ารหัส <link>อ่านเพิ่มเติม</link>"
+      },
+      "pairing": {
+        "title": "การจับคู่และช่องควบคุม",
+        "intro": "ticket ใช้ได้กับทุกคน แต่การคัดลอกไปวางระหว่างอุปกรณ์ของคุณเองทุกครั้งนั้นน่าเบื่อ การจับคู่ทำให้อุปกรณ์สองเครื่องจดจำกันและแลกเปลี่ยน ticket ผ่านช่องทางที่สองโดยเฉพาะ — โปรโตคอลแยกต่างหากบน iroh endpoint เดียวกัน ซึ่งแยกจากเส้นทางการโอน blob",
+        "items": {
+          "pairingCode": "รหัสจับคู่: โฮสต์จะเปิดหน้าต่างจับคู่ช่วงสั้น ๆ และแสดงรหัสซึ่งก็คือ endpoint id ของตัวเอง ในรูปแบบ QR หรือข้อความที่วางได้ ไม่มีข้อมูลอื่นถูกแลกเปลี่ยนนอกการเชื่อมต่อ ส่วนคำใบ้ relay จะแนบไปด้วยเฉพาะเมื่อโฮสต์ใช้ relay ของตัวเอง",
+          "closed": "ปิดไว้โดยค่าเริ่มต้น: นอกช่วงหน้าต่างนั้น ช่องควบคุมจะปฏิเสธการเชื่อมต่อจากอุปกรณ์ที่ยังไม่ได้จับคู่ ตั้งแต่ก่อนอ่านข้อความแม้แต่ข้อความเดียว",
+          "proof": "การพิสูจน์ตัวตนทั้งสองฝ่าย: แต่ละฝ่ายลงลายเซ็นบนคีย์แมทีเรียลที่ส่งออกจากการเชื่อมต่อ QUIC ที่กำลังใช้งาน ด้วยคีย์อุปกรณ์ Ed25519 ของตน แล้วตรวจสอบลายเซ็นของอีกฝ่ายเทียบกับ endpoint id ที่กำลังคุยด้วย ลายเซ็นผูกกับการเชื่อมต่อครั้งนั้นเท่านั้น จึงนำไปใช้ซ้ำกับการเชื่อมต่ออื่นไม่ได้",
+          "consent": "ยินยอมทั้งสองฝ่าย: การจับคู่จะคงอยู่ก็ต่อเมื่ออุปกรณ์ทั้งสองเครื่องตกลงจะจดจำกัน ฝ่ายใดก็ยกเลิกได้ภายหลัง และคำสั่งยกเลิกจะถูกลงลายเซ็นและส่งถึงอีกฝ่าย จึงมีผลกับทั้งสองเครื่อง",
+          "presence": "สถานะออนไลน์ ไม่ใช่การสำรวจซ้ำ: อุปกรณ์ที่จับคู่แล้วจะเปิดการเชื่อมต่อช่องควบคุมค้างไว้ และพิสูจน์ตัวตนใหม่ทุกครั้งที่เชื่อมต่อกลับ สถานะออนไลน์/ออฟไลน์อ่านจากว่าการเชื่อมต่อนั้นยังทำงานอยู่หรือไม่ หากหลุดจะลองใหม่โดยเว้นระยะนานขึ้นเรื่อย ๆ",
+          "invites": "คำเชิญ ไม่ใช่ทางลัด: การแชร์ไปยังอุปกรณ์ที่จับคู่แล้วยังคงสร้าง blob ticket แบบใช้ครั้งเดียวตามปกติ ช่องควบคุมเพียงส่งมันไปเป็นคำเชิญในแอป ซึ่งผู้รับจะกดรับหรือปฏิเสธ ส่วนการโอนไฟล์เองใช้เส้นทางเดียวกันกับการวาง ticket"
+        }
       }
     },
     "downloadCta": "ดาวน์โหลด DashBeam",
@@ -386,7 +398,7 @@
       "metaTitle": "Compare DashBeam to Blip (blip.net), LocalSend, Magic Wormhole & more",
       "metaDescription": "See how DashBeam compares to Blip (blip.net), LocalSend, Magic Wormhole, and PairDrop. Open-source Blip alternative with CLI, gigabit Iroh speeds, and transfers that work over the internet.",
       "title": "How DashBeam compares",
-      "lead": "DashBeam is an open-source alternative to Blip (blip.net) and a LocalSend alternative for the internet, powered by Iroh. Native apps, CLI, no file size limits, and gigabit-class transfer speeds—without proprietary lock-in.",
+      "lead": "DashBeam is an open-source alternative to Blip (blip.net) and a LocalSend alternative for the internet, powered by Iroh. Native apps, CLI, no file size limits, and gigabit-class transfer speeds, without proprietary lock-in.",
       "tableTitle": "การเปรียบเทียบ",
       "yes": "ใช่",
       "no": "ไม่",

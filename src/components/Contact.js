@@ -3,9 +3,14 @@
 import { useRef, useState } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { PAGE_OPENER_MIN_H } from '@/components/Section';
 
+/* The form sits on a photograph, so the fields keep their own opaque surface
+   rather than inheriting the page ground. `bg-popover` is that surface in both
+   themes; the scrim below darkens the photograph in dark mode so white copy
+   layered on it keeps its contrast. */
 const fieldClassName =
-  'w-full bg-white text-sm text-[#121212] placeholder:text-[#9A9A9A] px-4 focus:outline-none rounded-none border-0';
+  'w-full bg-popover text-sm text-popover-foreground placeholder:text-muted-foreground px-4 rounded-lg border-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset';
 
 export default function Contact() {
   const t = useTranslations('contact');
@@ -63,8 +68,13 @@ export default function Contact() {
   };
 
   return (
-    <section className="flex justify-center w-full py-8 px-5 md:px-10 lg:px-[60px] font-funnel-sans">
-      <div className="relative w-full max-w-[1100px] mx-auto overflow-hidden rounded-none">
+    /* `items-center` matters as much as the height: without it the card is a
+       stretched flex item and grows to whatever the band is, which is where
+       the dead space under the form came from. */
+    <section
+      className={`flex items-center justify-center w-full py-8 px-5 md:px-10 lg:px-[60px] font-sans ${PAGE_OPENER_MIN_H}`}
+    >
+      <div className="relative w-full max-w-[1100px] mx-auto overflow-hidden rounded-card">
         <Image
           src="/intouchBg.png"
           alt=""
@@ -75,6 +85,7 @@ export default function Contact() {
           aria-hidden="true"
         />
         <div className="absolute inset-0 bg-black/5" aria-hidden="true" />
+        <div className="absolute inset-0 bg-scrim" aria-hidden="true" />
 
         <div
           ref={contentRef}
@@ -93,10 +104,10 @@ export default function Contact() {
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] gap-8 lg:gap-12 p-8 md:p-10 lg:p-12">
               <div className="flex flex-col justify-start">
-                <h1 className="text-[28px] md:text-[36px] lg:text-[40px] font-bold leading-tight text-white tracking-tight">
+                <h1 className="font-heading text-[32px] md:text-[40px] lg:text-[44px] font-medium leading-[1.05] tracking-[-0.015em] text-white">
                   {t('title')}
                 </h1>
-                <p className="mt-3 text-sm md:text-base text-white/80 leading-relaxed max-w-[360px]">
+                <p className="mt-4 text-sm md:text-base text-white/80 leading-relaxed max-w-[360px]">
                   {t('subtitle')}
                 </p>
               </div>
@@ -132,14 +143,14 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="inline-flex items-center justify-center h-12 px-8 bg-dark text-white text-sm font-medium rounded-none hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed shrink-0"
+                    className="inline-flex items-center justify-center h-12 px-8 bg-brand-brown text-primary-foreground dark:text-neutral-900 text-sm font-medium rounded-lg hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed shrink-0"
                   >
                     {loading ? t('submitting') : t('submit')}
                   </button>
                 </div>
 
                 {error && (
-                  <p className="text-sm text-white bg-white/10 px-4 py-2 rounded-none">
+                  <p className="text-sm text-white bg-white/10 px-4 py-2 rounded-frame">
                     {error}
                   </p>
                 )}

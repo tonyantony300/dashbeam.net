@@ -6,7 +6,7 @@ import PrivacyPageContent from "@/components/PrivacyPageContent";
 
 export default function PrivacyPage() {
   return (
-    <div className="theme-light flex min-h-screen flex-col bg-cream">
+    <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex w-full flex-1 flex-col">
         <PrivacyPageContent />

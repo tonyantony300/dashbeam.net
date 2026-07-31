@@ -1,6 +1,16 @@
 import { cn } from "@/lib/utils";
 
 /**
+ * Every page opener on the site — the `PageHero` bands, the /downloads
+ * photograph, the /contact card — stands to the same height, so moving between
+ * pages doesn't shift where the first fold lands. It's a floor rather than a
+ * fixed height: a long title in a translated locale is still allowed to push
+ * the band taller.
+ */
+export const PAGE_OPENER_MIN_H =
+  "min-h-[380px] md:min-h-[420px] lg:min-h-[460px]";
+
+/**
  * The landing page's vertical rhythm lives here so every band shares one
  * scale. `tone="inverse"` is the single dark band (features); in dark mode it
  * resolves to an elevated card surface so it still reads as distinct.

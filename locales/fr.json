@@ -53,7 +53,7 @@
       },
       "step2": {
         "title": "Ensuite, un simple clic",
-        "description": "Vos appareils appairés apparaissent directement dans l'application. Choisissez-en un et le fichier part aussitôt — aucun ticket à copier."
+        "description": "Vos appareils appairés apparaissent directement dans l'application. Choisissez-en un et le fichier part aussitôt. Aucun ticket à copier."
       }
     }
   },
@@ -167,7 +167,7 @@
   },
   "underTheHoodPage": {
     "metaTitle": "Sous le capot",
-    "metaDescription": "Découvrez comment DashBeam permet des transferts de fichiers peer-to-peer directs avec des tickets, iroh, le chiffrement QUIC, le traversée NAT et des relais open source, sans comptes ni adresses IP.",
+    "metaDescription": "Découvrez comment DashBeam permet des transferts de fichiers peer-to-peer directs avec des tickets, iroh, le chiffrement QUIC, le traversée NAT, l'appairage d'appareils et des relais open source, sans comptes ni adresses IP.",
     "title": "Sous le capot",
     "intro": "C'est comme scp sans avoir besoin de connaître l'adresse IP. Ajoutez des fichiers à DashBeam, et il vous donnera un ticket collable que vous pourrez transmettre à quiconque a besoin de vos fichiers. DashBeam connectera vos appareils directement et transférera les données sans comptes ni configuration.",
     "heroAlt": "Graphique hero DashBeam",
@@ -215,6 +215,18 @@
       "relays": {
         "title": "Relais",
         "body": "DashBeam utilise des serveurs relais publics open source pour établir des connexions directes, accélérer les connexions initiales et servir de repli si les connexions directes échouent. Toutes les connexions sont chiffrées de bout en bout. Le relais est « juste un autre socket UDP » pour envoyer des paquets chiffrés. <link>En savoir plus</link>."
+      },
+      "pairing": {
+        "title": "Appairage & canal de contrôle",
+        "intro": "Les tickets fonctionnent avec n'importe qui, mais entre vos propres appareils, le copier-coller devient vite pénible. L'appairage permet à deux appareils de se souvenir l'un de l'autre et d'échanger des tickets via un second canal dédié : un protocole distinct sur le même endpoint iroh, séparé du chemin de transfert des blobs.",
+        "items": {
+          "pairingCode": "Code d'appairage : l'hôte ouvre une courte fenêtre d'appairage et affiche un code qui n'est autre que son identifiant d'endpoint, sous forme de QR code ou de chaîne à coller. Rien d'autre n'est échangé hors connexion ; une indication de relais n'est jointe que si l'hôte utilise son propre relais.",
+          "closed": "Fermé par défaut : en dehors de cette fenêtre, le canal de contrôle refuse les connexions de tout appareil non appairé, avant même d'avoir lu le moindre message.",
+          "proof": "Preuve mutuelle : chaque partie signe du matériel de clé exporté depuis la connexion QUIC en cours avec sa clé d'appareil Ed25519, et vérifie la signature de l'autre par rapport à l'identifiant d'endpoint auquel elle parle. La signature est liée à cette connexion précise et ne peut donc pas être rejouée sur une autre.",
+          "consent": "Consentement des deux côtés : un appairage n'est conservé que si les deux appareils acceptent de se souvenir l'un de l'autre. Chacun peut l'oublier ensuite ; cet oubli est signé et transmis pour prendre effet des deux côtés.",
+          "presence": "Présence, pas de sondage : les appareils appairés maintiennent la connexion de contrôle ouverte et prouvent à nouveau leur identité à chaque reconnexion. Le statut en ligne/hors ligne découle directement de l'état de cette connexion ; les coupures sont retentées avec un délai croissant.",
+          "invites": "Des invitations, pas des raccourcis : partager vers un appareil appairé génère toujours un ticket de blob ordinaire à usage unique. Le canal de contrôle se contente de le livrer sous forme d'invitation dans l'application, que le destinataire accepte ou refuse. Le transfert emprunte exactement le même chemin qu'un ticket collé."
+        }
       }
     },
     "downloadCta": "Télécharger DashBeam",
@@ -386,7 +398,7 @@
       "metaTitle": "Compare DashBeam to Blip (blip.net), LocalSend, Magic Wormhole & more",
       "metaDescription": "See how DashBeam compares to Blip (blip.net), LocalSend, Magic Wormhole, and PairDrop. Open-source Blip alternative with CLI, gigabit Iroh speeds, and transfers that work over the internet.",
       "title": "How DashBeam compares",
-      "lead": "DashBeam is an open-source alternative to Blip (blip.net) and a LocalSend alternative for the internet, powered by Iroh. Native apps, CLI, no file size limits, and gigabit-class transfer speeds—without proprietary lock-in.",
+      "lead": "DashBeam is an open-source alternative to Blip (blip.net) and a LocalSend alternative for the internet, powered by Iroh. Native apps, CLI, no file size limits, and gigabit-class transfer speeds, without proprietary lock-in.",
       "tableTitle": "La comparaison",
       "yes": "Oui",
       "no": "Non",

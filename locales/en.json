@@ -53,7 +53,7 @@
       },
       "step2": {
         "title": "Then just click",
-        "description": "Paired devices show up right in the app. Pick one and the file goes straight over — no ticket to copy."
+        "description": "Paired devices show up right in the app. Pick one and the file goes straight over. No ticket to copy."
       }
     }
   },
@@ -174,7 +174,7 @@
   },
   "underTheHoodPage": {
     "metaTitle": "Under The Hood",
-    "metaDescription": "Learn how DashBeam enables direct peer-to-peer file transfers with tickets, iroh, QUIC encryption, NAT traversal, and open-source relays, with no accounts or IP addresses required.",
+    "metaDescription": "Learn how DashBeam enables direct peer-to-peer file transfers with tickets, iroh, QUIC encryption, NAT traversal, device pairing, and open-source relays, with no accounts or IP addresses required.",
     "title": "Under The Hood",
     "intro": "It's like scp without needing to know the IP address. Add some files to DashBeam, and it will give you a pastable ticket that you can give to anyone who needs your files. DashBeam will connect your devices directly & transfer the data without any accounts or configuration.",
     "heroAlt": "DashBeam hero graphic",
@@ -222,9 +222,21 @@
       "relays": {
         "title": "Relays",
         "body": "DashBeam uses open-source public relay servers to support establishing direct connections, to speed up initial connection times, and to provide a fallback should direct connections between two endpoints fail or be impossible otherwise. All connections are end-to-end encrypted. The relay is \"just another UDP socket\" for sending encrypted packets around. <link>Read more</link>."
+      },
+      "pairing": {
+        "title": "Pairing & the control channel",
+        "intro": "Tickets work with anyone, but between your own devices, copy-pasting gets old. Pairing lets two devices remember each other and exchange tickets over a second, dedicated channel — a separate protocol on the same iroh endpoint, kept apart from the blob transfer path.",
+        "items": {
+          "pairingCode": "Pairing code: the host opens a short pairing window and shows a code that is simply its endpoint id, as a QR or a pastable string. Nothing else is exchanged out of band; a relay hint rides along only when the host runs its own relay.",
+          "closed": "Closed by default: outside that window, the control channel refuses connections from any device you haven't paired with, before a single message is read.",
+          "proof": "Mutual proof: each side signs keying material exported from the live QUIC connection with its Ed25519 device key, and checks the other's signature against the endpoint id it's talking to. The signature is bound to that one connection, so it can't be replayed on another.",
+          "consent": "Both sides opt in: a pair sticks only if both devices agree to remember it. Either can forget later, and the forget is signed and delivered so it takes effect on both.",
+          "presence": "Presence, not polling: paired devices hold the control connection open and re-prove identity on every reconnect. Online/offline is read from whether that connection is live; drops retry with a widening backoff.",
+          "invites": "Invites, not shortcuts: sharing to a paired device still mints an ordinary one-time blob ticket. The control channel only delivers it as an in-app invite the receiver accepts or declines. The transfer itself is the same path as a pasted ticket."
+        }
       }
     },
-    "downloadCta": "Download DashBeam",
+    "downloadCta": "Get DashBeam App",
     "githubCta": "View on GitHub"
   },
   "downloadsPage": {
@@ -393,7 +405,7 @@
       "metaTitle": "Compare DashBeam to Blip (blip.net), LocalSend, Magic Wormhole & more",
       "metaDescription": "See how DashBeam compares to Blip (blip.net), LocalSend, Magic Wormhole, and PairDrop. Open-source Blip alternative with CLI, gigabit Iroh speeds, and transfers that work over the internet.",
       "title": "How DashBeam compares",
-      "lead": "DashBeam is an open-source alternative to Blip (blip.net) and a LocalSend alternative for the internet, powered by Iroh. Native apps, CLI, no file size limits, and gigabit-class transfer speeds—without proprietary lock-in.",
+      "lead": "DashBeam is an open-source alternative to Blip (blip.net) and a LocalSend alternative for the internet, powered by Iroh. Native apps, CLI, no file size limits, and gigabit-class transfer speeds, without proprietary lock-in.",
       "tableTitle": "The comparison",
       "yes": "Yes",
       "no": "No",
@@ -443,19 +455,21 @@
       },
       "deepDives": "Deep dives",
       "localsendCardTitle": "DashBeam vs LocalSend",
-      "localsendCardDesc": "Looking for a LocalSend alternative that works over the internet? See the full breakdown.",
+      "localsendCardDesc": "LocalSend stops at the edge of your Wi-Fi. The LocalSend alternative that works over the internet, and resumes.",
       "blipCardTitle": "DashBeam vs Blip",
-      "blipCardDesc": "Looking for an open-source Blip (blip.net) alternative? Compare features, pricing, and privacy.",
+      "blipCardDesc": "Blip (blip.net) is closed source, so its data handling can't be audited. The open-source alternative, free at any size.",
       "wormholeCardTitle": "DashBeam vs Magic Wormhole",
-      "wormholeCardDesc": "Love wormhole-send but want a GUI, Android, and resumable folders? See the full breakdown.",
+      "wormholeCardDesc": "Magic Wormhole is CLI-only. Keep the CLI, add desktop, Android, and folders that resume.",
       "pairdropCardTitle": "DashBeam vs PairDrop",
-      "pairdropCardDesc": "Outgrow browser WebRTC limits with native apps, resumable folders, and gigabit Iroh speeds.",
+      "pairdropCardDesc": "PairDrop runs in the browser, and WebRTC caps what that can move. Native apps at gigabit Iroh speeds.",
       "ctaTitle": "Try DashBeam free",
       "ctaButton": "Download DashBeam",
       "underTheHood": "How it works under the hood",
       "builtOnIroh": "Built on Iroh",
       "eyebrow": "Comparison",
-      "tableDeck": "How DashBeam lines up against the other ways to move a file."
+      "tableDeck": "How DashBeam lines up against the other ways to move a file.",
+      "deepDivesEyebrow": "Head to head",
+      "deepDivesDeck": "Every row above, argued out one rival at a time: where each tool wins, and where it stops."
     },
     "localsend": {
       "metaTitle": "LocalSend Alternative for the Internet",
@@ -568,6 +582,9 @@
     },
     "shared": {
       "backToCompare": "All comparisons",
+      "eyebrowTable": "Side by side",
+      "eyebrowWhen": "Which one",
+      "eyebrowFaq": "Questions",
       "downloadCta": "Download DashBeam",
       "network": "Network reach",
       "license": "License",

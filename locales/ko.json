@@ -167,7 +167,7 @@
   },
   "underTheHoodPage": {
     "metaTitle": "내부 구조",
-    "metaDescription": "DashBeam가 티켓, iroh, QUIC 암호화, NAT 트래버설, 오픈 소스 릴레이로 직접 P2P 파일 전송을 가능하게 하는 방법을 알아보세요, 계정이나 IP 주소가 필요 없습니다.",
+    "metaDescription": "DashBeam가 티켓, iroh, QUIC 암호화, NAT 트래버설, 기기 페어링, 오픈 소스 릴레이로 직접 P2P 파일 전송을 가능하게 하는 방법을 알아보세요, 계정이나 IP 주소가 필요 없습니다.",
     "title": "내부 구조",
     "intro": "IP 주소를 알 필요 없이 scp처럼 사용할 수 있습니다. DashBeam에 파일을 추가하면 붙여넣을 수 있는 티켓이 생성되어 필요한 사람에게 전달할 수 있습니다. DashBeam는 기기를 직접 연결하고 계정이나 설정 없이 데이터를 전송합니다.",
     "heroAlt": "DashBeam 히어로 그래픽",
@@ -215,6 +215,18 @@
       "relays": {
         "title": "릴레이",
         "body": "DashBeam는 오픈 소스 공개 릴레이 서버를 사용해 직접 연결을 설정하고, 초기 연결 시간을 단축하며, 직접 연결 실패 시 폴백을 제공합니다. 모든 연결은 E2E 암호화됩니다. 릴레이는 암호화된 패킷을 보내는 \"또 다른 UDP 소켓\"입니다. <link>더 읽기</link>."
+      },
+      "pairing": {
+        "title": "페어링과 컨트롤 채널",
+        "intro": "ticket은 누구와도 쓸 수 있지만, 내 기기들끼리 매번 복사해 붙여넣는 것은 번거롭습니다. 페어링을 사용하면 두 기기가 서로를 기억하고, 전용 두 번째 채널—blob 전송 경로와 분리된, 같은 iroh 엔드포인트 위의 별도 프로토콜—로 ticket을 주고받습니다.",
+        "items": {
+          "pairingCode": "페어링 코드: 호스트가 짧은 페어링 창을 열고, 자신의 엔드포인트 ID 그 자체인 코드를 QR 또는 붙여넣을 수 있는 문자열로 보여줍니다. 그 밖의 정보는 연결 외부로 오가지 않으며, 릴레이 힌트는 호스트가 자체 릴레이를 쓸 때만 함께 전달됩니다.",
+          "closed": "기본적으로 닫혀 있음: 그 창이 열려 있지 않을 때 컨트롤 채널은 페어링되지 않은 기기의 연결을, 메시지를 한 건도 읽기 전에 거부합니다.",
+          "proof": "상호 증명: 양쪽 모두 진행 중인 QUIC 연결에서 내보낸 키 재료에 자신의 Ed25519 기기 키로 서명하고, 상대의 서명을 지금 통신 중인 엔드포인트 ID로 검증합니다. 서명은 그 연결 하나에만 묶이므로 다른 연결에서 재사용할 수 없습니다.",
+          "consent": "양쪽 모두의 동의: 페어는 두 기기가 서로를 기억하기로 동의한 경우에만 유지됩니다. 어느 쪽이든 나중에 해제할 수 있고, 해제 요청은 서명되어 상대에게 전달되므로 양쪽 모두에 적용됩니다.",
+          "presence": "폴링이 아닌 프레젠스: 페어링된 기기는 컨트롤 연결을 열어 두고 다시 연결할 때마다 신원을 새로 증명합니다. 온라인/오프라인은 그 연결이 살아 있는지에서 바로 결정되며, 끊기면 대기 시간을 늘려 가며 재시도합니다.",
+          "invites": "지름길이 아닌 초대: 페어링된 기기로 공유해도 일회용 blob ticket이 평소처럼 만들어집니다. 컨트롤 채널은 이를 앱 내 초대로 전달할 뿐이고, 받는 쪽이 수락하거나 거절합니다. 전송 자체는 붙여넣은 ticket과 똑같은 경로를 지납니다."
+        }
       }
     },
     "downloadCta": "DashBeam 다운로드",
@@ -386,7 +398,7 @@
       "metaTitle": "Compare DashBeam to Blip (blip.net), LocalSend, Magic Wormhole & more",
       "metaDescription": "See how DashBeam compares to Blip (blip.net), LocalSend, Magic Wormhole, and PairDrop. Open-source Blip alternative with CLI, gigabit Iroh speeds, and transfers that work over the internet.",
       "title": "How DashBeam compares",
-      "lead": "DashBeam is an open-source alternative to Blip (blip.net) and a LocalSend alternative for the internet, powered by Iroh. Native apps, CLI, no file size limits, and gigabit-class transfer speeds—without proprietary lock-in.",
+      "lead": "DashBeam is an open-source alternative to Blip (blip.net) and a LocalSend alternative for the internet, powered by Iroh. Native apps, CLI, no file size limits, and gigabit-class transfer speeds, without proprietary lock-in.",
       "tableTitle": "비교",
       "yes": "예",
       "no": "아니오",

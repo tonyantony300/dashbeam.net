@@ -11,7 +11,7 @@ export const STATUS = {
 };
 
 const TABLE_CELL_TEXT =
-  "font-inter text-xs leading-relaxed text-muted-foreground sm:text-sm";
+  "font-sans text-xs leading-relaxed text-muted-foreground sm:text-sm";
 const TABLE_HEADER_TEXT =
   "font-sans text-xs font-semibold leading-snug text-foreground sm:text-sm";
 

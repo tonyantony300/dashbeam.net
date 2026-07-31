@@ -79,7 +79,7 @@ export default function Footer() {
                 br: () => <br />,
               })}
             </h2>
-            <p className="mt-4 font-inter text-md text-white/80">
+            <p className="mt-4 font-sans text-md text-white/80">
               {t("builtOn")}{" "}
               <a
                 href="https://www.iroh.computer"
@@ -92,7 +92,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <nav className="grid w-full grid-cols-2 gap-x-6 gap-y-8 font-inter text-sm sm:gap-x-8 md:grid-cols-4 lg:ml-12 lg:flex-1">
+          <nav className="grid w-full grid-cols-2 gap-x-6 gap-y-8 font-sans text-sm sm:gap-x-8 md:grid-cols-4 lg:ml-12 lg:flex-1">
             {FOOTER_NAV_GROUPS.map((group) => (
               <div key={group.heading}>
                 <h3 className="text-[11px] font-medium uppercase tracking-[0.12em] text-white/40">
@@ -142,15 +142,15 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between sm:gap-10">
-            <p className="max-w-md font-inter text-xs text-white/50 sm:text-sm">
+            <p className="max-w-md font-sans text-xs text-white/50 sm:text-sm">
               {t("formerlyKnownAs")}
             </p>
 
             <div className="flex flex-col gap-2 sm:items-end">
-              <p className="font-inter text-[11px] font-medium uppercase tracking-[0.12em] text-white/40">
+              <p className="font-sans text-[11px] font-medium uppercase tracking-[0.12em] text-white/40">
                 {t("asSeenIn")}
               </p>
-              <p className="flex flex-wrap gap-x-1 font-inter text-xs text-white/70 sm:justify-end">
+              <p className="flex flex-wrap gap-x-1 font-sans text-xs text-white/70 sm:justify-end">
                 {PRESS_ITEMS.map((item, index) => (
                   <span key={item.name}>
                     {index > 0 && (
@@ -177,7 +177,7 @@ export default function Footer() {
       <FooterRule />
 
       <div className="px-5 py-6 md:px-10 md:py-8 lg:px-[60px]">
-        <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-3 text-center font-inter text-xs text-white/60 sm:flex-row sm:justify-between sm:text-left md:text-sm">
+        <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-3 text-center font-sans text-xs text-white/60 sm:flex-row sm:justify-between sm:text-left md:text-sm">
           <p>
             {t("websiteBy")}{" "}
             <a

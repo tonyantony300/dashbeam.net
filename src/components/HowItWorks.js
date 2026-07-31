@@ -31,7 +31,7 @@ export default function HowItWorks() {
       description: tx(
         t,
         "paired.step2.description",
-        "Paired devices show up right in the app. Pick one and the file goes straight over — no ticket to copy.",
+        "Paired devices show up right in the app. Pick one and the file goes straight over. No ticket to copy.",
       ),
     },
   ];

@@ -2,42 +2,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ---------------------------------------------------------------------------
-   Legacy brand theme.
-
-   These are the colours the site shipped with, renamed so that the coss ui
-   token names (--color-background / --color-foreground / --color-accent) are
-   free for the design system. Pages that have not been converted to coss ui
-   yet still use them; each one is dropped as its page is converted.
---------------------------------------------------------------------------- */
-@theme {
-  --color-cream: #f1ece6;
-  --color-ink: #000000;
-  --color-tan: #e8d2b8;
-  --color-dark: #0f0f0f;
-  --color-yc-red: #dc2626;
-  --color-footer-bg: #000000;
-  --color-footer-text: #ffffff;
-
-  --color-section-surface: var(--home-section-surface);
-  --color-section-border: var(--home-section-border);
-  --color-section-text: var(--home-section-text);
-  --color-section-muted: var(--home-section-muted);
-  --color-section-hover: var(--home-section-hover);
-  --color-card-surface: var(--home-card-surface);
-  --color-card-hover: var(--home-card-hover);
-  --color-accent-brown: var(--home-accent-brown);
-
-  /* next/font exposes the real family under --ff-*; the --font-* names belong
-     to Tailwind's theme namespace and generate the font-<name> utilities. */
-  --font-funnel-sans: var(--ff-funnel-sans), sans-serif;
-  --font-inter: var(--ff-inter), sans-serif;
-  --font-federo: var(--ff-libre-franklin), sans-serif;
-  --font-koulen: var(--ff-koulen), sans-serif;
-  --font-swear-display: var(--ff-newsreader), serif;
-  --font-fanwood-text: var(--ff-newsreader), serif;
-}
-
 @layer base {
   html,
   body {
@@ -59,7 +23,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-fanwood-text;
+    @apply bg-background text-foreground font-sans;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -125,11 +89,7 @@ summary {
    Light is the DashBeam brand palette (cream / brown / tan); dark is the coss
    neutral scale, taken verbatim from @coss/colors-neutral.
 --------------------------------------------------------------------------- */
-/* `.theme-light` re-declares the light tokens on a subtree, so pages that have
-   not been converted to coss ui yet opt out of dark mode instead of rendering
-   a dark header above a cream body. Drop the class as each page is converted. */
-:root,
-.theme-light {
+:root {
   color-scheme: light;
   --radius: 0.625rem;
 

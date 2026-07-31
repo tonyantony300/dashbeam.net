@@ -18,7 +18,7 @@
     "title": "Der schnellste und reibungsloseste Weg, Dateien an jeden, überall zu senden.",
     "description": "Ihre Dateien gehen direkt von Gerät zu Gerät, verschlüsselt, ohne Konten, Tracking, Werbung oder Cloud-Speicher dazwischen.",
     "airdropQuote": "Stellen Sie es sich wie AirDrop für jedes Gerät, jedes Netzwerk vor.",
-    "announcement": "Ankündigung: AltSendme heißt jetzt DashBeam. Dieselbe App – leichter auszusprechen, zu merken und zu finden",
+    "announcement": "Ankündigung: AltSendme heißt jetzt DashBeam. Dieselbe App, leichter auszusprechen, zu merken und zu finden",
     "downloadForMac": "Für Mac herunterladen",
     "downloadForWindows": "Für Windows herunterladen",
     "downloadForLinux": "Für Linux herunterladen",
@@ -32,7 +32,7 @@
   "howItWorks": {
     "sectionLabel": "Sicher & sofort.\nZwei Wege zum Senden.",
     "eyebrow": "So funktioniert's",
-    "deck": "Senden Sie ein Ticket an jeden – oder koppeln Sie einmal und senden Sie mit einem Klick an Ihre eigenen Geräte. Kein Konto auf beiden Seiten.",
+    "deck": "Senden Sie ein Ticket an jeden, oder koppeln Sie einmal und senden Sie mit einem Klick an Ihre eigenen Geräte. Kein Konto auf beiden Seiten.",
     "step1": {
       "title": "Datei oder Ordner ablegen",
       "description": "DashBeam erstellt einen sicheren Einmalcode (ein „Ticket“) für Ihre Datei"
@@ -49,11 +49,11 @@
       "label": "Sie senden oft? Einmal koppeln.",
       "step1": {
         "title": "Einmal koppeln",
-        "description": "Geben Sie auf beiden Geräten einen kurzen Code ein. Einmalig – danach bleiben sie gekoppelt."
+        "description": "Geben Sie auf beiden Geräten einen kurzen Code ein. Einmalig, danach bleiben sie gekoppelt."
       },
       "step2": {
         "title": "Danach genügt ein Klick",
-        "description": "Gekoppelte Geräte erscheinen direkt in der App. Eines auswählen und die Datei geht sofort raus – kein Ticket zum Kopieren."
+        "description": "Gekoppelte Geräte erscheinen direkt in der App. Eines auswählen und die Datei geht sofort raus. Kein Ticket zum Kopieren."
       }
     }
   },
@@ -167,7 +167,7 @@
   },
   "underTheHoodPage": {
     "metaTitle": "Unter der Haube",
-    "metaDescription": "Erfahren Sie, wie DashBeam direkte Peer-to-Peer-Dateiübertragungen mit Tickets, iroh, QUIC-Verschlüsselung, NAT-Traversal und Open-Source-Relays ermöglicht, ohne Konten oder IP-Adressen.",
+    "metaDescription": "Erfahren Sie, wie DashBeam direkte Peer-to-Peer-Dateiübertragungen mit Tickets, iroh, QUIC-Verschlüsselung, NAT-Traversal, Geräte-Pairing und Open-Source-Relays ermöglicht, ohne Konten oder IP-Adressen.",
     "title": "Unter der Haube",
     "intro": "Es ist wie scp, ohne die IP-Adresse kennen zu müssen. Fügen Sie Dateien zu DashBeam hinzu, und es gibt Ihnen ein einfügbares Ticket, das Sie an jeden weitergeben können, der Ihre Dateien benötigt. DashBeam verbindet Ihre Geräte direkt und überträgt die Daten ohne Konten oder Konfiguration.",
     "heroAlt": "DashBeam Hero-Grafik",
@@ -215,6 +215,18 @@
       "relays": {
         "title": "Relays",
         "body": "DashBeam nutzt Open-Source-öffentliche Relay-Server, um direkte Verbindungen aufzubauen, die anfängliche Verbindungszeit zu verkürzen und als Fallback zu dienen, falls direkte Verbindungen zwischen zwei Endpunkten scheitern oder unmöglich sind. Alle Verbindungen sind Ende-zu-Ende-verschlüsselt. Das Relay ist „nur ein weiterer UDP-Socket“ zum Versenden verschlüsselter Pakete. <link>Mehr erfahren</link>."
+      },
+      "pairing": {
+        "title": "Pairing & der Kontrollkanal",
+        "intro": "Tickets funktionieren mit jedem, aber zwischen den eigenen Geräten wird das Kopieren und Einfügen schnell lästig. Mit Pairing merken sich zwei Geräte gegenseitig und tauschen Tickets über einen zweiten, dedizierten Kanal aus — ein eigenes Protokoll auf demselben iroh-Endpunkt, getrennt vom Übertragungspfad der Blobs.",
+        "items": {
+          "pairingCode": "Pairing-Code: Der Host öffnet ein kurzes Pairing-Fenster und zeigt einen Code an, der schlicht seine Endpunkt-ID ist — als QR-Code oder einfügbare Zeichenkette. Sonst wird nichts außerhalb der Verbindung ausgetauscht; ein Relay-Hinweis wird nur mitgeschickt, wenn der Host ein eigenes Relay betreibt.",
+          "closed": "Standardmäßig geschlossen: Außerhalb dieses Fensters weist der Kontrollkanal Verbindungen von jedem Gerät ab, mit dem Sie nicht gekoppelt sind — noch bevor eine einzige Nachricht gelesen wird.",
+          "proof": "Gegenseitiger Nachweis: Jede Seite signiert Schlüsselmaterial, das aus der laufenden QUIC-Verbindung exportiert wurde, mit ihrem Ed25519-Geräteschlüssel und prüft die Signatur der Gegenseite gegen deren Endpunkt-ID. Die Signatur ist an genau diese Verbindung gebunden und lässt sich daher nicht auf einer anderen wiederverwenden.",
+          "consent": "Beide Seiten stimmen zu: Eine Kopplung bleibt nur bestehen, wenn beide Geräte sich gegenseitig merken wollen. Jede Seite kann sie später auflösen; das Vergessen wird signiert und übermittelt, sodass es auf beiden Geräten wirkt.",
+          "presence": "Präsenz statt Polling: Gekoppelte Geräte halten die Kontrollverbindung offen und weisen ihre Identität bei jeder Wiederverbindung erneut nach. Online/Offline ergibt sich daraus, ob diese Verbindung aktiv ist; Abbrüche werden mit wachsendem Backoff erneut versucht.",
+          "invites": "Einladungen, keine Abkürzungen: Beim Teilen mit einem gekoppelten Gerät entsteht weiterhin ein gewöhnliches Einweg-Blob-Ticket. Der Kontrollkanal liefert es lediglich als In-App-Einladung aus, die die Gegenseite annimmt oder ablehnt. Die Übertragung selbst läuft über denselben Weg wie bei einem eingefügten Ticket."
+        }
       }
     },
     "downloadCta": "DashBeam herunterladen",
@@ -386,7 +398,7 @@
       "metaTitle": "Compare DashBeam to Blip (blip.net), LocalSend, Magic Wormhole & more",
       "metaDescription": "See how DashBeam compares to Blip (blip.net), LocalSend, Magic Wormhole, and PairDrop. Open-source Blip alternative with CLI, gigabit Iroh speeds, and transfers that work over the internet.",
       "title": "How DashBeam compares",
-      "lead": "DashBeam is an open-source alternative to Blip (blip.net) and a LocalSend alternative for the internet, powered by Iroh. Native apps, CLI, no file size limits, and gigabit-class transfer speeds—without proprietary lock-in.",
+      "lead": "DashBeam is an open-source alternative to Blip (blip.net) and a LocalSend alternative for the internet, powered by Iroh. Native apps, CLI, no file size limits, and gigabit-class transfer speeds, without proprietary lock-in.",
       "tableTitle": "Der Vergleich",
       "yes": "Ja",
       "no": "Nein",

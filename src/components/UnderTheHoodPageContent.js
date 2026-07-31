@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { DownloadSimple } from "@phosphor-icons/react";
 import GithubIcon from "@/components/GithubIcon";
 import { Link } from "@/i18n/routing";
+import PageHero from "@/components/PageHero";
+import { Section, SectionOpener } from "@/components/Section";
+import { Button } from "@/components/ui/button";
 
 const CONCEPT_IDS = [
   "blobs",
@@ -12,9 +14,18 @@ const CONCEPT_IDS = [
   "peerDiscovery",
   "quic",
   "relays",
+  "pairing",
 ];
 
 const BLOB_ITEM_KEYS = ["blob", "link", "hashSeq", "provider"];
+const PAIRING_ITEM_KEYS = [
+  "pairingCode",
+  "closed",
+  "proof",
+  "consent",
+  "presence",
+  "invites",
+];
 const QUIC_POWER_KEYS = [
   "encryption",
   "multiplexing",
@@ -25,147 +36,160 @@ const QUIC_POWER_KEYS = [
   "zeroRtt",
 ];
 
+function ConceptList({ items }) {
+  return (
+    <ul className="mt-6 flex flex-col gap-3 font-sans text-sm leading-relaxed text-muted-foreground md:text-base">
+      {items.map((item) => (
+        <li className="flex gap-3" key={item}>
+          <span
+            aria-hidden="true"
+            className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-brown"
+          />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function ConceptBody({ children }) {
+  return (
+    <p className="mt-4 font-sans text-sm leading-relaxed text-muted-foreground md:text-base">
+      {children}
+    </p>
+  );
+}
+
 export default function UnderTheHoodPageContent() {
   const t = useTranslations("underTheHoodPage");
 
   return (
-    <div className="w-full font-funnel-sans">
-      <section className="relative w-full overflow-hidden bg-dark text-zinc-100">
-        <div className="absolute inset-0 pointer-events-none isolate" aria-hidden="true">
-          <div className="absolute inset-0 dark-grain opacity-40" />
-        </div>
+    <>
+      <PageHero
+        art={
+          <Image
+            alt={t("heroAlt")}
+            className="h-auto w-full object-contain"
+            height={900}
+            priority
+            src="/underthehoodasset.svg"
+            width={1600}
+          />
+        }
+        lead={t("intro")}
+        title={t("title")}
+        tone="inverse"
+      />
 
-        <div className="relative z-10 mx-auto w-full max-w-[1200px] px-5 py-12 md:px-10 md:py-16  lg:px-0 lg:py-20">
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
-            <div>
-              <h1 className="font-funnel-sans text-[40px] font-bold leading-[1.1] tracking-tight text-tan md:text-[52px] lg:text-[60px]">
-                {t("title")}
-              </h1>
-              <p className="mt-6 font-inter text-base leading-relaxed text-zinc-300 md:text-lg">
-                {t("intro")}
-              </p>
-            </div>
+      <Section>
+        <SectionOpener title={t("conceptsTitle")} />
 
-            <div className="relative mx-auto w-full max-w-md lg:max-w-none">
-              <Image
-                src="/underthehoodasset.svg"
-                alt={t("heroAlt")}
-                width={1600}
-                height={900}
-                className="h-auto w-full object-contain"
-                priority
+        {/* Numbered because the concepts build on each other: a blob is what a
+            ticket points at, and a ticket is what peer discovery resolves. */}
+        <ol className="flex flex-col gap-4">
+          {CONCEPT_IDS.map((id, index) => (
+            <li
+              className="scroll-mt-28 rounded-card border border-border bg-card p-8 shadow-card md:p-10 lg:p-12"
+              id={`concept-${id}`}
+              key={id}
+            >
+              <h3 className="font-heading text-2xl font-medium tracking-[-0.01em] md:text-3xl">
+                <span className="mr-3 text-brand-brown/45" aria-hidden="true">
+                  {index + 1}
+                </span>
+                {t(`sections.${id}.title`)}
+              </h3>
+
+              {id === "blobs" && (
+                <>
+                  <ConceptBody>{t("sections.blobs.intro")}</ConceptBody>
+                  <ConceptList
+                    items={BLOB_ITEM_KEYS.map((key) =>
+                      t(`sections.blobs.items.${key}`),
+                    )}
+                  />
+                </>
+              )}
+
+              {id === "tickets" && (
+                <ConceptBody>{t("sections.tickets.body")}</ConceptBody>
+              )}
+
+              {id === "peerDiscovery" && (
+                <ConceptBody>{t("sections.peerDiscovery.body")}</ConceptBody>
+              )}
+
+              {id === "quic" && (
+                <>
+                  <ConceptBody>{t("sections.quic.intro")}</ConceptBody>
+                  <p className="mt-4 font-sans text-sm font-medium text-foreground md:text-base">
+                    {t("sections.quic.powersLabel")}
+                  </p>
+                  <ConceptList
+                    items={QUIC_POWER_KEYS.map((key) =>
+                      t(`sections.quic.powers.${key}`),
+                    )}
+                  />
+                </>
+              )}
+
+              {id === "relays" && (
+                <ConceptBody>
+                  {t.rich("sections.relays.body", {
+                    link: (chunks) => (
+                      <a
+                        className="font-medium text-brand-brown underline underline-offset-[3px] transition-colors hover:text-foreground"
+                        href="https://docs.iroh.computer/iroh-services/relays/public"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        {chunks}
+                      </a>
+                    ),
+                  })}
+                </ConceptBody>
+              )}
+
+              {id === "pairing" && (
+                <>
+                  <ConceptBody>{t("sections.pairing.intro")}</ConceptBody>
+                  <ConceptList
+                    items={PAIRING_ITEM_KEYS.map((key) =>
+                      t(`sections.pairing.items.${key}`),
+                    )}
+                  />
+                </>
+              )}
+            </li>
+          ))}
+        </ol>
+
+        <div className="mt-12 flex flex-wrap items-center gap-4 md:mt-16">
+          <Button
+            className="h-12 px-6 font-sans"
+            render={<Link href="/downloads" />}
+            size="xl"
+          >
+            {t("downloadCta")}
+          </Button>
+
+          <Button
+            className="h-12 gap-2 px-6 font-sans"
+            render={
+              <a
+                href="https://github.com/tonyantony300/dashbeam"
+                rel="noopener noreferrer"
+                target="_blank"
               />
-            </div>
-          </div>
+            }
+            size="xl"
+            variant="outline"
+          >
+            <GithubIcon className="shrink-0" size={18} />
+            {t("githubCta")}
+          </Button>
         </div>
-      </section>
-
-      <section className="w-full px-5 py-12 md:px-10 md:py-16 lg:px-[60px] lg:py-20">
-        <div className="mx-auto w-full max-w-[1200px]">
-          <h2 className="font-funnel-sans text-2xl font-bold text-[#121212] md:text-3xl">
-            {t("conceptsTitle")}
-          </h2>
-
-          <div className="mt-10 border border-[#D3D2CD] md:mt-14">
-            {CONCEPT_IDS.map((id, index) => (
-              <article
-                key={id}
-                id={`concept-${id}`}
-                className={`scroll-mt-28 bg-white p-8 md:p-10 lg:p-12 ${
-                  index < CONCEPT_IDS.length - 1 ? "border-b border-[#D3D2CD]" : ""
-                }`}
-              >
-                <h3 className="font-funnel-sans text-2xl font-bold text-[#121212] md:text-3xl">
-                  {index + 1}. {t(`sections.${id}.title`)}
-                </h3>
-
-                {id === "blobs" && (
-                  <>
-                    <p className="mt-4 font-inter text-sm leading-relaxed text-[#4D4D4D] md:text-base">
-                      {t("sections.blobs.intro")}
-                    </p>
-                    <ul className="mt-6 flex flex-col gap-3 font-inter text-sm leading-relaxed text-[#4D4D4D] md:text-base">
-                      {BLOB_ITEM_KEYS.map((key) => (
-                        <li key={key} className="flex gap-3">
-                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#73411F]" aria-hidden="true" />
-                          <span>{t(`sections.blobs.items.${key}`)}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                )}
-
-                {id === "tickets" && (
-                  <p className="mt-4 font-inter text-sm leading-relaxed text-[#4D4D4D] md:text-base">
-                    {t("sections.tickets.body")}
-                  </p>
-                )}
-
-                {id === "peerDiscovery" && (
-                  <p className="mt-4 font-inter text-sm leading-relaxed text-[#4D4D4D] md:text-base">
-                    {t("sections.peerDiscovery.body")}
-                  </p>
-                )}
-
-                {id === "quic" && (
-                  <>
-                    <p className="mt-4 font-inter text-sm leading-relaxed text-[#4D4D4D] md:text-base">
-                      {t("sections.quic.intro")}
-                    </p>
-                    <p className="mt-4 font-inter text-sm font-medium text-[#121212] md:text-base">
-                      {t("sections.quic.powersLabel")}
-                    </p>
-                    <ul className="mt-4 flex flex-col gap-2 font-inter text-sm leading-relaxed text-[#4D4D4D] md:text-base">
-                      {QUIC_POWER_KEYS.map((key) => (
-                        <li key={key} className="flex gap-3">
-                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#73411F]" aria-hidden="true" />
-                          <span>{t(`sections.quic.powers.${key}`)}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                )}
-
-                {id === "relays" && (
-                  <p className="mt-4 font-inter text-sm leading-relaxed text-[#4D4D4D] md:text-base">
-                    {t.rich("sections.relays.body", {
-                      link: (chunks) => (
-                        <a
-                          href="https://docs.iroh.computer/iroh-services/relays/public"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-medium text-[#73411F] underline underline-offset-[3px] hover:text-[#121212]"
-                        >
-                          {chunks}
-                        </a>
-                      ),
-                    })}
-                  </p>
-                )}
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-12 flex flex-wrap items-center gap-4 md:mt-16">
-            <Link
-              href="/downloads"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-[#121212] px-6 text-sm font-medium text-white transition-colors hover:bg-[#2a2a2a] md:text-base"
-            >
-              <DownloadSimple size={18} weight="bold" aria-hidden="true" />
-              {t("downloadCta")}
-            </Link>
-            <a
-              href="https://github.com/tonyantony300/dashbeam"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-[#D3D2CD] bg-white px-6 text-sm font-medium text-[#121212] transition-colors hover:border-[#73411F] hover:text-[#73411F] md:text-base"
-            >
-              <GithubIcon size={18} className="shrink-0" />
-              {t("githubCta")}
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
+      </Section>
+    </>
   );
 }

@@ -23,7 +23,6 @@ import {
 import StructuredData from "./StructuredData";
 import ThemeProvider from "@/components/ThemeProvider";
 import "../globals.css";
-import "../../styles/home-sections.css";
 
 const funnelSans = Funnel_Sans({
   variable: "--ff-funnel-sans",
