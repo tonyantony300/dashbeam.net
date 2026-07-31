@@ -46,7 +46,10 @@ export const primaryDownloadsByOs = {
   },
   web: {
     id: "web",
-    icon: "/browser.webp",
+    icon: "/chrome.svg",
+    // Multi-colour mark: opt out of the monochrome treatment the other
+    // platform logos get.
+    keepIconColor: true,
     externalUrl: WEB_APP_URL,
     translationKey: "getAppForWeb",
     heroTranslationKey: "hero.openInBrowser",
@@ -265,6 +268,7 @@ export function getPrimaryDownloadOption(t, os, arch = "x64") {
     id: download.id,
     size: download.size,
     icon: download.icon,
+    keepIconColor: Boolean(download.keepIconColor),
     url: getDownloadHref(download),
     label: t(download.heroTranslationKey),
   };
@@ -277,6 +281,7 @@ export function getDownloadOptions(t) {
       id: download.id,
       size: download.size,
       icon: download.icon,
+      keepIconColor: Boolean(download.keepIconColor),
       url: getDownloadHref(download),
       label: t(download.heroTranslationKey),
     };

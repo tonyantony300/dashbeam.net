@@ -10,7 +10,6 @@ import {
   getPrimaryDownloadOption,
   WEB_APP_URL,
 } from "@/constants/downloads";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Menu,
@@ -18,6 +17,7 @@ import {
   MenuPopup,
   MenuTrigger,
 } from "@/components/ui/menu";
+import { tx } from "@/lib/tx";
 
 const HERO_FEATURES = [
   {
@@ -90,28 +90,27 @@ export default function HeroSection() {
             </p>
 
             <div className="flex w-full max-w-[460px] flex-col items-center lg:max-w-[660px] lg:items-start">
-              <div className="flex w-full flex-col items-stretch gap-4 sm:flex-row sm:items-center">
-                <div className="relative w-full shrink-0 sm:w-auto">
-                  <Badge className="pointer-events-none absolute -right-1 -top-3 z-10 rounded-full border-transparent bg-yc-red px-2 py-0.5 font-sans text-[9px] font-bold uppercase tracking-[0.1em] text-white shadow-[0_2px_10px_rgba(220,38,38,0.5)] ring-2 ring-white">
-                    {t("hero.newBadge")}
-                  </Badge>
-                  <Button
-                    className="h-16 sm:h-16 w-full border-transparent bg-white font-sans text-base text-neutral-950 hover:bg-white/90 sm:w-auto md:text-lg lg:text-xl"
-                    render={
-                      <a
-                        href={WEB_APP_URL}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      />
-                    }
-                  >
-                    {t("hero.sendNow")}
-                  </Button>
-                </div>
+              <div className="flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center">
+                <Button
+                  className="h-12 w-full shrink-0 border-transparent bg-brand-brown px-5 font-sans font-semibold text-primary-foreground shadow-card hover:opacity-90 sm:h-11 sm:w-auto dark:text-neutral-900"
+                  render={
+                    <a
+                      href={WEB_APP_URL}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    />
+                  }
+                  size="xl"
+                >
+                  {t("hero.sendNow")}
+                </Button>
 
-                <div className="flex w-full flex-1 rounded-lg bg-neutral-950 sm:flex-initial lg:w-auto">
+                {/* Split button: the halves stay transparent so the shared
+                    brand-brown shell reads as one control, and each half tints
+                    itself on hover instead of shifting its own background. */}
+                <div className="flex w-full rounded-lg bg-brand-brown shadow-card sm:w-auto">
                   <Button
-                    className="h-16 sm:h-16 flex-1 rounded-e-none border-transparent bg-neutral-950 px-4 font-sans text-base text-white hover:bg-neutral-800 md:px-6 md:text-lg lg:text-xl"
+                    className="h-12 flex-1 rounded-e-none border-transparent bg-transparent px-5 font-sans font-semibold text-primary-foreground shadow-none hover:bg-white/10 sm:h-11 sm:flex-initial dark:text-neutral-900 dark:hover:bg-black/10"
                     render={
                       <a
                         href={primaryDownload.url}
@@ -119,29 +118,41 @@ export default function HeroSection() {
                         target="_blank"
                       />
                     }
+                    size="xl"
+                    variant="ghost"
                   >
                     <Image
                       alt=""
-                      className="shrink-0 brightness-0 invert"
-                      height={20}
+                      className={
+                        primaryDownload.keepIconColor
+                          ? "shrink-0"
+                          : "shrink-0 brightness-0 invert dark:invert-0"
+                      }
+                      height={18}
                       src={primaryDownload.icon}
-                      width={20}
+                      width={18}
                     />
-                    <span className="font-medium">{primaryDownload.label}</span>
+                    <span>{primaryDownload.label}</span>
                   </Button>
 
                   <Menu>
                     <MenuTrigger
                       render={
                         <Button
-                          aria-label={t("hero.sendNow")}
-                          className="h-16 sm:h-16 shrink-0 rounded-s-none border-transparent border-s-white/40 bg-neutral-950 px-3 text-white hover:bg-neutral-800"
+                          aria-label={tx(
+                            t,
+                            "hero.moreDownloadOptions",
+                            "More download options",
+                          )}
+                          className="h-12 shrink-0 rounded-s-none border-transparent border-s-white/25 bg-transparent px-3 text-primary-foreground shadow-none hover:bg-white/10 sm:h-11 dark:border-s-black/15 dark:text-neutral-900 dark:hover:bg-black/10"
+                          size="xl"
+                          variant="ghost"
                         />
                       }
                     >
                       <ChevronsUpDown
                         aria-hidden="true"
-                        className="size-5 opacity-100"
+                        className="size-4 opacity-70"
                       />
                     </MenuTrigger>
                     <MenuPopup
@@ -159,7 +170,11 @@ export default function HeroSection() {
                           <span className="flex min-w-0 items-center gap-3">
                             <Image
                               alt=""
-                              className="shrink-0 dark:brightness-0 dark:invert"
+                              className={
+                                option.keepIconColor
+                                  ? "shrink-0"
+                                  : "shrink-0 dark:brightness-0 dark:invert"
+                              }
                               height={20}
                               src={option.icon}
                               width={20}
