@@ -7,6 +7,13 @@
     "contactUs": "Kontaktieren Sie uns",
     "license": "© GNU Affero General Public License v3.0"
   },
+  "header": {
+    "getApp": "App holen",
+    "menu": "Menü",
+    "theme": "Design",
+    "language": "Sprache",
+    "starsAria": "{count} Sterne auf GitHub"
+  },
   "hero": {
     "title": "Der schnellste und reibungsloseste Weg, Dateien an jeden, überall zu senden.",
     "description": "Ihre Dateien gehen direkt von Gerät zu Gerät, verschlüsselt, ohne Konten, Tracking, Werbung oder Cloud-Speicher dazwischen.",

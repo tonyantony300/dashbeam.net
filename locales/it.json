@@ -7,6 +7,13 @@
     "contactUs": "Contattaci",
     "license": "© GNU Affero General Public License v3.0"
   },
+  "header": {
+    "getApp": "Scarica l'app",
+    "menu": "Menu",
+    "theme": "Tema",
+    "language": "Lingua",
+    "starsAria": "{count} stelle su GitHub"
+  },
   "hero": {
     "title": "Il modo più veloce e fluido per trasferire file a chiunque, ovunque.",
     "description": "I tuoi file vanno direttamente da dispositivo a dispositivo, crittografati, senza account, tracciamento, pubblicità o cloud storage in mezzo.",

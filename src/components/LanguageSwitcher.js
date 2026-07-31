@@ -9,18 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
-const languages = [
-  { code: "en", name: "English", flag: "🇺🇸" },
-  { code: "ru", name: "Русский", flag: "🇷🇺" },
-  { code: "th", name: "ไทย", flag: "🇹🇭" },
-  { code: "de", name: "Deutsch", flag: "🇩🇪" },
-  { code: "fr", name: "Français", flag: "🇫🇷" },
-  { code: "ja", name: "日本語", flag: "🇯🇵" },
-  { code: "zh", name: "中文", flag: "🇨🇳" },
-  { code: "ko", name: "한국어", flag: "🇰🇷" },
-  { code: "it", name: "Italiano", flag: "🇮🇹" },
-];
+import { LANGUAGES } from "@/constants/languages";
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
@@ -48,7 +37,7 @@ export default function LanguageSwitcher() {
           top edge above the viewport, so it renders clipped — anchor it below
           the trigger instead and let the positioner handle collisions. */}
       <SelectPopup alignItemWithTrigger={false} className="font-sans">
-        {languages.map((language) => (
+        {LANGUAGES.map((language) => (
           <SelectItem key={language.code} value={language.code}>
             <span className="flex items-center gap-2 whitespace-nowrap">
               <span aria-hidden="true">{language.flag}</span>

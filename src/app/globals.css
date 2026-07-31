@@ -319,3 +319,15 @@ summary {
     font-family: var(--font-mono);
   }
 }
+
+/* The Buy Me a Coffee widget injects a fixed floating button we don't control.
+   On desktop it overlaps the hero and pulls against the download CTA, so it is
+   hidden there; on narrow screens it stays, since that is the only floating
+   support affordance mobile users get. Outside @layer so it beats the widget's
+   own inline styles without !important on the layout properties. */
+@media (min-width: 1024px) {
+  #bmc-wbtn,
+  #bmc-wbtn + div {
+    display: none !important;
+  }
+}

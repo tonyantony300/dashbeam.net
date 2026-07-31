@@ -7,6 +7,13 @@
     "contactUs": "문의하기",
     "license": "© GNU Affero General Public License v3.0"
   },
+  "header": {
+    "getApp": "앱 받기",
+    "menu": "메뉴",
+    "theme": "테마",
+    "language": "언어",
+    "starsAria": "GitHub 스타 {count}"
+  },
   "hero": {
     "title": "누구에게든, 어디서든 파일을 전송하는 가장 빠르고 매끄러운 방법.",
     "description": "파일이 기기에서 기기로 직접 전송됩니다, 암호화되며, 계정, 추적, 광고, 클라우드 저장소가 중간에 없습니다.",

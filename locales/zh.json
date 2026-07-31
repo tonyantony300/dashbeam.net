@@ -7,6 +7,13 @@
     "contactUs": "联系我们",
     "license": "© GNU Affero General Public License v3.0"
   },
+  "header": {
+    "getApp": "获取应用",
+    "menu": "菜单",
+    "theme": "主题",
+    "language": "语言",
+    "starsAria": "GitHub {count} 星"
+  },
   "hero": {
     "title": "最快、最流畅地向任何人、任何地方传输文件的方式。",
     "description": "您的文件从设备直传到设备，加密传输，无需账户、追踪、广告，中间没有云存储。",

@@ -7,6 +7,13 @@
     "contactUs": "お問い合わせ",
     "license": "© GNU Affero General Public License v3.0"
   },
+  "header": {
+    "getApp": "アプリを入手",
+    "menu": "メニュー",
+    "theme": "テーマ",
+    "language": "言語",
+    "starsAria": "GitHub スター {count}"
+  },
   "hero": {
     "title": "誰にでも、どこにでも、最も速くスムーズにファイルを転送する方法。",
     "description": "ファイルはデバイス間で直接送受信, 暗号化、アカウント・追跡・広告・クラウドストレージは一切不要。",
