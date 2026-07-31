@@ -49,8 +49,10 @@ export default function CommunitySection() {
       <div aria-hidden="true" className="absolute inset-0 bg-scrim" />
 
       <div className="relative z-10 h-full px-5 py-16 md:px-10 md:py-20 lg:px-[60px] lg:py-24">
-        <div className="mx-auto flex h-full min-h-[440px] w-full max-w-[1200px] flex-col justify-between gap-10 md:min-h-[520px] md:gap-12 lg:min-h-[600px] lg:gap-16">
-          <div className="max-w-[540px] lg:max-w-[560px] lg:pt-2">
+        {/* Stacked and left-aligned until lg, where the copy and the card sit
+            side by side with their tops on the same line. */}
+        <div className="mx-auto flex h-full min-h-[440px] w-full max-w-[1200px] flex-col justify-between gap-10 md:min-h-[520px] md:gap-12 lg:min-h-[600px] lg:flex-row lg:items-start lg:justify-between lg:gap-16">
+          <div className="max-w-[540px] lg:max-w-[560px]">
             <h2 className="text-balance font-heading text-[36px] font-medium leading-[1.05] tracking-[-0.015em] text-brand-brown md:text-[56px] lg:text-[64px]">
               {t("title")}
             </h2>
@@ -76,7 +78,9 @@ export default function CommunitySection() {
             </Button>
           </div>
 
-          <Card className="w-full max-w-[440px] rounded-card p-6 text-center shadow-card-lift lg:mb-2 lg:ml-auto lg:mr-0 md:p-10">
+          {/* Centred while stacked, flush to the content edge once it moves
+              alongside the copy at lg. */}
+          <Card className="mx-auto w-full max-w-[440px] shrink-0 rounded-card p-6 text-center shadow-card-lift md:p-10 lg:mx-0 lg:ml-auto">
             <h3 className="font-heading text-[30px] font-medium leading-tight tracking-[-0.015em] text-brand-brown md:text-[40px]">
               {t("cardTitle")}
             </h3>

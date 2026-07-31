@@ -62,7 +62,9 @@ export function SectionOpener({
       {eyebrow ? (
         <p
           className={cn(
-            "flex items-center gap-3 font-sans text-[11px] font-bold uppercase leading-none tracking-[0.16em]",
+            // The eyebrow labels the band rather than introducing the
+            // headline, so it sits further off the title than the column gap.
+            "mb-4 flex items-center gap-3 font-sans text-[11px] font-bold uppercase leading-none tracking-[0.16em] md:mb-6",
             // brand-brown resolves to tan in dark, so the eyebrow keeps its
             // brand tint on both grounds instead of going plain white.
             isInverse ? "text-brand-tan" : "text-brand-brown",

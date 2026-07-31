@@ -75,9 +75,9 @@ export default function HomeFAQ() {
   return (
     <Section>
       <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-14">
-        <aside className="flex flex-col lg:sticky lg:top-24">
+        <aside className="flex flex-col">
           <SectionOpener
-            className="mb-0"
+            className="mb-0 md:mb-0"
             deck={tx(
               t,
               "deck",
@@ -95,7 +95,10 @@ export default function HomeFAQ() {
           </Button>
         </aside>
 
-        <div className="flex flex-col gap-2.5">
+        {/* On desktop the first card's top border picks up the eyebrow's
+            hairline: the 11px leading-none eyebrow centres its rule at 5.5px,
+            so dropping the column 5px puts the border on that same line. */}
+        <div className="flex flex-col gap-2.5 lg:mt-[5px]">
           <Accordion className="flex flex-col gap-2.5" multiple>
             {visibleKeys.map((key) => (
               <AccordionItem
