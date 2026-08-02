@@ -173,11 +173,11 @@
     "subtitle": "Free, Open Source, and Available for Everyone"
   },
   "underTheHoodPage": {
-    "metaTitle": "Under The Hood",
-    "metaDescription": "Learn how DashBeam enables direct peer-to-peer file transfers with tickets, iroh, QUIC encryption, NAT traversal, device pairing, and open-source relays, with no accounts or IP addresses required.",
-    "title": "Under The Hood",
-    "intro": "It's like scp without needing to know the IP address. Add some files to DashBeam, and it will give you a pastable ticket that you can give to anyone who needs your files. DashBeam will connect your devices directly & transfer the data without any accounts or configuration.",
-    "heroAlt": "DashBeam hero graphic",
+    "metaTitle": "How it works",
+    "metaDescription": "A machine’s name is a key, not an address. How DashBeam fingerprints files, finds peers by public key, hole-punches through NATs, roams across networks, and resumes transfers — without accounts or a central server.",
+    "title": "How it works",
+    "intro": "A machine’s name is a key, not an address. Most file transfer tools upload to a company’s servers. DashBeam doesn’t — and this page explains what has to be true underneath for that claim to hold.",
+    "heroAlt": "DashBeam how it works",
     "conceptsTitle": "Important concepts",
     "concepts": {
       "blobs": "Blobs",

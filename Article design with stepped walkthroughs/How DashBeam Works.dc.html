@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/classical-4e3c9a32-1fb5-4029-aaea-d61ef451c773/styles.css">
+<script src="_ds/classical-4e3c9a32-1fb5-4029-aaea-d61ef451c773/_ds_bundle.js"></script>
+<style>
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--color-bg); }
+a { color: var(--color-accent-700); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--color-accent); }
+nav a:hover { color: var(--color-accent-700); text-decoration: underline; }
+svg text { font-family: var(--font-body); }
+</style>
+</helmet>
+
+<sc-if value="{{ showProgress }}" hint-placeholder-val="{{ true }}">
+  <div style="position:fixed;top:0;left:0;right:0;height:2px;z-index:9;background:transparent">
+    <div style="height:100%;background:var(--color-accent);width:{{ progressPct }}%"></div>
+  </div>
+</sc-if>
+
+<article style="--measure:{{ measurePx }};--talign:{{ talign }};max-width:860px;margin:0 auto;padding:var(--space-8) 24px 120px">
+
+  <header style="max-width:var(--measure,640px);margin:0 auto var(--space-8);padding-top:60px">
+    <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent-700)">DashBeam · How it works</div>
+    <h1 style="font-size:60px;font-weight:400;line-height:1.02;letter-spacing:-.02em;margin:var(--space-4) 0 var(--space-4)">A machine&rsquo;s name is a key,<br>not an address.</h1>
+    <p style="font-family:var(--font-heading);font-size:23px;line-height:1.4;color:var(--color-neutral-800);margin:0 0 var(--space-6);text-align:left">Most file transfer tools work the way you&rsquo;d guess: you upload to a company&rsquo;s servers, they hand you a link, your friend downloads it back out. DashBeam doesn&rsquo;t do any of that – and the interesting part isn&rsquo;t the claim. It&rsquo;s what has to be true underneath for the claim to hold.</p>
+    <div style="display:flex;gap:16px;align-items:center;font-size:12px;color:var(--color-neutral-700);border-top:1px solid var(--color-divider);padding:var(--space-2) 0">
+      <span>Eight sections · seven figures</span>
+      <span style="color:var(--color-neutral-400)">|</span>
+      <span>Built on <a href="https://www.iroh.computer">iroh</a>. Where a design decision is iroh&rsquo;s, we say so.</span>
+    </div>
+    <nav style="border-bottom:1px solid var(--color-divider);padding:var(--space-3) 0 var(--space-4)">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px 28px">
+        <a href="#fingerprint" style="display:flex;gap:10px;font-size:14.5px;line-height:1.5;color:var(--color-text);text-decoration:none"><span style="font-variant-numeric:tabular-nums;color:var(--color-accent-700);font-family:var(--font-heading)">01</span>The fingerprint</a>
+        <a href="#names" style="display:flex;gap:10px;font-size:14.5px;line-height:1.5;color:var(--color-text);text-decoration:none"><span style="font-variant-numeric:tabular-nums;color:var(--color-accent-700);font-family:var(--font-heading)">02</span>Names, not addresses</a>
+        <a href="#hole-punching" style="display:flex;gap:10px;font-size:14.5px;line-height:1.5;color:var(--color-text);text-decoration:none"><span style="font-variant-numeric:tabular-nums;color:var(--color-accent-700);font-family:var(--font-heading)">03</span>Speed &amp; hole punching</a>
+        <a href="#nearby" style="display:flex;gap:10px;font-size:14.5px;line-height:1.5;color:var(--color-text);text-decoration:none"><span style="font-variant-numeric:tabular-nums;color:var(--color-accent-700);font-family:var(--font-heading)">04</span>Nearby, on your Wi-Fi</a>
+        <a href="#roaming" style="display:flex;gap:10px;font-size:14.5px;line-height:1.5;color:var(--color-text);text-decoration:none"><span style="font-variant-numeric:tabular-nums;color:var(--color-accent-700);font-family:var(--font-heading)">05</span>Roaming across networks</a>
+        <a href="#resume" style="display:flex;gap:10px;font-size:14.5px;line-height:1.5;color:var(--color-text);text-decoration:none"><span style="font-variant-numeric:tabular-nums;color:var(--color-accent-700);font-family:var(--font-heading)">06</span>Resuming after sleep</a>
+        <a href="#no-accounts" style="display:flex;gap:10px;font-size:14.5px;line-height:1.5;color:var(--color-text);text-decoration:none"><span style="font-variant-numeric:tabular-nums;color:var(--color-accent-700);font-family:var(--font-heading)">07</span>No accounts, no server</a>
+        <a href="#pairing" style="display:flex;gap:10px;font-size:14.5px;line-height:1.5;color:var(--color-text);text-decoration:none"><span style="font-variant-numeric:tabular-nums;color:var(--color-accent-700);font-family:var(--font-heading)">08</span>Pairing your own devices</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ══ 1 ══ -->
+  <header id="fingerprint" style="max-width:var(--measure,640px);margin:var(--space-8) auto var(--space-6);scroll-margin-top:40px">
+    <div style="display:flex;align-items:baseline;gap:20px">
+      <span style="font-family:var(--font-heading);font-variant-numeric:tabular-nums;font-size:46px;line-height:1;font-weight:400;color:var(--color-accent-300)">01</span>
+      <div>
+        <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:7px">The fingerprint</div>
+        <h2 style="font-size:31px;font-weight:400;margin:0">Drag in 4&nbsp;GB, get a short string</h2>
+      </div>
+    </div>
+  </header>
+
+  <div style="max-width:var(--measure,640px);margin:0 auto;font-size:17px;line-height:1.72;text-align:var(--talign,justify);hyphens:auto">
+    <p>Drop a folder into DashBeam. There&rsquo;s no upload bar. A few seconds later there&rsquo;s a string of text you can send to somebody. Nothing was uploaded, because there&rsquo;s nowhere to upload it to.</p>
+    <p>What DashBeam did instead was read the folder and compute a fingerprint of its contents. Not a fingerprint of the whole thing at once – it split the data into chunks, fingerprinted each chunk, then fingerprinted those fingerprints in pairs, and again, and again, until everything collapsed into a single 32-byte value at the top. Change one byte anywhere in that folder and the value at the top changes.</p>
+    <p>Your file never moved. It&rsquo;s still sitting where you left it, and your machine is what will serve it. The string you&rsquo;re holding isn&rsquo;t a copy of your file. It&rsquo;s an <em>address</em> for it – and it happens to be an address that can only ever refer to exactly those bytes and no others.</p>
+  </div>
+
+  <blockquote style="max-width:var(--measure,640px);margin:var(--space-8) auto;padding:var(--space-4) 0;border-top:1px solid var(--color-accent);border-bottom:1px solid var(--color-divider);font-family:var(--font-heading);font-size:26px;line-height:1.34;font-weight:400;text-align:left">DashBeam never moves your file somewhere and then moves it again. There is one transfer, and it hasn&rsquo;t started yet.</blockquote>
+
+  <figure style="margin:var(--space-8) auto;max-width:860px">
+    <div style="display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--color-divider);padding-bottom:7px;margin-bottom:var(--space-3)">
+      <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700);font-variant-numeric:tabular-nums">Figure 1</span>
+      <span style="font-family:var(--font-heading);font-size:17px">The fingerprint tree</span>
+      <span style="margin-left:auto;font-size:12px;color:var(--color-neutral-600)">Click any chunk</span>
+    </div>
+    <div style="border:1px solid var(--color-divider);border-radius:var(--radius-md);background:var(--color-neutral-100);padding:var(--space-4) var(--space-3)">
+      <svg viewBox="0 0 720 300" style="width:100%;height:auto;display:block">
+        <g stroke="var(--color-neutral-400)" stroke-width="1" fill="none">
+          <path d="M108 240 L144 194 M180 240 L144 194 M252 240 L288 194 M324 240 L288 194 M396 240 L432 194 M468 240 L432 194 M540 240 L576 194 M612 240 L576 194"></path>
+          <path d="M144 170 L216 134 M288 170 L216 134 M432 170 L504 134 M576 170 L504 134"></path>
+          <path d="M216 110 L360 78 M504 110 L360 78"></path>
+        </g>
+        <polyline points="{{ f1Points }}" fill="none" stroke="var(--color-accent)" stroke-width="2" style="opacity:{{ f1On }}"></polyline>
+        <g fill="none" stroke="var(--color-neutral-700)">
+          <rect x="328" y="50" width="64" height="28" rx="3" stroke="var(--color-accent-700)"></rect>
+          <rect x="196" y="110" width="40" height="24" rx="3"></rect>
+          <rect x="484" y="110" width="40" height="24" rx="3"></rect>
+          <rect x="124" y="170" width="40" height="24" rx="3"></rect>
+          <rect x="268" y="170" width="40" height="24" rx="3"></rect>
+          <rect x="412" y="170" width="40" height="24" rx="3"></rect>
+          <rect x="556" y="170" width="40" height="24" rx="3"></rect>
+        </g>
+        <g fill="var(--color-neutral-700)" font-size="10" text-anchor="middle" font-variant-numeric="tabular-nums">
+          <text x="360" y="68">ROOT · 32 B</text>
+          <text x="216" y="126">hash</text><text x="504" y="126">hash</text>
+          <text x="144" y="186">hash</text><text x="288" y="186">hash</text><text x="432" y="186">hash</text><text x="576" y="186">hash</text>
+        </g>
+        <g onClick="{{ f1Click }}" style="cursor:pointer">
+          <rect x="78" y="240" width="60" height="30" rx="3" fill="var(--color-neutral-200)" stroke="var(--color-neutral-400)" data-i="0"></rect>
+          <rect x="150" y="240" width="60" height="30" rx="3" fill="var(--color-neutral-200)" stroke="var(--color-neutral-400)" data-i="1"></rect>
+          <rect x="222" y="240" width="60" height="30" rx="3" fill="var(--color-neutral-200)" stroke="var(--color-neutral-400)" data-i="2"></rect>
+          <rect x="294" y="240" width="60" height="30" rx="3" fill="var(--color-neutral-200)" stroke="var(--color-neutral-400)" data-i="3"></rect>
+          <rect x="366" y="240" width="60" height="30" rx="3" fill="var(--color-neutral-200)" stroke="var(--color-neutral-400)" data-i="4"></rect>
+          <rect x="438" y="240" width="60" height="30" rx="3" fill="var(--color-neutral-200)" stroke="var(--color-neutral-400)" data-i="5"></rect>
+          <rect x="510" y="240" width="60" height="30" rx="3" fill="var(--color-neutral-200)" stroke="var(--color-neutral-400)" data-i="6"></rect>
+          <rect x="582" y="240" width="60" height="30" rx="3" fill="var(--color-neutral-200)" stroke="var(--color-neutral-400)" data-i="7"></rect>
+        </g>
+        <rect x="{{ f1LeafX }}" y="240" width="60" height="30" rx="3" fill="var(--color-accent-200)" stroke="var(--color-accent)" style="opacity:{{ f1On }};pointer-events:none"></rect>
+        <text x="360" y="292" text-anchor="middle" font-size="11" fill="var(--color-neutral-600)">chunks of the folder, in order</text>
+      </svg>
+      <p style="margin:var(--space-3) 0 0;font-size:13.5px;color:var(--color-neutral-800);text-align:center">{{ f1Note }}</p>
+    </div>
+    <p style="margin:var(--space-2) 0 0;font-size:13px;font-style:italic;color:var(--color-neutral-700)">Notice how little of the tree has to change.</p>
+  </figure>
+
+  <aside style="max-width:var(--measure,640px);margin:var(--space-8) auto;border:1px solid var(--color-divider);border-radius:var(--radius-md);padding:var(--space-4)">
+    <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent);margin-bottom:9px">Worth being straight about</div>
+    <p style="margin:0;font-size:14.5px;line-height:1.66">That string is a bearer token. Anyone you forward it to can fetch that folder. It&rsquo;s &ldquo;one-time&rdquo; in the sense that it points at one specific set of bytes – not in the sense that it expires after the first person uses it.</p>
+  </aside>
+
+  <!-- ══ 2 ══ -->
+  <header id="names" style="max-width:var(--measure,640px);margin:var(--space-8) auto var(--space-6);scroll-margin-top:40px">
+    <hr class="hr" style="margin:0 0 var(--space-6)">
+    <div style="display:flex;align-items:baseline;gap:20px">
+      <span style="font-family:var(--font-heading);font-variant-numeric:tabular-nums;font-size:46px;line-height:1;font-weight:400;color:var(--color-accent-300)">02</span>
+      <div>
+        <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:7px">Names</div>
+        <h2 style="font-size:31px;font-weight:400;margin:0">Someone on another continent pastes it, and it starts</h2>
+      </div>
+    </div>
+  </header>
+
+  <div style="max-width:var(--measure,640px);margin:0 auto;font-size:17px;line-height:1.72;text-align:var(--talign,justify);hyphens:auto">
+    <p>They don&rsquo;t have an account. Neither do you. Neither of you told anyone your IP address. They paste the string, and bytes start moving.</p>
+    <p>The string carries three things: <strong>who</strong> to talk to, <strong>where to start looking</strong>, and <strong>what</strong> to ask for. The third one is the fingerprint from section&nbsp;1. The first one is where it gets interesting.</p>
+    <p>Your machine has a name on the network. That name isn&rsquo;t an address – it&rsquo;s a public key. When DashBeam first ran, it generated a keypair and kept the secret half on your device. The public half, written out, is 52 characters. That&rsquo;s the name.</p>
+    <p>This looks like an odd choice until you notice what comes free with it. Anyone who knows your machine&rsquo;s name can encrypt something that only your machine can open. Anyone who knows your machine&rsquo;s name can verify a signature that only your machine could have produced. <strong>Naming, encryption, and authentication stop being three problems and become one.</strong> There&rsquo;s no separate step where you check you&rsquo;re talking to the right person, because addressing them at all requires their key.</p>
+    <p>That still leaves a practical question: a key isn&rsquo;t somewhere you can send packets. Turning a name into a location is a lookup. Your device publishes a small record – <em>the key you&rsquo;re looking for can currently be reached at this relay, and possibly at these addresses directly</em> – and signs it with the same secret key the name is derived from. Your friend&rsquo;s device fetches that record and checks the signature against the name it already has. A tampered record fails that check, which means the lookup service doesn&rsquo;t have to be trusted, only available.</p>
+  </div>
+
+  <figure style="margin:var(--space-8) auto;max-width:860px">
+    <div style="display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--color-divider);padding-bottom:7px;margin-bottom:var(--space-3)">
+      <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700);font-variant-numeric:tabular-nums">Figure 2</span>
+      <span style="font-family:var(--font-heading);font-size:17px">Name to location</span>
+    </div>
+    <div style="border:1px solid var(--color-divider);border-radius:var(--radius-md);background:var(--color-neutral-100);padding:var(--space-4)">
+      <div style="display:grid;grid-template-columns:1fr 44px 1.15fr;gap:var(--space-3);align-items:center">
+        <div style="border:1px solid var(--color-neutral-400);border-radius:var(--radius-md);padding:var(--space-3)">
+          <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:8px">The name you already have</div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:12.5px;line-height:1.6;word-break:break-all;color:var(--color-accent-800)">k5ff3q7xr2m9wbt8ha0ncypelu6djz4svgo1ki2bxr7ad9mq3f</div>
+          <div style="margin-top:10px;font-size:11.5px;color:var(--color-neutral-700)">52 characters. A public key, not an address.</div>
+        </div>
+        <div style="text-align:center;color:var(--color-accent);font-size:22px">&rarr;</div>
+        <div style="border:1px solid {{ f2Border }};border-radius:var(--radius-md);padding:var(--space-3)">
+          <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:8px">The signed record that comes back</div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.9">
+            <div>relay &nbsp;= <span style="color:var(--color-accent-800)">eu-west.relay.dashbeam</span></div>
+            <div>direct = <span style="color:var(--color-accent-800)">198.51.100.7:41641</span></div>
+            <div>direct = <span style="color:var(--color-accent-800)">[2001:db8::4a]:41641</span></div>
+            <div style="margin-top:6px;padding-top:6px;border-top:1px dashed var(--color-divider)">sig &nbsp;&nbsp;= <span style="color:var(--color-neutral-700)">{{ f2Sig }}</span></div>
+          </div>
+          <div style="margin-top:11px;display:flex;align-items:center;gap:8px;font-size:12.5px;color:{{ f2Border }}">
+            <span style="font-family:var(--font-heading);font-size:16px">{{ f2Mark }}</span>{{ f2Verdict }}
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;margin-top:var(--space-4);padding-top:var(--space-3);border-top:1px solid var(--color-divider)">
+        <button class="btn btn-secondary" onClick="{{ f2Toggle }}">{{ f2Btn }}</button>
+        <span style="font-size:12.5px;color:var(--color-neutral-700)">{{ f2Hint }}</span>
+      </div>
+    </div>
+    <p style="margin:var(--space-2) 0 0;font-size:13px;font-style:italic;color:var(--color-neutral-700)">The lookup service can lie. It just can&rsquo;t lie successfully.</p>
+  </figure>
+
+  <blockquote style="max-width:var(--measure,640px);margin:var(--space-8) auto;padding:var(--space-4) 0;border-top:1px solid var(--color-accent);border-bottom:1px solid var(--color-divider);font-family:var(--font-heading);font-size:26px;line-height:1.34;font-weight:400;text-align:left">This is a lookup, not a directory. You can resolve a name you already have. You cannot browse for one, because there is no list to browse. If someone doesn&rsquo;t know your key, your record may as well not exist.</blockquote>
+
+  <!-- ══ 3 ══ -->
+  <header id="hole-punching" style="max-width:var(--measure,640px);margin:var(--space-8) auto var(--space-6);scroll-margin-top:40px">
+    <hr class="hr" style="margin:0 0 var(--space-6)">
+    <div style="display:flex;align-items:baseline;gap:20px">
+      <span style="font-family:var(--font-heading);font-variant-numeric:tabular-nums;font-size:46px;line-height:1;font-weight:400;color:var(--color-accent-300)">03</span>
+      <div>
+        <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:7px">Speed &amp; hole punching</div>
+        <h2 style="font-size:31px;font-weight:400;margin:0">It moves at a speed web tools don&rsquo;t</h2>
+      </div>
+    </div>
+  </header>
+
+  <div style="max-width:860px;margin:0 auto var(--space-6);display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--color-accent);border-bottom:1px solid var(--color-divider)">
+    <div style="padding:var(--space-4) var(--space-3)">
+      <div style="font-family:var(--font-heading);font-size:44px;font-weight:400;font-variant-numeric:tabular-nums;line-height:1">452 GB</div>
+      <div style="font-size:12px;color:var(--color-neutral-700);margin-top:4px">in a single transfer</div>
+    </div>
+    <div style="padding:var(--space-4) var(--space-3);border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading);font-size:44px;font-weight:400;font-variant-numeric:tabular-nums;line-height:1">123 MB/s</div>
+      <div style="font-size:12px;color:var(--color-neutral-700);margin-top:4px">sustained across 54 GB</div>
+    </div>
+    <div style="padding:var(--space-4) var(--space-3);border-left:1px solid var(--color-divider)">
+      <div style="font-family:var(--font-heading);font-size:44px;font-weight:400;font-variant-numeric:tabular-nums;line-height:1">125 MB/s</div>
+      <div style="font-size:12px;color:var(--color-neutral-700);margin-top:4px">measured peak – a saturated gigabit line</div>
+    </div>
+  </div>
+
+  <div style="max-width:var(--measure,640px);margin:0 auto;font-size:17px;line-height:1.72;text-align:var(--talign,justify);hyphens:auto">
+    <p>Two reasons, and the second one is the one worth reading.</p>
+    <p>The first is that there&rsquo;s no detour. Bytes go from your disk to their disk. Upload-then-download means every byte crosses the internet twice, and the whole thing runs at the speed of the slower of two links that have nothing to do with each other.</p>
+    <p>The second reason is that the direct connection exists at all – which, if you think about home networks for a second, it shouldn&rsquo;t. Both machines are almost certainly behind a router doing address translation. Such a router only forwards inbound packets that belong to a conversation it already watched begin. From the outside, neither machine has a reachable address at all. Neither one can be dialled by the other.</p>
+    <p>They connect directly about nine times in ten anyway.</p>
+    <p>The trick is that the router doesn&rsquo;t ask anyone&rsquo;s permission – it just keeps a table. When your laptop sends a packet out to some address, the router writes down <em>if something comes back from there, it&rsquo;s for the laptop</em>. So if both machines send a packet toward each other at roughly the same moment, each router independently opens a hole for a reply it now expects. Neither router believes it accepted an inbound connection. Both of them did.</p>
+    <p>What needs coordinating is the <em>roughly the same moment</em> part, and which addresses to aim at. That&rsquo;s what a relay is for. And notice the ordering, because it&rsquo;s the part people assume wrong.</p>
+  </div>
+
+  <figure style="margin:var(--space-8) auto;max-width:860px">
+    <div style="display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--color-divider);padding-bottom:7px;margin-bottom:var(--space-3)">
+      <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700);font-variant-numeric:tabular-nums">Figure 3</span>
+      <span style="font-family:var(--font-heading);font-size:17px">Punching through</span>
+      <span style="margin-left:auto;font-size:12px;color:var(--color-neutral-600)">Step {{ f3Label }}</span>
+    </div>
+    <div style="border:1px solid var(--color-divider);border-radius:var(--radius-md);background:var(--color-neutral-100);padding:var(--space-4)">
+      <svg viewBox="0 0 760 280" style="width:100%;height:auto;display:block">
+        <g style="opacity:{{ f3RelayOp }}">
+          <path d="M115 120 L330 62 M645 120 L430 62" fill="none" stroke="var(--color-accent)" stroke-width="2"></path>
+          <text x="380" y="98" text-anchor="middle" font-size="11" fill="var(--color-accent-800)">data is already flowing here</text>
+        </g>
+        <g style="opacity:{{ f3ProbeOp }}">
+          <text x="115" y="205" text-anchor="middle" font-size="10.5" fill="var(--color-neutral-700)">candidate addrs · 3</text>
+          <text x="645" y="205" text-anchor="middle" font-size="10.5" fill="var(--color-neutral-700)">candidate addrs · 2</text>
+        </g>
+        <g style="opacity:{{ f3BurstOp }}">
+          <path d="M170 140 L330 140 M590 140 L430 140" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-dasharray="5 5"></path>
+          <path d="M330 140 l-9 -5 v10 z M430 140 l9 -5 v10 z" fill="var(--color-accent)"></path>
+          <text x="380" y="132" text-anchor="middle" font-size="11" fill="var(--color-accent-800)">both send, at once</text>
+        </g>
+        <g style="opacity:{{ f3DirectOp }}">
+          <path d="M170 140 L590 140" fill="none" stroke="var(--color-accent)" stroke-width="3"></path>
+          <rect x="318" y="126" width="124" height="20" rx="3" fill="var(--color-neutral-100)"></rect>
+          <text x="380" y="141" text-anchor="middle" font-size="11.5" fill="var(--color-accent-800)">direct path open</text>
+        </g>
+        <g style="opacity:{{ f3FailOp }}">
+          <path d="M170 140 L590 140" fill="none" stroke="var(--color-neutral-400)" stroke-width="2" stroke-dasharray="4 6"></path>
+          <path d="M368 128 l24 24 M392 128 l-24 24" stroke="var(--color-neutral-700)" stroke-width="2"></path>
+          <text x="380" y="172" text-anchor="middle" font-size="11" fill="var(--color-neutral-700)">no direct path – the relay stays</text>
+        </g>
+        <g fill="none" stroke="var(--color-neutral-700)">
+          <rect x="330" y="36" width="100" height="44" rx="3" stroke="var(--color-accent-700)"></rect>
+          <rect x="60" y="120" width="110" height="40" rx="3"></rect>
+          <rect x="590" y="120" width="110" height="40" rx="3"></rect>
+          <rect x="45" y="220" width="140" height="42" rx="3"></rect>
+          <rect x="575" y="220" width="140" height="42" rx="3"></rect>
+          <path d="M115 160 L115 220 M645 160 L645 220" stroke="var(--color-neutral-400)"></path>
+        </g>
+        <g font-size="11.5" text-anchor="middle" fill="var(--color-text)">
+          <text x="380" y="63">RELAY</text>
+          <text x="115" y="145">router A</text>
+          <text x="645" y="145">router B</text>
+          <text x="115" y="246">your machine</text>
+          <text x="645" y="246">their machine</text>
+        </g>
+      </svg>
+      <p style="margin:var(--space-4) 0 0;font-size:14.5px;line-height:1.6;min-height:44px">{{ f3Caption }}</p>
+      <div style="display:flex;gap:10px;align-items:center;margin-top:var(--space-3);padding-top:var(--space-3);border-top:1px solid var(--color-divider);flex-wrap:wrap">
+        <button class="btn btn-secondary" onClick="{{ f3Prev }}">&larr; Back</button>
+        <button class="btn btn-primary" onClick="{{ f3Next }}">{{ f3NextLabel }}</button>
+        <label class="radio" style="margin-left:12px"><input type="checkbox" checked="{{ f3Strict }}" onChange="{{ f3ToggleStrict }}"><span class="dot"></span>Both routers at their strictest</label>
+      </div>
+    </div>
+    <p style="margin:var(--space-2) 0 0;font-size:13px;font-style:italic;color:var(--color-neutral-700)">Set both routers strict and watch the direct connection fail – then watch the transfer carry on anyway.</p>
+  </figure>
+
+  <blockquote style="max-width:var(--measure,640px);margin:var(--space-8) auto;padding:var(--space-4) 0;border-top:1px solid var(--color-accent);border-bottom:1px solid var(--color-divider);font-family:var(--font-heading);font-size:26px;line-height:1.34;font-weight:400;text-align:left">The relay is already carrying your data while this negotiation happens. Nothing is waiting on the direct connection to succeed. When it does succeed, traffic moves over and the relay steps back.</blockquote>
+
+  <aside style="max-width:var(--measure,640px);margin:var(--space-8) auto;border:1px solid var(--color-divider);border-radius:var(--radius-md);padding:var(--space-4)">
+    <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent);margin-bottom:9px">Worth being straight about</div>
+    <p style="margin:0 0 var(--space-2);font-size:14.5px;line-height:1.66">Nine in ten means one in ten doesn&rsquo;t. Some networks – symmetric address translation on both ends, some corporate setups – never get a direct path, and those transfers run through a relay for their whole life. They still work; they&rsquo;re just slower.</p>
+    <p style="margin:0;font-size:14.5px;line-height:1.66">Separately, the browser version is throughput-limited compared to the desktop app, and that&rsquo;s a browser constraint rather than something we can engineer around.</p>
+  </aside>
+
+  <!-- ══ 4 ══ -->
+  <header id="nearby" style="max-width:var(--measure,640px);margin:var(--space-8) auto var(--space-6);scroll-margin-top:40px">
+    <hr class="hr" style="margin:0 0 var(--space-6)">
+    <div style="display:flex;align-items:baseline;gap:20px">
+      <span style="font-family:var(--font-heading);font-variant-numeric:tabular-nums;font-size:46px;line-height:1;font-weight:400;color:var(--color-accent-300)">04</span>
+      <div>
+        <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:7px">Nearby</div>
+        <h2 style="font-size:31px;font-weight:400;margin:0">Someone on your Wi-Fi appears, with no code typed</h2>
+      </div>
+    </div>
+  </header>
+
+  <div style="max-width:var(--measure,640px);margin:0 auto;font-size:17px;line-height:1.72;text-align:var(--talign,justify);hyphens:auto">
+    <p>Another DashBeam device on the same network shows up under <strong>Nearby</strong>. You pick it and send. Nobody typed a pairing code, and nothing went out to the internet to make that happen.</p>
+    <p>When a machine is on the same network segment, all of section&nbsp;2&rsquo;s lookup machinery is unnecessary work – the network itself can answer. DashBeam advertises and browses using multicast DNS, the same mechanism that makes printers and speakers show up without configuration.</p>
+    <p>Being precise about where this comes from is worth more than making it sound effortless: <strong>iroh ships local discovery switched off by default. DashBeam turns it on</strong>, and wraps it in a policy, because &ldquo;everyone on this coffee shop Wi-Fi can see my laptop&rsquo;s name&rdquo; is a decision that belongs to you rather than to us.</p>
+    <p>The first time two devices meet this way, both show a short verification code derived from both public keys. Same code on both screens means you&rsquo;re talking to the machine that&rsquo;s actually in front of you.</p>
+  </div>
+
+  <figure style="margin:var(--space-8) auto;max-width:860px">
+    <div style="display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--color-divider);padding-bottom:7px;margin-bottom:var(--space-3)">
+      <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700);font-variant-numeric:tabular-nums">Figure 4</span>
+      <span style="font-family:var(--font-heading);font-size:17px">Two devices, one network</span>
+      <span style="margin-left:auto;font-size:12px;color:var(--color-neutral-600)">Set each side</span>
+    </div>
+    <div style="border:1px solid var(--color-divider);border-radius:var(--radius-md);background:var(--color-neutral-100);padding:var(--space-4)">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+        <div style="border:1px solid var(--color-neutral-400);border-radius:var(--radius-md);padding:var(--space-3)">
+          <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:10px">Your laptop</div>
+          <div class="seg" onClick="{{ f4SetA }}">
+            <label class="seg-opt" data-v="everyone"><input type="radio" name="f4a" checked="{{ f4aEveryone }}">Everyone</label>
+            <label class="seg-opt" data-v="paired"><input type="radio" name="f4a" checked="{{ f4aPaired }}">Paired only</label>
+            <label class="seg-opt" data-v="off"><input type="radio" name="f4a" checked="{{ f4aOff }}">Off</label>
+          </div>
+          <p style="margin:var(--space-3) 0 0;font-size:13.5px;line-height:1.6;color:var(--color-neutral-800)">{{ f4aDesc }}</p>
+        </div>
+        <div style="border:1px solid var(--color-neutral-400);border-radius:var(--radius-md);padding:var(--space-3)">
+          <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:10px">Their phone</div>
+          <div class="seg" onClick="{{ f4SetB }}">
+            <label class="seg-opt" data-v="everyone"><input type="radio" name="f4b" checked="{{ f4bEveryone }}">Everyone</label>
+            <label class="seg-opt" data-v="paired"><input type="radio" name="f4b" checked="{{ f4bPaired }}">Paired only</label>
+            <label class="seg-opt" data-v="off"><input type="radio" name="f4b" checked="{{ f4bOff }}">Off</label>
+          </div>
+          <p style="margin:var(--space-3) 0 0;font-size:13.5px;line-height:1.6;color:var(--color-neutral-800)">{{ f4bDesc }}</p>
+        </div>
+      </div>
+      <div style="margin-top:var(--space-4);padding-top:var(--space-3);border-top:1px solid var(--color-divider);display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+        <div>
+          <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent);margin-bottom:6px">Laptop&rsquo;s Nearby list</div>
+          <div style="font-size:14px">{{ f4SeesB }}</div>
+        </div>
+        <div>
+          <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent);margin-bottom:6px">Phone&rsquo;s Nearby list</div>
+          <div style="font-size:14px">{{ f4SeesA }}</div>
+        </div>
+      </div>
+      <div style="margin-top:var(--space-4);padding-top:var(--space-3);border-top:1px solid var(--color-divider);display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+        <label class="radio"><input type="checkbox" checked="{{ f4Blocked }}" onChange="{{ f4ToggleBlocked }}"><span class="dot"></span>Guest Wi-Fi blocks multicast</label>
+        <span style="font-size:12.5px;color:var(--color-neutral-700)">{{ f4BlockNote }}</span>
+      </div>
+    </div>
+    <p style="margin:var(--space-2) 0 0;font-size:13px;font-style:italic;color:var(--color-neutral-700)">Try &ldquo;Paired only&rdquo; on one side and notice what still gets through.</p>
+  </figure>
+
+  <blockquote style="max-width:var(--measure,640px);margin:var(--space-8) auto;padding:var(--space-4) 0;border-top:1px solid var(--color-accent);border-bottom:1px solid var(--color-divider);font-family:var(--font-heading);font-size:26px;line-height:1.34;font-weight:400;text-align:left">The local path replaces the lookup, not the transfer. Everything after this point – the encryption, the verification, the resumption – is identical either way.</blockquote>
+
+  <aside style="max-width:var(--measure,640px);margin:var(--space-8) auto;border:1px solid var(--color-divider);border-radius:var(--radius-md);padding:var(--space-4)">
+    <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent);margin-bottom:9px">Worth being straight about</div>
+    <p style="margin:0;font-size:14.5px;line-height:1.66">Plenty of guest networks and VPNs block multicast outright, and when they do, Nearby is simply empty. It isn&rsquo;t broken and there&rsquo;s no setting to fix it – use a ticket or pair over the internet instead.</p>
+  </aside>
+
+  <!-- ══ 5 ══ -->
+  <header id="roaming" style="max-width:var(--measure,640px);margin:var(--space-8) auto var(--space-6);scroll-margin-top:40px">
+    <hr class="hr" style="margin:0 0 var(--space-6)">
+    <div style="display:flex;align-items:baseline;gap:20px">
+      <span style="font-family:var(--font-heading);font-variant-numeric:tabular-nums;font-size:46px;line-height:1;font-weight:400;color:var(--color-accent-300)">05</span>
+      <div>
+        <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:7px">Roaming</div>
+        <h2 style="font-size:31px;font-weight:400;margin:0">You walk out the door mid-transfer, and it keeps going</h2>
+      </div>
+    </div>
+  </header>
+
+  <div style="max-width:var(--measure,640px);margin:0 auto;font-size:17px;line-height:1.72;text-align:var(--talign,justify);hyphens:auto">
+    <p>The transfer is running. Your phone drops off Wi-Fi and picks up cellular. The progress bar doesn&rsquo;t stop.</p>
+    <p>This is where the strange decision back in section&nbsp;2 pays for itself completely. The connection was never attached to an IP address. It&rsquo;s attached to a key. The addresses were only ever a hint about where to find that key – and hints are cheap to replace. So when the network underneath changes:</p>
+    <ol style="margin:0 0 var(--space-4);padding-left:22px;text-align:left">
+      <li style="margin-bottom:6px">A monitor notices the network interfaces and routing table are different.</li>
+      <li style="margin-bottom:6px">Probes go out to relays to learn the new public addresses and how far away they are.</li>
+      <li style="margin-bottom:6px">A small message crosses the relay to the other device: <em>here&rsquo;s where I am now.</em></li>
+      <li style="margin-bottom:6px">The other device updates its address book. Same key, new addresses.</li>
+      <li>The new path validates, and traffic moves onto it.</li>
+    </ol>
+    <p>And the reason the progress bar keeps moving through all of that, in iroh&rsquo;s own words:</p>
+  </div>
+
+  <blockquote style="max-width:var(--measure,640px);margin:var(--space-6) auto;padding:0 0 0 var(--space-4);border-left:1px solid var(--color-accent);font-family:var(--font-heading);font-size:22px;line-height:1.4;font-weight:400;text-align:left;font-style:italic">&ldquo;While this hole-punching dance progresses, we are still able to send data back and forth over the relay connection, so data never stops flowing.&rdquo;
+    <div style="font-family:var(--font-body);font-style:normal;font-size:12px;margin-top:10px;color:var(--color-neutral-700)">iroh – <a href="https://www.iroh.computer/blog/healing-connections">Healing Connections After Network Migration</a></div>
+  </blockquote>
+
+  <figure style="margin:var(--space-8) auto;max-width:860px">
+    <div style="display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--color-divider);padding-bottom:7px;margin-bottom:var(--space-3)">
+      <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700);font-variant-numeric:tabular-nums">Figure 5</span>
+      <span style="font-family:var(--font-heading);font-size:17px">Move the machine</span>
+      <span style="margin-left:auto;font-size:12px;color:var(--color-neutral-600)">Step {{ f5Label }}</span>
+    </div>
+    <div style="border:1px solid var(--color-divider);border-radius:var(--radius-md);background:var(--color-neutral-100);padding:var(--space-4)">
+      <svg viewBox="0 0 760 250" style="width:100%;height:auto;display:block">
+        <g style="opacity:{{ f5WifiOp }}">
+          <path d="M180 100 C 300 30, 460 30, 580 100" fill="none" stroke="var(--color-accent)" stroke-width="2.5"></path>
+          <text x="380" y="42" text-anchor="middle" font-size="11" fill="var(--color-accent-800)">path A – home Wi-Fi</text>
+        </g>
+        <g style="opacity:{{ f5CellOp }}">
+          <path d="M180 140 C 300 215, 460 215, 580 140" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-dasharray="{{ f5CellDash }}"></path>
+          <text x="380" y="212" text-anchor="middle" font-size="11" fill="var(--color-accent-800)">path B – cellular</text>
+        </g>
+        <g style="opacity:{{ f5RelayOp }}">
+          <path d="M180 118 L330 118 M430 118 L580 118" fill="none" stroke="var(--color-neutral-500)" stroke-width="1.5" stroke-dasharray="4 4"></path>
+          <rect x="330" y="102" width="100" height="32" rx="3" fill="var(--color-neutral-100)" stroke="var(--color-accent-700)"></rect>
+          <text x="380" y="122" text-anchor="middle" font-size="11">RELAY</text>
+        </g>
+        <g fill="none" stroke="var(--color-neutral-700)">
+          <rect x="60" y="88" width="120" height="60" rx="3"></rect>
+          <rect x="580" y="88" width="120" height="60" rx="3"></rect>
+        </g>
+        <g font-size="11.5" text-anchor="middle">
+          <text x="120" y="115">your phone</text>
+          <text x="120" y="132" font-size="10" fill="var(--color-neutral-600)">{{ f5Net }}</text>
+          <text x="640" y="122">their desktop</text>
+        </g>
+      </svg>
+      <div style="margin-top:var(--space-3)">
+        <div style="display:flex;justify-content:space-between;font-size:11.5px;color:var(--color-neutral-700);margin-bottom:6px;font-variant-numeric:tabular-nums">
+          <span>transfer</span><span>{{ f5Pct }}% – never stalls</span>
+        </div>
+        <div style="height:6px;border:1px solid var(--color-divider);border-radius:3px;overflow:hidden">
+          <div style="height:100%;background:var(--color-accent);width:{{ f5Pct }}%;transition:width .5s ease"></div>
+        </div>
+      </div>
+      <p style="margin:var(--space-4) 0 0;font-size:14.5px;line-height:1.6;min-height:44px">{{ f5Caption }}</p>
+      <div style="display:flex;gap:10px;margin-top:var(--space-3);padding-top:var(--space-3);border-top:1px solid var(--color-divider);flex-wrap:wrap">
+        <button class="btn btn-secondary" onClick="{{ f5Prev }}">&larr; Back</button>
+        <button class="btn btn-primary" onClick="{{ f5Next }}">{{ f5NextLabel }}</button>
+      </div>
+    </div>
+    <p style="margin:var(--space-2) 0 0;font-size:13px;font-style:italic;color:var(--color-neutral-700)">Try to break it. Notice what doesn&rsquo;t happen.</p>
+  </figure>
+
+  <blockquote style="max-width:var(--measure,640px);margin:var(--space-8) auto;padding:var(--space-6) 0;border-top:1px solid var(--color-accent);border-bottom:1px solid var(--color-accent);font-family:var(--font-heading);font-size:32px;line-height:1.28;font-weight:400;text-align:left">A machine&rsquo;s name is a key, not an address. The key does the encryption. So the address is disposable – and everything else here is a consequence of that.</blockquote>
+
+  <!-- ══ 6 ══ -->
+  <header id="resume" style="max-width:var(--measure,640px);margin:var(--space-8) auto var(--space-6);scroll-margin-top:40px">
+    <hr class="hr" style="margin:0 0 var(--space-6)">
+    <div style="display:flex;align-items:baseline;gap:20px">
+      <span style="font-family:var(--font-heading);font-variant-numeric:tabular-nums;font-size:46px;line-height:1;font-weight:400;color:var(--color-accent-300)">06</span>
+      <div>
+        <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:7px">Resumption</div>
+        <h2 style="font-size:31px;font-weight:400;margin:0">Your laptop sleeps, and it picks up where it stopped</h2>
+      </div>
+    </div>
+  </header>
+
+  <div style="max-width:var(--measure,640px);margin:0 auto;font-size:17px;line-height:1.72;text-align:var(--talign,justify);hyphens:auto">
+    <p>Close the lid, lose the network, quit the app. When you come back, the transfer resumes from where it stopped. It doesn&rsquo;t start over.</p>
+    <p>Go back to the tree in section&nbsp;1. Because the folder was fingerprinted as a tree rather than as one lump, any individual chunk can be checked on its own against that same root value. The receiver doesn&rsquo;t need the whole file to know whether the part it has is right. That buys two things at once.</p>
+    <p><strong>Verified streaming.</strong> A corrupted or tampered chunk is caught at that chunk – not at the end of a 400&nbsp;GB download. Data is checked as it lands, continuously, against a fingerprint that was fixed before the transfer started.</p>
+    <p><strong>Resumption.</strong> The receiver knows exactly which chunks it already holds and trusts. When the connection comes back, it asks for the rest. Nothing that already arrived is re-sent, and nothing that already arrived has to be taken on faith.</p>
+    <p>Folders and very large files use the same idea one level up: a blob whose contents are the fingerprints of other blobs.</p>
+  </div>
+
+  <figure style="margin:var(--space-8) auto;max-width:860px">
+    <div style="display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--color-divider);padding-bottom:7px;margin-bottom:var(--space-3)">
+      <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700);font-variant-numeric:tabular-nums">Figure 6</span>
+      <span style="font-family:var(--font-heading);font-size:17px">The same tree, under load</span>
+    </div>
+    <div style="border:1px solid var(--color-divider);border-radius:var(--radius-md);background:var(--color-neutral-100);padding:var(--space-4)">
+      <div style="display:flex;gap:3px;height:52px;align-items:stretch">
+        <sc-for list="{{ f6Chunks }}" as="c" hint-placeholder-count="28">
+          <div title="{{ c.title }}" style="flex:1;border-radius:2px;border:1px solid var(--color-neutral-400);background:{{ c.fill }};transition:background .3s"></div>
+        </sc-for>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:11.5px;color:var(--color-neutral-700);font-variant-numeric:tabular-nums">
+        <span>{{ f6Held }} of 28 chunks held and verified</span>
+        <span>{{ f6State }}</span>
+      </div>
+      <p style="margin:var(--space-4) 0 0;font-size:14.5px;line-height:1.6;min-height:44px">{{ f6Caption }}</p>
+      <div style="display:flex;gap:10px;margin-top:var(--space-3);padding-top:var(--space-3);border-top:1px solid var(--color-divider);flex-wrap:wrap">
+        <button class="btn btn-secondary" onClick="{{ f6Corrupt }}">Corrupt a chunk</button>
+        <button class="btn btn-secondary" onClick="{{ f6Interrupt }}">Interrupt</button>
+        <button class="btn btn-primary" onClick="{{ f6Resume }}">Resume</button>
+        <button class="btn btn-ghost" onClick="{{ f6Reset }}">Reset</button>
+      </div>
+      <div style="display:flex;gap:20px;margin-top:var(--space-3);font-size:11.5px;color:var(--color-neutral-700)">
+        <span style="display:inline-flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:2px;background:var(--color-accent-400);border:1px solid var(--color-neutral-400)"></span>held &amp; verified</span>
+        <span style="display:inline-flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:2px;background:var(--color-neutral-200);border:1px solid var(--color-neutral-400)"></span>not yet received</span>
+        <span style="display:inline-flex;align-items:center;gap:6px"><span style="width:12px;height:12px;border-radius:2px;background:var(--color-neutral-900);border:1px solid var(--color-neutral-400)"></span>failed verification</span>
+      </div>
+    </div>
+    <p style="margin:var(--space-2) 0 0;font-size:13px;font-style:italic;color:var(--color-neutral-700)">Corruption localizes to one leaf. A resume asks only for what&rsquo;s missing.</p>
+  </figure>
+
+  <div style="max-width:var(--measure,640px);margin:0 auto;font-size:17px;line-height:1.72;text-align:var(--talign,justify);hyphens:auto">
+    <p>For what it&rsquo;s worth against the comparison table: LocalSend and PairDrop don&rsquo;t resume.</p>
+  </div>
+
+  <!-- ══ 7 ══ -->
+  <header id="no-accounts" style="max-width:var(--measure,640px);margin:var(--space-8) auto var(--space-6);scroll-margin-top:40px">
+    <hr class="hr" style="margin:0 0 var(--space-6)">
+    <div style="display:flex;align-items:baseline;gap:20px">
+      <span style="font-family:var(--font-heading);font-variant-numeric:tabular-nums;font-size:46px;line-height:1;font-weight:400;color:var(--color-accent-300)">07</span>
+      <div>
+        <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:7px">Accounts &amp; privacy</div>
+        <h2 style="font-size:31px;font-weight:400;margin:0">Nobody ever asked you to sign in</h2>
+      </div>
+    </div>
+  </header>
+
+  <div style="max-width:var(--measure,640px);margin:0 auto;font-size:17px;line-height:1.72;text-align:var(--talign,justify);hyphens:auto">
+    <p>No account. No sign-up. No &ldquo;your files&rdquo; page, no dashboard, no history of what you&rsquo;ve sent – not hidden somewhere, just absent.</p>
+    <p>That&rsquo;s not restraint on our part. There&rsquo;s nothing for an account to point at. The string from section&nbsp;2 <em>is</em> the coordination protocol, in full. No server holds a record of the transfer because no server was involved in arranging it.</p>
+    <p>Section&nbsp;3 admitted that a relay can end up in the path, so here&rsquo;s the ledger written out rather than implied.</p>
+  </div>
+
+  <div style="max-width:var(--measure,640px);margin:var(--space-6) auto">
+    <table class="table">
+      <tbody>
+        <tr><td style="width:38%;font-family:var(--font-heading);font-size:16px">A relay operator can see</td><td>that one key exchanged traffic with another key, roughly when, and roughly how much</td></tr>
+        <tr><td style="font-family:var(--font-heading);font-size:16px">A relay operator cannot see</td><td>what was sent – not the contents, not the filenames, not the folder structure. Traffic is encrypted end to end whether the path is direct or relayed</td></tr>
+        <tr><td style="font-family:var(--font-heading);font-size:16px">Your ISP sees</td><td>encrypted UDP going to a relay, or encrypted UDP going to a peer</td></tr>
+        <tr><td style="font-family:var(--font-heading);font-size:16px">The lookup service learns</td><td>that somebody asked for a particular key&rsquo;s record</td></tr>
+        <tr><td style="font-family:var(--font-heading);font-size:16px;color:var(--color-accent-800)">DashBeam, the project, sees</td><td style="color:var(--color-accent-800)">nothing. There is no server of ours anywhere in this drawing</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <figure style="margin:var(--space-8) auto;max-width:860px">
+    <div style="display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--color-divider);padding-bottom:7px;margin-bottom:var(--space-3)">
+      <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700);font-variant-numeric:tabular-nums">Figure 7</span>
+      <span style="font-family:var(--font-heading);font-size:17px">The relay&rsquo;s view</span>
+    </div>
+    <div style="border:1px solid var(--color-divider);border-radius:var(--radius-md);background:var(--color-neutral-100);padding:var(--space-4)">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+        <div style="border:1px solid var(--color-neutral-400);border-radius:var(--radius-md);padding:var(--space-3)">
+          <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent);margin-bottom:10px">What you sent</div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:12.5px;line-height:1.85;color:var(--color-neutral-800)">
+            <div>Iceland-2026/</div>
+            <div style="padding-left:14px">raw/DSC_0431.NEF &nbsp;<span style="color:var(--color-neutral-600)">48.2 MB</span></div>
+            <div style="padding-left:14px">raw/DSC_0432.NEF &nbsp;<span style="color:var(--color-neutral-600)">47.9 MB</span></div>
+            <div style="padding-left:14px">edit/cover.tiff &nbsp;&nbsp;<span style="color:var(--color-neutral-600)">210 MB</span></div>
+            <div style="padding-left:14px">notes.md</div>
+          </div>
+        </div>
+        <div style="border:1px solid var(--color-neutral-400);border-radius:var(--radius-md);padding:var(--space-3);background:var(--color-neutral-200)">
+          <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:10px">What the relay sees</div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:12.5px;line-height:1.85;color:var(--color-neutral-800)">
+            <div>from &nbsp;k5ff3q7x…r7ad9mq3f</div>
+            <div>to &nbsp;&nbsp;&nbsp;p2nw8ck1…y6ht0bz5e</div>
+            <div>bytes 1&nbsp;204&nbsp;883&nbsp;712</div>
+            <div>from 14:02 to 14:19 UTC</div>
+            <div style="margin-top:8px;color:var(--color-neutral-600);word-break:break-all">9f2c a771 0b4e dd93 61ac 8f00 5c2b e418 7a9d 30f6 …</div>
+          </div>
+        </div>
+      </div>
+      <p style="margin:var(--space-4) 0 0;font-size:13.5px;color:var(--color-neutral-800);text-align:center">Filenames and contents are absent from the right-hand panel because they were never in the traffic.</p>
+    </div>
+  </figure>
+
+  <div style="max-width:var(--measure,640px);margin:0 auto;font-size:17px;line-height:1.72;text-align:var(--talign,justify);hyphens:auto">
+    <p>If that ledger still isn&rsquo;t good enough for you – and for some people it shouldn&rsquo;t be – <strong>the relay and the lookup service are both self-hostable</strong>, and the instructions are in the repository. Point DashBeam at your own and the last third party leaves the diagram.</p>
+  </div>
+
+  <!-- ══ 8 ══ -->
+  <header id="pairing" style="max-width:var(--measure,640px);margin:var(--space-8) auto var(--space-6);scroll-margin-top:40px">
+    <hr class="hr" style="margin:0 0 var(--space-6)">
+    <div style="display:flex;align-items:baseline;gap:20px">
+      <span style="font-family:var(--font-heading);font-variant-numeric:tabular-nums;font-size:46px;line-height:1;font-weight:400;color:var(--color-accent-300)">08</span>
+      <div>
+        <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:7px">Pairing</div>
+        <h2 style="font-size:31px;font-weight:400;margin:0">You paired your phone once, and now it&rsquo;s one button</h2>
+      </div>
+    </div>
+  </header>
+
+  <div style="max-width:var(--measure,640px);margin:0 auto;font-size:17px;line-height:1.72;text-align:var(--talign,justify);hyphens:auto">
+    <p>Your own devices are listed. Sending to one is a click. There&rsquo;s no string to copy. Pairing doesn&rsquo;t replace the string – it delivers it for you.</p>
+    <p>Two devices exchange a short code, and then each one proves it actually holds the secret behind its public name by signing material bound to that specific connection. A signature copied from somewhere else won&rsquo;t do; it has to be produced live, for this connection. Once that&rsquo;s done, each device remembers the other locally, and a long-lived connection between them carries presence – which is how you can see that a device is online before you send to it.</p>
+    <p>When you do send, DashBeam still mints an ordinary one-time ticket, exactly like section&nbsp;1. It just delivers it as an in-app invite instead of asking you to copy and paste. Accepting a Nearby request from section&nbsp;4 produces the same stored record – same destination, different way of meeting.</p>
+    <p>Manual tickets and the <a href="https://www.iroh.computer/sendme">sendme CLI</a> keep working exactly as they did.</p>
+  </div>
+
+  <!-- ══ close ══ -->
+  <div style="max-width:var(--measure,640px);margin:var(--space-8) auto 0">
+    <hr class="hr" style="margin:0 0 var(--space-6)">
+    <h2 style="font-size:26px;font-weight:400;margin:0 0 var(--space-4)">The whole thing in one paragraph</h2>
+    <p style="font-family:var(--font-heading);font-size:23px;line-height:1.42;text-align:left;margin:0">A machine&rsquo;s name is a key. The key does the encryption. So the address is disposable – and once the address is disposable, everything else follows. You can change networks in the middle of a transfer, because the connection was never about the address. You can attempt a direct connection without having to trust the result, because failure just means the relay stays. A relay can carry your traffic without being able to read it, because the name it&rsquo;s routing to is the same key the traffic is encrypted for. And nobody needs an account, because there&rsquo;s nothing an account could point at.</p>
+    <hr class="hr" style="margin:var(--space-8) 0 var(--space-4)">
+    <p style="font-size:13.5px;font-style:italic;color:var(--color-neutral-700);text-align:left;margin:0">DashBeam is built on <a href="https://www.iroh.computer">iroh</a>. If you&rsquo;d rather read source than prose, the protocol lives in <a href="https://github.com/tonyantony300/dashbeam/tree/main/engine/protocol">engine/protocol</a>. This page is available in English only.</p>
+  </div>
+
+</article>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:940},&quot;measure&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:640,&quot;min&quot;:540,&quot;max&quot;:760,&quot;step&quot;:10,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Reading&quot;},&quot;justified&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Reading&quot;},&quot;readingProgress&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Reading&quot;}}">
+class Component extends DCLogic {
+  state = {
+    progressPct: 0,
+    f1: 3,
+    f2Tampered: false,
+    f3: 0, f3Strict: false,
+    f4a: 'everyone', f4b: 'everyone', f4Blocked: false,
+    f5: 0,
+    f6: { held: 18, bad: -1, running: true, resumed: false }
+  };
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      this.setState({ progressPct: h > 0 ? Math.min(100, (window.scrollY / h) * 100) : 0 });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this._onScroll); }
+
+  f1Geometry(i) {
+    const lc = 108 + 72 * i;
+    const l1 = 144 + 144 * Math.floor(i / 2);
+    const l2 = 216 + 288 * Math.floor(i / 4);
+    return [[lc, 240], [l1, 194], [l1, 170], [l2, 134], [l2, 110], [360, 78]]
+      .map(p => p.join(',')).join(' ');
+  }
+
+  renderVals() {
+    const s = this.state;
+
+    // ── Figure 3
+    const f3Caps = [
+      'Two machines, each behind a router doing address translation. From the outside neither has a reachable address. Neither can dial the other.',
+      'Both dial out to a relay – an outbound connection their routers are happy to allow. The transfer starts here. Bytes are already moving.',
+      'Each side collects the addresses it might be reachable at: local interfaces, and what the relay reports seeing.',
+      'The relay coordinates a moment. Both machines fire a packet at the other’s candidate addresses at the same time. Each router notes an outbound conversation and starts expecting a reply.',
+      s.f3Strict
+        ? 'Strict routers assign a fresh outside port per destination, so the address each side was aiming at is already wrong. No direct path – and the transfer carries on over the relay, slower, uninterrupted.'
+        : 'The replies arrive into holes each router now believes it opened itself. Neither router thinks it accepted an inbound connection. Both did. Traffic moves to the direct path and the relay steps back.'
+    ];
+    const f3 = s.f3;
+
+    // ── Figure 4
+    const desc = {
+      everyone: 'Discoverable by name on the local network.',
+      paired: 'Announces its presence, but doesn’t hand its display name to strangers on the segment.',
+      off: 'No advertising at all. Can still see and send to others who are discoverable.'
+    };
+    const seen = (mode, name) => {
+      if (s.f4Blocked) return 'Empty – multicast doesn’t cross this network.';
+      if (mode === 'off') return 'Empty.';
+      if (mode === 'paired') return 'One unnamed DashBeam device. Send needs a code or a pairing.';
+      return name + ' – ready to send.';
+    };
+
+    // ── Figure 5
+    const f5Caps = [
+      'A transfer is running over the phone’s home Wi-Fi. A relay connection is open alongside it, as it always is.',
+      'The phone leaves the house. A monitor notices the interfaces and routing table have changed.',
+      'Probes go out to relays to learn the new public addresses and how far away each relay is.',
+      'A small signed message crosses the relay to the desktop: here’s where I am now. Data is still flowing over that same relay.',
+      'The desktop updates its address book. Same key, new addresses – nothing about the connection’s identity changed.',
+      'The new path validates and traffic moves onto it. The progress bar never registered any of this.'
+    ];
+    const f5 = s.f5;
+    const f5Nets = ['home Wi-Fi', 'home Wi-Fi', 'switching…', 'cellular', 'cellular', 'cellular'];
+
+    // ── Figure 6
+    const f6 = s.f6;
+    const chunks = Array.from({ length: 28 }, (_, i) => {
+      let fill = 'var(--color-neutral-200)', title = 'chunk ' + (i + 1) + ' – not received';
+      if (i === f6.bad) { fill = 'var(--color-neutral-900)'; title = 'chunk ' + (i + 1) + ' – failed verification against the root'; }
+      else if (i < f6.held) { fill = 'var(--color-accent-400)'; title = 'chunk ' + (i + 1) + ' – held and verified'; }
+      return { fill, title };
+    });
+    let f6Caption = 'A transfer in progress. Each chunk is checked against the root as it lands – not at the end.';
+    if (f6.bad >= 0) f6Caption = 'Chunk ' + (f6.bad + 1) + ' didn’t match its leaf hash. The failure is localized to that chunk; everything before it is still trusted. It gets re-requested, and nothing else is thrown away.';
+    else if (!f6.running && !f6.resumed) f6Caption = 'Lid closed, network gone, app quit. The receiver still knows exactly which chunks it holds and has verified – that knowledge is just the tree.';
+    else if (f6.resumed) f6Caption = 'Back online. The receiver asks only for the chunks it doesn’t have. Nothing already arrived is re-sent, and nothing already arrived is taken on faith.';
+
+    return {
+      progressPct: s.progressPct,
+      showProgress: this.props.readingProgress ?? true,
+      measurePx: (this.props.measure ?? 640) + 'px',
+      talign: (this.props.justified ?? true) ? 'justify' : 'left',
+
+      f1Points: this.f1Geometry(s.f1),
+      f1LeafX: 78 + 72 * s.f1,
+      f1On: 1,
+      f1Note: 'Chunk ' + (s.f1 + 1) + ' changed. Only ' + 4 + ' hashes on the path to the root are recomputed – the other ' + 11 + ' nodes are untouched, and the 32-byte value at the top is now a different address entirely.',
+      f1Click: (e) => {
+        const i = e.target.getAttribute && e.target.getAttribute('data-i');
+        if (i !== null && i !== undefined) this.setState({ f1: Number(i) });
+      },
+
+      f2Sig: s.f2Tampered ? 'ed25519:8c31…a0f2  (as delivered)' : 'ed25519:8c31…a0f2',
+      f2Border: s.f2Tampered ? 'var(--color-neutral-700)' : 'var(--color-accent)',
+      f2Mark: s.f2Tampered ? '✕' : '✓',
+      f2Verdict: s.f2Tampered
+        ? 'Signature does not match the name. Record discarded.'
+        : 'Signature checks against the name you already had.',
+      f2Btn: s.f2Tampered ? 'Undo the tamper' : 'Flip one bit in the record',
+      f2Hint: s.f2Tampered
+        ? 'The lookup service handed back a relay you didn’t ask for. Your device never even tries it.'
+        : 'Nothing here has to be trusted – only available.',
+      f2Toggle: () => this.setState(p => ({ f2Tampered: !p.f2Tampered })),
+
+      f3Label: (f3 + 1) + ' of 5',
+      f3Caption: f3Caps[f3],
+      f3RelayOp: f3 >= 1 ? (f3 >= 4 && !s.f3Strict ? 0.3 : 1) : 0.12,
+      f3ProbeOp: f3 >= 2 ? 1 : 0,
+      f3BurstOp: f3 === 3 ? 1 : 0,
+      f3DirectOp: f3 >= 4 && !s.f3Strict ? 1 : 0,
+      f3FailOp: f3 >= 4 && s.f3Strict ? 1 : 0,
+      f3Strict: s.f3Strict,
+      f3NextLabel: f3 >= 4 ? 'Start over' : 'Next →',
+      f3Next: () => this.setState(p => ({ f3: p.f3 >= 4 ? 0 : p.f3 + 1 })),
+      f3Prev: () => this.setState(p => ({ f3: Math.max(0, p.f3 - 1) })),
+      f3ToggleStrict: () => this.setState(p => ({ f3Strict: !p.f3Strict })),
+
+      f4aEveryone: s.f4a === 'everyone', f4aPaired: s.f4a === 'paired', f4aOff: s.f4a === 'off',
+      f4bEveryone: s.f4b === 'everyone', f4bPaired: s.f4b === 'paired', f4bOff: s.f4b === 'off',
+      f4aDesc: desc[s.f4a], f4bDesc: desc[s.f4b],
+      f4SeesA: seen(s.f4a, 'Ada’s MacBook'),
+      f4SeesB: seen(s.f4b, 'Pixel 9'),
+      f4SetA: (e) => { const l = e.target.closest && e.target.closest('[data-v]'); if (l) this.setState({ f4a: l.getAttribute('data-v') }); },
+      f4SetB: (e) => { const l = e.target.closest && e.target.closest('[data-v]'); if (l) this.setState({ f4b: l.getAttribute('data-v') }); },
+      f4Blocked: s.f4Blocked,
+      f4ToggleBlocked: () => this.setState(p => ({ f4Blocked: !p.f4Blocked })),
+      f4BlockNote: s.f4Blocked
+        ? 'Nearby is empty on both sides. Not broken – there’s no setting that fixes it. Use a ticket instead.'
+        : 'Plenty of guest networks and VPNs do.',
+
+      f5Label: (f5 + 1) + ' of 6',
+      f5Caption: f5Caps[f5],
+      f5Net: f5Nets[f5],
+      f5Pct: 34 + f5 * 8,
+      f5WifiOp: f5 <= 1 ? 1 : (f5 <= 3 ? 0.3 : 0.1),
+      f5CellOp: f5 >= 5 ? 1 : (f5 >= 3 ? 0.45 : 0.08),
+      f5CellDash: f5 >= 5 ? '0' : '6 6',
+      f5RelayOp: f5 >= 1 && f5 <= 4 ? 1 : 0.35,
+      f5NextLabel: f5 >= 5 ? 'Start over' : 'Next →',
+      f5Next: () => this.setState(p => ({ f5: p.f5 >= 5 ? 0 : p.f5 + 1 })),
+      f5Prev: () => this.setState(p => ({ f5: Math.max(0, p.f5 - 1) })),
+
+      f6Chunks: chunks,
+      f6Held: f6.bad >= 0 ? f6.bad : f6.held,
+      f6State: f6.bad >= 0 ? 'chunk ' + (f6.bad + 1) + ' rejected' : (f6.running ? 'receiving' : (f6.resumed ? 'resumed' : 'interrupted')),
+      f6Caption,
+      f6Corrupt: () => this.setState(p => ({ f6: { ...p.f6, bad: 11, running: false, resumed: false } })),
+      f6Interrupt: () => this.setState(p => ({ f6: { ...p.f6, bad: -1, running: false, resumed: false } })),
+      f6Resume: () => this.setState(p => ({ f6: { held: 28, bad: -1, running: false, resumed: true } })),
+      f6Reset: () => this.setState({ f6: { held: 18, bad: -1, running: true, resumed: false } })
+    };
+  }
+}
+</script>
+</body>
+</html>
