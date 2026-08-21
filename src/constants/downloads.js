@@ -6,8 +6,8 @@ export const DONATE_LINKS = {
   githubSponsors: "https://github.com/sponsors/tonyantony300",
 };
 
-export const DESKTOP_VERSION = "0.6.2";
-export const ANDROID_VERSION = "v0.6.2";
+export const DESKTOP_VERSION = "0.7.0";
+export const ANDROID_VERSION = "v0.7.0";
 export const WEB_APP_URL = "https://app.dashbeam.net";
 const DESKTOP_TAG = `v${DESKTOP_VERSION}`;
 

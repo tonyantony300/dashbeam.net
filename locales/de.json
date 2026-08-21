@@ -29,69 +29,50 @@
     "newBadge": "Neu",
     "donationMessage": "Ihre Spenden machen dieses Projekt besser"
   },
-  "howItWorks": {
-    "sectionLabel": "Sicher & sofort.\nZwei Wege zum Senden.",
-    "eyebrow": "So funktioniert's",
-    "deck": "Senden Sie ein Ticket an jeden, oder koppeln Sie einmal und senden Sie mit einem Klick an Ihre eigenen Geräte. Kein Konto auf beiden Seiten.",
-    "step1": {
-      "title": "Datei oder Ordner ablegen",
-      "description": "DashBeam erstellt einen sicheren Einmalcode (ein „Ticket“) für Ihre Datei"
-    },
-    "step2": {
-      "title": "Ticket teilen",
-      "description": "Ticket kopieren und per Chat, E-Mail oder SMS an Ihren Empfänger senden"
-    },
-    "step3": {
-      "title": "Empfänger erhält Datei",
-      "description": "Ihr Freund fügt das Ticket in seiner App ein und der Transfer beginnt. Die Datei wird direkt heruntergeladen."
-    },
-    "paired": {
-      "label": "Sie senden oft? Einmal koppeln.",
-      "step1": {
-        "title": "Einmal koppeln",
-        "description": "Geben Sie auf beiden Geräten einen kurzen Code ein. Einmalig, danach bleiben sie gekoppelt."
-      },
-      "step2": {
-        "title": "Danach genügt ein Klick",
-        "description": "Gekoppelte Geräte erscheinen direkt in der App. Eines auswählen und die Datei geht sofort raus. Kein Ticket zum Kopieren."
-      }
-    }
-  },
   "features": {
     "titleLine1": "Warum Menschen DashBeam lieben",
     "titleLine2": "Für den täglichen Dateiaustausch",
+    "groups": {
+      "performance": { "label": "Performance" },
+      "connectivity": { "label": "Konnektivität" },
+      "other": { "label": "Sonstiges" }
+    },
     "items": {
-      "directSend": {
-        "title": "Dateien direkt senden. Keine Mittelsmänner.",
-        "description": "Funktioniert nahtlos in lokalen Netzwerken oder über Kontinente hinweg."
+      "anyFileAnySize": {
+        "title": "Jede Datei, jede Größe.",
+        "description": "Senden Sie Dateien oder ganze Ordner beliebiger Größe – lückenlos verifiziert mit BLAKE3-Integritätsprüfungen."
       },
-      "transferAnything": {
-        "title": "Alles übertragen. Jede Datei. Jedes Format.",
-        "description": "Senden Sie Dateien oder Ordner jeder Größe und jedes Formats, verifiziert mit BLAKE3-basierten Integritätsprüfungen."
+      "multiGigabit": {
+        "title": "Multi-Gigabit-Geschwindigkeit.",
+        "description": "Sättigt schnelle lokale und entfernte Verbindungen für blitzschnelle Übertragungen."
       },
-      "noSizeLimits": {
-        "title": "Keine Größenbeschränkung. Wirklich unbegrenzt.",
-        "description": "Von KB's bis 999GB's. DashBeam hilft Ihnen, Dateien unbegrenzter Größe zu teilen."
+      "resumableMultiPeer": {
+        "title": "Fortsetzbar & Multi-Peer.",
+        "description": "Unterbrochene Übertragungen werden dort fortgesetzt, wo sie aufgehört haben, und eine Übertragung kann gleichzeitig mehrere Peers erreichen."
       },
-      "blazingFast": {
-        "title": "Blitzschnell & zuverlässig",
-        "description": "Kann Multi-Gigabit-Verbindungen auslasten für blitzschnelle Übertragungen."
+      "previewHistory": {
+        "title": "Vorschau & Verlauf.",
+        "description": "Sehen Sie vor dem Herunterladen, was enthalten ist, und behalten Sie ein lokales Protokoll jeder Übertragung."
       },
-      "endToEndEncrypted": {
-        "title": "Ende-zu-Ende-verschlüsselt",
-        "description": "Geschützt durch QUIC + TLS 1.3 für Vorwärts- und Rückwärtsgeheimhaltung."
+      "dialByKey": {
+        "title": "Wählen per Schlüssel.",
+        "description": "Verbinden Sie sich über die Identität eines Geräts, nicht über dessen IP-Adresse."
       },
-      "resumable": {
-        "title": "Fortsetzbare Übertragungen",
-        "description": "Unterbrochen? Kein Problem. Übertragungen werden automatisch dort fortgesetzt, wo sie aufgehört haben."
+      "roaming": {
+        "title": "Roaming.",
+        "description": "Wechseln Sie mitten in der Übertragung zwischen Wi-Fi, Mobilfunk oder anderen Netzwerken, ohne die Verbindung zu verlieren."
       },
-      "zeroPersonalData": {
-        "title": "Keine persönlichen Daten",
-        "description": "Keine Konten, keine Werbung. Kein Tracking, kein Training. Nur private Dateiübertragungen."
+      "selfHostRelays": {
+        "title": "Relays selbst hosten.",
+        "description": "Betreiben Sie Ihr eigenes Relay für ungedrosselte Remote-Übertragungen (Settings → Infra)."
       },
-      "freeOpenSource": {
-        "title": "Kostenlos & Open Source",
-        "description": "Von der Community gebaut. Offen durch Design. Transparenz und Privatsphäre als Standard."
+      "advancedDebugMode": {
+        "title": "Erweiterter Debug-Modus.",
+        "description": "Optionale Diagnosen zeigen genau, was unter der Haube passiert."
+      },
+      "lightweightFree": {
+        "title": "Schlank & kostenlos.",
+        "description": "Kompakte Installationen, Open Source und keine Einschränkungen."
       }
     },
     "eyebrow": "Why DashBeam",
@@ -136,7 +117,7 @@
     "title": "Gebaut, um uns zu überdauern.",
     "subtitle": "Open Source & Community-getrieben",
     "description": "DashBeam wird öffentlich von Mitwirkenden auf der ganzen Welt entwickelt. Jede Codezeile ist öffentlich. Jede Verbesserung wird geteilt. Gemeinsam bauen wir einen schnelleren, privateren Weg, Dateien direkt zwischen Menschen zu senden.",
-    "githubStars": "9,0k Sterne",
+    "githubStars": "9,3k Sterne",
     "cardTitle": "Tritt unserer Community bei",
     "othersCount": "+ 65 weitere",
     "cardDescription": "Open Source ist unsere Art, der Community etwas zurückzugeben und sicherzustellen, dass das, was wir bauen, uns überdauert.",
@@ -418,11 +399,15 @@
         "worksOverInternet": "Funktioniert übers Internet",
         "natHolePunching": "Direktverbindung per NAT Hole Punching",
         "gigabitSpeed": "Sättigt Gigabit-Verbindungen",
+        "discoverLan": "Geräte im LAN entdecken",
+        "persistentPaired": "Dauerhaft gekoppelte Geräte",
         "openSource": "Open Source",
         "noAccount": "Kein Konto erforderlich",
         "e2eEncryption": "Ende-zu-Ende-Verschlüsselung",
         "folders": "Ordner senden",
         "resumable": "Fortsetzbare Übertragungen",
+        "roamingMidTransfer": "Roaming während der Übertragung",
+        "multiReceiver": "An mehrere Empfänger senden",
         "unlimitedSize": "Unbegrenzte Dateigröße",
         "platforms": "Plattformen",
         "theCatch": "Der Haken",
@@ -441,6 +426,8 @@
         "gigabitPairdrop": "Nein (SCTP/Browser-Limit)",
         "foldersPairdrop": "Ja (nur CLI, nicht im Browser)",
         "resumableLocalsend": "Nein (Feature-Anfrage offen, nicht veröffentlicht)",
+        "persistentPairedBlip": "Ja (Konto)",
+        "multiReceiverAltsendme": "Ja (Broadcast)",
         "sizePairdrop": "Begrenzt durch Browser-Speicher",
         "platformsAltsendme": "CLI + Desktop + Mobil + Web",
         "platformsBlip": "Desktop + Mobil (kein Web/CLI)",

@@ -3,7 +3,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
-import HowItWorks from "@/components/HowItWorks";
+import WaysToSend from "@/components/WaysToSend";
 import AvailableAs from "@/components/AvailableAs";
 import HomeFAQ from "@/components/HomeFAQ";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -19,7 +19,7 @@ export default function HomePage() {
       <Header />
       <main className="flex w-full flex-1 flex-col">
         <HeroSection />
-        <HowItWorks />
+        <WaysToSend />
         <AvailableAs />
         <FeaturesSection />
         <CompareHubMatrixSection />

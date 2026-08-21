@@ -29,69 +29,56 @@
     "newBadge": "新着",
     "donationMessage": "あなたの寄付がこのプロジェクトをより良くします"
   },
-  "howItWorks": {
-    "sectionLabel": "安全で即座。\n送る方法は2通り。",
-    "eyebrow": "使い方",
-    "deck": "誰にでもチケットを送るか、一度ペアリングして自分のデバイスへワンクリックで送信。どちらの側にもアカウントは不要です。",
-    "step1": {
-      "title": "ファイルまたはフォルダをドロップ",
-      "description": "DashBeamはファイル用の安全なワンタイムコード（「チケット」）を作成します"
-    },
-    "step2": {
-      "title": "チケットを共有",
-      "description": "チケットをコピーして、チャット、メール、またはSMSで受取人に送信します"
-    },
-    "step3": {
-      "title": "相手がファイルを受信",
-      "description": "友達がアプリにチケットを貼り付けると、転送が始まります。ファイルは直接ダウンロードされます。"
-    },
-    "paired": {
-      "label": "よく送るなら、一度ペアリング。",
-      "step1": {
-        "title": "一度だけペアリング",
-        "description": "両方のデバイスで短いコードを入力します。最初の一度だけで、あとはペアリングされたままです。"
-      },
-      "step2": {
-        "title": "あとはクリックするだけ",
-        "description": "ペアリング済みのデバイスがアプリにそのまま表示されます。選ぶだけでファイルが直接送られ、チケットをコピーする必要はありません。"
-      }
-    }
-  },
   "features": {
     "titleLine1": "DashBeamが愛される理由",
     "titleLine2": "日常のファイル共有のために",
+    "groups": {
+      "performance": {
+        "label": "パフォーマンス"
+      },
+      "connectivity": {
+        "label": "接続性"
+      },
+      "other": {
+        "label": "その他"
+      }
+    },
     "items": {
-      "directSend": {
-        "title": "ファイルを直接送信。仲介者なし。",
-        "description": "ローカルネットワークでも大陸を越えてもシームレスに動作します。"
+      "anyFileAnySize": {
+        "title": "あらゆるファイル、あらゆるサイズ。",
+        "description": "BLAKE3による整合性チェックでエンドツーエンドに検証しながら、ファイルやフォルダ全体をサイズを問わず送信できます。"
       },
-      "transferAnything": {
-        "title": "何でも転送。あらゆるファイル。あらゆる形式。",
-        "description": "BLAKE3ベースの整合性チェックで検証された、あらゆるサイズ・形式のファイルやディレクトリを送信できます。"
+      "multiGigabit": {
+        "title": "マルチギガビット級の速度。",
+        "description": "高速なローカル・リモート接続を飽和させ、電光石火の転送を実現します。"
       },
-      "noSizeLimits": {
-        "title": "サイズ制限なし。真に無制限。",
-        "description": "KB'sから999GB'sまで。DashBeamは無制限サイズのファイル共有を支援します。"
+      "resumableMultiPeer": {
+        "title": "再開可能＆マルチピア。",
+        "description": "転送が中断しても自動的に続きから再開され、1回の送信で複数の相手に同時に届けることもできます。"
       },
-      "blazingFast": {
-        "title": "超高速＆信頼性",
-        "description": "マルチギガビット接続を飽和させ、電光石火の転送を実現します。"
+      "previewHistory": {
+        "title": "プレビュー＆履歴。",
+        "description": "ダウンロード前に中身を確認でき、すべての転送はローカルに記録として残ります。"
       },
-      "endToEndEncrypted": {
-        "title": "エンドツーエンド暗号化",
-        "description": "QUIC + TLS 1.3により、前方・後方秘匿性を保護します。"
+      "dialByKey": {
+        "title": "キーでダイヤル。",
+        "description": "IPアドレスではなく、デバイスの識別情報で接続します。"
       },
-      "resumable": {
-        "title": "再開可能な転送",
-        "description": "中断されても問題ありません。転送は自動的に中断した位置から再開されます。"
+      "roaming": {
+        "title": "ローミング。",
+        "description": "転送中にWi-Fiやモバイル回線、ネットワークを切り替えても、接続が途切れることはありません。"
       },
-      "zeroPersonalData": {
-        "title": "個人データゼロ",
-        "description": "アカウントなし、広告なし。トラッキングなし、学習なし。プライベートなファイル転送だけ。"
+      "selfHostRelays": {
+        "title": "リレーをセルフホスト。",
+        "description": "帯域制限のないリモート転送のために、自分専用のリレーを運用できます（Settings → Infra）。"
       },
-      "freeOpenSource": {
-        "title": "無料＆オープンソース",
-        "description": "コミュニティによって構築。設計上オープン。透明性とプライバシーをデフォルトに。"
+      "advancedDebugMode": {
+        "title": "高度なデバッグモード。",
+        "description": "オプトインの診断機能で、内部で何が起きているかを正確に確認できます。"
+      },
+      "lightweightFree": {
+        "title": "軽量＆無料。",
+        "description": "軽量なインストールサイズ、オープンソースで、制限は一切ありません。"
       }
     },
     "eyebrow": "Why DashBeam",
@@ -136,7 +123,7 @@
     "title": "私たちを超えて残るために。",
     "subtitle": "オープンソース＆コミュニティ主導",
     "description": "DashBeamは世界中の貢献者によって公開開発されています。すべてのコードは公開されています。すべての改善は共有されます。一緒に、人と人の間でファイルを直接送る、より速く、よりプライベートな方法を構築しています。",
-    "githubStars": "9.0kスター",
+    "githubStars": "9.3kスター",
     "cardTitle": "コミュニティに参加",
     "othersCount": "+ 65 人",
     "cardDescription": "オープンソースは、コミュニティへの還元であり、私たちが構築しているものが永続することを保証する方法です。",
@@ -418,11 +405,15 @@
         "worksOverInternet": "インターネット経由で利用可能",
         "natHolePunching": "NATホールパンチングによる直接接続",
         "gigabitSpeed": "ギガビット回線を飽和",
+        "discoverLan": "LAN内のデバイスを検出",
+        "persistentPaired": "永続的なペアリングデバイス",
         "openSource": "オープンソース",
         "noAccount": "アカウント不要",
         "e2eEncryption": "エンドツーエンド暗号化",
         "folders": "フォルダ送信",
         "resumable": "再開可能な転送",
+        "roamingMidTransfer": "転送中のローミング",
+        "multiReceiver": "複数の受信者へ送信",
         "unlimitedSize": "ファイルサイズ無制限",
         "platforms": "プラットフォーム",
         "theCatch": "注意点",
@@ -441,6 +432,8 @@
         "gigabitPairdrop": "いいえ（SCTP/ブラウザ上限）",
         "foldersPairdrop": "はい（CLIのみ、ブラウザ不可）",
         "resumableLocalsend": "いいえ（機能リクエスト中、未実装）",
+        "persistentPairedBlip": "はい（アカウント）",
+        "multiReceiverAltsendme": "はい（ブロードキャスト）",
         "sizePairdrop": "ブラウザメモリで制限",
         "platformsAltsendme": "CLI + デスクトップ + モバイル + Web",
         "platformsBlip": "デスクトップ + モバイル（Web/CLIなし）",

@@ -29,69 +29,56 @@
     "newBadge": "신규",
     "donationMessage": "여러분의 기부가 이 프로젝트를 더 좋게 만듭니다"
   },
-  "howItWorks": {
-    "sectionLabel": "안전하고 즉시.\n보내는 방법은 두 가지.",
-    "eyebrow": "사용 방법",
-    "deck": "누구에게나 티켓을 보내거나, 한 번만 페어링하고 내 기기로 클릭 한 번에 보내세요. 양쪽 모두 계정이 필요 없습니다.",
-    "step1": {
-      "title": "파일 또는 폴더 드롭",
-      "description": "DashBeam가 파일용 안전한 일회용 코드(「티켓」)를 생성합니다"
-    },
-    "step2": {
-      "title": "티켓 공유",
-      "description": "티켓을 복사하여 채팅, 이메일 또는 문자로 수신자에게 보냅니다"
-    },
-    "step3": {
-      "title": "상대방이 파일 수신",
-      "description": "친구가 앱에 티켓을 붙여넣으면 전송이 시작됩니다. 파일이 직접 다운로드됩니다."
-    },
-    "paired": {
-      "label": "자주 보내나요? 한 번만 페어링하세요.",
-      "step1": {
-        "title": "한 번만 페어링",
-        "description": "두 기기에서 짧은 코드를 입력하세요. 처음 한 번이면 계속 페어링된 상태로 유지됩니다."
-      },
-      "step2": {
-        "title": "그다음엔 클릭만",
-        "description": "페어링된 기기가 앱에 바로 표시됩니다. 하나를 선택하면 파일이 곧바로 전송되며, 티켓을 복사할 필요가 없습니다."
-      }
-    }
-  },
   "features": {
     "titleLine1": "사람들이 DashBeam를 사랑하는 이유",
     "titleLine2": "일상적인 파일 공유를 위해",
+    "groups": {
+      "performance": {
+        "label": "성능"
+      },
+      "connectivity": {
+        "label": "연결성"
+      },
+      "other": {
+        "label": "기타"
+      }
+    },
     "items": {
-      "directSend": {
-        "title": "파일을 직접 전송. 중개자 없음.",
-        "description": "로컬 네트워크든 대륙을 넘어든 원활하게 작동합니다."
+      "anyFileAnySize": {
+        "title": "모든 파일, 모든 크기.",
+        "description": "크기와 상관없이 파일이나 폴더 전체를 보낼 수 있으며, BLAKE3 무결성 검사로 종단 간 검증됩니다."
       },
-      "transferAnything": {
-        "title": "무엇이든 전송. 모든 파일. 모든 형식.",
-        "description": "BLAKE3 기반 무결성 검사로 검증된 모든 크기와 형식의 파일 또는 디렉터리를 전송하세요."
+      "multiGigabit": {
+        "title": "멀티기가비트 속도.",
+        "description": "빠른 로컬 및 원격 연결을 포화시켜 번개처럼 빠른 전송을 제공합니다."
       },
-      "noSizeLimits": {
-        "title": "크기 제한 없음. 진정한 무제한.",
-        "description": "KB's부터 999GB's까지. DashBeam는 무제한 크기의 파일 공유를 돕습니다."
+      "resumableMultiPeer": {
+        "title": "재개 가능 & 다중 피어.",
+        "description": "중단된 전송은 멈춘 지점부터 다시 이어지고, 한 번의 전송으로 여러 피어에게 동시에 보낼 수 있습니다."
       },
-      "blazingFast": {
-        "title": "초고속 & 안정적",
-        "description": "멀티기가비트 연결을 포화시켜 번개처럼 빠른 전송을 가능하게 합니다."
+      "previewHistory": {
+        "title": "미리보기 & 기록.",
+        "description": "다운로드하기 전에 내용을 미리 확인하고, 모든 전송 기록을 로컬에 보관합니다."
       },
-      "endToEndEncrypted": {
-        "title": "종단 간 암호화",
-        "description": "QUIC + TLS 1.3으로 전방 및 후방 비밀성을 보호합니다."
+      "dialByKey": {
+        "title": "키로 연결.",
+        "description": "IP 주소가 아닌 기기의 ID로 연결합니다."
       },
-      "resumable": {
-        "title": "재개 가능한 전송",
-        "description": "중단되었나요? 문제없습니다. 전송은 중단된 지점에서 자동으로 재개됩니다."
+      "roaming": {
+        "title": "로밍.",
+        "description": "전송 중에 Wi-Fi, 셀룰러 또는 네트워크를 전환해도 연결이 끊기지 않습니다."
       },
-      "zeroPersonalData": {
-        "title": "개인 데이터 제로",
-        "description": "계정 없음, 광고 없음. 추적 없음, 학습 없음. 오직 프라이빗한 파일 전송."
+      "selfHostRelays": {
+        "title": "릴레이 자체 호스팅.",
+        "description": "제한 없는 원격 전송을 위해 직접 릴레이를 운영하세요 (Settings → Infra)."
       },
-      "freeOpenSource": {
-        "title": "무료 & 오픈 소스",
-        "description": "커뮤니티가 만듦. 설계상 개방적. 투명성과 프라이버시가 기본."
+      "advancedDebugMode": {
+        "title": "고급 디버그 모드.",
+        "description": "선택적으로 켜는 진단 기능이 내부에서 일어나는 일을 정확히 보여줍니다."
+      },
+      "lightweightFree": {
+        "title": "경량 & 무료.",
+        "description": "설치 용량이 작고, 오픈 소스이며, 제한이 없습니다."
       }
     },
     "eyebrow": "Why DashBeam",
@@ -136,7 +123,7 @@
     "title": "우리를 뛰어넘어 남도록.",
     "subtitle": "오픈 소스 & 커뮤니티 주도",
     "description": "DashBeam는 전 세계 기여자들에 의해 공개적으로 개발되고 있습니다. 모든 코드는 공개되어 있습니다. 모든 개선은 공유됩니다. 함께 사람들 사이에서 파일을 직접 보내는 더 빠르고 더 프라이빗한 방법을 만들고 있습니다.",
-    "githubStars": "9.0k 스타",
+    "githubStars": "9.3k 스타",
     "cardTitle": "커뮤니티에 참여하세요",
     "othersCount": "+ 65명",
     "cardDescription": "오픈 소스는 커뮤니티에 환원하고 우리가 만드는 것이 우리를 뛰어넘어 남도록 하는 방법입니다.",
@@ -418,11 +405,15 @@
         "worksOverInternet": "인터넷에서 작동",
         "natHolePunching": "NAT 홀 펀칭을 통한 직접 연결",
         "gigabitSpeed": "기가비트 연결 포화",
+        "discoverLan": "LAN에서 기기 검색",
+        "persistentPaired": "영구 페어링된 기기",
         "openSource": "오픈 소스",
         "noAccount": "계정 불필요",
         "e2eEncryption": "종단간 암호화",
         "folders": "폴더 전송",
         "resumable": "재개 가능한 전송",
+        "roamingMidTransfer": "전송 중 로밍",
+        "multiReceiver": "여러 수신자에게 전송",
         "unlimitedSize": "무제한 파일 크기",
         "platforms": "플랫폼",
         "theCatch": "단점",
@@ -441,6 +432,8 @@
         "gigabitPairdrop": "아니오 (SCTP/브라우저 한계)",
         "foldersPairdrop": "예 (CLI만, 브라우저 불가)",
         "resumableLocalsend": "아니오 (기능 요청 중, 미출시)",
+        "persistentPairedBlip": "예 (계정)",
+        "multiReceiverAltsendme": "예 (브로드캐스트)",
         "sizePairdrop": "브라우저 메모리로 제한",
         "platformsAltsendme": "CLI + 데스크톱 + 모바일 + 웹",
         "platformsBlip": "데스크톱 + 모바일 (웹/CLI 없음)",

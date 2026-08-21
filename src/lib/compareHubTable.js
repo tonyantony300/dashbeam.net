@@ -47,6 +47,20 @@ export function buildCompareHubTable(t, s) {
             status(STATUS.no, t("table.gigabitPairdrop")),
           ],
         },
+        {
+          feature: t("table.discoverLan"),
+          values: [yes(), no(), yes(), no(), no()],
+        },
+        {
+          feature: t("table.persistentPaired"),
+          values: [
+            yes(),
+            status(STATUS.yes, t("table.persistentPairedBlip")),
+            no(),
+            no(),
+            yes(),
+          ],
+        },
       ],
     },
     {
@@ -77,6 +91,20 @@ export function buildCompareHubTable(t, s) {
         {
           feature: t("table.resumable"),
           values: [yes(), yes(), no(), no(), no()],
+        },
+        {
+          feature: t("table.roamingMidTransfer"),
+          values: [yes(), no(), no(), no(), no()],
+        },
+        {
+          feature: t("table.multiReceiver"),
+          values: [
+            status(STATUS.yes, t("table.multiReceiverAltsendme")),
+            no(),
+            yes(),
+            yes(),
+            no(),
+          ],
         },
         {
           feature: t("table.unlimitedSize"),
