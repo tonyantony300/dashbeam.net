@@ -6,8 +6,8 @@ export const DONATE_LINKS = {
   githubSponsors: "https://github.com/sponsors/tonyantony300",
 };
 
-export const DESKTOP_VERSION = "0.7.0";
-export const ANDROID_VERSION = "v0.7.0";
+export const DESKTOP_VERSION = "0.7.1";
+export const ANDROID_VERSION = "v0.7.1";
 export const WEB_APP_URL = "https://app.dashbeam.net";
 const DESKTOP_TAG = `v${DESKTOP_VERSION}`;
 
@@ -42,7 +42,7 @@ export const primaryDownloadsByOs = {
     tag: DESKTOP_TAG,
     translationKey: "getAppForMac",
     heroTranslationKey: "hero.downloadForMac",
-    size: "31 MB",
+    size: "32 MB",
   },
   web: {
     id: "web",
@@ -97,7 +97,7 @@ export const primaryDownloadsByOs = {
     tag: ANDROID_VERSION,
     translationKey: "getAppForAndroid",
     heroTranslationKey: "hero.downloadForAndroid",
-    size: "49 MB",
+    size: "51 MB",
   },
 };
 
@@ -109,13 +109,13 @@ export const desktopPlatformGroups = [
         key: "universalDmg",
         file: `DashBeam_${DESKTOP_VERSION}_universal.dmg`,
         tag: DESKTOP_TAG,
-        size: "31 MB",
+        size: "32 MB",
       },
       {
         key: "x64Dmg",
         file: `DashBeam_${DESKTOP_VERSION}_x64.dmg`,
         tag: DESKTOP_TAG,
-        size: "16 MB",
+        size: "17 MB",
       },
       {
         key: "aarch64Dmg",
@@ -144,7 +144,7 @@ export const desktopPlatformGroups = [
         key: "msi",
         file: `DashBeam_${DESKTOP_VERSION}_x64_en-US.msi`,
         tag: DESKTOP_TAG,
-        size: "14 MB",
+        size: "15 MB",
       },
       {
         key: "arm64Exe",
@@ -211,19 +211,19 @@ export const mobilePlatformGroups = [
         key: "arm64Apk",
         file: `DashBeam-${ANDROID_VERSION}-arm64.apk`,
         tag: ANDROID_VERSION,
-        size: "49 MB",
+        size: "51 MB",
       },
       {
         key: "armv7Apk",
         file: `DashBeam-${ANDROID_VERSION}-armv7.apk`,
         tag: ANDROID_VERSION,
-        size: "35 MB",
+        size: "36 MB",
       },
       {
         key: "universalApk",
         file: `DashBeam-${ANDROID_VERSION}-universal.apk`,
         tag: ANDROID_VERSION,
-        size: "173 MB",
+        size: "183 MB",
       },
     ],
   },
