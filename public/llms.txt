@@ -19,5 +19,5 @@
 
 ## Optional
 
-- [Web app](https://app.altsendme.com)
+- [Web app](https://app.dashbeam.net)
 - [Discord](https://discord.gg/xwb7z22Eve)

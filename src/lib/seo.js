@@ -3,14 +3,12 @@ import { routing } from "@/i18n/routing";
 export const SITE_URL = "https://dashbeam.net";
 
 export const BRAND_NAME = "DashBeam";
-export const BRAND_FORMER_NAMES = [
-  "AltSendme",
-  "Alt Send Me",
-  "Alt Send ME",
-  "alt-sendme",
-  "Altsendme",
-  "AltSendMe",
-];
+/**
+ * Only the two spellings that were ever used publicly (product name + repo/domain
+ * slug). Listing every casing variant reads as keyword stuffing to search engines,
+ * and Google normalises case anyway.
+ */
+export const BRAND_FORMER_NAMES = ["AltSendme", "alt-sendme"];
 export const GITHUB_REPO_URL = "https://github.com/tonyantony300/dashbeam";
 /** Shown as social proof in the header — bump this when the repo crosses a round number. */
 export const GITHUB_STAR_COUNT = "9.4K";
@@ -67,44 +65,6 @@ export const SITE_ROUTES = [
   "compare/blip",
   "compare/wormhole",
   "compare/pairdrop",
-];
-
-export const SEO_KEYWORDS = [
-  "DashBeam",
-  "open source Blip alternative",
-  "open source alternative to Blip",
-  "Blip alternative",
-  "blip.net alternative",
-  "alternative to blip.net",
-  "open source blip.net alternative",
-  "free Blip alternative",
-  "LocalSend alternative for the internet",
-  "LocalSend alternative",
-  "WeTransfer alternative open source",
-  "file transfer",
-  "peer-to-peer",
-  "P2P file sharing",
-  "encrypted file transfer",
-  "cross-platform file transfer",
-  "secure file sharing",
-  "private file transfer",
-  "free file transfer",
-  "unlimited file transfer",
-  "AltSendme",
-  "Alt Send Me",
-  "Alt Send ME",
-  "alt-sendme",
-  "Altsendme",
-  "AltSendMe",
-  "sendme",
-  "iroh",
-  "open source file transfer",
-  "AirDrop alternative",
-  "send large files free",
-  "Windows file transfer",
-  "macOS file transfer",
-  "Linux file transfer",
-  "Android file transfer",
 ];
 
 export const PRESS_LINKS = {

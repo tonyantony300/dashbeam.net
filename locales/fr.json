@@ -155,7 +155,7 @@
   },
   "underTheHoodPage": {
     "metaTitle": "Sous le capot",
-    "metaDescription": "Découvrez comment DashBeam permet des transferts de fichiers peer-to-peer directs avec des tickets, iroh, le chiffrement QUIC, le traversée NAT, l'appairage d'appareils et des relais open source, sans comptes ni adresses IP.",
+    "metaDescription": "Comment DashBeam identifie les fichiers, trouve les pairs par clé publique, traverse les NAT et reprend les transferts interrompus.",
     "title": "Sous le capot",
     "intro": "C'est comme scp sans avoir besoin de connaître l'adresse IP. Ajoutez des fichiers à DashBeam, et il vous donnera un ticket collable que vous pourrez transmettre à quiconque a besoin de vos fichiers. DashBeam connectera vos appareils directement et transférera les données sans comptes ni configuration.",
     "heroAlt": "Graphique hero DashBeam",
@@ -222,7 +222,7 @@
   },
   "downloadsPage": {
     "metaTitle": "Télécharger DashBeam",
-    "metaDescription": "Téléchargez DashBeam pour Windows, macOS, Linux et Android ou utilisez l'application web sur app.altsendme.com. Transfert de fichiers peer-to-peer gratuit et open source, sans limite de taille.",
+    "metaDescription": "Téléchargez DashBeam pour Windows, macOS, Linux et Android, ou utilisez l'app web sur app.dashbeam.net. Gratuit, open source, sans limite de taille.",
     "titleLine1": "Télécharger",
     "titleLine2": "DashBeam",
     "statsLine": "100K+ téléchargements | Disponible en 24 langues | Gratuit",
@@ -239,7 +239,7 @@
     "desktop": "Bureau",
     "mobile": "Mobile",
     "web": "Web",
-    "openWebApp": "app.altsendme.com",
+    "openWebApp": "app.dashbeam.net",
     "webDescription": "Transférez des fichiers directement dans votre navigateur, aucune installation requise.",
     "scoopLabel": "Windows (Scoop)",
     "scoopIntro": "Installer avec Scoop :",
@@ -383,8 +383,8 @@
   },
   "comparePage": {
     "hub": {
-      "metaTitle": "Compare DashBeam to Blip (blip.net), LocalSend, Magic Wormhole & more",
-      "metaDescription": "See how DashBeam compares to Blip (blip.net), LocalSend, Magic Wormhole, and PairDrop. Open-source Blip alternative with CLI, gigabit Iroh speeds, and transfers that work over the internet.",
+      "metaTitle": "DashBeam face à Blip, LocalSend et Magic Wormhole",
+      "metaDescription": "DashBeam comparé à Blip, LocalSend, Magic Wormhole et PairDrop : open source, fonctionne via Internet, taille illimitée, CLI et applis natives.",
       "title": "How DashBeam compares",
       "lead": "DashBeam is an open-source alternative to Blip (blip.net) and a LocalSend alternative for the internet, powered by Iroh. Native apps, CLI, no file size limits, and gigabit-class transfer speeds, without proprietary lock-in.",
       "tableTitle": "La comparaison",
@@ -460,7 +460,7 @@
     },
     "localsend": {
       "metaTitle": "LocalSend Alternative for the Internet",
-      "metaDescription": "DashBeam is a LocalSend alternative that works over the internet, not just the same Wi-Fi. Open-source P2P with Iroh gigabit speeds, tickets, Android, web, and CLI.",
+      "metaDescription": "DashBeam is a LocalSend alternative that works over the internet, not just the same Wi-Fi. Open-source P2P with Iroh speeds, Android, web and CLI.",
       "title": "LocalSend alternative for the internet",
       "lead": "LocalSend is excellent for nearby devices on the same network. DashBeam keeps that frictionless feel across the internet, and adds Iroh/QUIC networking that can saturate gigabit links, plus a real CLI compatible with sendme.",
       "tableTitle": "LocalSend vs DashBeam",
@@ -489,7 +489,7 @@
     },
     "blip": {
       "metaTitle": "Open Source Blip Alternative (blip.net) | DashBeam",
-      "metaDescription": "DashBeam is a free, open-source alternative to Blip (blip.net). Unlimited P2P with CLI, Iroh gigabit speeds, no accounts, and apps for Windows, macOS, Linux, Android, and web.",
+      "metaDescription": "A free, open-source alternative to Blip (blip.net). Unlimited P2P transfers, no accounts, plus CLI and apps for Windows, macOS, Linux and Android.",
       "title": "Open-source Blip (blip.net) alternative",
       "lead": "Blip (blip.net) is a popular proprietary large-file transfer app. DashBeam is the open-source alternative: unlimited size, no accounts, a real CLI, end-to-end encrypted P2P on Iroh that can saturate gigabit connections, and full transparency under AGPL-3.0.",
       "tableTitle": "Blip vs DashBeam",
@@ -614,8 +614,8 @@
     }
   },
   "meta": {
-    "title": "DashBeam (anciennement AltSendme) | Open-source Blip alternative | P2P file transfer",
-    "description": "DashBeam (anciennement AltSendme, Alt Send Me, alt-sendme) is a free, open-source alternative to Blip (blip.net): peer-to-peer file transfer for Windows, macOS, Linux, Android, and web. No accounts, unlimited size, E2E encrypted with Iroh. Official site: dashbeam.net."
+    "title": "DashBeam — Transfert de fichiers P2P open source",
+    "description": "DashBeam (anciennement AltSendme) : envoyez des fichiers de toute taille d'appareil à appareil. Sans compte, sans limite, chiffré de bout en bout."
   },
   "privacyPage": {
     "metaTitle": "Politique de confidentialité",

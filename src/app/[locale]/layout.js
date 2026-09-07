@@ -15,7 +15,6 @@ import {
   GITHUB_REPO_URL,
   OG_LOCALE_MAP,
   PRESS_LINKS,
-  SEO_KEYWORDS,
   SITE_URL,
   absoluteUrl,
   pageAlternates,
@@ -65,7 +64,6 @@ export async function generateMetadata({ params }) {
       template: `%s | ${BRAND_NAME}`,
     },
     description: t("meta.description"),
-    keywords: SEO_KEYWORDS,
     authors: [
       { name: "tonyantony300", url: "https://github.com/tonyantony300" },
     ],
@@ -149,7 +147,6 @@ export default async function LocaleLayout({ children, params }) {
     <html lang={locale} suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="keywords" content={SEO_KEYWORDS.join(", ")} />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta
           name="apple-mobile-web-app-status-bar-style"

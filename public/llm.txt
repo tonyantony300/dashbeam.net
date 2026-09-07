@@ -11,7 +11,7 @@ DashBeam is the same project previously known as **AltSendme**, **Alt Send Me**,
 - **Website**: https://dashbeam.net
 - **English home**: https://dashbeam.net/en
 - **Downloads**: https://dashbeam.net/en/downloads
-- **Web app**: https://app.altsendme.com
+- **Web app**: https://app.dashbeam.net
 - **GitHub**: https://github.com/tonyantony300/dashbeam
 - **GitHub (legacy URL)**: https://github.com/tonyantony300/alt-sendme
 - **Discord**: https://discord.gg/xwb7z22Eve
@@ -30,7 +30,7 @@ DashBeam lets you send files and folders directly between devices using a one-ti
 - macOS: Universal, Intel, Apple Silicon DMG
 - Linux: AppImage, deb, rpm (x86_64 and ARM64)
 - Android: APK (arm64, armv7, universal)
-- Web: https://app.altsendme.com
+- Web: https://app.dashbeam.net
 - CLI: interoperable with official Iroh sendme (https://www.iroh.computer/sendme)
 
 ## Key features
