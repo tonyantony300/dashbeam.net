@@ -1,7 +1,7 @@
 # DashBeam (previously AltSendme)
 
 
-![DashBeam](public/linkedin%20cover.jpg)
+![DashBeam](docs/banner.jpg)
 
 
 

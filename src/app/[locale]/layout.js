@@ -156,7 +156,6 @@ export default async function LocaleLayout({ children, params }) {
           content="black-translucent"
         />
         <meta name="format-detection" content="telephone=no" />
-        <script src="https://tally.so/widgets/embed.js" async></script>
       </head>
       <body
         className={`${funnelSans.variable} ${newsreader.variable} ${libreFranklin.variable} ${koulen.variable} ${inter.variable}`}
