@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import { Heart, List } from "@phosphor-icons/react";
 import GithubIcon from "@/components/GithubIcon";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
-import { Link, usePathname, useRouter } from "@/i18n/routing";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ThemeToggle, { THEME_OPTIONS } from "@/components/ThemeToggle";
 import { Button, buttonVariants } from "@/components/ui/button";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 import {
   PRIVACY_LAST_UPDATED,
   PRIVACY_SOURCE_URL,

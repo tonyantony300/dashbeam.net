@@ -1,5 +1,5 @@
 import { ArrowLeft } from "@phosphor-icons/react";
-import { Link } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 import { PAGE_OPENER_MIN_H, Section } from "@/components/Section";
 import { cn } from "@/lib/utils";
 

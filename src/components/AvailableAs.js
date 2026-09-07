@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { ArrowUpRight } from "@phosphor-icons/react";
-import { Link } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 import { WEB_APP_URL } from "@/constants/downloads";
 import { Section, SectionOpener } from "@/components/Section";
 import { tx } from "@/lib/tx";

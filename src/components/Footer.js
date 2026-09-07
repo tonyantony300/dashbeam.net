@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 import { BRAND_NAME, GITHUB_REPO_URL, PRESS_LINKS } from "@/lib/seo";
 
 const PRESS_ITEMS = [
