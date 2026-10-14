@@ -21,7 +21,7 @@ export default function PartnerSection() {
         title={t("title")}
       />
 
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         <a
           className="group flex min-h-0 items-center justify-center rounded-card border border-border bg-card px-6 py-14 shadow-card transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-card-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:px-8 md:py-16"
           href="https://www.lambdatest.com/"
@@ -37,7 +37,22 @@ export default function PartnerSection() {
           />
         </a>
 
-        <div className="flex min-h-0 flex-col rounded-card bg-brand-tan px-6 py-12 text-neutral-900 shadow-card md:px-8 md:py-14">
+        <a
+          className="group flex min-h-0 items-center justify-center rounded-card border border-border bg-card px-6 py-14 shadow-card transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-card-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:px-8 md:py-16"
+          href="https://vercel.com/open-source-program"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <Image
+            alt={tx(t, "vercelAlt", "Vercel OSS Program")}
+            className="h-auto w-full max-w-60 object-contain transition-transform duration-200 group-hover:scale-[1.02] md:max-w-64 dark:brightness-0 dark:invert"
+            height={24}
+            src="/assets/sponsors/vercel-oss.svg"
+            width={240}
+          />
+        </a>
+
+        <div className="flex min-h-0 flex-col rounded-card md:col-span-2 lg:col-span-1 bg-brand-tan px-6 py-12 text-neutral-900 shadow-card md:px-8 md:py-14">
           <h3 className="font-sans text-lg font-semibold leading-snug tracking-[-0.01em] md:text-xl">
             {t("ctaTitle")}
           </h3>

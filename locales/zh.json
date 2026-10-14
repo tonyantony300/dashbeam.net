@@ -113,6 +113,7 @@
   "partners": {
     "title": "合作伙伴",
     "testmuAlt": "TestMu AI，前身为 LambdaTest",
+    "vercelAlt": "Vercel OSS Program",
     "ctaTitle": "有兴趣合作吗？",
     "ctaDescription": "我们一直在寻找希望合作并支持开源开发的组织。",
     "ctaButton": "联系我们",
@@ -123,7 +124,7 @@
     "title": "为超越我们而构建。",
     "subtitle": "开源 & 社区驱动",
     "description": "DashBeam 由全球贡献者公开构建。每一行代码都是公开的。每一项改进都会共享。我们一起正在构建一种更快、更私密的文件直传方式。",
-    "githubStars": "9.3k stars",
+    "githubStars": "9.9k stars",
     "cardTitle": "加入我们的社区",
     "othersCount": "+ 65 其他人",
     "cardDescription": "开源是我们回馈社区的方式，也是确保我们所构建的东西能够超越我们的方式。",
@@ -620,7 +621,7 @@
     }
   },
   "meta": {
-    "title": "DashBeam — 开源点对点文件传输，无限制",
+    "title": "DashBeam | 开源点对点文件传输，无限制",
     "description": "DashBeam（原 AltSendme）：无需账号、不限大小，在设备之间直接传输文件。端到端加密，免费开源。"
   },
   "privacyPage": {

@@ -113,6 +113,7 @@
   "partners": {
     "title": "パートナー",
     "testmuAlt": "TestMu AI（旧 LambdaTest）",
+    "vercelAlt": "Vercel OSS Program",
     "ctaTitle": "パートナーシップにご興味がありますか？",
     "ctaDescription": "協力し、オープンソース開発を支援したい組織を常に探しています。",
     "ctaButton": "お問い合わせ",
@@ -123,7 +124,7 @@
     "title": "私たちを超えて残るために。",
     "subtitle": "オープンソース＆コミュニティ主導",
     "description": "DashBeamは世界中の貢献者によって公開開発されています。すべてのコードは公開されています。すべての改善は共有されます。一緒に、人と人の間でファイルを直接送る、より速く、よりプライベートな方法を構築しています。",
-    "githubStars": "9.3kスター",
+    "githubStars": "9.9kスター",
     "cardTitle": "コミュニティに参加",
     "othersCount": "+ 65 人",
     "cardDescription": "オープンソースは、コミュニティへの還元であり、私たちが構築しているものが永続することを保証する方法です。",
@@ -620,7 +621,7 @@
     }
   },
   "meta": {
-    "title": "DashBeam — オープンソースのP2Pファイル転送",
+    "title": "DashBeam | オープンソースのP2Pファイル転送",
     "description": "DashBeam（旧AltSendme）。アカウント不要、サイズ無制限で端末間を直接転送。エンドツーエンド暗号化のオープンソースアプリ。"
   },
   "privacyPage": {
