@@ -124,7 +124,7 @@
     "title": "Costruito per sopravviverci.",
     "subtitle": "Open Source & Guidato dalla community",
     "description": "DashBeam è sviluppato in pubblico da contributori in tutto il mondo. Ogni riga di codice è pubblica. Ogni miglioramento è condiviso. Insieme, stiamo costruendo un modo più veloce e privato di inviare file direttamente tra le persone.",
-    "githubStars": "9,9k stelle",
+    "githubStars": "10,3k stelle",
     "cardTitle": "Unisciti alla nostra community",
     "othersCount": "+ 65 altri",
     "cardDescription": "L'open source è il nostro modo di restituire alla community e assicurarci che ciò che stiamo costruendo ci sopravviva.",
@@ -291,6 +291,7 @@
     "donate": {
       "title": "Supporta software libero e open source",
       "description": "DashBeam è gratuito al 100%, open source e senza pubblicità o paywall. Se lo trovi utile, considera di supportarne lo sviluppo. Ogni donazione aiuta a mantenere il progetto gratuito, indipendente e attivamente curato.",
+      "keepsAlive": "Le tue donazioni tengono in vita il progetto.",
       "badge": "AGPL 3.0 · Niente pubblicità · Niente tracking",
       "buyMeACoffee": "Buy Me a Coffee",
       "githubSponsors": "GitHub Sponsors"
@@ -431,6 +432,7 @@
         "gigabitLocalsend": "Sì (solo LAN)",
         "gigabitWormhole": "Sì (se diretto)",
         "gigabitPairdrop": "No (limite SCTP/browser)",
+        "discoverLanPairdrop": "Sì (stesso IP pubblico, tramite il suo server)",
         "foldersPairdrop": "Sì (solo CLI, non nel browser)",
         "resumableLocalsend": "No (richiesta funzione aperta, non rilasciata)",
         "persistentPairedBlip": "Sì (account)",

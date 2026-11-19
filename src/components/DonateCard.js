@@ -41,6 +41,9 @@ export default function DonateCard({ className = "" }) {
             <p className="mt-3 max-w-2xl text-center font-sans text-sm leading-relaxed text-muted-foreground md:text-left md:text-base">
               {t("donate.description")}
             </p>
+            <p className="mt-4 text-center font-sans text-base font-semibold text-foreground md:text-left md:text-lg">
+              {t("donate.keepsAlive")}
+            </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Button
                 className="border-transparent bg-[#FFDD00] font-sans font-semibold text-[#452815] hover:bg-[#FFDD00]/90 md:text-base"

@@ -124,7 +124,7 @@
     "title": "为超越我们而构建。",
     "subtitle": "开源 & 社区驱动",
     "description": "DashBeam 由全球贡献者公开构建。每一行代码都是公开的。每一项改进都会共享。我们一起正在构建一种更快、更私密的文件直传方式。",
-    "githubStars": "9.9k stars",
+    "githubStars": "10.3k stars",
     "cardTitle": "加入我们的社区",
     "othersCount": "+ 65 其他人",
     "cardDescription": "开源是我们回馈社区的方式，也是确保我们所构建的东西能够超越我们的方式。",
@@ -291,6 +291,7 @@
     "donate": {
       "title": "支持自由开源软件",
       "description": "DashBeam 完全免费、开源，且无广告或付费墙。如果您觉得它有用，请考虑支持其开发。每一份捐赠都有助于让这个项目保持免费、独立并持续维护。",
+      "keepsAlive": "您的捐赠让这个项目得以延续。",
       "badge": "AGPL 3.0 · 无广告 · 无追踪",
       "buyMeACoffee": "Buy Me a Coffee",
       "githubSponsors": "GitHub Sponsors"
@@ -431,6 +432,7 @@
         "gigabitLocalsend": "是（仅局域网）",
         "gigabitWormhole": "是（直连时）",
         "gigabitPairdrop": "否（SCTP/浏览器上限）",
+        "discoverLanPairdrop": "是（相同公网 IP，经由其服务器）",
         "foldersPairdrop": "是（仅 CLI，浏览器不支持）",
         "resumableLocalsend": "否（功能请求中，未发布）",
         "persistentPairedBlip": "是（需账户）",

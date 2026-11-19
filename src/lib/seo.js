@@ -11,7 +11,7 @@ export const BRAND_NAME = "DashBeam";
 export const BRAND_FORMER_NAMES = ["AltSendme", "alt-sendme"];
 export const GITHUB_REPO_URL = "https://github.com/tonyantony300/dashbeam";
 /** Shown as social proof in the header — bump this when the repo crosses a round number. */
-export const GITHUB_STAR_COUNT = "9.9K";
+export const GITHUB_STAR_COUNT = "10.3K";
 export const GITHUB_REPO_URL_LEGACY =
   "https://github.com/tonyantony300/alt-sendme";
 

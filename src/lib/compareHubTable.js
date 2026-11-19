@@ -49,7 +49,16 @@ export function buildCompareHubTable(t, s) {
         },
         {
           feature: t("table.discoverLan"),
-          values: [yes(), no(), yes(), no(), no()],
+          // PairDrop's signalling server puts clients that share a public IP
+          // into one room, so devices behind the same router see each other
+          // without a code. It isn't local broadcast like LocalSend's.
+          values: [
+            yes(),
+            no(),
+            yes(),
+            no(),
+            status(STATUS.yes, t("table.discoverLanPairdrop")),
+          ],
         },
         {
           feature: t("table.persistentPaired"),

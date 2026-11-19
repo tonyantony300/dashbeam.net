@@ -29,6 +29,39 @@
     "newBadge": "New",
     "donationMessage": "Your donations make this project better"
   },
+  "videoExplainer": {
+    "eyebrow": "Explained in 6 minutes",
+    "title": "How DashBeam moves files without the cloud",
+    "deck": "An independent walkthrough of what happens under the hood.",
+    "chapter1": {
+      "title": "No cloud, no size cap",
+      "description": "Device to device. Nothing ever sits on a server."
+    },
+    "chapter2": {
+      "title": "Finds devices on your Wi-Fi",
+      "description": "Nearby devices just appear. No codes to copy."
+    },
+    "chapter3": {
+      "title": "Every chunk is verified",
+      "description": "BLAKE3 checks every piece, so nothing arrives corrupted."
+    },
+    "chapter4": {
+      "title": "Works across the internet",
+      "description": "Send a link or QR. An encrypted relay gets past firewalls."
+    },
+    "chapter5": {
+      "title": "Switch networks mid-transfer",
+      "description": "Go from Wi-Fi to 5G and the transfer keeps going."
+    },
+    "chapter6": {
+      "title": "Your own devices skip the prompt",
+      "description": "Pair once. After that, files land straight in a folder."
+    },
+    "creditPrefix": "Video by",
+    "watchOnYoutube": "Watch on YouTube",
+    "play": "Play video",
+    "playFrom": "Play from"
+  },
   "waysToSend": {
     "sectionLabel": "Pick a device.\nOr send a link.",
     "eyebrow": "Ways to send",
@@ -136,7 +169,7 @@
     "title": "Built To Outlive Us.",
     "subtitle": "Open Source & Community Driven",
     "description": "DashBeam is built in public by contributors around the world. Every line of code is public. Every improvement is shared. Together, we're building a faster, more private way to send files directly between people.",
-    "githubStars": "9.9k stars",
+    "githubStars": "10.3k stars",
     "cardTitle": "Join our Community",
     "othersCount": "+ 65 Others",
     "cardDescription": "Open source is our way of giving back to the community and making sure what we're building outlives us.",
@@ -303,6 +336,7 @@
     "donate": {
       "title": "Support Free & Open Source Software",
       "description": "DashBeam is 100% free, open source, and built without ads or paywalls. If you find it useful, consider supporting its development. Every donation helps keep the project free, independent, and actively maintained.",
+      "keepsAlive": "Your donations keep the project alive.",
       "badge": "AGPL 3.0 · No ads · No tracking",
       "buyMeACoffee": "Buy Me a Coffee",
       "githubSponsors": "GitHub Sponsors"
@@ -443,6 +477,7 @@
         "gigabitLocalsend": "Yes (LAN only)",
         "gigabitWormhole": "Yes (when direct)",
         "gigabitPairdrop": "No (SCTP/browser ceiling)",
+        "discoverLanPairdrop": "Yes (same public IP, via its server)",
         "foldersPairdrop": "Yes (CLI only, not in browser)",
         "resumableLocalsend": "No (open feature request, unshipped)",
         "persistentPairedBlip": "Yes (account)",
