@@ -717,11 +717,6 @@
     "title": "Політика конфіденційності",
     "lastUpdated": "Останнє оновлення — {date}",
     "sourceNote": "Ця сторінка відтворює офіційну політику з репозиторію DashBeam.",
-    "sourceLink": "Переглянути PRIVACY.md на GitHub",
-    "sourceLabel": "Джерело",
-    "githubIssues": "Розділ Issues на GitHub",
-    "contactForm": "Форма зв’язку",
-    "learnMoreAbout": "Докладніше про",
-    "seeAlso": "Дивіться також"
+    "sourceLink": "Переглянути PRIVACY.md на GitHub"
   }
 }

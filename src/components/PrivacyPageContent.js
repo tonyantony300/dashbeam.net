@@ -2,9 +2,12 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { PRIVACY_SOURCE_URL } from "@/content/privacyPolicy";
+import {
+  PRIVACY_LAST_UPDATED,
+  PRIVACY_SOURCE_URL,
+  privacyPolicy,
+} from "@/content/privacyPolicy";
 import { GITHUB_REPO_URL } from "@/lib/seo";
-import { tx } from "@/lib/tx";
 import PageHero from "@/components/PageHero";
 import { Section } from "@/components/Section";
 
@@ -68,8 +71,6 @@ function NumberedList({ items }) {
 }
 
 function SectionBody({ section }) {
-  const t = useTranslations("privacyPage");
-
   return (
     <>
       {section.paragraphs?.map((p) => (
@@ -112,7 +113,7 @@ function SectionBody({ section }) {
 
       {section.id === "open-source" && (
         <p className={`mt-4 ${BODY}`}>
-          {tx(t, "sourceLabel", "Source")}{": "}
+          Source:{" "}
           <ExternalLink href={GITHUB_REPO_URL}>
             {GITHUB_REPO_URL.replace("https://", "")}
           </ExternalLink>
@@ -122,25 +123,25 @@ function SectionBody({ section }) {
       {section.id === "contact" && (
         <p className={`mt-4 ${BODY}`}>
           <ExternalLink href={`${GITHUB_REPO_URL}/issues`}>
-            {tx(t, "githubIssues", "GitHub issues")}
+            GitHub issues
           </ExternalLink>
           {" · "}
           <Link className={LINK} href="/contact">
-            {tx(t, "contactForm", "Contact form")}
+            Contact form
           </Link>
         </p>
       )}
 
       {section.id === "how-it-works" && (
         <p className={`mt-4 ${BODY}`}>
-          {tx(t, "learnMoreAbout", "Learn more about")}{" "}
+          Learn more about{" "}
           <ExternalLink href="https://www.iroh.computer">Iroh</ExternalLink>.
         </p>
       )}
 
       {section.id === "third-party" && (
         <p className={`mt-4 ${BODY}`}>
-          {tx(t, "seeAlso", "See also")}{" "}
+          See also{" "}
           <ExternalLink href="https://www.iroh.computer">
             iroh.computer
           </ExternalLink>
@@ -151,25 +152,24 @@ function SectionBody({ section }) {
   );
 }
 
-export default function PrivacyPageContent({ policy, lastUpdated, language }) {
+export default function PrivacyPageContent() {
   const t = useTranslations("privacyPage");
 
   return (
     <>
       <PageHero
         containerClassName={PROSE}
-        lead={<span lang={language}>{policy.intro}</span>}
-        meta={t("lastUpdated", { date: lastUpdated })}
+        lead={privacyPolicy.intro}
+        meta={t("lastUpdated", { date: PRIVACY_LAST_UPDATED })}
         title={t("title")}
         tone="inverse"
       />
 
       <Section containerClassName={PROSE}>
-        {policy.sections.map((section, index) => (
+        {privacyPolicy.sections.map((section, index) => (
           <article
             key={section.id}
             id={section.id}
-            lang={language}
             className={`scroll-mt-28 ${
               index > 0
                 ? "mt-12 border-t border-border pt-12 md:mt-14 md:pt-14"

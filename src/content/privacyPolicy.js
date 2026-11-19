@@ -1,6 +1,6 @@
 import { GITHUB_REPO_URL } from "@/lib/seo";
 
-export const PRIVACY_LAST_UPDATED = "2026-07-21";
+export const PRIVACY_LAST_UPDATED = "July 21, 2026";
 
 export const PRIVACY_SOURCE_URL = `${GITHUB_REPO_URL}/blob/main/PRIVACY.md`;
 
