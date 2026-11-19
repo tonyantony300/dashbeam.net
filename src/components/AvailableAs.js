@@ -69,7 +69,7 @@ export default function AvailableAs() {
                   so they sit in a fixed 4:3 frame to keep the cards aligned. */}
               <div className="mb-4 aspect-[4/3] overflow-hidden rounded-frame bg-frame">
                 <img
-                  alt={platform.imageAlt}
+                  alt={tx(t, `${platform.key}.imageAlt`, platform.imageAlt)}
                   className="h-full w-full object-cover object-top"
                   decoding="async"
                   height={platform.height}

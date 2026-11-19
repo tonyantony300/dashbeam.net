@@ -1,10 +1,12 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import { Monitor, Moon, Sun } from "lucide-react";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Button } from "@/components/ui/button";
+import { tx } from "@/lib/tx";
 
 export const THEME_OPTIONS = [
   { value: "light", label: "Light", Icon: Sun },
@@ -23,6 +25,7 @@ const subscribe = () => () => {};
  */
 export default function ThemeToggle({ className = "", compact = false }) {
   const { theme, setTheme } = useTheme();
+  const t = useTranslations("header");
 
   // The stored theme is only readable on the client, so the server renders a
   // same-sized placeholder instead of a toggle that would hydrate mismatched.
@@ -48,14 +51,24 @@ export default function ThemeToggle({ className = "", compact = false }) {
     );
     const current = OPTIONS[index];
     const next = OPTIONS[(index + 1) % OPTIONS.length];
+    const currentLabel = tx(t, `themeOptions.${current.value}`, current.label);
+    const nextLabel = tx(t, `themeOptions.${next.value}`, next.label);
 
     return (
       <Button
-        aria-label={`Color theme: ${current.label}. Switch to ${next.label}.`}
+        aria-label={
+          t.has("themeCycle")
+            ? t("themeCycle", { current: currentLabel, next: nextLabel })
+            : `Color theme: ${currentLabel}. Switch to ${nextLabel}.`
+        }
         className={className}
         onClick={() => setTheme(next.value)}
         size="icon-sm"
-        title={`Theme: ${current.label}`}
+        title={
+          t.has("themeTitle")
+            ? t("themeTitle", { name: currentLabel })
+            : `Theme: ${currentLabel}`
+        }
         variant="ghost"
       >
         <current.Icon aria-hidden="true" />
@@ -65,7 +78,7 @@ export default function ThemeToggle({ className = "", compact = false }) {
 
   return (
     <ToggleGroup
-      aria-label="Color theme"
+      aria-label={tx(t, "colorTheme", "Color theme")}
       className={className}
       onValueChange={(value) => {
         const next = Array.isArray(value) ? value[0] : value;
@@ -76,10 +89,10 @@ export default function ThemeToggle({ className = "", compact = false }) {
     >
       {OPTIONS.map(({ value, label, Icon }) => (
         <ToggleGroupItem
-          aria-label={label}
+          aria-label={tx(t, `themeOptions.${value}`, label)}
           key={value}
           size="sm"
-          title={label}
+          title={tx(t, `themeOptions.${value}`, label)}
           value={value}
         >
           <Icon aria-hidden="true" />

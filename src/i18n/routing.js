@@ -1,4 +1,5 @@
 import { defineRouting } from 'next-intl/routing';
+import { LANGUAGES } from '../constants/languages';
 
 /**
  * Pure routing config. Deliberately free of any React/navigation imports so the
@@ -7,7 +8,7 @@ import { defineRouting } from 'next-intl/routing';
  * getRequestConfig, every message catalog) into middleware. See ./navigation.js.
  */
 export const routing = defineRouting({
-  locales: ['en', 'ru', 'th', 'de', 'fr', 'ja', 'zh', 'ko', 'it'],
+  locales: LANGUAGES.map(({ code }) => code),
   defaultLocale: 'en',
   localePrefix: 'always',
   localeDetection: true

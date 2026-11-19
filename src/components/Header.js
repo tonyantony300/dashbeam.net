@@ -23,6 +23,7 @@ import {
 import { LANGUAGES } from "@/constants/languages";
 import { DONATE_LINKS } from "@/constants/downloads";
 import { GITHUB_REPO_URL, GITHUB_STAR_COUNT } from "@/lib/seo";
+import { tx } from "@/lib/tx";
 
 const NAV_LINKS = [
   { key: "footer.howItWorks", href: "/under-the-hood" },
@@ -187,7 +188,7 @@ export default function Header() {
                       <MenuRadioItem key={value} value={value}>
                         <span className="flex items-center gap-2">
                           <Icon aria-hidden="true" className="size-4" />
-                          {label}
+                          {tx(t, `header.themeOptions.${value}`, label)}
                         </span>
                       </MenuRadioItem>
                     ))}

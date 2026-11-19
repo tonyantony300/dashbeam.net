@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { routing } from "@/i18n/routing";
 import { DESKTOP_VERSION } from "@/constants/downloads";
 import {
   BRAND_FORMER_NAMES,
@@ -113,7 +114,7 @@ export default async function StructuredData({ locale }) {
     screenshot: `${SITE_URL}/og-image.png`,
     keywords:
       "peer-to-peer file transfer, P2P file sharing, Blip alternative, LocalSend alternative, end-to-end encrypted, open source, iroh, sendme",
-    inLanguage: ["en", "fr", "th", "de", "zh", "ja", "ru", "ko", "it"],
+    inLanguage: routing.locales,
     browserRequirements:
       "Native app recommended; web app available at app.dashbeam.net",
     softwareRequirements:

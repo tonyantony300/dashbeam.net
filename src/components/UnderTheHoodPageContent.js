@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import {
   ARTICLE_MAX,
   Measure,
@@ -49,10 +50,18 @@ function ReadingProgress() {
 }
 
 export default function UnderTheHoodPageContent() {
+  const t = useTranslations("underTheHoodPage");
+
   return (
     <>
       <ReadingProgress />
+      {t.has("englishArticle") && (
+        <p className="mx-auto mt-8 w-full max-w-[720px] px-5 text-sm text-muted-foreground">
+          {t("englishArticle")}
+        </p>
+      )}
       <article
+        lang="en"
         className={cn(
           "mx-auto w-full px-5 pb-28 pt-8 md:px-10 lg:px-[60px]",
           ARTICLE_MAX,

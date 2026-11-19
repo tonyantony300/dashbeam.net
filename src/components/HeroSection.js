@@ -21,19 +21,23 @@ import { tx } from "@/lib/tx";
 
 const HERO_FEATURES = [
   {
+    key: "free",
     title: "Free, for files & folders of any size",
     description:
       "DashBeam works by connecting sender and receiver directly, so there's no need to upload to a server, which means your transfers are truly private.",
   },
   {
+    key: "fast",
     title: "Fast",
     description: "DashBeam can saturate a 4Gbps connection.",
   },
   {
+    key: "resume",
     title: "Resumable fetching",
     description: "Interrupted downloads pick up where they left off.",
   },
   {
+    key: "integrity",
     title: "Integrity checks",
     description:
       "Data is automatically verified for correctness on both send and receive.",
@@ -43,6 +47,13 @@ const HERO_FEATURES = [
 export default function HeroSection() {
   const t = useTranslations();
   const [platform, setPlatform] = useState({ os: "mac", arch: "x64" });
+  const [primaryHighlight, ...highlights] = HERO_FEATURES.map(
+    ({ key, title, description }) => ({
+      key,
+      title: tx(t, `hero.highlights.${key}.title`, title),
+      description: tx(t, `hero.highlights.${key}.description`, description),
+    }),
+  );
 
   useEffect(() => {
     setPlatform(detectPlatform());
@@ -198,7 +209,7 @@ export default function HeroSection() {
           <div className="relative z-20 w-full rounded-[18px] border border-black/20 bg-white/30 p-1.5 shadow-[2px_2px_12px_2px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-md md:max-w-[575px] lg:max-w-[690px] dark:border-white/15 dark:bg-white/10">
             <div className="overflow-hidden rounded-card">
               <Image
-                alt="DashBeam app demo"
+                alt={tx(t, "hero.demoAlt", "DashBeam app demo")}
                 className="h-auto w-full object-contain"
                 height={800}
                 priority
@@ -213,16 +224,16 @@ export default function HeroSection() {
         <div className="mt-12 w-full overflow-hidden rounded-card border border-black/15 bg-white/40 backdrop-blur-sm lg:mt-16 dark:border-white/15 dark:bg-black/40">
           <div className="border-b border-black/15 p-6 md:p-8 dark:border-white/15">
             <h2 className="mb-2 font-sans text-sm font-bold uppercase tracking-wide text-black md:text-base dark:text-white">
-              {HERO_FEATURES[0].title}
+              {primaryHighlight.title}
             </h2>
             <p className="font-sans text-sm leading-relaxed text-black md:text-base dark:text-zinc-200">
-              {HERO_FEATURES[0].description}
+              {primaryHighlight.description}
             </p>
           </div>
 
           <div className="grid grid-cols-1 divide-y divide-black/15 md:grid-cols-3 md:divide-x md:divide-y-0 dark:divide-white/15">
-            {HERO_FEATURES.slice(1).map((feature) => (
-              <div className="p-6 md:p-8" key={feature.title}>
+            {highlights.map((feature) => (
+              <div className="p-6 md:p-8" key={feature.key}>
                 <h3 className="mb-2 font-sans text-sm font-bold uppercase tracking-wide text-black md:text-base dark:text-white">
                   {feature.title}
                 </h3>

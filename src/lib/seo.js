@@ -17,6 +17,7 @@ export const GITHUB_REPO_URL_LEGACY =
 
 export const OG_LOCALE_MAP = {
   en: "en_US",
+  uk: "uk_UA",
   ru: "ru_RU",
   th: "th_TH",
   de: "de_DE",

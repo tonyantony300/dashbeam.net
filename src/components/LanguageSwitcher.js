@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import {
   Select,
@@ -10,9 +10,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { LANGUAGES } from "@/constants/languages";
+import { tx } from "@/lib/tx";
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
+  const t = useTranslations("header");
   const router = useRouter();
   const pathname = usePathname();
 
@@ -26,7 +28,7 @@ export default function LanguageSwitcher() {
       value={locale}
     >
       <SelectTrigger
-        aria-label="Change language"
+        aria-label={tx(t, "changeLanguage", "Change language")}
         className="w-auto min-w-0 font-sans"
         size="sm"
       >
