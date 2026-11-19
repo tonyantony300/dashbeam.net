@@ -7,6 +7,12 @@
     "contactUs": "联系我们",
     "license": "© GNU Affero General Public License v3.0"
   },
+  "donationNudge": {
+    "title": "感谢下载 DashBeam",
+    "body": "DashBeam 免费、开源，由使用它的人们资助。如果它为您节省了时间，一点小小的支持就能帮助开发继续下去。",
+    "later": "以后再说",
+    "close": "关闭"
+  },
   "header": {
     "getApp": "获取应用",
     "menu": "菜单",

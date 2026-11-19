@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import BuyMeACoffeeIcon from "@/components/BuyMeACoffeeIcon";
 import GithubIcon from "@/components/GithubIcon";
+import KofiIcon from "@/components/KofiIcon";
 import { DONATE_LINKS } from "@/constants/downloads";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -45,6 +46,22 @@ export default function DonateCard({ className = "" }) {
               {t("donate.keepsAlive")}
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              {/* Ko-fi's coral sits on the icon rather than the button: white
+                  text on that coral doesn't pass contrast. */}
+              <Button
+                className="border-border bg-card font-sans font-semibold text-foreground hover:bg-card/80 md:text-base"
+                render={
+                  <a
+                    href={DONATE_LINKS.kofi}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  />
+                }
+                size="lg"
+              >
+                <KofiIcon className="shrink-0" size={22} />
+                Ko-fi
+              </Button>
               <Button
                 className="border-transparent bg-[#FFDD00] font-sans font-semibold text-[#452815] hover:bg-[#FFDD00]/90 md:text-base"
                 render={

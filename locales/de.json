@@ -7,6 +7,12 @@
     "contactUs": "Kontaktieren Sie uns",
     "license": "© GNU Affero General Public License v3.0"
   },
+  "donationNudge": {
+    "title": "Danke, dass Sie DashBeam herunterladen",
+    "body": "DashBeam ist kostenlos, Open Source und wird von den Menschen finanziert, die es nutzen. Wenn es Ihnen Zeit spart, hilft ein kleiner Beitrag, die Entwicklung voranzubringen.",
+    "later": "Vielleicht später",
+    "close": "Schließen"
+  },
   "header": {
     "getApp": "App holen",
     "menu": "Menü",

@@ -21,6 +21,7 @@ import {
 } from "@/lib/seo";
 import StructuredData from "./StructuredData";
 import ThemeProvider from "@/components/ThemeProvider";
+import DonationNudge from "@/components/DonationNudge";
 import "../globals.css";
 
 const funnelSans = Funnel_Sans({
@@ -161,6 +162,7 @@ export default async function LocaleLayout({ children, params }) {
           <NextIntlClientProvider messages={messages}>
             <StructuredData locale={locale} />
             {children}
+            <DonationNudge />
             <Analytics />
           </NextIntlClientProvider>
         </ThemeProvider>

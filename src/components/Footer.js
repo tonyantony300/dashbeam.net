@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { DONATE_OPTIONS } from "@/components/donateOptions";
 import { BRAND_NAME, GITHUB_REPO_URL, PRESS_LINKS } from "@/lib/seo";
 
 const PRESS_ITEMS = [
@@ -40,18 +41,13 @@ const FOOTER_NAV_GROUPS = [
   },
   {
     heading: "groupSupport",
-    links: [
-      {
-        key: "githubSponsors",
-        href: "https://github.com/sponsors/tonyantony300",
-        external: true,
-      },
-      {
-        key: "buyMeACoffee",
-        href: "https://buymeacoffee.com/tny_antny",
-        external: true,
-      },
-    ],
+    // Same three platforms, same order, as everywhere else on the site.
+    links: DONATE_OPTIONS.map(({ id, label, href }) => ({
+      key: id,
+      label,
+      href,
+      external: true,
+    })),
   },
 ];
 
@@ -99,7 +95,7 @@ export default function Footer() {
                   {t(group.heading)}
                 </h3>
                 <ul className="mt-4 flex flex-col gap-3">
-                  {group.links.map(({ key, href, external }) => (
+                  {group.links.map(({ key, label, href, external }) => (
                     <li key={key}>
                       {external ? (
                         <a
@@ -108,7 +104,7 @@ export default function Footer() {
                           rel="noopener noreferrer"
                           className={NAV_LINK_CLASS}
                         >
-                          {t(key)}
+                          {label ?? t(key)}
                         </a>
                       ) : (
                         <Link href={href} className={NAV_LINK_CLASS}>

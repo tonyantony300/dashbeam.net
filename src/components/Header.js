@@ -21,7 +21,7 @@ import {
   MenuTrigger,
 } from "@/components/ui/menu";
 import { LANGUAGES } from "@/constants/languages";
-import { DONATE_LINKS } from "@/constants/downloads";
+import { DONATE_OPTIONS } from "@/components/donateOptions";
 import { GITHUB_REPO_URL, GITHUB_STAR_COUNT } from "@/lib/seo";
 
 const NAV_LINKS = [
@@ -86,9 +86,45 @@ export default function Header() {
               <span>{GITHUB_STAR_COUNT}</span>
             </a>
 
-            {/* No donate affordance on desktop — it competes with the download
-                CTA. Donating stays one tap away in the mobile menu and in the
-                footer's Support group. */}
+            {/* A quiet ghost control, not a filled button, so it never
+                competes with "Get the app". It opens the three platforms
+                rather than picking one for the visitor. */}
+            <Menu>
+              <MenuTrigger
+                className={buttonVariants({
+                  className:
+                    "hidden gap-1.5 font-sans text-sm font-medium text-muted-foreground hover:text-foreground lg:inline-flex",
+                  size: "sm",
+                  variant: "ghost",
+                })}
+              >
+                <Heart
+                  aria-hidden="true"
+                  className="text-[#e5484d]"
+                  size={14}
+                  weight="fill"
+                />
+                {t("common.donate")}
+              </MenuTrigger>
+              <MenuPopup align="end" className="w-56 font-sans">
+                {DONATE_OPTIONS.map(({ id, label, href, Icon, iconSize }) => (
+                  <MenuLinkItem
+                    key={id}
+                    render={
+                      <a
+                        href={href}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      />
+                    }
+                  >
+                    <Icon aria-hidden="true" size={iconSize} />
+                    {label}
+                  </MenuLinkItem>
+                ))}
+              </MenuPopup>
+            </Menu>
+
             <div className="hidden lg:block">
               <LanguageSwitcher />
             </div>
@@ -125,18 +161,35 @@ export default function Header() {
 
                 <MenuSeparator />
 
-                <MenuLinkItem
-                  render={
-                    <a
-                      href={DONATE_LINKS.githubSponsors}
-                      rel="noopener noreferrer"
-                      target="_blank"
+                <MenuGroup>
+                  <MenuGroupLabel className="flex items-center gap-1.5">
+                    <Heart
+                      aria-hidden="true"
+                      className="text-[#e5484d]"
+                      size={12}
+                      weight="fill"
                     />
-                  }
-                >
-                  <Heart aria-hidden="true" size={16} weight="fill" />
-                  {t("common.donate")}
-                </MenuLinkItem>
+                    {t("common.donate")}
+                  </MenuGroupLabel>
+                  {DONATE_OPTIONS.map(({ id, label, href, Icon, iconSize }) => (
+                    <MenuLinkItem
+                      key={id}
+                      render={
+                        <a
+                          href={href}
+                          rel="noopener noreferrer"
+                          target="_blank"
+                        />
+                      }
+                    >
+                      <Icon aria-hidden="true" size={iconSize} />
+                      {label}
+                    </MenuLinkItem>
+                  ))}
+                </MenuGroup>
+
+                <MenuSeparator />
+
                 <MenuLinkItem
                   render={
                     <a

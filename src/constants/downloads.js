@@ -2,9 +2,15 @@ const RELEASE_BASE =
   "https://github.com/tonyantony300/dashbeam/releases/download";
 
 export const DONATE_LINKS = {
+  kofi: "https://ko-fi.com/tonyantony",
   buyMeACoffee: "https://buymeacoffee.com/tny_antny",
   githubSponsors: "https://github.com/sponsors/tonyantony300",
 };
+
+/** True for links that download a release asset (installers, APKs). */
+export function isReleaseDownload(href) {
+  return typeof href === "string" && href.startsWith(RELEASE_BASE);
+}
 
 export const DESKTOP_VERSION = "0.7.2";
 export const ANDROID_VERSION = "v0.7.2";

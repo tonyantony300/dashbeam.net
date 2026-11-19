@@ -7,6 +7,12 @@
     "contactUs": "お問い合わせ",
     "license": "© GNU Affero General Public License v3.0"
   },
+  "donationNudge": {
+    "title": "DashBeamをダウンロードいただきありがとうございます",
+    "body": "DashBeamは無料のオープンソースで、使ってくださる皆さんの支援で開発されています。お役に立てたなら、少額のご支援が開発の継続につながります。",
+    "later": "また今度",
+    "close": "閉じる"
+  },
   "header": {
     "getApp": "アプリを入手",
     "menu": "メニュー",
