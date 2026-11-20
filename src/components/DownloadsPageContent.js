@@ -44,13 +44,33 @@ function DownloadIcon({ className = "", fill = "currentColor" }) {
 const ROW = "grid grid-cols-2 gap-4 border-t border-border py-6 md:py-8";
 const ROW_LABEL = "font-sans text-base font-medium text-foreground md:text-lg";
 
-function PlatformDownloadRow({ platformKey, links, t }) {
+function PlatformDownloadRow({ platformKey, links, store, t }) {
   return (
     // `id` gives each platform a stable anchor, e.g. /<locale>/downloads#linux
     // (the landing hero's Linux button links there).
     <div id={platformKey} className={`${ROW} scroll-mt-24 md:min-h-[120px]`}>
       <div className={ROW_LABEL}>{t(`platforms.${platformKey}`)}</div>
       <div className="flex flex-col gap-3">
+        {store && (
+          <a
+            href={store.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-1 inline-flex w-fit rounded-[10px] transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            {/* Official badge artwork, so it keeps its own colours in both
+                themes. 591×177 source, shown at ~48px tall. */}
+            <img
+              src={store.badge}
+              alt="Get it on Google Play"
+              width={160}
+              height={48}
+              className="h-12 w-auto"
+              decoding="async"
+              loading="lazy"
+            />
+          </a>
+        )}
         {links.map((link) => (
           <a
             key={link.key}
@@ -335,6 +355,7 @@ export default function DownloadsPageContent() {
                     key={group.key}
                     platformKey={group.key}
                     links={group.links}
+                    store={group.store}
                     t={t}
                   />
                 ))}

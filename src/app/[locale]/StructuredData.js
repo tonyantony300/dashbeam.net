@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { DESKTOP_VERSION } from "@/constants/downloads";
+import { DESKTOP_VERSION, PLAY_STORE_URL } from "@/constants/downloads";
 import {
   BRAND_FORMER_NAMES,
   BRAND_NAME,
@@ -93,12 +93,14 @@ export default async function StructuredData({ locale }) {
     },
     url: SITE_URL,
     downloadUrl: absoluteUrl("en", "downloads"),
+    installUrl: PLAY_STORE_URL,
     codeRepository: GITHUB_REPO_URL,
     isAccessibleForFree: true,
     softwareHelp: "https://www.iroh.computer/docs/faq",
     applicationSubCategory: "File Sharing",
     sameAs: [
       GITHUB_REPO_URL,
+      PLAY_STORE_URL,
       GITHUB_REPO_URL_LEGACY,
       PRESS_LINKS.softpediaMac,
       PRESS_LINKS.softpediaLinux,

@@ -15,6 +15,10 @@ export function isReleaseDownload(href) {
 export const DESKTOP_VERSION = "0.7.2";
 export const ANDROID_VERSION = "v0.7.2";
 export const WEB_APP_URL = "https://app.dashbeam.net";
+export const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.dashbeam.android";
+/** Official "Get it on Google Play" badge (591×177). */
+export const PLAY_STORE_BADGE = "/google-play-badge.png";
 const DESKTOP_TAG = `v${DESKTOP_VERSION}`;
 
 /** In-page anchor for the Linux row on the Downloads page (`id={group.key}`). */
@@ -34,7 +38,9 @@ export function detectPlatform() {
 
   const ua = navigator.userAgent.toLowerCase();
   let os = "mac";
-  if (ua.includes("win")) os = "windows";
+  // Android UAs also contain "linux", so check for it first.
+  if (ua.includes("android")) os = "android";
+  else if (ua.includes("win")) os = "windows";
   else if (ua.includes("mac")) os = "mac";
   else if (ua.includes("linux")) os = "linux";
 
@@ -109,14 +115,15 @@ export const primaryDownloadsByOs = {
     pageHref: LINUX_DOWNLOADS_HREF,
     formats: LINUX_FORMATS,
   },
+  // Android installs go through the Play Store; the sideloadable APKs stay on
+  // the Downloads page (and in its split-button menu for Android visitors).
   android: {
     id: "android",
     icon: "/androidlogo.svg",
-    file: `DashBeam-${ANDROID_VERSION}-arm64.apk`,
-    tag: ANDROID_VERSION,
+    externalUrl: PLAY_STORE_URL,
     translationKey: "getAppForAndroid",
     heroTranslationKey: "hero.downloadForAndroid",
-    size: "51 MB",
+    formats: "Google Play",
   },
 };
 
@@ -225,6 +232,7 @@ export const desktopPlatformGroups = [
 export const mobilePlatformGroups = [
   {
     key: "android",
+    store: { href: PLAY_STORE_URL, badge: PLAY_STORE_BADGE },
     links: [
       {
         key: "arm64Apk",
@@ -270,7 +278,9 @@ export function getPrimaryDownloadUrl(os, arch = "x64") {
 }
 
 export function getAlternateDownloadsForOs(osKey, arch = "x64") {
-  const group = desktopPlatformGroups.find((g) => g.key === osKey);
+  const group = [...desktopPlatformGroups, ...mobilePlatformGroups].find(
+    (g) => g.key === osKey,
+  );
   if (!group) return [];
   const primary = getPrimaryDownload(osKey, arch);
   return group.links
