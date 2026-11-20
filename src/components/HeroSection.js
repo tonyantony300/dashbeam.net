@@ -10,6 +10,7 @@ import {
   getPrimaryDownloadOption,
   WEB_APP_URL,
 } from "@/constants/downloads";
+import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import {
   Menu,
@@ -40,6 +41,19 @@ const HERO_FEATURES = [
   },
 ];
 
+/**
+ * Link element for a download option: release files open in a new tab, while
+ * options that point at a Downloads page section (Linux) stay in-site and keep
+ * the current locale prefix.
+ */
+function optionLink(option) {
+  return option.internal ? (
+    <Link href={option.url} />
+  ) : (
+    <a href={option.url} rel="noopener noreferrer" target="_blank" />
+  );
+}
+
 export default function HeroSection() {
   const t = useTranslations();
   const [platform, setPlatform] = useState({ os: "mac", arch: "x64" });
@@ -56,7 +70,7 @@ export default function HeroSection() {
   );
 
   return (
-    <section className="relative flex min-h-[559px] w-full flex-col items-center justify-center overflow-hidden px-5 py-16 md:min-h-[60vh] md:px-10 md:py-20 lg:items-start lg:px-[60px] lg:py-24 xl:min-h-[80vh]">
+    <section className="relative flex min-h-[559px] w-full flex-col items-center justify-center overflow-hidden px-5 py-16 md:min-h-[60vh] md:px-10 md:py-20 lg:items-start lg:px-[60px] lg:pt-9 lg:pb-24 xl:min-h-[80vh]">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[url('/heroImage.jpg')] bg-[length:auto_100%] bg-center bg-no-repeat lg:bg-cover" />
         <div className="absolute inset-0 hero-grain opacity-[0.22] mix-blend-overlay" />
@@ -111,13 +125,7 @@ export default function HeroSection() {
                 <div className="flex w-full rounded-lg bg-brand-brown shadow-card sm:w-auto">
                   <Button
                     className="h-12 flex-1 rounded-e-none border-transparent bg-transparent px-5 font-sans font-semibold text-primary-foreground shadow-none hover:bg-white/10 sm:h-11 sm:flex-initial dark:text-neutral-900 dark:hover:bg-black/10"
-                    render={
-                      <a
-                        href={primaryDownload.url}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                      />
-                    }
+                    render={optionLink(primaryDownload)}
                     size="xl"
                     variant="ghost"
                   >
@@ -132,7 +140,16 @@ export default function HeroSection() {
                       src={primaryDownload.icon}
                       width={18}
                     />
-                    <span>{primaryDownload.label}</span>
+                    {primaryDownload.formats ? (
+                      <span className="flex flex-col items-start leading-tight">
+                        <span>{primaryDownload.label}</span>
+                        <span className="text-xs font-normal opacity-80">
+                          {primaryDownload.formats}
+                        </span>
+                      </span>
+                    ) : (
+                      <span>{primaryDownload.label}</span>
+                    )}
                   </Button>
 
                   <Menu>
@@ -162,10 +179,8 @@ export default function HeroSection() {
                       {downloadOptions.map((option) => (
                         <MenuLinkItem
                           className="justify-between py-2.5"
-                          href={option.url}
                           key={option.id}
-                          rel="noopener noreferrer"
-                          target="_blank"
+                          render={optionLink(option)}
                         >
                           <span className="flex min-w-0 items-center gap-3">
                             <Image
@@ -184,7 +199,7 @@ export default function HeroSection() {
                             </span>
                           </span>
                           <span className="ms-2 shrink-0 font-sans text-sm text-muted-foreground">
-                            {option.size}
+                            {option.size ?? option.formats}
                           </span>
                         </MenuLinkItem>
                       ))}

@@ -17,6 +17,12 @@ export const ANDROID_VERSION = "v0.7.2";
 export const WEB_APP_URL = "https://app.dashbeam.net";
 const DESKTOP_TAG = `v${DESKTOP_VERSION}`;
 
+/** In-page anchor for the Linux row on the Downloads page (`id={group.key}`). */
+const LINUX_DOWNLOADS_HREF = "/downloads#linux";
+
+/** Shown under "Download for Linux" in the landing hero. */
+const LINUX_FORMATS = ".deb · .rpm · AppImage";
+
 export function releaseUrl(tag, filename) {
   return `${RELEASE_BASE}/${tag}/${filename}`;
 }
@@ -78,6 +84,9 @@ export const primaryDownloadsByOs = {
     heroTranslationKey: "hero.downloadForWindows",
     size: "9 MB",
   },
+  // `file` still drives the Downloads page's own hero button. The landing hero
+  // uses `pageHref` instead, so Linux visitors see every package format (and
+  // can pick the right package) rather than being handed the AppImage directly.
   linux: {
     id: "linux-appimage",
     icon: "/linuxlogo.svg",
@@ -86,6 +95,8 @@ export const primaryDownloadsByOs = {
     translationKey: "getAppForLinux",
     heroTranslationKey: "hero.downloadForLinux",
     size: "91 MB",
+    pageHref: LINUX_DOWNLOADS_HREF,
+    formats: LINUX_FORMATS,
   },
   "linux-arm64": {
     id: "linux-appimage-arm64",
@@ -95,6 +106,8 @@ export const primaryDownloadsByOs = {
     translationKey: "getAppForLinux",
     heroTranslationKey: "hero.downloadForLinux",
     size: "89 MB",
+    pageHref: LINUX_DOWNLOADS_HREF,
+    formats: LINUX_FORMATS,
   },
   android: {
     id: "android",
@@ -268,28 +281,30 @@ export function getAlternateDownloadsForOs(osKey, arch = "x64") {
     }));
 }
 
-export function getPrimaryDownloadOption(t, os, arch = "x64") {
-  const download = getPrimaryDownload(os, arch);
+/**
+ * Landing-hero shape of a download. Entries with a `pageHref` open that
+ * (locale-relative) Downloads page section instead of a release file, and
+ * show their package formats in place of a single file size.
+ */
+function toHeroOption(t, download) {
   return {
     id: download.id,
-    size: download.size,
+    size: download.pageHref ? undefined : download.size,
+    formats: download.formats,
     icon: download.icon,
     keepIconColor: Boolean(download.keepIconColor),
-    url: getDownloadHref(download),
+    url: download.pageHref ?? getDownloadHref(download),
+    internal: Boolean(download.pageHref),
     label: t(download.heroTranslationKey),
   };
 }
 
+export function getPrimaryDownloadOption(t, os, arch = "x64") {
+  return toHeroOption(t, getPrimaryDownload(os, arch));
+}
+
 export function getDownloadOptions(t) {
-  return HERO_DOWNLOAD_ORDER.map((osKey) => {
-    const download = primaryDownloadsByOs[osKey];
-    return {
-      id: download.id,
-      size: download.size,
-      icon: download.icon,
-      keepIconColor: Boolean(download.keepIconColor),
-      url: getDownloadHref(download),
-      label: t(download.heroTranslationKey),
-    };
-  });
+  return HERO_DOWNLOAD_ORDER.map((osKey) =>
+    toHeroOption(t, primaryDownloadsByOs[osKey]),
+  );
 }

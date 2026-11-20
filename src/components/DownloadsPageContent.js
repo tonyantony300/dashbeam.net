@@ -46,7 +46,9 @@ const ROW_LABEL = "font-sans text-base font-medium text-foreground md:text-lg";
 
 function PlatformDownloadRow({ platformKey, links, t }) {
   return (
-    <div className={`${ROW} md:min-h-[120px]`}>
+    // `id` gives each platform a stable anchor, e.g. /<locale>/downloads#linux
+    // (the landing hero's Linux button links there).
+    <div id={platformKey} className={`${ROW} scroll-mt-24 md:min-h-[120px]`}>
       <div className={ROW_LABEL}>{t(`platforms.${platformKey}`)}</div>
       <div className="flex flex-col gap-3">
         {links.map((link) => (
