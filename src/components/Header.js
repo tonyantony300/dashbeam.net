@@ -52,7 +52,7 @@ export default function Header() {
               href="/"
             >
               {/* Steps down below 360px so the brand name never truncates —
-                  the star pill and the CTA both hold their width. */}
+                  the star pill holds its width, and the CTA drops out below sm. */}
               <span className="block truncate font-sans text-lg font-extrabold tracking-tighter text-primary min-[360px]:text-xl sm:text-2xl lg:text-[28px]">
                 {t("common.logo")}
               </span>
@@ -131,8 +131,10 @@ export default function Header() {
 
             <ThemeToggle className="hidden lg:inline-flex" compact />
 
+            {/* Hidden on phones so the brand name has room; Downloads is
+                still one tap away in the overflow menu. */}
             <Button
-              className="font-sans font-semibold"
+              className="hidden font-sans font-semibold sm:inline-flex"
               render={<Link href="/downloads" />}
               size="sm"
             >

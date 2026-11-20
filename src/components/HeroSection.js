@@ -70,7 +70,7 @@ export default function HeroSection() {
   );
 
   return (
-    <section className="relative flex min-h-[559px] w-full flex-col items-center justify-center overflow-hidden px-5 py-16 md:min-h-[60vh] md:px-10 md:py-20 lg:items-start lg:px-[60px] lg:pt-9 lg:pb-24 xl:min-h-[80vh]">
+    <section className="relative flex min-h-[559px] w-full flex-col items-center justify-center overflow-hidden px-5 pt-6 pb-16 md:min-h-[60vh] md:px-10 md:pt-9 md:pb-20 lg:items-start lg:px-[60px] lg:pt-9 lg:pb-24 xl:min-h-[80vh]">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[url('/heroImage.jpg')] bg-[length:auto_100%] bg-center bg-no-repeat lg:bg-cover" />
         <div className="absolute inset-0 hero-grain opacity-[0.22] mix-blend-overlay" />
@@ -83,7 +83,7 @@ export default function HeroSection() {
         <div className="flex flex-col items-center justify-center gap-8 lg:flex-row lg:justify-start lg:gap-12">
           <div className="flex flex-col items-center lg:items-start">
             <a
-              className="mb-6 flex items-center justify-center gap-2 rounded-full border-[0.5px] border-white/40 bg-white/20 px-4 py-1.5 font-sans text-sm text-black shadow-[0_2px_8px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.5)] backdrop-blur-md transition-colors hover:bg-white/30 lg:justify-start dark:border-white/25 dark:bg-white/10 dark:text-white"
+              className="mb-4 flex items-center justify-center gap-2 rounded-full border-[0.5px] md:mb-6 border-white/40 bg-white/20 px-4 py-1.5 font-sans text-sm text-black shadow-[0_2px_8px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.5)] backdrop-blur-md transition-colors hover:bg-white/30 lg:justify-start dark:border-white/25 dark:bg-white/10 dark:text-white"
               href="https://github.com/tonyantony300/dashbeam"
               rel="noopener noreferrer"
               target="_blank"
@@ -91,15 +91,15 @@ export default function HeroSection() {
               {t("common.openSourceAgpl")}
             </a>
 
-            <h1 className="mb-6 max-w-[620px] text-balance text-center font-heading text-[42px] font-medium leading-[1.04] tracking-[-0.02em] text-black md:max-w-[760px] md:text-[62px] lg:mb-8 lg:text-left dark:text-white">
+            <h1 className="mb-4 max-w-[620px] text-balance text-center font-heading text-[42px] font-medium leading-[1.04] tracking-[-0.02em] text-black md:max-w-[760px] md:mb-6 md:text-[62px] lg:mb-8 lg:text-left dark:text-white">
               {t("hero.title")}
             </h1>
 
-            <p className="mb-6 max-w-[600px] text-center font-sans text-base text-black md:mb-8 md:text-lg lg:text-left dark:text-zinc-200">
+            <p className="mb-4 max-w-[600px] text-center font-sans text-base text-black md:mb-8 md:text-lg lg:text-left dark:text-zinc-200">
               {t("hero.description")}
             </p>
 
-            <p className="mb-6 max-w-[600px] text-center font-sans text-sm italic text-black md:mb-8 md:text-base lg:text-left dark:text-zinc-300">
+            <p className="mb-5 max-w-[600px] text-center font-sans text-sm italic text-black md:mb-8 md:text-base lg:text-left dark:text-zinc-300">
               {t("hero.airdropQuote")}
             </p>
 
